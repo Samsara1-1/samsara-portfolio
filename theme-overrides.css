@@ -1,0 +1,106 @@
+/* Dark-mode interaction colors stay quiet and preserve readable contrast. */
+[data-theme="dark"] .research-grid article:hover,
+[data-theme="dark"] .github-grid a:hover,
+[data-theme="dark"] .github-grid a:focus-visible {
+  background: color-mix(in srgb, var(--paper) 82%, var(--moss) 18%);
+  color: var(--ink);
+  box-shadow: inset 0 0.25rem 0 color-mix(in srgb, var(--moss) 78%, var(--ink) 22%);
+}
+
+[data-theme="dark"] .research-grid article:hover > span,
+[data-theme="dark"] .research-grid article:hover p,
+[data-theme="dark"] .research-grid article:hover footer,
+[data-theme="dark"] .github-grid a:hover span,
+[data-theme="dark"] .github-grid a:hover p,
+[data-theme="dark"] .github-grid a:hover b,
+[data-theme="dark"] .github-grid a:focus-visible span,
+[data-theme="dark"] .github-grid a:focus-visible p,
+[data-theme="dark"] .github-grid a:focus-visible b {
+  color: var(--ink);
+}
+
+[data-theme="dark"] .research-grid article:hover footer {
+  border-color: var(--line);
+}
+
+.music-toggle {
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.music-toggle:hover {
+  border-color: var(--moss);
+  background: var(--paper);
+  color: var(--ink);
+  transform: translateY(-0.1rem);
+}
+
+.music-toggle:active {
+  transform: translateY(0);
+}
+
+.music-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.music-toggle__note {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+}
+
+.music-toggle__bars {
+  position: absolute;
+  right: 0.3rem;
+  bottom: 0.3rem;
+  height: 0.65rem;
+  display: flex;
+  align-items: end;
+  gap: 0.1rem;
+}
+
+.music-toggle__bars i {
+  width: 0.1rem;
+  height: 35%;
+  background: currentColor;
+}
+
+.music-toggle.is-playing {
+  border-color: var(--moss);
+  background: color-mix(in srgb, var(--paper) 82%, var(--moss) 18%);
+  color: var(--moss);
+}
+
+.music-toggle.is-playing .music-toggle__bars i {
+  animation: music-level 0.75s ease-in-out infinite alternate;
+}
+
+.music-toggle.is-playing .music-toggle__bars i:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.music-toggle.is-playing .music-toggle__bars i:nth-child(3) {
+  animation-delay: -0.55s;
+}
+
+@keyframes music-level {
+  to { height: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-toggle.is-playing .music-toggle__bars i { animation: none; }
+}
+
+@media (max-width: 48rem) {
+  .header-tools { gap: 0.4rem; }
+  .music-toggle,
+  .theme-toggle { width: 2.25rem; height: 2.25rem; }
+}

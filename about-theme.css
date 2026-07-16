@@ -1,0 +1,54 @@
+/* Low-contrast surfaces for the about page in both color schemes. */
+.about-heading > p {
+  color: var(--muted);
+}
+
+.about-heading h1:focus-visible {
+  outline: none;
+}
+
+.about-statement {
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.about-statement::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.25rem;
+  background: var(--clay);
+  opacity: 0.55;
+}
+
+.about-statement p:last-child,
+.maker-shelf article p,
+.contact-panel > p:nth-of-type(2),
+.contact-placeholder span {
+  color: var(--muted);
+}
+
+.maker-shelf,
+.contact-panel {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.maker-shelf > div,
+.maker-shelf article {
+  border-color: var(--line);
+}
+
+.maker-shelf article > span,
+.contact-panel > p:first-child {
+  color: var(--clay);
+  font-weight: 800;
+}
+
+.contact-placeholder {
+  border-color: var(--line);
+  background: var(--bg);
+}
