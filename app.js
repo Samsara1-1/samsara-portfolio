@@ -9,6 +9,19 @@ const themedImages = [...document.querySelectorAll('img[data-light-src][data-dar
 const pageShell = [document.querySelector('.site-header'), main];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
+/* ===== CDN acceleration for images on GitHub Pages ===== */
+const IS_GITHUB_PAGES = location.hostname.includes('github.io');
+const CDN_BASE = 'https://cdn.jsdelivr.net/gh/Samsara1-1/samsara-portfolio@main/';
+if (IS_GITHUB_PAGES) {
+  requestIdleCallback(() => {
+    document.querySelectorAll('img[src^="assets/"]').forEach(img => {
+      img.src = CDN_BASE + img.getAttribute('src');
+      if (img.dataset.lightSrc) img.dataset.lightSrc = CDN_BASE + img.dataset.lightSrc;
+      if (img.dataset.darkSrc) img.dataset.darkSrc = CDN_BASE + img.dataset.darkSrc;
+    });
+  }, { timeout: 1200 });
+}
+
 const routeNames = {
   home: '首页',
   systems: '作品与实验',
@@ -90,73 +103,95 @@ themeToggle.addEventListener('click', async () => {
   });
 });
 
-let audioContext = null;
-let musicTimer = null;
+/* ===== Music player: ambient audio via <audio> element ===== */
+const bgAudio = document.getElementById('bg-audio');
 let musicPlaying = false;
-let musicStarting = false;
-const activeTones = new Set();
-const melody = [261.63, 329.63, 392, 493.88, 440, 392, 329.63, 293.66];
 
-function scheduleMelody() {
-  const start = audioContext.currentTime + 0.04;
-  melody.forEach((frequency, index) => {
-    const oscillator = audioContext.createOscillator();
-    const gain = audioContext.createGain();
-    const noteStart = start + index * 0.75;
-    const noteEnd = noteStart + 2.1;
-    oscillator.type = index % 2 ? 'triangle' : 'sine';
-    oscillator.frequency.setValueAtTime(frequency, noteStart);
-    gain.gain.setValueAtTime(0.0001, noteStart);
-    gain.gain.exponentialRampToValueAtTime(0.022, noteStart + 0.18);
-    gain.gain.exponentialRampToValueAtTime(0.0001, noteEnd);
-    oscillator.connect(gain).connect(audioContext.destination);
-    oscillator.start(noteStart);
-    oscillator.stop(noteEnd + 0.02);
-    activeTones.add(oscillator);
-    oscillator.addEventListener('ended', () => activeTones.delete(oscillator), { once: true });
-  });
-}
-
-async function startMusic() {
-  audioContext ||= new (window.AudioContext || window.webkitAudioContext)();
-  await audioContext.resume();
-  scheduleMelody();
-  musicTimer = setInterval(scheduleMelody, 6000);
-  musicPlaying = true;
-  musicToggle.setAttribute('aria-pressed', 'true');
-  musicToggle.setAttribute('aria-label', '暂停背景音乐');
-  musicToggle.title = '暂停背景音乐';
-  musicToggle.classList.add('is-playing');
-}
-
-function stopMusic() {
-  clearInterval(musicTimer);
-  musicTimer = null;
-  activeTones.forEach(oscillator => {
-    try { oscillator.stop(); } catch {}
-  });
-  activeTones.clear();
-  musicPlaying = false;
-  musicToggle.setAttribute('aria-pressed', 'false');
-  musicToggle.setAttribute('aria-label', '播放背景音乐');
-  musicToggle.title = '播放背景音乐';
-  musicToggle.classList.remove('is-playing');
-}
-
-musicToggle.addEventListener('click', async () => {
-  if (musicStarting) return;
-  if (musicPlaying) stopMusic();
-  else {
-    musicStarting = true;
-    try { await startMusic(); }
-    finally { musicStarting = false; }
+musicToggle.addEventListener('click', () => {
+  if (!bgAudio) return;
+  if (musicPlaying) {
+    bgAudio.pause();
+    musicPlaying = false;
+    musicToggle.setAttribute('aria-pressed', 'false');
+    musicToggle.setAttribute('aria-label', '播放背景音乐');
+    musicToggle.title = '播放背景音乐';
+    musicToggle.classList.remove('is-playing');
+  } else {
+    bgAudio.play().then(() => {
+      musicPlaying = true;
+      musicToggle.setAttribute('aria-pressed', 'true');
+      musicToggle.setAttribute('aria-label', '暂停背景音乐');
+      musicToggle.title = '暂停背景音乐';
+      musicToggle.classList.add('is-playing');
+    }).catch(() => {
+      musicToggle.disabled = true;
+      musicToggle.setAttribute('aria-label', '音频加载失败');
+    });
   }
 });
 
-if (!('AudioContext' in window) && !('webkitAudioContext' in window)) {
-  musicToggle.disabled = true;
-  musicToggle.setAttribute('aria-label', '当前浏览器不支持背景音乐');
-  musicToggle.title = '当前浏览器不支持背景音乐';
+bgAudio?.addEventListener('ended', () => {
+  musicPlaying = false;
+  musicToggle.setAttribute('aria-pressed', 'false');
+  musicToggle.classList.remove('is-playing');
+});
+
+/* ===== GitHub trending data fetcher ===== */
+const trendingGrid = document.getElementById('trending-grid');
+const trendingUpdated = document.getElementById('trending-updated');
+
+function formatStars(n) {
+  if (n >= 100000) return (n / 10000).toFixed(1) + ' 万星';
+  if (n >= 10000) return (n / 10000).toFixed(1) + ' 万星';
+  if (n >= 1000) return (n / 1000).toFixed(1) + ' 千星';
+  return n + ' 星';
+}
+
+function formatDescription(desc, maxLen) {
+  if (!desc || desc === '暂无描述' || desc === 'No description') return '暂无描述。';
+  if (desc.length <= maxLen) return desc;
+  return desc.slice(0, maxLen) + '…';
+}
+
+function renderTrending(repos) {
+  if (!trendingGrid || !repos?.length) return;
+  trendingGrid.innerHTML = repos.map(repo => {
+    const desc = formatDescription(repo.description, 72);
+    const stars = formatStars(repo.stars);
+    const lang = repo.language !== 'N/A' ? `<em>${repo.language}</em>` : '';
+    const topics = (repo.topics || []).map(t => `<small>${t}</small>`).join(' ');
+    return `<a href="${repo.url}" target="_blank" rel="noopener noreferrer">
+      <span>${stars}${lang ? ' · ' + lang : ''}</span>
+      <h3>${repo.name}</h3>
+      <p>${desc}</p>
+      ${topics ? `<b>${topics} ↗</b>` : `<b>查看项目 ↗</b>`}
+    </a>`;
+  }).join('');
+}
+
+async function loadTrending() {
+  if (!trendingGrid) return;
+  try {
+    const res = await fetch('data/trending.json', { cache: 'no-cache' });
+    if (!res.ok) throw new Error('fetch failed');
+    const data = await res.json();
+    renderTrending(data.repos);
+    if (trendingUpdated && data.fetched_at) {
+      const d = new Date(data.fetched_at);
+      trendingUpdated.textContent = `数据更新于 ${d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}`;
+      trendingUpdated.hidden = false;
+    }
+  } catch {
+    if (trendingGrid) {
+      trendingGrid.innerHTML = '<div class="trending-loading">暂时加载不到数据，稍后再试试。</div>';
+    }
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadTrending);
+} else {
+  loadTrending();
 }
 
 const regionSelector = [

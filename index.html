@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Samsara，一个大学生关于 AI、小程序、小游戏和网页智能体的个人实验站。">
   <title>Samsara / AI 实验与个人作品</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="about-theme.css">
   <link rel="stylesheet" href="theme-overrides.css">
@@ -57,7 +60,7 @@
           </button>
           <button class="fold-route fold-route--apricot route-link" type="button" data-route="research">
             <span class="fold-route__number">02</span>
-            <span><strong>热门 AI 话题</strong><small>从 GitHub 项目理解正在发生什么</small></span>
+            <span><strong>热门 AI 话题</strong><small>GitHub 高星项目 · 自动更新</small></span>
             <span class="fold-route__arrow" aria-hidden="true">↗</span>
           </button>
           <button class="fold-route fold-route--mustard route-link" type="button" data-route="notes">
@@ -95,7 +98,7 @@
 
         <article class="system-project">
           <figure class="system-project__media media-ink"><img src="assets/beach-palms.jpg" data-light-src="assets/beach-palms.jpg" data-dark-src="assets/beach-palms-dark.jpg" data-light-alt="棕榈树、白色帆船和蓝色海水组成的明亮沙滩" data-dark-alt="深色调的棕榈树、帆船和海滩" width="1600" height="1067" loading="lazy" decoding="async" alt="棕榈树、白色帆船和蓝色海水组成的明亮沙滩"><figcaption>网页小游戏 / 02 · 开发中</figcaption></figure>
-          <div class="system-project__content"><p class="project-code">作品 02 · 网页小游戏</p><h2>横版闯关练习</h2><p class="project-summary">一个玩法接近经典马里奥式横版闯关的网页小游戏。角色可以奔跑、跳跃、踩上平台并避开障碍，目前还是浏览器里的练习版本，关卡数量也不多。做它的时候，我第一次认真处理重力、碰撞边界、镜头跟随和角色状态，也慢慢明白“能动起来”和“操作起来舒服”之间还有很长一段距离。</p><div class="pill-row"><span>HTML Canvas</span><span>碰撞检测</span><span>横版关卡</span><span>开发中</span></div></div>
+          <div class="system-project__content"><p class="project-code">作品 02 · 网页小游戏</p><h2>横版闯关练习</h2><p class="project-summary">一个玩法接近经典马里奥式横版闯关的网页小游戏。角色可以奔跑、跳跃、踩上平台并避开障碍，目前还是浏览器里的练习版本，关卡数量也不多。做它的时候，我第一次认真处理重力、碰撞边界、镜头跟随和角色状态，也慢慢明白"能动起来"和"操作起来舒服"之间还有很长一段距离。</p><div class="pill-row"><span>HTML Canvas</span><span>碰撞检测</span><span>横版关卡</span><span>开发中</span></div></div>
         </article>
 
         <article class="system-project">
@@ -124,23 +127,17 @@
       <div class="research-grid">
         <article><span>话题 / 01</span><h2>智能体如何协作</h2><p>多个智能体分工很吸引人，但更重要的是任务怎么拆、失败怎么重试、结果由谁复核。我更关心的不是让很多角色一起聊天，而是它们能不能留下清楚的过程，让人知道哪一步值得相信、哪一步需要重新检查。</p><footer><b>我的进度</b> 正在做原型</footer></article>
         <article><span>话题 / 02</span><h2>模型上下文协议</h2><p>MCP 正在把模型、工具和数据源连接起来。对新手来说，它最有意思的地方是可以少写一些只为某个平台服务的连接代码。我想先做一个很小的校园信息服务，让智能体查询课表、空教室和活动通知。</p><footer><b>我的进度</b> 阅读文档中</footer></article>
-        <article><span>话题 / 03</span><h2>检索与长期记忆</h2><p>RAG 解决“去哪里找”，记忆还要解决“什么值得留下、什么时候应该忘记”。我准备拿自己的学习笔记做实验，比较关键词、向量检索和人工标签的差别，也观察错误记忆会怎样影响后面的回答。</p><footer><b>我的进度</b> 准备实验</footer></article>
+        <article><span>话题 / 03</span><h2>检索与长期记忆</h2><p>RAG 解决"去哪里找"，记忆还要解决"什么值得留下、什么时候应该忘记"。我准备拿自己的学习笔记做实验，比较关键词、向量检索和人工标签的差别，也观察错误记忆会怎样影响后面的回答。</p><footer><b>我的进度</b> 准备实验</footer></article>
         <article><span>话题 / 04</span><h2>本地模型与隐私</h2><p>Open WebUI、Ollama 一类工具让个人设备运行 AI 更容易，也让我开始关注数据是否必须离开电脑。本地运行不一定更快，却能让我看清模型、显存、量化和隐私之间的取舍，很适合拿来理解 AI 应用真正依赖什么。</p><footer><b>我的进度</b> 已经跑通</footer></article>
         <article><span>话题 / 05</span><h2>节点式生成工作流</h2><p>ComfyUI 把生成过程变成可组合节点。这种可见、可重排的工作流不只适合图片，也能启发普通 AI 产品：当复杂过程能够被展开、替换和复用时，新手就更容易从结果倒推每一步发生了什么。</p><footer><b>我的进度</b> 正在学习</footer></article>
-        <article><span>话题 / 06</span><h2>真实场景中的评测</h2><p>模型排行榜离产品体验很远。同一个模型在知识问答里表现不错，调用工具时却可能反复出错。我想学会按任务、失败类型和实际代价评价功能，把“感觉变聪明了”变成可以复查的测试记录。</p><footer><b>我的进度</b> 记录案例中</footer></article>
+        <article><span>话题 / 06</span><h2>真实场景中的评测</h2><p>模型排行榜离产品体验很远。同一个模型在知识问答里表现不错，调用工具时却可能反复出错。我想学会按任务、失败类型和实际代价评价功能，把"感觉变聪明了"变成可以复查的测试记录。</p><footer><b>我的进度</b> 记录案例中</footer></article>
       </div>
       <section class="github-watch" aria-labelledby="github-watch-title">
-        <header><p>GitHub 热门项目静态快照 · 数据读取于 2026-07-16</p><h2 id="github-watch-title">大家正在关注什么？</h2><p>数据来自 GitHub 仓库公开元数据，本页不会自动更新。星标只代表关注度，不等于项目一定适合所有人。</p></header>
-        <div class="github-grid">
-          <a href="https://github.com/langgenius/dify" target="_blank" rel="noopener noreferrer"><span>14.9 万星</span><h3>Dify</h3><p>面向生产环境的智能体工作流平台，适合观察 AI 应用如何从原型走向完整产品。</p><b>智能体工作流 ↗</b></a>
-          <a href="https://github.com/open-webui/open-webui" target="_blank" rel="noopener noreferrer"><span>14.6 万星</span><h3>Open WebUI</h3><p>连接本地和云端模型的开源 AI 界面，包含知识库、工具与多种交互能力。</p><b>本地模型界面 ↗</b></a>
-          <a href="https://github.com/langchain-ai/langchain" target="_blank" rel="noopener noreferrer"><span>14.2 万星</span><h3>LangChain</h3><p>智能体工程平台，覆盖模型、工具、检索、编排和可观察性，是理解生态的重要入口。</p><b>智能体工程 ↗</b></a>
-          <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank" rel="noopener noreferrer"><span>12.1 万星</span><h3>ComfyUI</h3><p>以节点图组织扩散模型生成流程，展示了复杂 AI 能力怎样变得可视、可组合。</p><b>生成工作流 ↗</b></a>
-          <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener noreferrer"><span>8.9 万星</span><h3>MCP Servers</h3><p>官方 MCP 服务示例集合，让模型能够用统一协议连接文件、数据库和外部工具。</p><b>工具协议 ↗</b></a>
-          <a href="https://github.com/microsoft/autogen" target="_blank" rel="noopener noreferrer"><span>6.0 万星</span><h3>AutoGen</h3><p>微软的智能体编程框架，重点展示多智能体对话、协作和事件驱动的工作方式。</p><b>多智能体 ↗</b></a>
-          <a href="https://github.com/crewAIInc/crewAI" target="_blank" rel="noopener noreferrer"><span>5.6 万星</span><h3>CrewAI</h3><p>用角色与任务组织多个智能体协作，适合快速理解“团队式智能体”的基本模型。</p><b>角色协作 ↗</b></a>
-          <a href="https://github.com/run-llama/llama_index" target="_blank" rel="noopener noreferrer"><span>5.1 万星</span><h3>LlamaIndex</h3><p>围绕文档智能体、检索与 OCR 构建的数据框架，适合学习知识如何进入 AI 应用。</p><b>文档与检索 ↗</b></a>
+        <header><p>GitHub 热门项目 · 每日自动更新</p><h2 id="github-watch-title">大家正在关注什么？</h2><p>数据来自 GitHub 公开元数据，由 GitHub Actions 每天自动拉取并提交。星标只代表关注度，不等于项目一定适合所有人。</p></header>
+        <div class="github-grid" id="trending-grid" data-trending>
+          <div class="trending-loading">正在加载 GitHub 热门项目…</div>
         </div>
+        <p class="trending-updated" id="trending-updated" hidden></p>
       </section>
       <div class="research-strip"><p>现在最想弄懂</p><strong>一个新手，怎样做出真正有用的第一个 AI 智能体？</strong><span>2026 年夏</span></div>
     </section>
@@ -148,12 +145,16 @@
     <section class="view view-notes" data-view="notes" aria-labelledby="notes-title" aria-hidden="true">
       <header class="view-heading notes-heading"><div><button class="back-link route-link" type="button" data-route="home">返回首页</button><p>03 / 学习与折腾笔记</p><h1 id="notes-title" tabindex="-1">在做东西的循环里，<br>留下真实记录。</h1></div><p>不装作教程专家，只记录我为什么想做、遇到了什么问题、最后学会了哪一点。</p></header>
       <div class="notes-list">
-        <article class="note-feature"><div class="note-feature__visual note-photo"><img src="assets/beach-resort.jpg" data-light-src="assets/beach-resort.jpg" data-dark-src="assets/beach-resort-dark.jpg" data-light-alt="礁石、瀑布和蓝色海水围成的安静海湾" data-dark-alt="深色调的礁石、瀑布与安静海湾" width="1600" height="1067" loading="lazy" decoding="async" alt="礁石、瀑布和蓝色海水围成的安静海湾"><span>01</span></div><div><p>2026 年 7 月 · 8 分钟</p><h2>做“你画我猜”小程序时，我低估了多人游戏这件事</h2><p>画板本身并不是最难的部分。真正让我反复修改的，是怎样让不同玩家看到一致的倒计时、题目、答案和分数。这个小程序还没有上线，但每次卡住都让我更理解多人交互背后的状态同步。</p><span class="read-state">整理中</span></div></article>
+        <article class="note-feature"><div class="note-feature__visual note-photo"><img src="assets/beach-resort.jpg" data-light-src="assets/beach-resort.jpg" data-dark-src="assets/beach-resort-dark.jpg" data-light-alt="礁石、瀑布和蓝色海水围成的安静海湾" data-dark-alt="深色调的礁石、瀑布与安静海湾" width="1600" height="1067" loading="lazy" decoding="async" alt="礁石、瀑布和蓝色海水围成的安静海湾"><span>01</span></div><div><p>2026 年 7 月 · 8 分钟</p><h2>做"你画我猜"小程序时，我低估了多人游戏这件事</h2><p>画板本身并不是最难的部分。真正让我反复修改的，是怎样让不同玩家看到一致的倒计时、题目、答案和分数。这个小程序还没有上线，但每次卡住都让我更理解多人交互背后的状态同步。</p><span class="read-state">整理中</span></div></article>
         <article><p>2026 年 6 月 · 6 分钟</p><h2>把横版闯关游戏放进网页后，我开始在意跳跃手感</h2><p class="note-excerpt">从重力、速度到碰撞边界，几个很小的数值就能让角色从轻快变得迟钝。这篇记录我怎样一边试玩，一边调整移动与镜头跟随。</p><span>网页游戏 / Canvas</span></article>
         <article><p>2026 年 5 月 · 5 分钟</p><h2>塔罗牌翻开的那一刻，动画为什么需要慢一点</h2><p class="note-excerpt">塔罗牌小工具并不复杂，但抽牌、停顿、翻面和显示解读的先后顺序，会直接决定它有没有一点仪式感。</p><span>趣味网页 / 翻牌交互</span></article>
         <article><p>2026 年 4 月 · 7 分钟</p><h2>做一个音乐电台网页，不只是放上播放按钮</h2><p class="note-excerpt">歌曲切换、进度变化和播放列表是功能，留白、封面与文字节奏则决定它更像播放器，还是一间可以安静听歌的小房间。</p><span>音乐网页 / 音频体验</span></article>
         <article><p>2026 年 3 月 · 4 分钟</p><h2>项目还没上线，算不算真正做过？</h2><p class="note-excerpt">我曾经因为作品不够完整而不愿意展示，后来发现未上线不等于没有价值。把当前状态和没有解决的问题写清楚，也是一种诚实的记录。</p><span>个人复盘 / 未完成作品</span></article>
         <article><p>2026 年 2 月 · 7 分钟</p><h2>从四个小作品里，我学到的不是四套教程</h2><p class="note-excerpt">小程序让我接触多人状态，小游戏让我理解碰撞，塔罗牌让我注意交互节奏，音乐电台则让我开始思考内容与氛围。</p><span>学习记录 / 项目实践</span></article>
+        <article><p>2026 年 1 月 · 5 分钟</p><h2>为什么我选择不刷教程，而是直接动手做</h2><p class="note-excerpt">看了很多视频和文章，但感觉什么都没学会。后来我发现，只有当我在做项目时遇到一个具体问题，再去查资料、读完马上用上，那个知识才真正留下来。</p><span>学习方法 / 项目驱动</span></article>
+        <article><p>2025 年 12 月 · 6 分钟</p><h2>第一次部署个人网页到 GitHub Pages</h2><p class="note-excerpt">从创建仓库到 DNS 配置，从 404 到看到自己的域名出现在浏览器地址栏，中间踩了不少坑。记录那些报错和解决过程，方便自己以后回看。</p><span>部署 / GitHub Pages</span></article>
+        <article><p>2025 年 11 月 · 4 分钟</p><h2>学会了使用 Git 之后，我为什么还经常忘掉分支</h2><p class="note-excerpt">会用 commit、push、pull 不等于真的理解 Git。merge 和 rebase 的区别让我花了很久才接受它们不是同一件事的不同名字。</p><span>版本控制 / Git</span></article>
+        <article><p>2025 年 10 月 · 5 分钟</p><h2>从零搭了一个 HTML 页面之后，我对 CSS 有了新看法</h2><p class="note-excerpt">以前觉得 CSS 就是调颜色和大小。但当我需要做一个完整布局时才发现，flex、grid、position、z-index 每一个都需要理解，不是背几行代码就能糊弄过去的。</p><span>前端基础 / CSS</span></article>
       </div>
     </section>
 
@@ -161,17 +162,19 @@
       <header class="view-heading about-heading"><button class="back-link route-link" type="button" data-route="home">返回首页</button><p>04 / 关于 Samsara</p><h1 id="about-title" tabindex="-1">一个大学生新手，<br>和他不断增加的实验。</h1></header>
       <div class="about-layout">
         <figure class="about-photo"><img src="assets/beach-coastline.jpg" data-light-src="assets/beach-coastline.jpg" data-dark-src="assets/beach-coastline-dark.jpg" data-light-alt="椰林沿着安静的热带沙滩延伸到远处" data-dark-alt="深色调的椰林和热带沙滩" width="1600" height="1067" loading="lazy" decoding="async" alt="椰林沿着安静的热带沙滩延伸到远处"><figcaption>喜欢海，也喜欢把突然出现的想法慢慢做出来。</figcaption></figure>
-        <div class="about-statement"><p>我是一名还在摸索方向的大学生，也是编程和 AI 领域的新手。</p><p>我没有很多成熟项目，但很喜欢把一个突然冒出来的想法做成能点击、能运行的小东西。比起只看教程，我更习惯先动手，再从报错和不顺手的地方补知识。</p></div>
-        <dl class="capability-list"><div><dt>01 / 我做过</dt><dd>微信小程序、浏览器小游戏、个人网页、简单数据面板</dd></div><div><dt>02 / 我在学</dt><dd>JavaScript、前端交互、Canvas、接口调用和基础产品设计</dd></div><div><dt>03 / 我想做</dt><dd>能搜索、调用工具、保存记忆并说明过程的网页智能体</dd></div><div><dt>04 / 我的优势</dt><dd>好奇、愿意试、不怕从零开始，也愿意把失败过程记录下来</dd></div></dl>
+        <div class="about-statement"><p>我是一名还在摸索方向的大学生，也是编程和 AI 领域的新手。</p><p>我没有很多成熟项目，但很喜欢把一个突然冒出来的想法做成能点击、能运行的小东西。比起只看教程，我更习惯先动手，再从报错和不顺手的地方补知识。</p><p>这个网站是我给自己的实验记录本。它不完美，但每一个内容都是我自己写的、自己做出来的。我希望几年后回头看，能看到自己从零开始的每一步。</p></div>
+        <dl class="capability-list"><div><dt>01 / 我做过</dt><dd>微信小程序、浏览器小游戏、个人网页、简单数据面板</dd></div><div><dt>02 / 我在学</dt><dd>JavaScript、前端交互、Canvas、接口调用和基础产品设计</dd></div><div><dt>03 / 我想做</dt><dd>能搜索、调用工具、保存记忆并说明过程的网页智能体</dd></div><div><dt>04 / 我的优势</dt><dd>好奇、愿意试、不怕从零开始，也愿意把失败过程记录下来</dd></div><div><dt>05 / 我的工具</dt><dd>VS Code、Figma、Git、GitHub Pages、浏览器 DevTools</dd></div><div><dt>06 / 我的状态</dt><dd>在课余时间做小项目，每周至少写一篇笔记</dd></div></dl>
         <div class="maker-shelf">
           <h2>我喜欢捣鼓的东西</h2>
-          <div><article><span>小程序</span><h3>把日常小麻烦变成按钮</h3><p>课程提醒、吃饭选择、活动报名，功能不必宏大，先解决一个具体问题。</p></article><article><span>小游戏</span><h3>用规则练习交互与状态</h3><p>关卡、碰撞、计分和反馈，让我在“好不好玩”里理解程序结构。</p></article><article><span>网页</span><h3>把想法组织成可见的空间</h3><p>我喜欢尝试不一样的导航、排版和动画，让内容本身也有表达方式。</p></article><article><span>智能体</span><h3>让 AI 不只回答，还能行动</h3><p>从一次模型调用开始，慢慢加入工具、记忆、任务状态和人工确认。</p></article></div>
+          <div><article><span>小程序</span><h3>把日常小麻烦变成按钮</h3><p>课程提醒、吃饭选择、活动报名，功能不必宏大，先解决一个具体问题。</p></article><article><span>小游戏</span><h3>用规则练习交互与状态</h3><p>关卡、碰撞、计分和反馈，让我在"好不好玩"里理解程序结构。</p></article><article><span>网页</span><h3>把想法组织成可见的空间</h3><p>我喜欢尝试不一样的导航、排版和动画，让内容本身也有表达方式。</p></article><article><span>智能体</span><h3>让 AI 不只回答，还能行动</h3><p>从一次模型调用开始，慢慢加入工具、记忆、任务状态和人工确认。</p></article></div>
         </div>
         <div class="process"><h2>我的学习循环</h2><ol><li><span>先找问题</span>从自己或同学每天遇到的小麻烦开始。</li><li><span>做最小版本</span>先让核心流程跑起来，不急着把功能堆满。</li><li><span>真实使用</span>自己连续用几天，也邀请朋友直接吐槽。</li><li><span>记录失败</span>把报错、卡顿和理解错误写成下一轮清单。</li><li><span>再学一点</span>只补当前项目真正需要的知识，然后继续做。</li></ol></div>
+        <div class="contact-panel"><p>想聊聊？</p><div class="contact-placeholder"><span>GitHub</span><a href="https://github.com/Samsara1-1" target="_blank" rel="noopener noreferrer">github.com/Samsara1-1 ↗</a></div><div class="contact-placeholder"><span>邮箱</span><span>Samsara1-1@users.noreply.github.com</span></div></div>
       </div>
     </section>
   </main>
 
+  <audio id="bg-audio" loop preload="none" src="https://cdn.pixabay.com/download/audio/2025/03/13/audio_5c94ba32b6.mp3?filename=ambient-piano-ambient-154270.mp3" crossorigin="anonymous"></audio>
   <div class="route-status" aria-live="polite" aria-atomic="true"></div>
 
   <script src="app.js"></script>
