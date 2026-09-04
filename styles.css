@@ -52,127 +52,152 @@
 @media(max-width:48rem){.notes-list article:not(.note-feature){grid-template-columns:1fr}.notes-list article:not(.note-feature)>.note-excerpt{grid-column:auto}}
 .radio-board{min-height:24rem;padding:1.5rem;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr auto auto;gap:1.25rem;border-left:1px solid var(--line);background:var(--bg)}.radio-board header,.radio-board footer{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;font-size:.65rem}.radio-board header{padding-bottom:1rem;border-bottom:1px solid var(--line)}.radio-disc{align-self:center;width:min(15rem,28vw);aspect-ratio:1;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:repeating-radial-gradient(circle,var(--ink) 0 .08rem,transparent .1rem .55rem)}.radio-disc i{width:22%;aspect-ratio:1;border:1px solid var(--line);border-radius:50%;background:var(--paper)}.radio-track{align-self:center;text-align:right}.radio-track p{margin:0;font-family:Georgia,"Songti SC",serif;font-size:clamp(2rem,4vw,4rem);line-height:1}.radio-track span{color:var(--muted);font-size:.7rem}.radio-progress{grid-column:1/-1;position:relative;height:.25rem;background:var(--line)}.radio-progress i{position:absolute;inset:0 auto 0 0;width:48%;background:var(--clay)}.radio-board footer{color:var(--muted)}.radio-board footer strong{color:var(--ink);font-size:.7rem}@media(max-width:48rem){.radio-board{grid-template-columns:1fr;border-left:0;border-top:1px solid var(--line)}.radio-disc{width:min(14rem,70vw);justify-self:center}.radio-track{text-align:center}}
 
-/* ===== Unified Wallpaper + Frosted Glass ===== */
+/* ===== Whole-page wallpaper + glass ===== */
 
-/* Wallpaper layer: fixed behind everything */
+:root {
+  --wallpaper: url("assets/beach-cove.jpg");
+  --glass-tint: color-mix(in srgb, var(--bg) 28%, transparent);
+  --glass-border: color-mix(in srgb, var(--line) 36%, transparent);
+}
+
+body {
+  background: transparent;
+  min-height: 100svh;
+  overflow-x: clip;
+}
+
+/* The actual wallpaper. Replace the filename only; the fixed layer stays glued to the viewport. */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
-  background-image: url('assets/beach-cove.jpg');
+  background-image:
+    linear-gradient(to bottom, color-mix(in srgb, var(--bg) 16%, transparent), color-mix(in srgb, var(--ink) 18%, transparent)),
+    var(--wallpaper);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(33, 23, 18, 0.3);
-  background-blend-mode: overlay;
+  transform: translateZ(0);
   pointer-events: none;
 }
 
 [data-theme="dark"] body::before {
-  background-color: rgba(18, 12, 9, 0.6);
-  filter: brightness(0.7) saturate(0.85);
+  filter: brightness(0.68) saturate(0.82);
 }
 
-/* Frosted blur between wallpaper and content */
+/* One frosted pane for the entire page, instead of many small blurred cards. */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -1;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  background: color-mix(in srgb, var(--bg) 28%, transparent);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 248, 238, 0.18), transparent 42%),
+    radial-gradient(circle at 82% 88%, rgba(91, 48, 64, 0.14), transparent 46%),
+    var(--glass-tint);
+  backdrop-filter: blur(18px) saturate(1.06);
+  -webkit-backdrop-filter: blur(18px) saturate(1.06);
   pointer-events: none;
 }
 
 [data-theme="dark"] body::after {
-  background: color-mix(in srgb, var(--bg) 42%, transparent);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 243, 230, 0.07), transparent 44%),
+    radial-gradient(circle at 82% 88%, rgba(154, 92, 114, 0.10), transparent 48%),
+    color-mix(in srgb, var(--bg) 42%, transparent);
+  backdrop-filter: blur(20px) saturate(1.02);
+  -webkit-backdrop-filter: blur(20px) saturate(1.02);
 }
 
-/* Make page sections transparent so wallpaper shows through */
-body {
-  background: transparent;
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  body::after {
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+  }
 }
 
+/* The header stays glassy while scrolling. Other cards only add translucency, not extra blur. */
 .site-header {
-  background: color-mix(in srgb, var(--bg) 60%, transparent);
-  backdrop-filter: blur(2rem) saturate(1.2);
-  -webkit-backdrop-filter: blur(2rem) saturate(1.2);
-  border-bottom-color: color-mix(in srgb, var(--line) 35%, transparent);
+  background: color-mix(in srgb, var(--bg) 62%, transparent);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+  border-bottom-color: var(--glass-border);
 }
 
 [data-theme="dark"] .site-header {
-  background: color-mix(in srgb, var(--bg) 68%, transparent);
+  background: color-mix(in srgb, var(--bg) 70%, transparent);
+}
+
+.fold-route,
+.github-grid a,
+.notes-list article,
+.about-statement,
+.maker-shelf,
+.contact-panel,
+.github-watch > header,
+.home-marquee,
+.signal-board,
+.radio-board,
+.contact-placeholder {
+  border-color: var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 0.3rem 1.25rem rgba(33, 23, 18, 0.06);
 }
 
 .fold-route {
-  background: color-mix(in srgb, var(--paper) 45%, transparent);
-  backdrop-filter: blur(1.5rem) saturate(1.15);
-  -webkit-backdrop-filter: blur(1.5rem) saturate(1.15);
-  border-color: color-mix(in srgb, var(--line) 40%, transparent);
+  background: color-mix(in srgb, var(--paper) 46%, transparent);
 }
 
 [data-theme="dark"] .fold-route {
-  background: color-mix(in srgb, var(--paper) 38%, transparent);
+  background: color-mix(in srgb, var(--paper) 32%, transparent);
 }
 
 .github-grid a {
   background: color-mix(in srgb, var(--paper) 42%, transparent);
-  backdrop-filter: blur(1.25rem) saturate(1.1);
-  -webkit-backdrop-filter: blur(1.25rem) saturate(1.1);
-}
-
-[data-theme="dark"] .github-grid a {
-  background: color-mix(in srgb, var(--paper) 32%, transparent);
 }
 
 .notes-list article {
   background: color-mix(in srgb, var(--paper) 40%, transparent);
-  backdrop-filter: blur(1.25rem);
-  -webkit-backdrop-filter: blur(1.25rem);
-}
-
-[data-theme="dark"] .notes-list article {
-  background: color-mix(in srgb, var(--paper) 30%, transparent);
 }
 
 .about-statement,
 .maker-shelf,
 .contact-panel {
   background: color-mix(in srgb, var(--paper) 42%, transparent);
-  backdrop-filter: blur(1.5rem) saturate(1.1);
-  -webkit-backdrop-filter: blur(1.5rem) saturate(1.1);
-}
-
-[data-theme="dark"] .about-statement,
-[data-theme="dark"] .maker-shelf,
-[data-theme="dark"] .contact-panel {
-  background: color-mix(in srgb, var(--paper) 35%, transparent);
 }
 
 .github-watch > header {
-  background: color-mix(in srgb, var(--paper) 32%, transparent);
-  backdrop-filter: blur(1.25rem);
-  -webkit-backdrop-filter: blur(1.25rem);
+  background: color-mix(in srgb, var(--paper) 30%, transparent);
 }
 
 .home-marquee {
-  background: color-mix(in srgb, var(--paper) 32%, transparent);
-  backdrop-filter: blur(1rem);
-  -webkit-backdrop-filter: blur(1rem);
+  background: color-mix(in srgb, var(--paper) 30%, transparent);
+  color: var(--ink);
 }
 
 .signal-board,
 .radio-board {
   background: color-mix(in srgb, var(--paper) 38%, transparent);
-  backdrop-filter: blur(1.25rem);
-  -webkit-backdrop-filter: blur(1.25rem);
 }
 
-/* Trending UI */
+.contact-placeholder {
+  background: color-mix(in srgb, var(--bg) 34%, transparent);
+}
+
+[data-theme="dark"] .fold-route,
+[data-theme="dark"] .github-grid a,
+[data-theme="dark"] .notes-list article,
+[data-theme="dark"] .about-statement,
+[data-theme="dark"] .maker-shelf,
+[data-theme="dark"] .contact-panel,
+[data-theme="dark"] .github-watch > header,
+[data-theme="dark"] .home-marquee,
+[data-theme="dark"] .signal-board,
+[data-theme="dark"] .radio-board,
+[data-theme="dark"] .contact-placeholder {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0.3rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+/* Trending list */
 .trending-loading {
   grid-column: 1 / -1;
   padding: 3rem;
@@ -188,33 +213,61 @@ body {
   text-align: right;
 }
 
-/* ===== Fix janky route transitions ===== */
-/* Backdrop-filter on many overlapping layers causes GPU layer explosion during transitions.
-   Solution: disable all backdrop-filter while a route transition is active. */
-.route-changing,
-.route-changing *,
-::view-transition-old(root),
-::view-transition-new(root) {
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+/* One fast, clean transition. Fewer captured layers means smoother navigation. */
+body.route-changing,
+body.route-changing *,
+body.route-changing::after {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
-/* On small screens, transitions get especially janky with blur — simplify */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: .2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  animation-name: page-route-out;
+}
+
+::view-transition-new(root) {
+  animation-name: page-route-in;
+  animation-duration: .26s;
+  animation-delay: .04s;
+}
+
+@keyframes page-route-out {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateY(-.35rem); }
+}
+
+@keyframes page-route-in {
+  from { opacity: .82; transform: translateY(.5rem); }
+  to { opacity: 1; transform: none; }
+}
+
 @media (max-width: 64rem) {
-  .route-changing * {
-    animation: none;
+  body::after {
+    backdrop-filter: blur(12px) saturate(1.02);
+    -webkit-backdrop-filter: blur(12px) saturate(1.02);
+  }
+
+  body.route-changing .view,
+  body.route-changing * {
     transition: none;
+    animation: none;
   }
 }
 
-/* ===== Wallpaper swap instructions =====
-   To use your own wallpaper:
-   1. Place your image in assets/
-   2. Change body::before background-image to url('assets/YOUR_FILE.jpg')
-   3. Adjust the background-color alpha to control readability:
-      - Higher alpha (e.g. 0.5) = more readable, less wallpaper visible
-      - Lower alpha (e.g. 0.2) = more wallpaper visible, text might be harder to read
-   4. Adjust body::after blur to control the frosted effect:
-      - Higher blur (e.g. 8px) = stronger frosted glass
-      - Lower blur (e.g. 1px) = more visible wallpaper detail
-*/
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* 换壁纸只改 --wallpaper 里的文件名，例如 assets/your-wallpaper.jpg。
+   想更透：把 --glass-tint 的 28% 调小；想更易读：调大或把 body::after 的 blur 提高。 */

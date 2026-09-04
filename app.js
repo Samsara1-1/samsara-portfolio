@@ -83,21 +83,16 @@ themeToggle.addEventListener('click', async () => {
     return;
   }
 
-  main.classList.add('route-changing');
+  document.body.classList.add('route-changing');
   pageShell.forEach(element => { if (element) element.inert = true; });
   const currentView = views.find(view => view.dataset.view === activeRoute);
-  namedTransitionElements = nameTransitionRegions(currentView);
   const transition = document.startViewTransition(async () => {
-    clearTransitionNames(namedTransitionElements);
     commit();
     const visibleImages = [...currentView.querySelectorAll('img[data-light-src][data-dark-src]')];
     await Promise.all(visibleImages.map(image => image.decode().catch(() => {})));
-    namedTransitionElements = nameTransitionRegions(currentView);
   });
   transition.finished.catch(() => {}).finally(() => {
-    clearTransitionNames(namedTransitionElements);
-    namedTransitionElements = [];
-    main.classList.remove('route-changing');
+    document.body.classList.remove('route-changing');
     pageShell.forEach(element => { if (element) element.inert = false; });
     themeChanging = false;
   });
@@ -244,9 +239,7 @@ function showRoute(route, { focus = true, restore = false, announce = true } = {
 function cancelRouteTransition() {
   nativeTransition?.skipTransition();
   nativeTransition = null;
-  clearTransitionNames(namedTransitionElements);
-  namedTransitionElements = [];
-  main.classList.remove('route-changing');
+  document.body.classList.remove('route-changing');
   pageShell.forEach(element => { if (element) element.inert = false; });
   routing = false;
 }
@@ -268,12 +261,10 @@ function navigate(route, { push = true, restore = false } = {}) {
     if (push) history.pushState({ route }, '', `#${route}`);
   };
   const complete = () => {
-    main.classList.remove('route-changing');
+    document.body.classList.remove('route-changing');
     pageShell.forEach(element => { if (element) element.inert = false; });
     routing = false;
     nativeTransition = null;
-    clearTransitionNames(namedTransitionElements);
-    namedTransitionElements = [];
     views.find(view => view.dataset.view === route)?.querySelector('h1')?.focus({ preventScroll: true });
     routeStatus.textContent = `已进入${routeNames[route]}`;
   };
@@ -285,15 +276,10 @@ function navigate(route, { push = true, restore = false } = {}) {
   }
 
   routing = true;
-  main.classList.add('route-changing');
+  document.body.classList.add('route-changing');
   pageShell.forEach(element => { if (element) element.inert = true; });
-  const oldView = views.find(view => view.dataset.view === activeRoute);
-  namedTransitionElements = nameTransitionRegions(oldView);
-  nativeTransition = document.startViewTransition(() => {
-    clearTransitionNames(namedTransitionElements);
+  nativeTransition = document.startViewTransition(async () => {
     commit();
-    const newView = views.find(view => view.dataset.view === route);
-    namedTransitionElements = nameTransitionRegions(newView);
   });
   nativeTransition.finished.catch(() => {}).finally(complete);
 }
