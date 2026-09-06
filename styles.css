@@ -5577,3 +5577,36 @@ a:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
     radial-gradient(130% 92% at 50% 6%, rgba(28, 15, 9, .4), transparent 52%),
     linear-gradient(180deg, rgba(28, 15, 9, .24), rgba(28, 15, 9, .05) 26%, rgba(28, 15, 9, .05) 72%, rgba(28, 15, 9, .38));
 }
+
+/* ============================================================
+   Round 42 — 修正主题色：暖色主色真正生效（去掉绿色小字）
+   ------------------------------------------------------------
+   根因：文件中部残留的 "Calm dark palette"（冷色 + 薄荷绿）
+   块会覆盖第 2 行定义的暖色调色板，导致所有 var(--clay) 实际
+   渲染成 #6fc3ae 薄荷绿 —— 作品条目上的小标签因此是绿色的。
+   这里在末尾用 !important 重新声明暖色调色板，让：
+     --clay = #dc6747（暖橘）真正成为主题色；
+   作品/笔记/关于 条目级小标签统一改中性暖灰，不再带彩色。
+   ============================================================ */
+[data-theme="dark"] {
+  --bg: #211814 !important;
+  --paper: #2c211c !important;
+  --ink: #fff3e6 !important;
+  --muted: #c7ac98 !important;
+  --line: #6b5143 !important;
+  --clay: #dc6747 !important;
+  --apricot: #ef9b66 !important;
+  --mustard: #e3b842 !important;
+  --plum: #9a5c72 !important;
+  --moss: #839477 !important;
+}
+
+/* 条目级小标签：中性暖灰（不再有绿色 / 彩色小字） */
+.systems-list .work-kicker,
+.notes-index .index-card > span,
+.about-index .index-card > span {
+  color: color-mix(in srgb, var(--muted) 78%, var(--ink)) !important;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
