@@ -12,7 +12,7 @@ serve.py
 *.r*bak
 .serve*.log
 assets/audio/
-assets/wallpapers/bg-video.mp4
+assets/wallpapers/bg-video-original-4k.mp4
 # 壁纸中间备份/未用图（只提交当前在用的）
 assets/wallpapers/home-beach.jpg
 assets/wallpapers/home-sq.jpg
