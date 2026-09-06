@@ -3,3 +3,19 @@ Thumbs.db
 desktop.ini
 
 *.bak
+.playwright-cli/
+
+# WorkBuddy workspace memory / generated previews
+.workbuddy/
+*.png
+serve.py
+*.r*bak
+.serve*.log
+assets/audio/
+assets/wallpapers/bg-video.mp4
+# 壁纸中间备份/未用图（只提交当前在用的）
+assets/wallpapers/home-beach.jpg
+assets/wallpapers/home-sq.jpg
+assets/wallpapers/systems-sq.jpg
+assets/wallpapers/systems-code.jpg
+assets/wallpapers/home.gif

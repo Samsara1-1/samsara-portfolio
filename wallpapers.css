@@ -1,0 +1,52 @@
+/* ============================================================
+   壁纸配置 (wallpaper config)
+   ------------------------------------------------------------
+   想换壁纸，只改这一个文件就够了。两种改法：
+
+   方式 A —— 直接换图（推荐，不用动代码）
+     把你的图片放到 assets/wallpapers/ 下，覆盖同名文件即可：
+       home.jpg      首页
+       systems.jpg   作品与实验
+       research.jpg  热门 AI 话题
+       notes.jpg     学习与折腾笔记
+       about.jpg     关于
+
+   方式 B —— 改路径
+     把下面 url(...) 里的路径换成你自己的图片，例如：
+       --wp-home: url("assets/wallpapers/my-favourite.jpg");
+     路径相对于本文件所在目录（项目根目录）。
+
+   小建议
+     · 横构图、长边 >= 1920px，文件尽量压到 500KB 以内，
+       否则首屏加载和切页都会变慢。
+     · 画面别太花：中间区域会放文字，太杂乱会看不清。
+       本文件末尾的 --wp-dim / --wp-blur 可以压暗和柔化壁纸。
+     · 五个页面可以各用一张，也可以几页共用同一张。
+   ============================================================ */
+
+:root {
+  /* --- 每个页面一张壁纸 --- */
+  --wp-home:     url("assets/wallpapers/home.jpg");
+  --wp-systems:  url("assets/wallpapers/systems.jpg");
+  --wp-research: url("assets/wallpapers/research.jpg");
+  --wp-notes:    url("assets/wallpapers/notes.jpg");
+  --wp-about:    url("assets/wallpapers/about.jpg");
+
+  /* --- 壁纸之上的一层遮罩：数值越大，壁纸越暗、文字越清晰 --- */
+  --wp-dim: 66%;          /* 想让壁纸更明显就调小，想让字更清楚就调大 */
+  --wp-blur: 0px;         /* 给壁纸本身加模糊，0 表示保持清晰 */
+
+  /* 兜底：JS 还没决定用哪张时先显示这张 */
+  --wallpaper: var(--wp-home);
+}
+
+[data-theme="dark"] {
+  /* 深色模式下壁纸压得更暗一点，避免亮图刺眼 */
+  --wp-dim: 80%;
+}
+
+.wallpaper-layer[data-wallpaper="home"]     { --wallpaper: var(--wp-home); }
+.wallpaper-layer[data-wallpaper="systems"]  { --wallpaper: var(--wp-systems); }
+.wallpaper-layer[data-wallpaper="research"] { --wallpaper: var(--wp-research); }
+.wallpaper-layer[data-wallpaper="notes"]    { --wallpaper: var(--wp-notes); }
+.wallpaper-layer[data-wallpaper="about"]    { --wallpaper: var(--wp-about); }
