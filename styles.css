@@ -5610,3 +5610,25 @@ a:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
   font-weight: 700;
   letter-spacing: .08em;
 }
+
+/* ============================================================
+   Round 43 - 作品条目去掉编号小字后的排版修正
+   ------------------------------------------------------------
+   work-kicker（作品 01/02/... 编号小字）已从 HTML 删除。
+   原三列网格 num/body/arrow 的 num 列消失，这里收成两列：
+   左列 h2 标题 + small 技术标签，右列细箭头（保留 hover 滑入）。
+   ============================================================ */
+.systems-list .index-card {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  grid-template-areas: none !important;
+  gap: 0 1.1rem !important;
+  align-items: center !important;
+}
+.systems-list .index-card > :not(.work-arrow) { grid-column: 1 !important; }
+.systems-list .index-card h2 { grid-row: 1 !important; }
+.systems-list .index-card small { grid-row: 2 !important; }
+.systems-list .index-card .work-arrow {
+  grid-column: 2 !important;
+  grid-row: 1 / span 2 !important;
+  align-self: center !important;
+}
