@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-09-05T05:15:24Z",
+  "fetched_at": "2026-09-06T05:29:40Z",
   "repos": [
     {
       "full_name": "sindresorhus/awesome",
       "name": "awesome",
       "owner": "sindresorhus",
       "description": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are temporarily disabled until I have a chance to catch up with the existing ones]",
-      "stars": 503079,
+      "stars": 503381,
       "language": "N/A",
       "url": "https://github.com/sindresorhus/awesome",
       "topics": [
@@ -20,7 +20,7 @@
       "name": "public-apis",
       "owner": "public-apis",
       "description": "A collective list of free APIs",
-      "stars": 475394,
+      "stars": 476004,
       "language": "Python",
       "url": "https://github.com/public-apis/public-apis",
       "topics": [
@@ -34,7 +34,7 @@
       "name": "freeCodeCamp",
       "owner": "freeCodeCamp",
       "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
-      "stars": 455022,
+      "stars": 455073,
       "language": "TypeScript",
       "url": "https://github.com/freeCodeCamp/freeCodeCamp",
       "topics": [
@@ -48,7 +48,7 @@
       "name": "free-programming-books",
       "owner": "EbookFoundation",
       "description": ":books: Freely available programming books",
-      "stars": 395998,
+      "stars": 396039,
       "language": "Python",
       "url": "https://github.com/EbookFoundation/free-programming-books",
       "topics": [
@@ -62,7 +62,7 @@
       "name": "openclaw",
       "owner": "openclaw",
       "description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
-      "stars": 388894,
+      "stars": 388977,
       "language": "TypeScript",
       "url": "https://github.com/openclaw/openclaw",
       "topics": [
@@ -76,7 +76,7 @@
       "name": "developer-roadmap",
       "owner": "nilbuild",
       "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
-      "stars": 366323,
+      "stars": 366381,
       "language": "TypeScript",
       "url": "https://github.com/nilbuild/developer-roadmap",
       "topics": [
@@ -90,7 +90,7 @@
       "name": "awesome-python",
       "owner": "vinta",
       "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
-      "stars": 318327,
+      "stars": 318573,
       "language": "Python",
       "url": "https://github.com/vinta/awesome-python",
       "topics": [
@@ -104,7 +104,7 @@
       "name": "awesome-selfhosted",
       "owner": "awesome-selfhosted",
       "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
-      "stars": 317210,
+      "stars": 317399,
       "language": "N/A",
       "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
       "topics": [
@@ -118,7 +118,7 @@
       "name": "project-based-learning",
       "owner": "practical-tutorials",
       "description": "Curated list of project-based tutorials",
-      "stars": 282111,
+      "stars": 282240,
       "language": "Python",
       "url": "https://github.com/practical-tutorials/project-based-learning",
       "topics": [
@@ -132,7 +132,7 @@
       "name": "superpowers",
       "owner": "obra",
       "description": "An agentic skills framework & software development methodology that works.",
-      "stars": 281844,
+      "stars": 282150,
       "language": "Shell",
       "url": "https://github.com/obra/superpowers",
       "topics": [
@@ -146,31 +146,17 @@
       "name": "skills",
       "owner": "mattpocock",
       "description": "Skills for Real Engineers. Straight from my .agents directory.",
-      "stars": 250708,
+      "stars": 252987,
       "language": "Shell",
       "url": "https://github.com/mattpocock/skills",
       "topics": []
-    },
-    {
-      "full_name": "react/react",
-      "name": "react",
-      "owner": "react",
-      "description": "The library for web and native user interfaces.",
-      "stars": 249080,
-      "language": "JavaScript",
-      "url": "https://github.com/react/react",
-      "topics": [
-        "declarative",
-        "frontend",
-        "javascript"
-      ]
     },
     {
       "full_name": "affaan-m/ECC",
       "name": "ECC",
       "owner": "affaan-m",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 248675,
+      "stars": 250136,
       "language": "JavaScript",
       "url": "https://github.com/affaan-m/ECC",
       "topics": [
@@ -180,11 +166,25 @@
       ]
     },
     {
+      "full_name": "react/react",
+      "name": "react",
+      "owner": "react",
+      "description": "The library for web and native user interfaces.",
+      "stars": 249119,
+      "language": "JavaScript",
+      "url": "https://github.com/react/react",
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript"
+      ]
+    },
+    {
       "full_name": "torvalds/linux",
       "name": "linux",
       "owner": "torvalds",
       "description": "Linux kernel source tree",
-      "stars": 246648,
+      "stars": 246777,
       "language": "C",
       "url": "https://github.com/torvalds/linux",
       "topics": []
@@ -194,7 +194,7 @@
       "name": "hermes-agent",
       "owner": "NousResearch",
       "description": "The agent that grows with you",
-      "stars": 241593,
+      "stars": 242095,
       "language": "Python",
       "url": "https://github.com/NousResearch/hermes-agent",
       "topics": [
@@ -208,7 +208,7 @@
       "name": "Python",
       "owner": "TheAlgorithms",
       "description": "All Algorithms implemented in Python",
-      "stars": 224264,
+      "stars": 224293,
       "language": "Python",
       "url": "https://github.com/TheAlgorithms/Python",
       "topics": [
@@ -222,7 +222,7 @@
       "name": "deepseek-harness",
       "owner": "deepseek-ai",
       "description": "DeepSeek Harness: Everything is a Plugin.",
-      "stars": 212442,
+      "stars": 213303,
       "language": "TypeScript",
       "url": "https://github.com/deepseek-ai/deepseek-harness",
       "topics": [
@@ -236,7 +236,7 @@
       "name": "opencode",
       "owner": "anomalyco",
       "description": "The open source coding agent.",
-      "stars": 204238,
+      "stars": 204768,
       "language": "TypeScript",
       "url": "https://github.com/anomalyco/opencode",
       "topics": []
@@ -246,7 +246,7 @@
       "name": "n8n",
       "owner": "n8n-io",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 203388,
+      "stars": 203494,
       "language": "TypeScript",
       "url": "https://github.com/n8n-io/n8n",
       "topics": [
@@ -260,7 +260,7 @@
       "name": "tensorflow",
       "owner": "tensorflow",
       "description": "An Open Source Machine Learning Framework for Everyone",
-      "stars": 198833,
+      "stars": 198868,
       "language": "C++",
       "url": "https://github.com/tensorflow/tensorflow",
       "topics": [
