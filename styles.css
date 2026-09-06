@@ -5365,3 +5365,215 @@ button.index-card h2::after,
   border: 0 !important;
   border-radius: .9rem;
 }
+
+/* ============================================================
+   Round 41 — 主题强化 + 克制玻璃感（可读性）
+   ------------------------------------------------------------
+   两个目标：
+   1) 主题突出：暖色主色（clay/apricot）真正站出来 —— 品牌标、
+      首页大标题渐变、导航/标题 kicker 统一用陶土橘，滚动条、
+      选中、焦点也统一成主题色；背景渐晕略微加暖，让视频壁纸
+      和整体暖调融为一体。
+   2) 字体可读：Round 40 把卡片全部改成"全透明"，亮处视频上
+      小字会看不清。这里恢复"克制玻璃感"：极轻暖色底 + 中强
+      模糊 + 发丝亮边，保留透明感但保证文字清晰；小字号统一
+      放大一档、颜色提亮、加投影。
+   ============================================================ */
+
+/* --- 1. 品牌 / 主题色 --- */
+::selection { background: rgba(220, 103, 71, .4); color: #fff6ec; }
+
+* { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--clay) 60%, var(--line)) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--apricot), var(--clay));
+  border-radius: 999px;
+  border: 2px solid rgba(26, 17, 12, .55);
+}
+
+button:focus-visible,
+a:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+
+/* 品牌标：暖色渐变 */
+.brand__mark {
+  background: linear-gradient(135deg, var(--apricot), var(--clay));
+  color: #fff6ec;
+  box-shadow: 0 4px 14px rgba(220, 103, 71, .35);
+}
+
+/* 顶栏底部加一条极细暖色发丝线，强化主题存在感 */
+.site-header { border-bottom-color: rgba(220, 103, 71, .28); }
+
+/* 导航：当前页与 hover 用主题色 */
+.global-nav button:hover { color: var(--apricot); }
+.global-nav button[aria-current="page"] { color: var(--clay); border-bottom-color: var(--clay); }
+
+/* --- 2. 首页：标题渐变 + 眉题装饰 --- */
+.view-home .home-hero h1 {
+  background: linear-gradient(100deg, #fff6ec 4%, #ffdfc0 42%, #ef9b66 74%, #dc6747 98%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 3px 18px rgba(0, 0, 0, .38));
+}
+
+.view-home .home-hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+}
+.view-home .home-hero .eyebrow::before {
+  content: "";
+  width: .5rem;
+  height: .5rem;
+  background: linear-gradient(135deg, var(--apricot), var(--clay));
+  transform: rotate(45deg);
+  border-radius: 1px;
+}
+
+/* 首页右侧文字提亮：在亮视频上也清楚 */
+.view-home .home-right .hero-lead {
+  color: color-mix(in srgb, var(--ink) 84%, var(--paper));
+  text-shadow: 0 1px 14px rgba(0, 0, 0, .45);
+}
+.view-home .home-right .hero-meta span {
+  color: color-mix(in srgb, var(--ink) 90%, var(--apricot));
+  border-color: rgba(255, 243, 230, .22);
+  background: rgba(26, 17, 12, .16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+}
+.view-home .home-status {
+  color: color-mix(in srgb, var(--muted) 62%, var(--ink));
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .4);
+}
+
+/* --- 3. 页面标题：kicker 主题色 + h1 下加一条主题短杠 --- */
+.frame-heading__body > p,
+.view-heading > p {
+  color: var(--clay) !important;
+  letter-spacing: .16em;
+  font-size: .72rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .35);
+}
+.frame-heading h1 { text-shadow: 0 1px 18px rgba(0, 0, 0, .5); }
+.frame-heading__body h1::after {
+  content: "";
+  display: block;
+  width: 3.4rem;
+  height: .22rem;
+  margin-top: 1.05rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--clay), var(--apricot), transparent);
+}
+.frame-heading__note {
+  color: color-mix(in srgb, var(--muted) 72%, var(--ink)) !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .42);
+}
+.frame-intro,
+.frame-text p {
+  color: color-mix(in srgb, var(--muted) 66%, var(--ink));
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .42);
+}
+
+/* --- 4. 克制玻璃感：卡片是"透明但能读"的暖色轻底 --- */
+.systems-list .index-card,
+.notes-index .index-card,
+.about-index .index-card,
+.research-frame .trend-card,
+.mini-card,
+.mini-signal,
+.status-rail article,
+.github-grid a {
+  background: color-mix(in srgb, #221916 30%, transparent) !important;
+  backdrop-filter: blur(18px) saturate(1.26) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.26) !important;
+  border: 1px solid rgba(255, 243, 230, .10) !important;
+  border-radius: .9rem !important;
+  box-shadow: inset 0 1px 0 rgba(255, 243, 230, .055), 0 10px 26px rgba(0, 0, 0, .12) !important;
+}
+
+/* hover / 聚焦：底稍浓 + 陶土色描边 */
+.systems-list .index-card:hover,
+.systems-list .index-card:focus-visible,
+.notes-index .index-card:hover,
+.notes-index .index-card:focus-visible,
+.about-index .index-card:hover,
+.about-index .index-card:focus-visible,
+.research-frame .trend-card:hover,
+.research-frame .trend-card:focus-visible,
+.mini-card:hover,
+.mini-card:focus-visible,
+.github-grid a:hover,
+.github-grid a:focus-visible {
+  background: color-mix(in srgb, #2b211c 46%, transparent) !important;
+  border-color: color-mix(in srgb, var(--clay) 55%, rgba(255, 243, 230, .12)) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 243, 230, .07), 0 12px 30px rgba(0, 0, 0, .18) !important;
+}
+
+/* 作品页行内分隔线保留（浅亮发丝） */
+.systems-list li + li { border-top-color: rgba(255, 243, 230, .14); }
+
+/* --- 5. 卡片文字：放大一个刻度、提亮、加投影 --- */
+.notes-index .index-card h2,
+.about-index .index-card h2,
+.research-frame .trend-card h3 {
+  color: var(--ink);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, .5);
+}
+.notes-index .index-card p,
+.about-index .index-card p,
+.research-frame .trend-card p,
+.notes-index .index-card small,
+.about-index .index-card small,
+.systems-list .index-card small,
+.mini-card small {
+  color: color-mix(in srgb, var(--muted) 56%, var(--ink));
+  text-shadow: 0 1px 10px rgba(0, 0, 0, .45);
+}
+/* 小字统一放大一档，不再"看不清" */
+.notes-index .index-card small,
+.about-index .index-card small,
+.systems-list .index-card small,
+.mini-card small { font-size: .72rem; }
+.research-frame .trend-card span { font-size: .66rem; color: color-mix(in srgb, var(--muted) 50%, var(--ink)); }
+.research-frame .trend-card p { font-size: .78rem; }
+
+/* 卡片顶部 kicker（作品编号 / 日期 / 我是谁 等）保留主题色 */
+.systems-list .work-kicker,
+.notes-index .index-card > span,
+.about-index .index-card > span {
+  color: var(--clay) !important;
+  font-size: .68rem;
+}
+
+/* 脚下小信息卡：保持轻量，但文字也清晰 */
+.foot-card p { color: color-mix(in srgb, var(--muted) 60%, var(--ink)); text-shadow: 0 1px 8px rgba(0, 0, 0, .4); }
+.foot-card span { color: var(--clay); text-shadow: 0 1px 8px rgba(0, 0, 0, .4); }
+.foot-card strong { text-shadow: 0 1px 8px rgba(0, 0, 0, .4); }
+
+/* 数据信号小卡 */
+.mini-signal__rows span { color: color-mix(in srgb, var(--muted) 55%, var(--ink)); text-shadow: 0 1px 10px rgba(0, 0, 0, .45); }
+.mini-signal__rows b { color: var(--ink); }
+
+/* 加载提示 */
+.trending-loading { color: color-mix(in srgb, var(--ink) 78%, var(--paper)); text-shadow: 0 1px 10px rgba(0, 0, 0, .45); }
+
+/* --- 6. 弹窗：视频上方需要"厚一点"的玻璃实底 --- */
+.detail-modal__panel {
+  background: color-mix(in srgb, var(--paper) 91%, transparent) !important;
+  backdrop-filter: blur(24px) saturate(1.2) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.2) !important;
+  border: 1px solid rgba(255, 243, 230, .14) !important;
+  box-shadow: 0 1.4rem 3.6rem rgba(0, 0, 0, .42) !important;
+}
+
+/* --- 7. 背景渐晕略微加暖，让视频与整体暖调统一 --- */
+#bg-video-scrim {
+  background:
+    radial-gradient(130% 92% at 50% 6%, rgba(28, 15, 9, .4), transparent 52%),
+    linear-gradient(180deg, rgba(28, 15, 9, .24), rgba(28, 15, 9, .05) 26%, rgba(28, 15, 9, .05) 72%, rgba(28, 15, 9, .38));
+}
