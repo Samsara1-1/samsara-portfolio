@@ -313,11 +313,37 @@ function renderTrending(repos, fetchedAt = null) {
     ? new Date(fetchedAt).toLocaleString('zh-CN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
     : new Date().toLocaleDateString('zh-CN');
 
-  /* 星阶图：七个每日高星项目化作一根根星柱，
-     左侧星数刻度、柱顶星标定格热度、底部项目名，
-     一天一换，每日同步。 */
+  /* 星迹折线图：七点连成一条发光的星迹，
+     左侧星数刻度、底部项目名，点数越高热度越高，
+     点击星点直达仓库。数据每天 0 点后自动重取。 */
+  const W = 100, H = 64, PADX = 0, TOP = 6, BOTTOM = 58;
+  function px(i) { return PADX + (i / (currentRepos.length - 1)) * (W - PADX * 2); }
+  function py(stars) {
+    const ratio = Math.max(0.06, stars / maxStars);
+    return TOP + (BOTTOM - TOP) * (1 - ratio);
+  }
+  const pts = currentRepos.map((r, i) => [px(i), py(r.stars)]);
+  const line = pts.map((q, i) => (i ? 'L' : 'M') + q[0].toFixed(2) + ' ' + q[1].toFixed(2)).join(' ');
+  const area = line + ' L ' + pts[pts.length - 1][0].toFixed(2) + ' ' + BOTTOM + ' L ' + pts[0][0].toFixed(2) + ' ' + BOTTOM + ' Z';
+  const nodes = pts.map(function (q, i) {
+    const repo = currentRepos[i];
+    const stars = formatStars(repo.stars);
+    const langText = repo.language && repo.language !== 'N/A' ? repo.language : '';
+    const descText = formatDescription(repo.description, 20);
+    const metaText = langText ? langText + ' · ' + descText : descText;
+    return '<a class="trend-dot" href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener noreferrer"'
+      + ' style="--x:' + q[0].toFixed(2) + '%;--y:' + q[1].toFixed(2) + '%;--delay:' + (i * 90) + 'ms"'
+      + ' aria-label="' + escapeHtml(repo.name) + '，' + stars + '，' + escapeHtml(metaText) + '，在 GitHub 打开">'
+      + '<i class="trend-dot__core" aria-hidden="true"></i>'
+      + '<i class="trend-dot__pulse" aria-hidden="true"></i>'
+      + '<b class="trend-dot__count">' + stars + '</b>'
+      + '<em class="trend-dot__name">' + escapeHtml(repo.name) + '</em>'
+      + '<small class="trend-dot__meta">' + escapeHtml(metaText) + '</small>'
+      + '</a>';
+  }).join('');
+
   trendingGrid.innerHTML =
-      '<p class="trend-chart__date">★ 每日星阶 · 更新于 ' + escapeHtml(updatedText) + '</p>'
+      '<p class="trend-chart__date">★ 每日星迹 · 更新于 ' + escapeHtml(updatedText) + '</p>'
     + '<div class="trend-chart__body">'
     +   '<div class="trend-chart__axis" aria-hidden="true">'
     +     '<span style="--f:1">' + axisStars(maxStars) + '</span>'
@@ -325,26 +351,25 @@ function renderTrending(repos, fetchedAt = null) {
     +     '<span style="--f:0">0 星</span>'
     +   '</div>'
     +   '<div class="trend-chart__plot">'
-    +     currentRepos.map(function (repo, index) {
-        const ratio = Math.max(0.08, repo.stars / maxStars);
-        const height = Math.round(92 * ratio);
-        const stars = formatStars(repo.stars);
-        const langText = repo.language && repo.language !== 'N/A' ? repo.language : '';
-        const descText = formatDescription(repo.description, 20);
-        const metaText = langText ? langText + ' · ' + descText : descText;
-        return '<a class="trend-col" href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener noreferrer"'
-          + ' style="--h:' + height + '%;--delay:' + (index * 70) + 'ms"'
-          + ' aria-label="' + escapeHtml(repo.name) + '，' + stars + '，' + escapeHtml(metaText) + '，在 GitHub 打开">'
-          + '<span class="trend-col__beam" aria-hidden="true"></span>'
-          + '<span class="trend-col__star" aria-hidden="true">✦</span>'
-          + '<b class="trend-col__count">' + stars + '</b>'
-          + '<em class="trend-col__name">' + escapeHtml(repo.name) + '</em>'
-          + (metaText ? '<small class="trend-col__meta">' + escapeHtml(metaText) + '</small>' : '')
-          + '</a>';
-      }).join('')
+    +     '<svg class="trend-chart__svg" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none" aria-hidden="true">'
+    +       '<defs>'
+    +         '<linearGradient id="trend-area" x1="0" y1="0" x2="0" y2="1">'
+    +           '<stop offset="0" stop-color="#e9c8ff" stop-opacity=".34"/>'
+    +           '<stop offset="1" stop-color="#e9c8ff" stop-opacity="0"/>'
+    +         '</linearGradient>'
+    +         '<linearGradient id="trend-line" x1="0" y1="0" x2="1" y2="0">'
+    +           '<stop offset="0" stop-color="#ffd9f6"/>'
+    +           '<stop offset=".55" stop-color="#e3b8ff"/>'
+    +           '<stop offset="1" stop-color="#b9a0ff"/>'
+    +         '</linearGradient>'
+    +       '</defs>'
+    +       '<path class="trend-chart__area" d="' + area + '" fill="url(#trend-area)" stroke="none"/>'
+    +       '<path class="trend-chart__line" pathLength="1" d="' + line + '" fill="none" stroke="url(#trend-line)" stroke-width="1.6" vector-effect="non-scaling-stroke"/>'
+    +     '</svg>'
+    +     nodes
     +   '</div>'
     + '</div>'
-    + '<p class="trend-chart__foot">悬停柱身看简介 · 点击直达仓库 ↗</p>';
+    + '<p class="trend-chart__foot">折线起伏 = 星数热度 · 点击星点直达仓库 ↗</p>';
   requestAnimationFrame(function () {
     requestAnimationFrame(function () {
       trendingGrid.classList.add('is-in');
