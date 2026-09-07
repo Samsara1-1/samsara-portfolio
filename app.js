@@ -293,7 +293,7 @@ function formatStars(n) {
 }
 
 function formatDescription(desc, maxLen) {
-  if (!desc || desc === '暂无描述' || desc === 'No description') return '暂无描述。';
+  if (!desc || desc === '暂无描述' || desc === 'No description') return '';
   if (desc.length <= maxLen) return desc;
   return desc.slice(0, maxLen) + '…';
 }
@@ -322,17 +322,19 @@ function renderTrending(repos, fetchedAt = null) {
         const rise = 10 + Math.round(52 * ratio);                       // 10%..62%
         const size = (0.86 + 0.66 * ratio).toFixed(2);
         const jitter = ((index % 2 ? -1 : 1) * (4 + (index % 4) * 2)) + '%';
+        const langText = repo.language && repo.language !== 'N/A' ? repo.language : '';
+        const descText = formatDescription(repo.description, 18);
+        const metaText = langText ? langText + ' · ' + descText : descText;
         return '<a class="ripple-star" href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener noreferrer"'
           + ' style="--rise:' + rise + '%;--size:' + size + 'rem;--jitter:' + jitter
           + ';--delay:' + (index * 480) + 'ms;--delay2:' + (index * 120) + 'ms"'
-          + ' aria-label="' + escapeHtml(repo.name) + '，' + stars + '，在 GitHub 打开">'
+          + ' aria-label="' + escapeHtml(repo.name) + '，' + stars + '，' + escapeHtml(metaText) + '，在 GitHub 打开">'
           + '<i class="ripple-star__ring" aria-hidden="true"></i>'
           + '<i class="ripple-star__ring ripple-star__ring--b" aria-hidden="true"></i>'
           + '<span class="ripple-star__orb" aria-hidden="true"></span>'
           + '<b class="ripple-star__count">' + stars + '</b>'
           + '<em class="ripple-star__name">' + escapeHtml(repo.name) + '</em>'
-          + (repo.language && repo.language !== 'N/A'
-              ? '<i class="ripple-star__lang">' + escapeHtml(repo.language) + '</i>' : '')
+          + (metaText ? '<small class="ripple-star__meta">' + escapeHtml(metaText) + '</small>' : '')
           + '</a>';
       }).join('')
     + '</div>';

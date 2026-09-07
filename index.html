@@ -11,11 +11,11 @@
   <!-- 字体改为异步加载：外网字体慢时不再阻塞首屏渲染 -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia&display=swap"></noscript>
-  <link rel="stylesheet" href="styles.css?v=20260907-06">
+  <link rel="stylesheet" href="styles.css?v=20260907-07">
   <link rel="stylesheet" href="wallpapers.css"><!-- 壁纸配置：换壁纸只改这个文件 -->
   <link rel="stylesheet" href="about-theme.css">
   <link rel="stylesheet" href="theme-overrides.css">
-  <link rel="stylesheet" href="free-sections.css?v=20260907-08">
+  <link rel="stylesheet" href="free-sections.css?v=20260907-09">
 </head>
 <body>
   <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/wallpapers/bg-video-v2.mp4" type="video/mp4"></video>
@@ -118,7 +118,7 @@
           <button class="back-link" type="button" data-route="home">返回首页</button>
           <p>02 / 热门 AI 话题</p>
           <h1 id="research-title" tabindex="-1">从高星项目里，<br>寻找学习路线。</h1>
-          <p class="scene-head__note">把每天 GitHub 上最亮的新星，捞进一片星光池 —— 星点越高光越盛，点它去仓库里逛逛。</p>
+          <p class="scene-head__note">每日 GitHub 高星项目速览：星点越高，热度越高，点击直达仓库。</p>
         </header>
 
         <div class="ripple-pool" id="trending-grid" data-trending aria-label="GitHub 高星项目星光池">
@@ -132,7 +132,7 @@
           <button class="back-link" type="button" data-route="home">返回首页</button>
           <p>03 / 学习与折腾笔记</p>
           <h1 id="notes-title" tabindex="-1">在做东西的循环里，<br>留下真实记录。</h1>
-          <p class="scene-head__note">不装教程专家，只记下为什么做、卡在哪里、学会了什么。</p>
+          <p class="scene-head__note">只记录为什么做、卡在哪里、学到了什么。</p>
         </header>
 
         <!-- Round 52 · 星砂轨迹：五粒发光的星砂沿柔弧散落，点开一粒，读一页。 -->
@@ -149,7 +149,7 @@
               <p class="grain__note">
                 <small>AI 协作</small>
                 <strong>AI 不是替代思考</strong>
-                <span>让它帮你列可能性，最后判断仍要自己收口。</span>
+                <span>AI 提供可能性，最终判断仍需自己完成。</span>
               </p>
             </li>
             <li class="grain" style="--sx:28%;--sy:34%;--tw:6.1s;--td:1.1s">
@@ -160,7 +160,7 @@
               <p class="grain__note">
                 <small>学习方法</small>
                 <strong>做项目才会留下知识</strong>
-                <span>遇到具体问题再查资料，读完马上用上，记忆才更深。</span>
+                <span>边做边查，即学即用，记忆更扎实。</span>
               </p>
             </li>
             <li class="grain" style="--sx:50%;--sy:30%;--tw:5.6s;--td:2s">
@@ -171,7 +171,7 @@
               <p class="grain__note">
                 <small>项目复盘</small>
                 <strong>未上线也有价值</strong>
-                <span>把当前状态和没解决的问题写清楚，就是诚实的记录。</span>
+                <span>如实记录现状与未解问题，即诚实复盘。</span>
               </p>
             </li>
             <li class="grain" style="--sx:71%;--sy:46%;--tw:6.4s;--td:.8s">
@@ -182,7 +182,7 @@
               <p class="grain__note">
                 <small>交互节奏</small>
                 <strong>翻牌要慢一点</strong>
-                <span>抽牌、停顿、翻面和解读的顺序，决定了仪式感。</span>
+                <span>抽牌、停顿、翻牌、解读的顺序塑造仪式感。</span>
               </p>
             </li>
             <li class="grain" style="--sx:90%;--sy:28%;--tw:5.9s;--td:1.6s">
@@ -193,7 +193,7 @@
               <p class="grain__note">
                 <small>状态同步</small>
                 <strong>多人游戏比画板更难</strong>
-                <span>倒计时、答案和分数的同步，才是你画我猜真正的难点。</span>
+                <span>倒计时、答案与分数的同步是多人玩法核心难点。</span>
               </p>
             </li>
           </ol>
@@ -270,7 +270,7 @@
   </div>
   <div class="route-status" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="app.js?v=20260907-10"></script>
+  <script src="app.js?v=20260907-11"></script>
 </body>
 </html>
 
