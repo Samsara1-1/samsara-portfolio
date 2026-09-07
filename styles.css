@@ -5631,3 +5631,19 @@ a:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
   grid-row: 1 / span 2 !important;
   align-self: center !important;
 }
+
+/* ============================================================
+   Round 44 — 打开页面无缝：静态兜底改用视频第一帧
+   ------------------------------------------------------------
+   视频未就绪时，静态壁纸层不再显示每页 JPG（会闪旧壁纸），
+   而是显示 bg-video 的第一帧 video-frame.jpg —— 打开页面看到
+   的画面与视频完全一致，视频就绪后 1s 淡入，肉眼无跳变。
+   渐晕仍由 #bg-video-scrim 提供（z-index 高于静态层）。
+   ============================================================ */
+.wallpaper-layer {
+  background-image: url("assets/wallpapers/video-frame.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
