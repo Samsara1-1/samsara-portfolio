@@ -307,27 +307,38 @@ function renderTrending(repos, fetchedAt = null) {
     ? new Date(fetchedAt).toLocaleString('zh-CN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
     : new Date().toLocaleDateString('zh-CN');
 
-  /* 光谱：把每天的高星项目排成一段淡紫光柱谱线。
-     高度按星数取对数缩放，最高的那颗接近满高。
-     柱顶 = 星数常显，柱下 = 项目名常显；点击直接去仓库。 */
+  /* 涟漪池：七颗新星从水面浮起（越高=星越多），
+     星数悬在星光上方、项目名沉在水线；
+     涟漪一圈圈荡开，点击直达仓库。 */
   const logMax = Math.log10(Math.max(10, maxStars));
-  trendingGrid.classList.add('spectrum');
+  trendingGrid.classList.add('ripple-pool');
   trendingGrid.innerHTML =
-      '<div class="spectrum__updated">光谱更新于 ' + escapeHtml(updatedText) + '</div>'
-    + '<div class="spectrum__field">'
+      '<p class="ripple-pool__date">星光更新于 ' + escapeHtml(updatedText) + '</p>'
+    + '<p class="ripple-pool__foot">悬停点亮星光 · 点击直达仓库 ↗</p>'
+    + '<div class="ripple-pool__field">'
     + currentRepos.map(function (repo, index) {
         const stars = formatStars(repo.stars);
-        const h = 16 + Math.round(56 * (Math.log10(Math.max(2, repo.stars)) / logMax));
-        return '<a class="spectrum-bar" href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener noreferrer"'
-          + ' style="--h:' + h + '%"'
+        const ratio = Math.log10(Math.max(2, repo.stars)) / logMax;      // 0..1
+        const rise = 10 + Math.round(52 * ratio);                       // 10%..62%
+        const size = (0.72 + 0.62 * ratio).toFixed(2);
+        const jitter = ((index % 2 ? -1 : 1) * (4 + (index % 4) * 2)) + '%';
+        return '<a class="ripple-star" href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener noreferrer"'
+          + ' style="--rise:' + rise + '%;--size:' + size + 'rem;--jitter:' + jitter
+          + ';--delay:' + (index * 480) + 'ms;--delay2:' + (index * 120) + 'ms"'
           + ' aria-label="' + escapeHtml(repo.name) + '，' + stars + '，在 GitHub 打开">'
-          + '<span class="spectrum-bar__tip">' + stars + '</span>'
-          + '<i class="spectrum-bar__pill" aria-hidden="true"></i>'
-          + '<em class="spectrum-bar__name">' + escapeHtml(repo.name) + '</em>'
+          + '<i class="ripple-star__ring" aria-hidden="true"></i>'
+          + '<i class="ripple-star__ring ripple-star__ring--b" aria-hidden="true"></i>'
+          + '<span class="ripple-star__orb" aria-hidden="true"></span>'
+          + '<b class="ripple-star__count">' + stars + '</b>'
+          + '<em class="ripple-star__name">' + escapeHtml(repo.name) + '</em>'
           + '</a>';
       }).join('')
-    + '</div>'
-    + '<p class="spectrum__foot">悬停看细节 · 点击直达仓库 ↗</p>';
+    + '</div>';
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      trendingGrid.classList.add('is-in');
+    });
+  });
 }
 function withTimeout(promise, ms) {
   return new Promise(function (resolve, reject) {
@@ -856,7 +867,7 @@ function initFreeExpand(containerSel, headSel) {
     });
   });
 }
-initFreeExpand('.windchime__rack', '.windchime__tag');
+initFreeExpand('.grain-trail', '.grain__btn');
 
 detailModal?.addEventListener('click', function (event) {
   if (event.target === detailModal || event.target.closest('[data-close-modal]')) closeDetail();
@@ -870,7 +881,7 @@ document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape' && detailModal?.classList.contains('is-open')) closeDetail(false);
 });
 
-// 光谱柱本身就是 <a href target=_blank>，点击交给浏览器即可。
+// 涟漪星星本身就是 <a href target=_blank>，点击交给浏览器即可。
 
 
 detailModal?.addEventListener('keydown', function (event) {

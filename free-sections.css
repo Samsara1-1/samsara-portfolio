@@ -66,8 +66,8 @@
 
 
 /* ============================================================
-   Round 51 — 三页「风与光的故事」
-   作品=星图 · 话题=光谱 · 笔记=夜风铃
+   Round 52 — 三页「风与光的故事」
+   作品=星图 · 话题=涟漪池 · 笔记=星砂轨迹
    母题：风与光，贴合粉紫治愈系动漫壁纸。
    原则：不画边框、不做玻璃卡片；用光晕 / 半透明 / 错落排版
    表达层次；三页互不重复、不方方正正。
@@ -218,273 +218,355 @@ a.work-star:focus-visible .work-star__tag,
   .work-star__tag { left: 50%; top: calc(100% + 10px); translate: -50% 0; }
   .work-sky__legend { display: none; }
 }
-/* ---------- 话题：高星光谱 ----------
-   光柱高度按星数对数缩放，柱尖星点发光，项目名与星数常显。 */
-.spectrum {
+/* ---------- 话题：新星涟漪池 ----------
+   七颗新星从水面浮起，高度与光晕=星数；
+   星数悬在星光上方，项目名沉在水线；
+   涟漪一圈圈荡开，点击直达仓库。 */
+.ripple-pool {
   position: relative;
   flex: 1 1 auto;
   min-height: 0;
-  display: flex;
-  flex-direction: column;
   margin-top: clamp(.5rem, 1.6vh, 1.1rem);
 }
-.spectrum__updated {
+.ripple-pool__date {
   position: absolute;
-  right: 0;
   top: -.1rem;
-  font-size: .64rem;
-  letter-spacing: .06em;
-  color: rgba(255, 235, 255, .55);
+  right: 0;
+  font-size: .62rem;
+  letter-spacing: .08em;
+  color: rgba(255, 235, 255, .5);
 }
-.spectrum__field {
-  flex: 1 1 auto;
-  min-height: 0;
-  margin-top: 1.2rem;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: clamp(.6rem, 2vw, 1.8rem);
-  position: relative;
-}
-.spectrum-bar {
-  position: relative;
-  align-self: stretch;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  text-decoration: none;
-}
-.spectrum-bar__tip {
+.ripple-pool__foot {
   position: absolute;
-  left: 50%;
-  bottom: calc(var(--h) + .5rem);
-  translate: -50% 0;
-  font-size: .66rem;
-  letter-spacing: .04em;
-  color: #ffe9fd;
-  font-weight: 700;
-  white-space: nowrap;
-  text-shadow: 0 0 6px rgba(255, 200, 250, .8);
-  opacity: .92;
-  transition: opacity .2s;
+  top: 1.1rem;
+  right: 0;
+  margin: 0;
+  font-size: .58rem;
+  letter-spacing: .08em;
+  color: rgba(255, 235, 255, .38);
 }
-.spectrum-bar__pill {
-  display: block;
-  width: clamp(1.4rem, 3.2vw, 2.6rem);
-  height: var(--h);
-  border-radius: 999px 999px 5px 5px;
-  background: linear-gradient(180deg, #ffe0f6 0%, #c9a6ff 42%, rgba(143, 111, 232, .35) 100%);
-  box-shadow: 0 0 16px rgba(176, 138, 255, .5);
-  position: relative;
-  transform-origin: bottom;
-  transition: filter .25s, box-shadow .25s, height .4s cubic-bezier(.22, .9, .3, 1.1);
+.ripple-pool__field {
+  position: absolute;
+  inset: 1.6rem 0 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: clamp(.2rem, 1.4vw, 1rem);
 }
-.spectrum-bar__pill::before {
+/* 水面：一道极淡的星光水线 + 底部柔光 */
+.ripple-pool__field::before {
   content: "";
   position: absolute;
-  top: -5px;
+  left: 2%;
+  right: 2%;
+  bottom: 1.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(226, 196, 255, .38) 16%, rgba(255, 214, 246, .55) 50%, rgba(226, 196, 255, .38) 84%, transparent);
+  box-shadow: 0 0 10px rgba(190, 150, 255, .35);
+}
+.ripple-pool__field::after {
+  content: "";
+  position: absolute;
   left: 50%;
+  bottom: -1.7rem;
+  width: 82%;
+  height: 4.4rem;
   translate: -50% 0;
-  width: 9px;
-  height: 9px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, #fff, #ffd9f7 55%, #ffaee4 100%);
-  box-shadow: 0 0 9px rgba(255, 190, 240, .95);
+  background: radial-gradient(closest-side, rgba(163, 122, 243, .2), rgba(163, 122, 243, 0) 72%);
+  pointer-events: none;
 }
-.spectrum-bar:hover .spectrum-bar__pill {
-  filter: brightness(1.3);
-  box-shadow: 0 0 24px rgba(210, 170, 255, .95);
+.ripple-star {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
 }
-.spectrum-bar:hover .spectrum-bar__tip { opacity: 1; }
-.spectrum-bar__name {
-  display: block;
-  max-width: 100%;
-  margin-top: .55rem;
-  padding: .18rem .4rem;
-  border-radius: 999px;
-  background: rgba(30, 21, 58, .35);
-  color: rgba(255, 244, 255, .8);
+.ripple-pool.is-in .ripple-star {
+  animation: star-rise .85s cubic-bezier(.22, .9, .3, 1.08) forwards;
+  animation-delay: var(--delay2, 0s);
+}
+@keyframes star-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+.ripple-star__orb {
+  position: absolute;
+  left: calc(50% + var(--jitter, 0%));
+  bottom: calc(3.4rem + var(--rise));
+  width: var(--size);
+  height: var(--size);
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 32%, #fff 0%, #ffe3fb 34%, #cfa4ff 66%, #8f6ae0 100%);
+  box-shadow:
+    0 0 calc(var(--size) * .9) rgba(255, 196, 244, .8),
+    0 0 calc(var(--size) * 2.4) rgba(186, 143, 255, .45);
+  transition: filter .25s, box-shadow .25s;
+}
+.ripple-star__count {
+  position: absolute;
+  left: calc(50% + var(--jitter, 0%));
+  bottom: calc(3.4rem + var(--rise) + var(--size) + .32rem);
+  translate: -50% 0;
   font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  color: #ffe9fd;
+  white-space: nowrap;
+  text-shadow: 0 0 8px rgba(255, 180, 240, .85);
+  transition: color .25s, text-shadow .25s;
+}
+.ripple-star__name {
+  position: absolute;
+  left: 50%;
+  bottom: .75rem;
+  translate: -50% 0;
+  max-width: calc(100% - .5rem);
+  font-size: .58rem;
   font-style: normal;
-  letter-spacing: .03em;
+  letter-spacing: .04em;
+  color: rgba(255, 243, 255, .72);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: background .2s, color .2s;
+  text-shadow: 0 0 6px rgba(20, 10, 44, .55);
+  transition: color .25s, text-shadow .25s;
 }
-.spectrum-bar:hover .spectrum-bar__name {
-  background: rgba(46, 32, 88, .6);
+.ripple-star__ring {
+  position: absolute;
+  left: calc(50% + var(--jitter, 0%));
+  bottom: calc(3.4rem + var(--rise));
+  width: var(--size);
+  height: var(--size);
+  translate: -50% -50%;
+  border: 1px solid rgba(214, 178, 255, .42);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: ripple-ring 3.4s cubic-bezier(.22, .6, .3, 1) infinite;
+  animation-delay: var(--delay, 0s);
+}
+.ripple-star__ring--b {
+  animation-delay: calc(var(--delay, 0s) + 1.7s);
+}
+@keyframes ripple-ring {
+  0%   { opacity: 0; transform: scale(.38); }
+  16%  { opacity: .55; }
+  72%  { opacity: 0; transform: scale(2.8); }
+  100% { opacity: 0; transform: scale(2.8); }
+}
+.ripple-star:hover .ripple-star__orb,
+.ripple-star:focus-visible .ripple-star__orb {
+  filter: brightness(1.22);
+  box-shadow:
+    0 0 calc(var(--size) * 1.25) rgba(255, 210, 250, .95),
+    0 0 calc(var(--size) * 3) rgba(198, 160, 255, .6);
+}
+.ripple-star:hover .ripple-star__count,
+.ripple-star:focus-visible .ripple-star__count {
   color: #fff;
+  text-shadow: 0 0 12px rgba(255, 190, 245, 1);
 }
-.spectrum__foot {
-  margin: .55rem 0 0;
-  font-size: .64rem;
-  letter-spacing: .08em;
-  color: rgba(255, 235, 255, .42);
-  text-align: right;
-  border-top: 1px solid color-mix(in srgb, rgba(210, 180, 255, .22) 60%, transparent);
-  padding-top: .4rem;
+.ripple-star:hover .ripple-star__name,
+.ripple-star:focus-visible .ripple-star__name {
+  color: rgba(255, 250, 255, .96);
+}
+.ripple-star:focus-visible {
+  outline: 1px solid rgba(214, 178, 255, .4);
+  outline-offset: 5px;
+  border-radius: 8px;
 }
 .trending-loading {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  color: rgba(255, 240, 255, .7);
-  font-size: .8rem;
-  letter-spacing: .1em;
+  color: rgba(255, 240, 255, .72);
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-shadow: 0 0 10px rgba(220, 180, 255, .5);
+  z-index: 2;
 }
 .trending-loading::after {
   content: "";
+  position: absolute;
+  top: calc(50% + 1.35rem);
+  left: 50%;
   width: 1.6rem;
   height: 1.6rem;
+  margin: -.8rem 0 0 -.8rem;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, .15);
+  border: 2px solid rgba(255, 255, 255, .14);
   border-top-color: #c9a6ff;
   animation: trend-spin 1s linear infinite;
 }
 @keyframes trend-spin { to { transform: rotate(360deg); } }
-/* ---------- 笔记：夜风铃 ----------
-   一串纸签挂在线绳上，各自的摆幅与节奏不同，风来轻摆。 */
-.windchime {
+@media (max-width: 34rem) {
+  .ripple-star__count { font-size: .54rem; }
+  .ripple-star__name { font-size: .54rem; }
+  .ripple-pool__foot { top: 1.2rem; }
+}
+/* ---------- 笔记：星砂轨迹 ----------
+   五粒发光的星砂沿一条柔弧散落，各自轻浮微闪；
+   点开一粒，气泡在身边缓缓浮出 —— 无框、圆润。 */
+.grain-path {
   position: relative;
   flex: 1 1 auto;
   min-height: 0;
   margin-top: clamp(.5rem, 1.6vh, 1.1rem);
 }
-.windchime__rack {
-  list-style: none;
-  margin: 1.5rem 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(1.2rem, 4vw, 3.4rem);
-  justify-content: flex-start;
-  position: relative;
-}
-.windchime-item {
-  position: relative;
-  list-style: none;
-  transform-origin: top center;
-}
-.windchime-item:nth-child(1) { --rot: 2.2deg; }
-.windchime-item:nth-child(2) { --rot: -1.6deg; }
-.windchime-item:nth-child(3) { --rot: 1.4deg; }
-.windchime-item:nth-child(4) { --rot: -2.4deg; }
-.windchime-item:nth-child(5) { --rot: 1.8deg; }
-.windchime__string {
+.grain-path__arc {
   position: absolute;
-  top: -1.3rem;
-  left: 50%;
-  width: 1px;
-  height: 1.3rem;
-  background: linear-gradient(180deg, rgba(214, 178, 255, .85), rgba(170, 130, 230, .1));
-}
-.windchime__tag {
-  position: relative;
-  display: block;
-  width: clamp(8rem, 16vw, 10.6rem);
-  padding: .8rem .9rem .6rem;
-  border: 0;
-  border-radius: .55rem .4rem .6rem .6rem;
-  background:
-    linear-gradient(160deg, rgba(255,255,255,.18), rgba(204,172,255,.1)),
-    color-mix(in srgb, rgba(32, 22, 62, .52) 74%, transparent);
-  color: #f4ecff;
-  text-align: left;
-  cursor: pointer;
-  transform: rotate(var(--rot, 0deg));
-  transform-origin: top center;
-  animation: windchime-sway var(--hang, 4.6s) ease-in-out infinite;
-  transition: filter .25s, background .25s;
-  box-shadow: 0 6px 18px rgba(10, 6, 30, .3), inset 0 1px 0 rgba(255,255,255,.22);
-}
-@keyframes windchime-sway {
-  0%, 100% { transform: rotate(var(--rot, 0deg)); }
-  50% { transform: rotate(calc(var(--rot, 0deg) * -1)); }
-}
-.windchime__tag:hover {
-  filter: brightness(1.18);
-  animation-duration: calc(var(--hang, 4.6s) * .7);
-}
-.windchime__tag time {
-  display: block;
-  font-size: .6rem;
-  letter-spacing: .14em;
-  color: rgba(255, 225, 255, .65);
-  margin-bottom: .35rem;
-}
-.windchime__tag i {
-  display: block;
-  font-style: normal;
-  font-weight: 700;
-  font-size: .84rem;
-  line-height: 1.45;
-  letter-spacing: .03em;
-}
-.windchime__tag::after {
-  content: "";
-  display: block;
-  width: .55rem;
-  height: .55rem;
-  margin: .5rem auto -.85rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at 40% 35%, #ffd9f7, #c9a6ff 70%);
-  box-shadow: 0 0 6px rgba(255, 190, 240, .7);
-}
-.windchime__msg {
-  position: absolute;
-  left: 50%;
-  top: calc(100% + 1rem);
-  translate: -50% 0;
-  width: min(19rem, 72vw);
-  margin: 0;
-  padding: .85rem 1.05rem;
-  border-radius: .7rem 1.15rem .7rem 1.15rem;
-  background: color-mix(in srgb, rgba(28, 19, 56, .84) 78%, transparent);
-  color: #f0e8ff;
-  font-size: .8rem;
-  line-height: 1.7;
-  letter-spacing: .02em;
-  opacity: 0;
-  transform: translate(-50%, -6px) scale(.98);
-  transition: opacity .3s, transform .3s;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
   pointer-events: none;
-  z-index: 5;
-  box-shadow: 0 10px 26px rgba(8, 4, 26, .36), inset 0 1px 0 rgba(255,255,255,.14);
 }
-.windchime__msg::before {
-  content: "";
+.grain-path__curve {
+  fill: none;
+  stroke: rgba(206, 168, 255, .3);
+  stroke-width: 1;
+  stroke-dasharray: .2 7;
+  stroke-linecap: round;
+  animation: grain-drift 26s linear infinite;
+}
+@keyframes grain-drift {
+  to { stroke-dashoffset: -29; }
+}
+.grain-trail {
   position: absolute;
-  top: -.32rem;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.grain {
+  position: absolute;
+  left: var(--sx);
+  top: var(--sy);
+  translate: -50% -50%;
+}
+.grain__btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.grain__spark {
+  width: .82rem;
+  height: .82rem;
+  background: radial-gradient(circle at 40% 35%, #fff 0%, #ffddf8 48%, #c79fff 82%, #8f6ae0 100%);
+  clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+  filter: drop-shadow(0 0 5px rgba(255, 186, 240, .9)) drop-shadow(0 0 12px rgba(186, 143, 255, .5));
+  animation: sparkle-idle var(--tw, 5.4s) ease-in-out infinite;
+  animation-delay: var(--td, 0s);
+  transition: transform .3s cubic-bezier(.22, .9, .3, 1.25), filter .3s;
+}
+@keyframes sparkle-idle {
+  0%, 100% { transform: scale(.88) rotate(0deg); opacity: .72; }
+  50%      { transform: scale(1.16) rotate(22deg); opacity: 1; }
+}
+.grain__btn:hover .grain__spark,
+.grain.is-open .grain__spark {
+  transform: scale(1.4) rotate(45deg);
+  filter: drop-shadow(0 0 8px rgba(255, 200, 248, 1)) drop-shadow(0 0 20px rgba(200, 160, 255, .85));
+  animation-play-state: paused;
+}
+.grain__date {
+  position: absolute;
+  top: calc(100% + .5rem);
   left: 50%;
   translate: -50% 0;
-  border: .32rem solid transparent;
-  border-bottom-color: color-mix(in srgb, rgba(28, 19, 56, .84) 78%, transparent);
+  font-size: .56rem;
+  letter-spacing: .18em;
+  color: rgba(255, 238, 255, .6);
+  white-space: nowrap;
+  text-shadow: 0 0 6px rgba(22, 12, 46, .65);
+  transition: color .25s;
 }
-.windchime__msg small {
+.grain.is-open .grain__date { color: rgba(255, 246, 255, .95); }
+/* 气泡：不规则圆角、无边框的柔光泡 */
+.grain__note {
+  position: absolute;
+  width: min(15rem, 46vw);
+  margin: 0;
+  padding: .95rem 1.15rem 1.05rem;
+  border-radius: 56% 44% 54% 46% / 48% 42% 58% 52%;
+  background: radial-gradient(120% 110% at 18% 12%, rgba(255, 240, 255, .3), rgba(209, 172, 255, .13) 46%, rgba(112, 82, 196, .05) 100%);
+  box-shadow:
+    0 16px 34px rgba(10, 5, 30, .42),
+    0 0 0 1px rgba(255, 232, 255, .09),
+    0 0 24px rgba(190, 150, 255, .16);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #f4ecff;
+  font-size: .76rem;
+  line-height: 1.72;
+  letter-spacing: .02em;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(.85);
+  transition: opacity .3s cubic-bezier(.22, .9, .3, 1), transform .36s cubic-bezier(.22, .9, .3, 1.18);
+  z-index: 6;
+}
+.grain.is-open .grain__note {
+  opacity: 1;
+  transform: scale(1);
+}
+.grain__note small {
   display: block;
   margin-bottom: .3rem;
-  font-size: .62rem;
-  letter-spacing: .18em;
-  color: #e0c6ff;
+  font-size: .56rem;
+  letter-spacing: .24em;
+  color: #e2c8ff;
 }
-.windchime-item.is-open .windchime__tag {
-  background:
-    linear-gradient(160deg, rgba(255,255,255,.26), rgba(214,178,255,.14)),
-    color-mix(in srgb, rgba(44, 30, 84, .6) 76%, transparent);
+.grain__note strong {
+  display: block;
+  margin-bottom: .35rem;
+  font-size: .84rem;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: .03em;
+  color: #fff6ff;
 }
-.windchime-item.is-open .windchime__msg {
-  opacity: 1;
-  transform: translate(-50%, 0) scale(1);
-  pointer-events: auto;
+.grain__note span {
+  display: block;
+  color: rgba(255, 244, 255, .84);
 }
+.grain__note::after {
+  content: "";
+  position: absolute;
+  bottom: -.45rem;
+  left: 2rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #fff, #ffd9f7 55%, #c79fff 100%);
+  box-shadow: 0 0 8px rgba(255, 186, 240, .95);
+}
+/* 每粒星砂的气泡朝向：防越界、防互相遮挡 */
+.grain:nth-child(1) .grain__note  { left: 2.2rem; top: calc(100% + .95rem); transform-origin: left top; }
+.grain:nth-child(2) .grain__note  { left: .4rem;  top: calc(100% + .95rem); transform-origin: left top; }
+.grain:nth-child(3) .grain__note  { left: 50%;    top: calc(100% + .95rem); translate: -50% 0; transform-origin: top center; }
+.grain:nth-child(4) .grain__note  { left: 50%;    bottom: calc(100% + .95rem); translate: -50% 0; transform-origin: bottom center; }
+.grain:nth-child(5) .grain__note  { right: 2.2rem; top: calc(100% + .95rem); transform-origin: right top; }
+.grain:nth-child(2) .grain__note::after { left: .6rem; }
+.grain:nth-child(3) .grain__note::after { left: 50%; translate: -50% 0; }
+.grain:nth-child(4) .grain__note::after { bottom: auto; top: -.45rem; left: 50%; translate: -50% 0; }
+.grain:nth-child(5) .grain__note::after { right: 2.2rem; left: auto; }
 @media (max-width: 34rem) {
-  .windchime__rack { justify-content: center; }
-  .windchime__msg { width: min(16rem, 78vw); }
+  .grain__note { width: min(17rem, 62vw); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .work-star__halo, .trending-loading::after, .windchime__tag { animation: none !important; }
+  .work-star__halo, .trending-loading::after,
+  .ripple-star__ring, .grain-path__curve, .grain__spark {
+    animation: none !important;
+  }
 }

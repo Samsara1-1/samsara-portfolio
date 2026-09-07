@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="wallpapers.css"><!-- 壁纸配置：换壁纸只改这个文件 -->
   <link rel="stylesheet" href="about-theme.css">
   <link rel="stylesheet" href="theme-overrides.css">
-  <link rel="stylesheet" href="free-sections.css?v=20260907-05">
+  <link rel="stylesheet" href="free-sections.css?v=20260907-06">
 </head>
 <body>
   <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/wallpapers/bg-video-v2.mp4" type="video/mp4"></video>
@@ -118,12 +118,11 @@
           <button class="back-link" type="button" data-route="home">返回首页</button>
           <p>02 / 热门 AI 话题</p>
           <h1 id="research-title" tabindex="-1">从高星项目里，<br>寻找学习路线。</h1>
-          <p class="scene-head__note">把每天 GitHub 上最亮的新星，排成一段淡淡的光谱 —— 悬停看它，点它去仓库里逛逛。</p>
+          <p class="scene-head__note">把每天 GitHub 上最亮的新星，捞进一片星光池 —— 星点越高光越盛，点它去仓库里逛逛。</p>
         </header>
 
-        <div class="spectrum" id="trending-grid" data-trending aria-label="GitHub 高星项目光谱">
-          <div class="spectrum__field" id="spectrum-field" aria-hidden="true"></div>
-          <div class="trending-loading">正在采集今天的光谱…</div>
+        <div class="ripple-pool" id="trending-grid" data-trending aria-label="GitHub 高星项目星光池">
+          <div class="trending-loading">正在打捞今天的星光…</div>
         </div>
       </div>
     </section>
@@ -136,45 +135,68 @@
           <p class="scene-head__note">不装教程专家，只记下为什么做、卡在哪里、学会了什么。</p>
         </header>
 
-        <!-- Round 51 · 夜风铃：一串纸签挂在风里，风来轻摆；点一下，读一页。 -->
-        <div class="windchime" aria-label="学习笔记风铃">
-          <ul class="windchime__rack">
-            <li class="windchime-item" style="--hang:4.6s">
-              <button type="button" class="windchime__tag" aria-expanded="false">
-                <time>2026 / 07</time><i>多人游戏比画板更难</i>
+        <!-- Round 52 · 星砂轨迹：五粒发光的星砂沿柔弧散落，点开一粒，读一页。 -->
+        <div class="grain-path" aria-label="学习笔记 · 星砂轨迹">
+          <svg class="grain-path__arc" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">
+            <path class="grain-path__curve" d="M 8 18 Q 30 54 52 30 T 90 28"/>
+          </svg>
+          <ol class="grain-trail">
+            <li class="grain" style="--sx:8%;--sy:18%;--tw:5.2s;--td:.2s">
+              <button type="button" class="grain__btn" aria-expanded="false">
+                <i class="grain__spark" aria-hidden="true"></i>
+                <span class="grain__date">2026 · 01</span>
               </button>
-              <p class="windchime__msg"><small>状态同步</small>倒计时、答案和分数的同步，才是你画我猜真正的难点。</p>
-              <span class="windchime__string" aria-hidden="true"></span>
+              <p class="grain__note">
+                <small>AI 协作</small>
+                <strong>AI 不是替代思考</strong>
+                <span>让它帮你列可能性，最后判断仍要自己收口。</span>
+              </p>
             </li>
-            <li class="windchime-item" style="--hang:3.8s">
-              <button type="button" class="windchime__tag" aria-expanded="false">
-                <time>2026 / 05</time><i>翻牌要慢一点</i>
+            <li class="grain" style="--sx:28%;--sy:34%;--tw:6.1s;--td:1.1s">
+              <button type="button" class="grain__btn" aria-expanded="false">
+                <i class="grain__spark" aria-hidden="true"></i>
+                <span class="grain__date">2026 · 02</span>
               </button>
-              <p class="windchime__msg"><small>交互节奏</small>抽牌、停顿、翻面和解读的顺序，决定了仪式感。</p>
-              <span class="windchime__string" aria-hidden="true"></span>
+              <p class="grain__note">
+                <small>学习方法</small>
+                <strong>做项目才会留下知识</strong>
+                <span>遇到具体问题再查资料，读完马上用上，记忆才更深。</span>
+              </p>
             </li>
-            <li class="windchime-item" style="--hang:5.2s">
-              <button type="button" class="windchime__tag" aria-expanded="false">
-                <time>2026 / 03</time><i>未上线也有价值</i>
+            <li class="grain" style="--sx:50%;--sy:30%;--tw:5.6s;--td:2s">
+              <button type="button" class="grain__btn" aria-expanded="false">
+                <i class="grain__spark" aria-hidden="true"></i>
+                <span class="grain__date">2026 · 03</span>
               </button>
-              <p class="windchime__msg"><small>项目复盘</small>把当前状态和没解决的问题写清楚，就是诚实的记录。</p>
-              <span class="windchime__string" aria-hidden="true"></span>
+              <p class="grain__note">
+                <small>项目复盘</small>
+                <strong>未上线也有价值</strong>
+                <span>把当前状态和没解决的问题写清楚，就是诚实的记录。</span>
+              </p>
             </li>
-            <li class="windchime-item" style="--hang:4.1s">
-              <button type="button" class="windchime__tag" aria-expanded="false">
-                <time>2026 / 02</time><i>做项目才会留下知识</i>
+            <li class="grain" style="--sx:71%;--sy:46%;--tw:6.4s;--td:.8s">
+              <button type="button" class="grain__btn" aria-expanded="false">
+                <i class="grain__spark" aria-hidden="true"></i>
+                <span class="grain__date">2026 · 05</span>
               </button>
-              <p class="windchime__msg"><small>学习方法</small>遇到具体问题再查资料，读完马上用上，记忆才更深。</p>
-              <span class="windchime__string" aria-hidden="true"></span>
+              <p class="grain__note">
+                <small>交互节奏</small>
+                <strong>翻牌要慢一点</strong>
+                <span>抽牌、停顿、翻面和解读的顺序，决定了仪式感。</span>
+              </p>
             </li>
-            <li class="windchime-item" style="--hang:5.6s">
-              <button type="button" class="windchime__tag" aria-expanded="false">
-                <time>2026 / 01</time><i>AI 不是替代思考</i>
+            <li class="grain" style="--sx:90%;--sy:28%;--tw:5.9s;--td:1.6s">
+              <button type="button" class="grain__btn" aria-expanded="false">
+                <i class="grain__spark" aria-hidden="true"></i>
+                <span class="grain__date">2026 · 07</span>
               </button>
-              <p class="windchime__msg"><small>AI 协作</small>让它帮你列可能性，最后判断仍要自己收口。</p>
-              <span class="windchime__string" aria-hidden="true"></span>
+              <p class="grain__note">
+                <small>状态同步</small>
+                <strong>多人游戏比画板更难</strong>
+                <span>倒计时、答案和分数的同步，才是你画我猜真正的难点。</span>
+              </p>
             </li>
-          </ul>
+          </ol>
         </div>
       </div>
     </section>
@@ -248,7 +270,7 @@
   </div>
   <div class="route-status" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="app.js?v=20260907-07"></script>
+  <script src="app.js?v=20260907-08"></script>
 </body>
 </html>
 
