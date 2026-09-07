@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="wallpapers.css"><!-- 壁纸配置：换壁纸只改这个文件 -->
   <link rel="stylesheet" href="about-theme.css">
   <link rel="stylesheet" href="theme-overrides.css">
-  <link rel="stylesheet" href="free-sections.css?v=20260907-09">
+  <link rel="stylesheet" href="free-sections.css?v=20260907-10">
 </head>
 <body>
   <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/wallpapers/bg-video-v2.mp4" type="video/mp4"></video>
@@ -77,11 +77,25 @@
         <!-- Round 51 · 作品星图：亮星 = 已上线能打开的，暗星 = 还没想好的空位。
              以后加作品，照“星语”这颗的结构再贴一颗星，并把坐标加进下面的连线即可。 -->
         <div class="work-sky" aria-label="作品星图">
+          <i class="work-sky__nebula" aria-hidden="true"></i>
+          <i class="work-sky__dust" aria-hidden="true"></i>
           <svg class="work-sky__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <polyline class="work-sky__softline" vector-effect="non-scaling-stroke" points="14,30 56,44 86,26" pathLength="1"></polyline>
             <polyline class="work-sky__softline" vector-effect="non-scaling-stroke" points="56,44 72,76 26,72 14,30" pathLength="1"></polyline>
             <polyline class="work-sky__line" vector-effect="non-scaling-stroke" points="14,30 56,44 86,26" pathLength="1"></polyline>
             <polyline class="work-sky__line" vector-effect="non-scaling-stroke" points="56,44 72,76 26,72 14,30" pathLength="1"></polyline>
+            <g class="work-sky__nodes" aria-hidden="true">
+              <circle cx="14" cy="30" r=".7"></circle>
+              <circle cx="86" cy="26" r=".7"></circle>
+              <circle cx="72" cy="76" r=".7"></circle>
+              <circle cx="26" cy="72" r=".7"></circle>
+            </g>
+            <circle class="work-sky__flow" cx="0" cy="0" r=".65">
+              <animateMotion dur="6.5s" repeatCount="indefinite" rotate="auto" calcMode="linear" path="M 14 30 L 56 44 L 86 26"></animateMotion>
+            </circle>
+            <circle class="work-sky__flow work-sky__flow--b" cx="0" cy="0" r=".55">
+              <animateMotion dur="8.5s" repeatCount="indefinite" begin="1.6s" rotate="auto" calcMode="linear" path="M 56 44 L 72 76 L 26 72 L 14 30"></animateMotion>
+            </circle>
           </svg>
 
           <a class="work-star work-star--live" style="--x:56%;--y:44%;--pulse:2.6s"
@@ -108,6 +122,7 @@
             <b class="work-star__tag"><span class="work-star__name">空位肆</span><small>等它自己长出来</small></b>
           </span>
 
+          <i class="work-sky__shooting" aria-hidden="true"></i>
           <p class="work-sky__legend" aria-hidden="true">亮着的，是已经能打开的；暗一点的，是还空着的位置。</p>
         </div>
       </div>
