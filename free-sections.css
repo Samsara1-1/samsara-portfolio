@@ -232,18 +232,18 @@ a.work-star:focus-visible .work-star__tag,
   position: absolute;
   top: -.1rem;
   right: 0;
-  font-size: .62rem;
+  font-size: .64rem;
   letter-spacing: .08em;
-  color: rgba(255, 235, 255, .5);
+  color: rgba(255, 238, 255, .68);
 }
 .ripple-pool__foot {
   position: absolute;
   top: 1.1rem;
   right: 0;
   margin: 0;
-  font-size: .58rem;
+  font-size: .6rem;
   letter-spacing: .08em;
-  color: rgba(255, 235, 255, .38);
+  color: rgba(255, 238, 255, .52);
 }
 .ripple-pool__field {
   position: absolute;
@@ -306,14 +306,14 @@ a.work-star:focus-visible .work-star__tag,
 .ripple-star__count {
   position: absolute;
   left: calc(50% + var(--jitter, 0%));
-  bottom: calc(3.4rem + var(--rise) + var(--size) + .32rem);
+  bottom: calc(3.4rem + var(--rise) + var(--size) + .36rem);
   translate: -50% 0;
-  font-size: .6rem;
-  font-weight: 800;
+  font-size: .74rem;
+  font-weight: 900;
   letter-spacing: .05em;
-  color: #ffe9fd;
+  color: #fff;
   white-space: nowrap;
-  text-shadow: 0 0 8px rgba(255, 180, 240, .85);
+  text-shadow: 0 0 10px rgba(255, 190, 245, 1), 0 0 22px rgba(198, 160, 255, .6);
   transition: color .25s, text-shadow .25s;
 }
 .ripple-star__name {
@@ -322,14 +322,15 @@ a.work-star:focus-visible .work-star__tag,
   bottom: .75rem;
   translate: -50% 0;
   max-width: calc(100% - .5rem);
-  font-size: .58rem;
+  font-size: .68rem;
   font-style: normal;
-  letter-spacing: .04em;
-  color: rgba(255, 243, 255, .72);
+  font-weight: 700;
+  letter-spacing: .05em;
+  color: rgba(255, 252, 255, .94);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-shadow: 0 0 6px rgba(20, 10, 44, .55);
+  text-shadow: 0 0 8px rgba(20, 10, 44, .7), 0 0 18px rgba(255, 190, 245, .35);
   transition: color .25s, text-shadow .25s;
 }
 .ripple-star__ring {
@@ -369,12 +370,33 @@ a.work-star:focus-visible .work-star__tag,
 }
 .ripple-star:hover .ripple-star__name,
 .ripple-star:focus-visible .ripple-star__name {
-  color: rgba(255, 250, 255, .96);
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 200, 250, 1);
 }
 .ripple-star:focus-visible {
   outline: 1px solid rgba(214, 178, 255, .4);
   outline-offset: 5px;
   border-radius: 8px;
+}
+.ripple-star__lang {
+  position: absolute;
+  left: calc(50% + var(--jitter, 0%));
+  bottom: 2.1rem;
+  translate: -50% 0;
+  max-width: calc(100% - .5rem);
+  font-size: .52rem;
+  font-style: normal;
+  letter-spacing: .14em;
+  color: rgba(236, 214, 255, .64);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 6px rgba(22, 12, 46, .6);
+  transition: color .25s;
+}
+.ripple-star:hover .ripple-star__lang,
+.ripple-star:focus-visible .ripple-star__lang {
+  color: rgba(255, 248, 255, .95);
 }
 .trending-loading {
   position: absolute;
@@ -402,8 +424,9 @@ a.work-star:focus-visible .work-star__tag,
 }
 @keyframes trend-spin { to { transform: rotate(360deg); } }
 @media (max-width: 34rem) {
-  .ripple-star__count { font-size: .54rem; }
-  .ripple-star__name { font-size: .54rem; }
+  .ripple-star__count { font-size: .64rem; }
+  .ripple-star__name { font-size: .6rem; }
+  .ripple-star__lang { font-size: .46rem; bottom: 1.85rem; }
   .ripple-pool__foot { top: 1.2rem; }
 }
 /* ---------- 笔记：星砂轨迹 ----------
@@ -451,8 +474,8 @@ a.work-star:focus-visible .work-star__tag,
   position: relative;
   display: grid;
   place-items: center;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.9rem;
+  height: 2.9rem;
   padding: 0;
   border: 0;
   background: transparent;
@@ -481,23 +504,23 @@ a.work-star:focus-visible .work-star__tag,
 }
 .grain__date {
   position: absolute;
-  top: calc(100% + .5rem);
+  top: calc(100% + .55rem);
   left: 50%;
   translate: -50% 0;
-  font-size: .56rem;
-  letter-spacing: .18em;
-  color: rgba(255, 238, 255, .6);
+  font-size: .64rem;
+  letter-spacing: .14em;
+  color: rgba(255, 244, 255, .82);
   white-space: nowrap;
-  text-shadow: 0 0 6px rgba(22, 12, 46, .65);
+  text-shadow: 0 0 8px rgba(22, 12, 46, .75), 0 0 14px rgba(255, 190, 245, .3);
   transition: color .25s;
 }
 .grain.is-open .grain__date { color: rgba(255, 246, 255, .95); }
 /* 气泡：不规则圆角、无边框的柔光泡 */
 .grain__note {
   position: absolute;
-  width: min(15rem, 46vw);
+  width: min(17.5rem, 52vw);
   margin: 0;
-  padding: .95rem 1.15rem 1.05rem;
+  padding: 1.05rem 1.25rem 1.15rem;
   border-radius: 56% 44% 54% 46% / 48% 42% 58% 52%;
   background: radial-gradient(120% 110% at 18% 12%, rgba(255, 240, 255, .3), rgba(209, 172, 255, .13) 46%, rgba(112, 82, 196, .05) 100%);
   box-shadow:
@@ -507,8 +530,8 @@ a.work-star:focus-visible .work-star__tag,
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   color: #f4ecff;
-  font-size: .76rem;
-  line-height: 1.72;
+  font-size: .84rem;
+  line-height: 1.62;
   letter-spacing: .02em;
   pointer-events: none;
   opacity: 0;
@@ -522,47 +545,49 @@ a.work-star:focus-visible .work-star__tag,
 }
 .grain__note small {
   display: block;
-  margin-bottom: .3rem;
-  font-size: .56rem;
-  letter-spacing: .24em;
-  color: #e2c8ff;
+  margin-bottom: .34rem;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: #e9d2ff;
 }
 .grain__note strong {
   display: block;
-  margin-bottom: .35rem;
-  font-size: .84rem;
+  margin-bottom: .4rem;
+  font-size: .96rem;
   font-weight: 800;
-  line-height: 1.5;
+  line-height: 1.45;
   letter-spacing: .03em;
-  color: #fff6ff;
+  color: #ffffff;
 }
 .grain__note span {
   display: block;
-  color: rgba(255, 244, 255, .84);
+  color: rgba(255, 248, 255, .92);
 }
 .grain__note::after {
   content: "";
   position: absolute;
   bottom: -.45rem;
   left: 2rem;
-  width: 9px;
-  height: 9px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: radial-gradient(circle at 40% 35%, #fff, #ffd9f7 55%, #c79fff 100%);
   box-shadow: 0 0 8px rgba(255, 186, 240, .95);
 }
 /* 每粒星砂的气泡朝向：防越界、防互相遮挡 */
-.grain:nth-child(1) .grain__note  { left: 2.2rem; top: calc(100% + .95rem); transform-origin: left top; }
+.grain:nth-child(1) .grain__note  { left: 2.2rem; top: calc(100% + .6rem); transform-origin: left top; }
 .grain:nth-child(2) .grain__note  { left: .4rem;  top: calc(100% + .95rem); transform-origin: left top; }
 .grain:nth-child(3) .grain__note  { left: 50%;    top: calc(100% + .95rem); translate: -50% 0; transform-origin: top center; }
-.grain:nth-child(4) .grain__note  { left: 50%;    bottom: calc(100% + .95rem); translate: -50% 0; transform-origin: bottom center; }
+.grain:nth-child(4) .grain__note  { left: 50%;    bottom: calc(100% + .6rem); translate: -50% 0; transform-origin: bottom center; }
 .grain:nth-child(5) .grain__note  { right: 2.2rem; top: calc(100% + .95rem); transform-origin: right top; }
 .grain:nth-child(2) .grain__note::after { left: .6rem; }
 .grain:nth-child(3) .grain__note::after { left: 50%; translate: -50% 0; }
 .grain:nth-child(4) .grain__note::after { bottom: auto; top: -.45rem; left: 50%; translate: -50% 0; }
 .grain:nth-child(5) .grain__note::after { right: 2.2rem; left: auto; }
 @media (max-width: 34rem) {
-  .grain__note { width: min(17rem, 62vw); }
+  .grain__note { width: min(19rem, 66vw); }
+  .grain__date { font-size: .56rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .work-star__halo, .trending-loading::after,

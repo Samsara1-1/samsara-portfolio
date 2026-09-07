@@ -320,7 +320,7 @@ function renderTrending(repos, fetchedAt = null) {
         const stars = formatStars(repo.stars);
         const ratio = Math.log10(Math.max(2, repo.stars)) / logMax;      // 0..1
         const rise = 10 + Math.round(52 * ratio);                       // 10%..62%
-        const size = (0.72 + 0.62 * ratio).toFixed(2);
+        const size = (0.86 + 0.66 * ratio).toFixed(2);
         const jitter = ((index % 2 ? -1 : 1) * (4 + (index % 4) * 2)) + '%';
         return '<a class="ripple-star" href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener noreferrer"'
           + ' style="--rise:' + rise + '%;--size:' + size + 'rem;--jitter:' + jitter
@@ -331,6 +331,8 @@ function renderTrending(repos, fetchedAt = null) {
           + '<span class="ripple-star__orb" aria-hidden="true"></span>'
           + '<b class="ripple-star__count">' + stars + '</b>'
           + '<em class="ripple-star__name">' + escapeHtml(repo.name) + '</em>'
+          + (repo.language && repo.language !== 'N/A'
+              ? '<i class="ripple-star__lang">' + escapeHtml(repo.language) + '</i>' : '')
           + '</a>';
       }).join('')
     + '</div>';
