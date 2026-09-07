@@ -5647,3 +5647,197 @@ a:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
   filter: none !important;
   opacity: 1 !important;
 }
+
+
+/* ============================================================
+   Round 45 — 作品页：红绳签挂式索引（替代原 index-card 列表）
+   ------------------------------------------------------------
+   一条水平红绳 + 六张垂挂的签。点签展开一句简介
+   （grid-template-rows 0fr→1fr 折叠动画），互斥展开。
+   风格与玻璃卡片一致：半透明纸面、细边框、hover 轻抬。
+   ============================================================ */
+.wish-rope {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.6vh, 1.8rem);
+}
+
+.wish-rope__hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: .8rem;
+  letter-spacing: .02em;
+}
+
+/* 水平红绳：两端渐隐，中间偏暖红 */
+.wish-rope::before {
+  content: "";
+  position: relative;
+  display: block;
+  height: 2px;
+  margin: .1rem .2rem 0;
+  transform: translateY(.55rem);
+  background: linear-gradient(90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--clay) 28%, transparent) 5%,
+    color-mix(in srgb, var(--clay) 88%, var(--apricot)) 50%,
+    color-mix(in srgb, var(--clay) 28%, transparent) 95%,
+    transparent 100%);
+  pointer-events: none;
+}
+
+.wish-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.4rem, 2.6vh, 1.8rem) clamp(1rem, 2.6vw, 2.2rem);
+  align-items: start;
+}
+
+@media (max-width: 64rem) {
+  .wish-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 40rem) {
+  .wish-list { grid-template-columns: 1fr; }
+}
+
+/* 每张签：顶部一段垂线连到横绳 */
+.wish-list li {
+  min-width: 0;
+  position: relative;
+  padding-top: 1.35rem;
+  display: grid;
+  grid-template-rows: auto 0fr;
+  transition: grid-template-rows .55s cubic-bezier(.22, .8, .26, 1);
+}
+
+.wish-list li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 1.35rem;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  background:
+    radial-gradient(circle at 50% 3px, color-mix(in srgb, var(--clay) 82%, var(--apricot)) 0 3px, transparent 3.6px),
+    linear-gradient(to bottom,
+      color-mix(in srgb, var(--clay) 80%, var(--apricot)),
+      color-mix(in srgb, var(--clay) 45%, transparent));
+  pointer-events: none;
+}
+
+.wish-list li.is-open {
+  grid-template-rows: auto 1fr;
+}
+
+/* 签本身 */
+.wish-tag {
+  min-width: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .8rem;
+  padding: .85rem 1rem;
+  border: 1px solid var(--glass-border);
+  border-radius: .45rem;
+  background: color-mix(in srgb, var(--paper) 46%, transparent);
+  backdrop-filter: blur(.55rem) saturate(1.08);
+  -webkit-backdrop-filter: blur(.55rem) saturate(1.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 .3rem 1.1rem rgba(33,23,18,.06);
+  text-align: left;
+  transition: transform .3s cubic-bezier(.2, .8, .2, 1), background .3s, border-color .3s, box-shadow .3s;
+}
+
+.wish-tag:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--clay) 42%, var(--glass-border));
+  background: color-mix(in srgb, var(--paper) 60%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 .55rem 1.4rem rgba(33,23,18,.09);
+}
+
+.wish-tag:active { transform: translateY(0); }
+
+.wish-tag__num {
+  display: grid;
+  place-items: center;
+  width: 2.05rem;
+  height: 2.05rem;
+  border: 1px solid color-mix(in srgb, var(--clay) 46%, var(--glass-border));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--paper) 72%, transparent);
+  color: color-mix(in srgb, var(--clay) 86%, var(--ink));
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  transition: background .3s, color .3s, transform .3s cubic-bezier(.2, .8, .2, 1);
+}
+
+.wish-tag:hover .wish-tag__num {
+  background: color-mix(in srgb, var(--clay) 78%, var(--paper));
+  color: #fff8ee;
+  transform: rotate(-7deg) scale(1.07);
+}
+
+.wish-tag b {
+  font-size: .94rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+/* 右下展开指示：小折角箭头 */
+.wish-tag::after {
+  content: "";
+  width: .52rem;
+  height: .52rem;
+  justify-self: end;
+  border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform .45s cubic-bezier(.22, .8, .26, 1), border-color .3s;
+}
+
+li.is-open .wish-tag::after {
+  transform: rotate(225deg) translate(0, 0);
+  border-color: var(--clay);
+}
+
+/* 展开出的简介（折叠动画的外层容器） */
+.wish-tag__detail {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.wish-tag__inner {
+  margin-top: .5rem;
+  padding: .8rem 1rem .95rem;
+  border: 1px solid var(--glass-border);
+  border-top-color: color-mix(in srgb, var(--clay) 34%, var(--glass-border));
+  border-radius: .4rem;
+  background: color-mix(in srgb, var(--paper) 34%, transparent);
+}
+
+.wish-tag__inner p {
+  margin: 0 0 .42rem;
+  color: var(--muted);
+  font-size: .8rem;
+  line-height: 1.65;
+}
+
+.wish-tag__inner small {
+  color: color-mix(in srgb, var(--muted) 80%, var(--ink));
+  font-size: .66rem;
+  letter-spacing: .07em;
+}
+
+/* 展开态：签本体点亮一点 */
+li.is-open .wish-tag {
+  border-color: color-mix(in srgb, var(--clay) 38%, var(--glass-border));
+  background: color-mix(in srgb, var(--paper) 62%, transparent);
+}

@@ -324,6 +324,8 @@ function renderTrending(repos, fetchedAt = null) {
     + '<small>更新时间 · ' + updatedText + '</small>'
     + '</aside>';
   makeCardsInteractive();
+
+
 }
 function withTimeout(promise, ms) {
   return new Promise(function (resolve, reject) {
@@ -809,6 +811,27 @@ function makeCardsInteractive() {
 }
 
 makeCardsInteractive();
+
+/* ===== Round 45: 作品页红绳签 —— 点签互斥展开 ===== */
+function initWishTags() {
+  document.querySelectorAll('.wish-tag:not([data-wish-bound])').forEach(function (tag) {
+    tag.dataset.wishBound = '1';
+    tag.addEventListener('click', function () {
+      const li = tag.closest('li');
+      const willOpen = !li.classList.contains('is-open');
+      document.querySelectorAll('.wish-list li.is-open').forEach(function (other) {
+        if (other !== li) {
+          other.classList.remove('is-open');
+          const otherTag = other.querySelector('.wish-tag');
+          if (otherTag) otherTag.setAttribute('aria-expanded', 'false');
+        }
+      });
+      li.classList.toggle('is-open', willOpen);
+      tag.setAttribute('aria-expanded', String(willOpen));
+    });
+  });
+}
+initWishTags();
 
 detailModal?.addEventListener('click', function (event) {
   if (event.target === detailModal || event.target.closest('[data-close-modal]')) closeDetail();
