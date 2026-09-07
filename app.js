@@ -302,30 +302,52 @@ function renderTrending(repos, fetchedAt = null) {
   if (!trendingGrid || !repos?.length) return;
   currentRepos = repos.slice(0, 7);
   const topRepo = [...currentRepos].sort((a, b) => b.stars - a.stars)[0];
+  const maxStars = Math.max(1, topRepo.stars);
   const updatedText = fetchedAt
     ? new Date(fetchedAt).toLocaleString('zh-CN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
     : new Date().toLocaleDateString('zh-CN');
-  trendingGrid.innerHTML = currentRepos.map((repo, index) => {
-    const desc = formatDescription(repo.description, 64);
-    const stars = formatStars(repo.stars);
-    const lang = repo.language !== 'N/A' ? ' · ' + repo.language : '';
-    const topics = (repo.topics || []).slice(0, 2).join(" / ");
-    return '<button type="button" class="trend-card" data-repo-index="' + index + '" aria-haspopup="dialog">'
-      + '<span>' + stars + lang + '</span>'
-      + '<h3>' + escapeHtml(repo.name) + '</h3>'
-      + '<p>' + escapeHtml(desc) + '</p>'
-      + '<b>' + escapeHtml(topics || "查看项目") + ' ↗</b>'
-      + '</button>';
-  }).join("")
-    + '<aside class="mini-card mini-signal" aria-label="学习信号">'
-    + '<div class="mini-card__head"><span>数据信号</span><i class="mini-signal__pulse" aria-hidden="true"></i></div>'
-    + '<strong>' + currentRepos.length + ' 个高星项目</strong>'
-    + '<div class="mini-signal__rows"><span>最高热度<b>' + formatStars(topRepo.stars) + '</b></span><span>代表项目<b>' + escapeHtml(topRepo.name) + '</b></span></div>'
-    + '<small>更新时间 · ' + updatedText + '</small>'
-    + '</aside>';
-  makeCardsInteractive();
 
+  /* 星空行星：星越多，行星越大越亮。每颗星的位置由 index 决定，
+     用 CSS 变量 --x / --y / --size / --drift / --orbit 实现错落轨道与公转。
+     保留 .trend-card[data-repo-index]（弹窗委托依赖它）。 */
+  const spots = [
+    { x: 8,  y: 22, orbit: 2, drift: 3 },
+    { x: 34, y: 8,  orbit: 8, drift: 6 },
+    { x: 62, y: 18, orbit: 14, drift: 4 },
+    { x: 86, y: 30, orbit: 5, drift: 7 },
+    { x: 20, y: 62, orbit: 11, drift: 5 },
+    { x: 55, y: 70, orbit: 3, drift: 8 },
+    { x: 82, y: 66, orbit: 9, drift: 4 }
+  ];
 
+  trendingGrid.classList.add('star-field');
+  trendingGrid.innerHTML = '<div class="star-field__updated">数据更新于 ' + escapeHtml(updatedText) + '</div>'
+    + currentRepos.map((repo, index) => {
+      const desc = formatDescription(repo.description, 58);
+      const stars = formatStars(repo.stars);
+      const lang = repo.language !== 'N/A' ? repo.language : '多语言';
+      const topics = (repo.topics || []).slice(0, 2).join(" / ");
+      const spot = spots[index % spots.length];
+      const size = 16 + Math.round(Math.pow(repo.stars / maxStars, 0.6) * 46);
+      return '<button type="button" class="star-planet" data-repo-index="' + index + '"'
+        + ' style="--x:' + spot.x + '%;--y:' + spot.y + '%;--size:' + size + 'px;--orbit:' + spot.orbit + 's;--drift:' + spot.drift + 's"'
+        + ' aria-haspopup="dialog" aria-label="' + escapeHtml(repo.name) + '，' + stars + '">'
+        + '<span class="star-planet__star" aria-hidden="true"><i></i></span>'
+        + '<span class="star-planet__orbit" aria-hidden="true"></span>'
+        + '<b class="star-planet__name">' + escapeHtml(repo.name) + '</b>'
+        + '<small class="star-planet__glow">' + stars + '<i>·</i>' + escapeHtml(lang) + '</small>'
+        + '<span class="star-planet__tip">' + escapeHtml(topics || '查看项目 ↗') + '</span>'
+        + '</button>';
+    }).join("")
+    + '<div class="star-field__legend" aria-hidden="true">'
+    + '<span>最亮 · ' + escapeHtml(topRepo.name) + '（' + formatStars(topRepo.stars) + '）</span>'
+    + '</div>';
+
+  setTimeout(function () {
+    trendingGrid.querySelectorAll('.star-planet').forEach(function (el) {
+      el.classList.add('is-calm');
+    });
+  }, 60);
 }
 function withTimeout(promise, ms) {
   return new Promise(function (resolve, reject) {
@@ -833,6 +855,29 @@ function initWishTags() {
 }
 initWishTags();
 
+/* ===== Round 47: 纸签/便签的互斥展开（挂在容器上的事件委托） ===== */
+function initFreeExpand(containerSel, itemSel, bindAttr) {
+  document.querySelectorAll(containerSel).forEach(function (container) {
+    container.addEventListener('click', function (event) {
+      const head = event.target.closest(itemSel);
+      if (!head || head.dataset[bindAttr]) return;
+      const li = head.closest('li');
+      const willOpen = !li.classList.contains('is-open');
+      container.querySelectorAll(itemSel + ' li.is-open').forEach(function (other) {
+        if (other !== li) {
+          other.classList.remove('is-open');
+          const otherHead = other.querySelector('button[aria-expanded]');
+          if (otherHead) otherHead.setAttribute('aria-expanded', 'false');
+        }
+      });
+      li.classList.toggle('is-open', willOpen);
+      head.setAttribute('aria-expanded', String(willOpen));
+    });
+  });
+}
+initFreeExpand('.rope-gallery', '.rope-sign', 'bound');
+initFreeExpand('.note-sticks', '.note-stick', 'bound');
+
 detailModal?.addEventListener('click', function (event) {
   if (event.target === detailModal || event.target.closest('[data-close-modal]')) closeDetail();
 });
@@ -846,7 +891,7 @@ document.addEventListener('keydown', function (event) {
 });
 
 trendingGrid?.addEventListener('click', function (event) {
-  const card = event.target.closest('.trend-card');
+  const card = event.target.closest('.star-planet');
   if (!card) return;
   const repo = currentRepos[Number(card.dataset.repoIndex)];
   if (repo) openRepoDetail(repo);

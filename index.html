@@ -11,10 +11,11 @@
   <!-- 字体改为异步加载：外网字体慢时不再阻塞首屏渲染 -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia&display=swap"></noscript>
-  <link rel="stylesheet" href="styles.css?v=20260907-03">
+  <link rel="stylesheet" href="styles.css?v=20260907-05">
   <link rel="stylesheet" href="wallpapers.css"><!-- 壁纸配置：换壁纸只改这个文件 -->
   <link rel="stylesheet" href="about-theme.css">
   <link rel="stylesheet" href="theme-overrides.css">
+  <link rel="stylesheet" href="free-sections.css">
 </head>
 <body>
   <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/wallpapers/bg-video-v2.mp4" type="video/mp4"></video>
@@ -65,167 +66,112 @@
     </section>
 
 
-    <section id="systems" class="view view-systems" data-view="systems" aria-labelledby="systems-title" aria-hidden="true">
+                <section id="systems" class="view view-systems" data-view="systems" aria-labelledby="systems-title" aria-hidden="true">
       <canvas id="systems-atmosphere" aria-hidden="true"></canvas>
-      <div class="page-frame systems-frame">
-        <header class="frame-heading">
-          <div class="frame-heading__body">
-            <button class="back-link" type="button" data-route="home">返回首页</button>
-            <p>01 / 作品与实验</p>
-            <h1 id="systems-title" tabindex="-1">先做出来，<br>再慢慢变好。</h1>
-          </div>
-          <p class="frame-heading__note">几个做到一半的小实验，按在做的时间排。</p>
+      <div class="free-scene free-scene--systems">
+        <header class="scene-head scene-head--systems">
+          <button class="back-link" type="button" data-route="home">返回首页</button>
+          <p>01 / 作品与实验</p>
+          <h1 id="systems-title" tabindex="-1">先做出来，<br>再慢慢变好。</h1>
+          <p class="scene-head__note">这些算不上“作品”，更多是我量自己水平的方式 —— 能不能先跑起来，再慢慢变好。</p>
         </header>
-        <p class="frame-intro">这些实验大多算不上“作品”，更像我在量自己的水平——能做多少、卡在哪、还差多远。做的时候最在意的，是它能不能先跑起来，再慢慢变好。</p>
-        <div class="wish-rope" aria-label="作品与实验索引">
-          <p class="wish-rope__hint">挂在绳上的，都是做过的小实验 —— 点一张签看看它在做什么。</p>
-          <ol class="wish-list">
 
-
-
-            <li>
-              <button type="button" class="wish-tag" aria-expanded="false"><span class="wish-tag__num">壹</span><b>你画我猜</b></button>
-              <div class="wish-tag__detail">
-                <div class="wish-tag__inner">
-                  <p>多人限时猜词，重点在状态同步和计分。</p>
-                <small>状态同步 · 计分流程</small>
-                </div>
-              </div>
+        <div class="rope-gallery" aria-label="作品与实验索引">
+          <p class="rope-gallery__hint">做过的小实验，都挂在这根绳上 —— 点一张，看看它在做什么。</p>
+          <ul class="rope-signs">
+            <li class="rope-sign" style="--tilt:-1.6deg;--drop:0">
+              <i class="rope-sign__thread" aria-hidden="true"></i>
+              <button type="button" class="rope-sign__head" aria-expanded="false"><i>壹</i><b>你画我猜</b></button>
+              <p class="rope-sign__body">多人限时猜词，重点在状态同步和计分。<small>状态同步 · 计分流程</small></p>
             </li>
-            <li>
-              <button type="button" class="wish-tag" aria-expanded="false"><span class="wish-tag__num">贰</span><b>横版闯关</b></button>
-              <div class="wish-tag__detail">
-                <div class="wish-tag__inner">
-                  <p>用 Canvas 练重力、碰撞和跳跃手感。</p>
-                <small>HTML Canvas · 碰撞检测</small>
-                </div>
-              </div>
+            <li class="rope-sign" style="--tilt:1.2deg;--drop:1">
+              <i class="rope-sign__thread" aria-hidden="true"></i>
+              <button type="button" class="rope-sign__head" aria-expanded="false"><i>贰</i><b>横版闯关</b></button>
+              <p class="rope-sign__body">用 Canvas 练重力、碰撞和跳跃手感。<small>HTML Canvas · 碰撞检测</small></p>
             </li>
-            <li>
-              <button type="button" class="wish-tag" aria-expanded="false"><span class="wish-tag__num">叁</span><b>塔罗牌占卜</b></button>
-              <div class="wish-tag__detail">
-                <div class="wish-tag__inner">
-                  <p>抽牌、停顿、翻面，凑成一次有节奏的小互动。</p>
-                <small>随机逻辑 · 翻牌动画</small>
-                </div>
-              </div>
+            <li class="rope-sign" style="--tilt:-2deg;--drop:2">
+              <i class="rope-sign__thread" aria-hidden="true"></i>
+              <button type="button" class="rope-sign__head" aria-expanded="false"><i>叁</i><b>塔罗牌占卜</b></button>
+              <p class="rope-sign__body">抽牌、停顿、翻面，凑成一次有节奏的小互动。<small>随机逻辑 · 翻牌动画</small></p>
             </li>
-            <li>
-              <button type="button" class="wish-tag" aria-expanded="false"><span class="wish-tag__num">肆</span><b>深夜电台</b></button>
-              <div class="wish-tag__detail">
-                <div class="wish-tag__inner">
-                  <p>把歌曲、封面和播放状态放进一个安静页面。</p>
-                <small>音频控制 · 播放列表</small>
-                </div>
-              </div>
+            <li class="rope-sign" style="--tilt:1.8deg;--drop:0">
+              <i class="rope-sign__thread" aria-hidden="true"></i>
+              <button type="button" class="rope-sign__head" aria-expanded="false"><i>肆</i><b>深夜电台</b></button>
+              <p class="rope-sign__body">把歌曲、封面和播放状态放进一个安静页面。<small>音频控制 · 播放列表</small></p>
             </li>
-            <li>
-              <button type="button" class="wish-tag" aria-expanded="false"><span class="wish-tag__num">伍</span><b>任务小助手</b></button>
-              <div class="wish-tag__detail">
-                <div class="wish-tag__inner">
-                  <p>把“查资料 → 整理 → 输出”拆成可控步骤。</p>
-                <small>工具调用 · 状态记录</small>
-                </div>
-              </div>
+            <li class="rope-sign" style="--tilt:-1.1deg;--drop:1">
+              <i class="rope-sign__thread" aria-hidden="true"></i>
+              <button type="button" class="rope-sign__head" aria-expanded="false"><i>伍</i><b>任务小助手</b></button>
+              <p class="rope-sign__body">把“查资料 → 整理 → 输出”拆成可控步骤。<small>工具调用 · 状态记录</small></p>
             </li>
-            <li>
-              <button type="button" class="wish-tag" aria-expanded="false"><span class="wish-tag__num">陆</span><b>自动摘要</b></button>
-              <div class="wish-tag__detail">
-                <div class="wish-tag__inner">
-                  <p>让长文先变成要点，再补结论和来源。</p>
-                <small>文本处理 · Agent</small>
-                </div>
-              </div>
+            <li class="rope-sign" style="--tilt:1.4deg;--drop:2">
+              <i class="rope-sign__thread" aria-hidden="true"></i>
+              <button type="button" class="rope-sign__head" aria-expanded="false"><i>陆</i><b>自动摘要</b></button>
+              <p class="rope-sign__body">让长文先变成要点，再补结论和来源。<small>文本处理 · Agent</small></p>
             </li>
-          </ol>
+          </ul>
         </div>
       </div>
     </section>
-
-
-    <section id="research" class="view view-research" data-view="research" aria-labelledby="research-title" aria-hidden="true">
-      <div class="page-frame research-frame">
-        <header class="frame-heading frame-heading--compact">
-          <div class="frame-heading__body">
-            <button class="back-link" type="button" data-route="home">返回首页</button>
-            <p>02 / 热门 AI 话题</p>
-            <h1 id="research-title" tabindex="-1">从高星项目里，<br>寻找学习路线。</h1>
-          </div>
-          <div class="trending-index-head">
-            <p>GitHub 高星项目 · 每日自动更新</p>
-            <p id="trending-updated" hidden></p>
-          </div>
+        <section id="research" class="view view-research" data-view="research" aria-labelledby="research-title" aria-hidden="true">
+      <div class="free-scene free-scene--research">
+        <header class="scene-head scene-head--research">
+          <button class="back-link" type="button" data-route="home">返回首页</button>
+          <p>02 / 热门 AI 话题</p>
+          <h1 id="research-title" tabindex="-1">从高星项目里，<br>寻找学习路线。</h1>
+          <p class="scene-head__note">把每天 GitHub 上最亮的新星，变成一张可点的星图。</p>
         </header>
-        <section class="github-watch" aria-labelledby="github-watch-title">
-          <h2 id="github-watch-title" class="visually-hidden">GitHub 热门项目</h2>
-          <div class="github-grid" id="trending-grid" data-trending>
-            <div class="trending-loading">正在加载 GitHub 热门项目…</div>
-          </div>
-        </section>
 
-        <div class="page-foot research-foot" aria-label="学习线索">
-          <article class="foot-card"><span>线索 01</span><strong>项目构建</strong><p>看高星项目如何组织 README、示例和入口。</p></article>
-          <article class="foot-card"><span>线索 02</span><strong>Agent 框架</strong><p>关注工具调用、记忆和上下文组织。</p></article>
-          <article class="foot-card"><span>线索 03</span><strong>前端交互</strong><p>观察列表、状态和动效的轻量做法。</p></article>
-          <article class="foot-card"><span>线索 04</span><strong>学习路线</strong><p>把大项目拆成能练习的小任务。</p></article>
-        </div></div>
-        </section>
+        <div class="star-field" id="trending-grid" data-trending aria-label="GitHub 高星项目星图">
+          <div class="trending-loading">正在观测今天的星象…</div>
+        </div>
+        <p class="star-field__foot" aria-hidden="true">星越亮越大，说明关注越多 —— 点一颗星看看它是什么。</p>
       </div>
     </section>
-
-
-    <section id="notes" class="view view-notes" data-view="notes" aria-labelledby="notes-title" aria-hidden="true">
-      <div class="page-frame notes-frame">
-        <header class="frame-heading frame-heading--compact">
-          <div class="frame-heading__body">
-            <button class="back-link" type="button" data-route="home">返回首页</button>
-            <p>03 / 学习与折腾笔记</p>
-            <h1 id="notes-title" tabindex="-1">在做东西的循环里，<br>留下真实记录。</h1>
-          </div>
-          <p class="frame-heading__note">不装作教程专家，只记录为什么做、卡在哪里、学会了什么。</p>
+        <section id="notes" class="view view-notes" data-view="notes" aria-labelledby="notes-title" aria-hidden="true">
+      <div class="free-scene free-scene--notes">
+        <header class="scene-head scene-head--notes">
+          <button class="back-link" type="button" data-route="home">返回首页</button>
+          <p>03 / 学习与折腾笔记</p>
+          <h1 id="notes-title" tabindex="-1">在做东西的循环里，<br>留下真实记录。</h1>
+          <p class="scene-head__note">不装教程专家，只记下为什么做、卡在哪里、学会了什么。</p>
         </header>
-        <div class="notes-layout">
-          <ol class="timeline" aria-label="学习笔记时间线">
-            <li><button type="button" class="note-node" aria-expanded="false"><time>2026 / 07</time><b>多人游戏比画板更难</b><span>状态同步</span></button><div class="note-node__detail"><p>倒计时、答案和分数的同步才是你画我猜的真正难点。</p></div></li>
-            <li><button type="button" class="note-node" aria-expanded="false"><time>2026 / 06</time><b>跳跃手感需要调</b><span>Canvas</span></button><div class="note-node__detail"><p>重力、速度和碰撞边界会让角色从轻快变得迟钝。</p></div></li>
-            <li><button type="button" class="note-node" aria-expanded="false"><time>2026 / 05</time><b>翻牌要慢一点</b><span>交互节奏</span></button><div class="note-node__detail"><p>抽牌、停顿、翻面和解读的顺序决定仪式感。</p></div></li>
-            <li><button type="button" class="note-node" aria-expanded="false"><time>2026 / 04</time><b>电台不只是按钮</b><span>音乐网页</span></button><div class="note-node__detail"><p>留白、封面和文字节奏让它更像一个安静的小房间。</p></div></li>
-            <li><button type="button" class="note-node" aria-expanded="false"><time>2026 / 03</time><b>未上线也有价值</b><span>项目复盘</span></button><div class="note-node__detail"><p>把当前状态和没解决的问题写清楚，就是诚实的记录。</p></div></li>
-            <li><button type="button" class="note-node" aria-expanded="false"><time>2026 / 02</time><b>做项目才会留下知识</b><span>学习方法</span></button><div class="note-node__detail"><p>遇到具体问题再查资料，读完马上用上，记忆才更深。</p></div></li>
-            <li><button type="button" class="note-node" aria-expanded="false"><time>2026 / 01</time><b>接口要先想失败</b><span>错误处理</span></button><div class="note-node__detail"><p>请求不到时，页面要给明确提示而不是白屏。</p></div></li>
-            <li><button type="button" class="note-node" aria-expanded="false"><time>2026 / 01</time><b>AI 不是替代思考</b><span>AI 协作</span></button><div class="note-node__detail"><p>让它帮你列可能性，最后判断仍要自己收口。</p></div></li>
-          </ol>
 
-          <aside class="notes-side">
-            <aside class="mini-card mini-calendar" data-widget="calendar" aria-label="学习日历：点击格子切换点亮状态">
-              <div class="mini-card__head"><span>本周记录</span><i class="mini-calendar__live" aria-hidden="true"></i></div>
-              <strong>学习日历</strong>
-              <div class="mini-calendar__grid" data-calendar-grid>
-                <button type="button" class="mini-calendar__cell" data-day="0" aria-label="周一"></button><button type="button" class="mini-calendar__cell" data-day="1" aria-label="周二"></button><button type="button" class="mini-calendar__cell" data-day="2" aria-label="周三"></button><button type="button" class="mini-calendar__cell" data-day="3" aria-label="周四"></button>
-                <button type="button" class="mini-calendar__cell" data-day="4" aria-label="周五"></button><button type="button" class="mini-calendar__cell" data-day="5" aria-label="周六"></button><button type="button" class="mini-calendar__cell" data-day="6" aria-label="周日"></button>
-              </div>
-              <small><span id="calendar-note" aria-live="polite">读取本地时间…</span></small>
-            </aside>
-            <button type="button" class="mini-card mini-mood" data-widget="mood" aria-label="点击切换一条状态">
-              <div class="mini-card__head"><span>状态</span><i class="mini-mood__pulse" aria-hidden="true"></i></div>
-              <strong data-mood-title>今天有点想写代码</strong>
-              <div class="mini-mood__meter" data-mood-meter aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-              <small><span id="mood-time">刚刚</span> · <span data-mood-note>AI 协作</span> · 点击换一条</small>
+        <ul class="note-sticks" aria-label="学习笔记便签">
+          <li class="note-stick" style="--spin:-2.4deg;--top:6%;--left:4%;--paper:2">
+            <button type="button" class="note-stick__head" aria-expanded="false">
+              <time>2026 / 07</time><b>多人游戏比画板更难</b><span>状态同步</span>
             </button>
-          </aside>
-        </div>
-      
-        <div class="page-foot notes-foot" aria-label="固定检查">
-          <article class="foot-card"><span>检查 01</span><strong>能不能点</strong><p>先确认主要交互能跑通。</p></article>
-          <article class="foot-card"><span>检查 02</span><strong>能不能停</strong><p>给用户明确的停止和回退路径。</p></article>
-          <article class="foot-card"><span>检查 03</span><strong>能不能记</strong><p>关键数据要有保存方式。</p></article>
-          <article class="foot-card"><span>检查 04</span><strong>能不能说</strong><p>用一句话解释页面在做什么。</p></article>
-        </div>
+            <p class="note-stick__body">倒计时、答案和分数的同步，才是你画我猜真正的难点。</p>
+          </li>
+          <li class="note-stick" style="--spin:1.8deg;--top:44%;--left:14%;--paper:3">
+            <button type="button" class="note-stick__head" aria-expanded="false">
+              <time>2026 / 05</time><b>翻牌要慢一点</b><span>交互节奏</span>
+            </button>
+            <p class="note-stick__body">抽牌、停顿、翻面和解读的顺序，决定了仪式感。</p>
+          </li>
+          <li class="note-stick" style="--spin:-1.4deg;--top:16%;--left:46%;--paper:1">
+            <button type="button" class="note-stick__head" aria-expanded="false">
+              <time>2026 / 03</time><b>未上线也有价值</b><span>项目复盘</span>
+            </button>
+            <p class="note-stick__body">把当前状态和没解决的问题写清楚，就是诚实的记录。</p>
+          </li>
+          <li class="note-stick" style="--spin:2.8deg;--top:58%;--left:52%;--paper:4">
+            <button type="button" class="note-stick__head" aria-expanded="false">
+              <time>2026 / 02</time><b>做项目才会留下知识</b><span>学习方法</span>
+            </button>
+            <p class="note-stick__body">遇到具体问题再查资料，读完马上用上，记忆才更深。</p>
+          </li>
+          <li class="note-stick" style="--spin:-2deg;--top:30%;--left:74%;--paper:0">
+            <button type="button" class="note-stick__head" aria-expanded="false">
+              <time>2026 / 01</time><b>AI 不是替代思考</b><span>AI 协作</span>
+            </button>
+            <p class="note-stick__body">让它帮你列可能性，最后判断仍要自己收口。</p>
+          </li>
+        </ul>
       </div>
     </section>
-
-
-    <section id="about" class="view view-about" data-view="about" aria-labelledby="about-title" aria-hidden="true">
+<section id="about" class="view view-about" data-view="about" aria-labelledby="about-title" aria-hidden="true">
       <div class="page-frame about-frame">
         <header class="frame-heading frame-heading--compact">
           <div class="frame-heading__body">
@@ -295,7 +241,7 @@
   </div>
   <div class="route-status" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="app.js?v=20260907-02"></script>
+  <script src="app.js?v=20260907-04"></script>
 </body>
 </html>
 
