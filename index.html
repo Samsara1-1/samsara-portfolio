@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="wallpapers.css"><!-- 壁纸配置：换壁纸只改这个文件 -->
   <link rel="stylesheet" href="about-theme.css">
   <link rel="stylesheet" href="theme-overrides.css">
-  <link rel="stylesheet" href="free-sections.css?v=20260907-04">
+  <link rel="stylesheet" href="free-sections.css?v=20260907-05">
 </head>
 <body>
   <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/wallpapers/bg-video-v2.mp4" type="video/mp4"></video>
@@ -64,102 +64,70 @@
         </div>
       </div>
     </section>
-
-
-                <section id="systems" class="view view-systems" data-view="systems" aria-labelledby="systems-title" aria-hidden="true">
+<section id="systems" class="view view-systems" data-view="systems" aria-labelledby="systems-title" aria-hidden="true">
       <canvas id="systems-atmosphere" aria-hidden="true"></canvas>
       <div class="free-scene free-scene--systems">
         <header class="scene-head scene-head--systems">
           <button class="back-link" type="button" data-route="home">返回首页</button>
           <p>01 / 作品与实验</p>
           <h1 id="systems-title" tabindex="-1">先做出来，<br>再慢慢变好。</h1>
-          <p class="scene-head__note">这些算不上"作品"，更多是我量自己水平的方式 —— 能不能先跑起来，再慢慢变好。</p>
+          <p class="scene-head__note">这些算不上“作品”，更多是我量自己水平的方式 —— 能不能先跑起来，再慢慢变好。</p>
         </header>
 
-        <div class="lantern-gallery" aria-label="作品与实验索引">
-          <p class="lantern-gallery__hint">做过的小实验，像一盏盏升起的孔明灯 —— 悬停看看它，点一盏读读它。</p>
-          <ul class="lanterns">
-            <li class="lantern" style="--tilt:-2.6deg;--float:4.2s;--rise:22%">
-              <button type="button" class="lantern__head" aria-expanded="false">
-                <span class="lantern__glow" aria-hidden="true"></span>
-                <span class="lantern__body" aria-hidden="true"><i class="lantern__rib" aria-hidden="true"></i></span>
-                <span class="lantern__brazier" aria-hidden="true"></span>
-                <span class="lantern__flame" aria-hidden="true"></span>
-                <b class="lantern__no">壹</b><em>你画我猜</em>
-              </button>
-              <p class="lantern__desc">多人限时猜词，重点在状态同步和计分。<small>状态同步 · 计分流程</small></p>
-            </li>
-            <li class="lantern" style="--tilt:1.8deg;--float:5.1s;--rise:8%">
-              <button type="button" class="lantern__head" aria-expanded="false">
-                <span class="lantern__glow" aria-hidden="true"></span>
-                <span class="lantern__body" aria-hidden="true"><i class="lantern__rib" aria-hidden="true"></i></span>
-                <span class="lantern__brazier" aria-hidden="true"></span>
-                <span class="lantern__flame" aria-hidden="true"></span>
-                <b class="lantern__no">贰</b><em>横版闯关</em>
-              </button>
-              <p class="lantern__desc">用 Canvas 练重力、碰撞和跳跃手感。<small>HTML Canvas · 碰撞检测</small></p>
-            </li>
-            <li class="lantern" style="--tilt:-1.4deg;--float:4.7s;--rise:40%">
-              <button type="button" class="lantern__head" aria-expanded="false">
-                <span class="lantern__glow" aria-hidden="true"></span>
-                <span class="lantern__body" aria-hidden="true"><i class="lantern__rib" aria-hidden="true"></i></span>
-                <span class="lantern__brazier" aria-hidden="true"></span>
-                <span class="lantern__flame" aria-hidden="true"></span>
-                <b class="lantern__no">叁</b><em>塔罗牌占卜</em>
-              </button>
-              <p class="lantern__desc">抽牌、停顿、翻面，凑成一次有节奏的小互动。<small>随机逻辑 · 翻牌动画</small></p>
-            </li>
-            <li class="lantern" style="--tilt:2.4deg;--float:5.6s;--rise:15%">
-              <button type="button" class="lantern__head" aria-expanded="false">
-                <span class="lantern__glow" aria-hidden="true"></span>
-                <span class="lantern__body" aria-hidden="true"><i class="lantern__rib" aria-hidden="true"></i></span>
-                <span class="lantern__brazier" aria-hidden="true"></span>
-                <span class="lantern__flame" aria-hidden="true"></span>
-                <b class="lantern__no">肆</b><em>深夜电台</em>
-              </button>
-              <p class="lantern__desc">把歌曲、封面和播放状态放进一个安静页面。<small>音频控制 · 播放列表</small></p>
-            </li>
-            <li class="lantern" style="--tilt:-2.1deg;--float:4.4s;--rise:52%">
-              <button type="button" class="lantern__head" aria-expanded="false">
-                <span class="lantern__glow" aria-hidden="true"></span>
-                <span class="lantern__body" aria-hidden="true"><i class="lantern__rib" aria-hidden="true"></i></span>
-                <span class="lantern__brazier" aria-hidden="true"></span>
-                <span class="lantern__flame" aria-hidden="true"></span>
-                <b class="lantern__no">伍</b><em>任务小助手</em>
-              </button>
-              <p class="lantern__desc">把"查资料 → 整理 → 输出"拆成可控步骤。<small>工具调用 · 状态记录</small></p>
-            </li>
-            <li class="lantern" style="--tilt:1.3deg;--float:6s;--rise:32%">
-              <button type="button" class="lantern__head" aria-expanded="false">
-                <span class="lantern__glow" aria-hidden="true"></span>
-                <span class="lantern__body" aria-hidden="true"><i class="lantern__rib" aria-hidden="true"></i></span>
-                <span class="lantern__brazier" aria-hidden="true"></span>
-                <span class="lantern__flame" aria-hidden="true"></span>
-                <b class="lantern__no">陆</b><em>自动摘要</em>
-              </button>
-              <p class="lantern__desc">让长文先变成要点，再补结论和来源。<small>文本处理 · Agent</small></p>
-            </li>
-          </ul>
+        <!-- Round 51 · 作品星图：亮星 = 已上线能打开的，暗星 = 还没想好的空位。
+             以后加作品，照“星语”这颗的结构再贴一颗星，并把坐标加进下面的连线即可。 -->
+        <div class="work-sky" aria-label="作品星图">
+          <svg class="work-sky__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <polyline class="work-sky__softline" vector-effect="non-scaling-stroke" points="14,30 56,44 86,26" pathLength="1"></polyline>
+            <polyline class="work-sky__softline" vector-effect="non-scaling-stroke" points="56,44 72,76 26,72 14,30" pathLength="1"></polyline>
+            <polyline class="work-sky__line" vector-effect="non-scaling-stroke" points="14,30 56,44 86,26" pathLength="1"></polyline>
+            <polyline class="work-sky__line" vector-effect="non-scaling-stroke" points="56,44 72,76 26,72 14,30" pathLength="1"></polyline>
+          </svg>
+
+          <a class="work-star work-star--live" style="--x:56%;--y:44%;--pulse:2.6s"
+             href="https://xingyu-m5lw.onrender.com" target="_blank" rel="noopener noreferrer">
+            <span class="work-star__dot" aria-hidden="true"><i class="work-star__core"></i></span>
+            <span class="work-star__halo" aria-hidden="true"></span>
+            <b class="work-star__tag"><span class="work-star__name">星语</span><small>AI 女友 · 已上线，点我去见她 ↗</small></b>
+          </a>
+
+          <span class="work-star work-star--ghost" style="--x:14%;--y:30%">
+            <span class="work-star__dot" aria-hidden="true"></span>
+            <b class="work-star__tag"><span class="work-star__name">空位壹</span><small>等一个想法落进来</small></b>
+          </span>
+          <span class="work-star work-star--ghost" style="--x:86%;--y:26%">
+            <span class="work-star__dot" aria-hidden="true"></span>
+            <b class="work-star__tag"><span class="work-star__name">空位贰</span><small>还没想好做什么</small></b>
+          </span>
+          <span class="work-star work-star--ghost" style="--x:72%;--y:76%">
+            <span class="work-star__dot" aria-hidden="true"></span>
+            <b class="work-star__tag"><span class="work-star__name">空位叁</span><small>给下一个想法留着</small></b>
+          </span>
+          <span class="work-star work-star--ghost" style="--x:26%;--y:72%">
+            <span class="work-star__dot" aria-hidden="true"></span>
+            <b class="work-star__tag"><span class="work-star__name">空位肆</span><small>等它自己长出来</small></b>
+          </span>
+
+          <p class="work-sky__legend" aria-hidden="true">亮着的，是已经能打开的；暗一点的，是还空着的位置。</p>
         </div>
       </div>
     </section>
-        <section id="research" class="view view-research" data-view="research" aria-labelledby="research-title" aria-hidden="true">
+<section id="research" class="view view-research" data-view="research" aria-labelledby="research-title" aria-hidden="true">
       <div class="free-scene free-scene--research">
         <header class="scene-head scene-head--research">
           <button class="back-link" type="button" data-route="home">返回首页</button>
           <p>02 / 热门 AI 话题</p>
           <h1 id="research-title" tabindex="-1">从高星项目里，<br>寻找学习路线。</h1>
-          <p class="scene-head__note">把每天 GitHub 上最亮的新星，连成一片可读的星座。</p>
+          <p class="scene-head__note">把每天 GitHub 上最亮的新星，排成一段淡淡的光谱 —— 悬停看它，点它去仓库里逛逛。</p>
         </header>
 
-        <div class="constellation" id="trending-grid" data-trending aria-label="GitHub 高星项目星座">
-          <svg class="constellation__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
-          <div class="trending-loading">正在观测今天的星象…</div>
+        <div class="spectrum" id="trending-grid" data-trending aria-label="GitHub 高星项目光谱">
+          <div class="spectrum__field" id="spectrum-field" aria-hidden="true"></div>
+          <div class="trending-loading">正在采集今天的光谱…</div>
         </div>
-        <p class="constellation__foot" aria-hidden="true">星越亮，关注越多 —— 点一颗星，看看它是什么。</p>
       </div>
     </section>
-        <section id="notes" class="view view-notes" data-view="notes" aria-labelledby="notes-title" aria-hidden="true">
+<section id="notes" class="view view-notes" data-view="notes" aria-labelledby="notes-title" aria-hidden="true">
       <div class="free-scene free-scene--notes">
         <header class="scene-head scene-head--notes">
           <button class="back-link" type="button" data-route="home">返回首页</button>
@@ -168,52 +136,43 @@
           <p class="scene-head__note">不装教程专家，只记下为什么做、卡在哪里、学会了什么。</p>
         </header>
 
-        <div class="bottle-garden" aria-label="学习笔记漂流瓶">
-          <ul class="bottles">
-            <li class="bottle" style="--tilt:2deg;--bob:4.1s;--left:6%">
-              <button type="button" class="bottle__head" aria-expanded="false">
-                <span class="bottle__neck" aria-hidden="true"></span>
-                <span class="bottle__glass" aria-hidden="true"><i class="bottle__shine" aria-hidden="true"></i><i class="bottle__scroll" aria-hidden="true"></i></span>
-                <span class="bottle__cork" aria-hidden="true"></span>
-                <b class="bottle__tag"><time>2026 / 07</time><i>多人游戏比画板更难</i></b>
+        <!-- Round 51 · 夜风铃：一串纸签挂在风里，风来轻摆；点一下，读一页。 -->
+        <div class="windchime" aria-label="学习笔记风铃">
+          <ul class="windchime__rack">
+            <li class="windchime-item" style="--hang:4.6s">
+              <button type="button" class="windchime__tag" aria-expanded="false">
+                <time>2026 / 07</time><i>多人游戏比画板更难</i>
               </button>
-              <p class="bottle__msg"><small>状态同步</small>倒计时、答案和分数的同步，才是你画我猜真正的难点。</p>
+              <p class="windchime__msg"><small>状态同步</small>倒计时、答案和分数的同步，才是你画我猜真正的难点。</p>
+              <span class="windchime__string" aria-hidden="true"></span>
             </li>
-            <li class="bottle" style="--tilt:-1.7deg;--bob:5.2s;--left:27%">
-              <button type="button" class="bottle__head" aria-expanded="false">
-                <span class="bottle__neck" aria-hidden="true"></span>
-                <span class="bottle__glass" aria-hidden="true"><i class="bottle__shine" aria-hidden="true"></i><i class="bottle__scroll" aria-hidden="true"></i></span>
-                <span class="bottle__cork" aria-hidden="true"></span>
-                <b class="bottle__tag"><time>2026 / 05</time><i>翻牌要慢一点</i></b>
+            <li class="windchime-item" style="--hang:3.8s">
+              <button type="button" class="windchime__tag" aria-expanded="false">
+                <time>2026 / 05</time><i>翻牌要慢一点</i>
               </button>
-              <p class="bottle__msg"><small>交互节奏</small>抽牌、停顿、翻面和解读的顺序，决定了仪式感。</p>
+              <p class="windchime__msg"><small>交互节奏</small>抽牌、停顿、翻面和解读的顺序，决定了仪式感。</p>
+              <span class="windchime__string" aria-hidden="true"></span>
             </li>
-            <li class="bottle" style="--tilt:2.6deg;--bob:4.6s;--left:49%">
-              <button type="button" class="bottle__head" aria-expanded="false">
-                <span class="bottle__neck" aria-hidden="true"></span>
-                <span class="bottle__glass" aria-hidden="true"><i class="bottle__shine" aria-hidden="true"></i><i class="bottle__scroll" aria-hidden="true"></i></span>
-                <span class="bottle__cork" aria-hidden="true"></span>
-                <b class="bottle__tag"><time>2026 / 03</time><i>未上线也有价值</i></b>
+            <li class="windchime-item" style="--hang:5.2s">
+              <button type="button" class="windchime__tag" aria-expanded="false">
+                <time>2026 / 03</time><i>未上线也有价值</i>
               </button>
-              <p class="bottle__msg"><small>项目复盘</small>把当前状态和没解决的问题写清楚，就是诚实的记录。</p>
+              <p class="windchime__msg"><small>项目复盘</small>把当前状态和没解决的问题写清楚，就是诚实的记录。</p>
+              <span class="windchime__string" aria-hidden="true"></span>
             </li>
-            <li class="bottle" style="--tilt:-2.3deg;--bob:5.8s;--left:70%">
-              <button type="button" class="bottle__head" aria-expanded="false">
-                <span class="bottle__neck" aria-hidden="true"></span>
-                <span class="bottle__glass" aria-hidden="true"><i class="bottle__shine" aria-hidden="true"></i><i class="bottle__scroll" aria-hidden="true"></i></span>
-                <span class="bottle__cork" aria-hidden="true"></span>
-                <b class="bottle__tag"><time>2026 / 02</time><i>做项目才会留下知识</i></b>
+            <li class="windchime-item" style="--hang:4.1s">
+              <button type="button" class="windchime__tag" aria-expanded="false">
+                <time>2026 / 02</time><i>做项目才会留下知识</i>
               </button>
-              <p class="bottle__msg"><small>学习方法</small>遇到具体问题再查资料，读完马上用上，记忆才更深。</p>
+              <p class="windchime__msg"><small>学习方法</small>遇到具体问题再查资料，读完马上用上，记忆才更深。</p>
+              <span class="windchime__string" aria-hidden="true"></span>
             </li>
-            <li class="bottle" style="--tilt:1.4deg;--bob:4.3s;--left:88%">
-              <button type="button" class="bottle__head" aria-expanded="false">
-                <span class="bottle__neck" aria-hidden="true"></span>
-                <span class="bottle__glass" aria-hidden="true"><i class="bottle__shine" aria-hidden="true"></i><i class="bottle__scroll" aria-hidden="true"></i></span>
-                <span class="bottle__cork" aria-hidden="true"></span>
-                <b class="bottle__tag"><time>2026 / 01</time><i>AI 不是替代思考</i></b>
+            <li class="windchime-item" style="--hang:5.6s">
+              <button type="button" class="windchime__tag" aria-expanded="false">
+                <time>2026 / 01</time><i>AI 不是替代思考</i>
               </button>
-              <p class="bottle__msg"><small>AI 协作</small>让它帮你列可能性，最后判断仍要自己收口。</p>
+              <p class="windchime__msg"><small>AI 协作</small>让它帮你列可能性，最后判断仍要自己收口。</p>
+              <span class="windchime__string" aria-hidden="true"></span>
             </li>
           </ul>
         </div>
@@ -289,7 +248,7 @@
   </div>
   <div class="route-status" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="app.js?v=20260907-06"></script>
+  <script src="app.js?v=20260907-07"></script>
 </body>
 </html>
 

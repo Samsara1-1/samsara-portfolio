@@ -307,45 +307,27 @@ function renderTrending(repos, fetchedAt = null) {
     ? new Date(fetchedAt).toLocaleString('zh-CN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
     : new Date().toLocaleDateString('zh-CN');
 
-  /* 星座：高星项目连成一片星图。点位与 SVG 连线共用同一组百分比坐标，
-     preserveAspectRatio="none" 保证线始终穿过星心，无需 resize 重算。 */
-  const spots = [
-    { x: 8,  y: 22 },
-    { x: 34, y: 8 },
-    { x: 62, y: 18 },
-    { x: 86, y: 30 },
-    { x: 82, y: 66 },
-    { x: 55, y: 70 },
-    { x: 20, y: 62 }
-  ];
-  const line = spots.map(s => s.x + ',' + s.y).join(' ');
-
-  trendingGrid.classList.add('constellation');
+  /* 光谱：把每天的高星项目排成一段淡紫光柱谱线。
+     高度按星数取对数缩放，最高的那颗接近满高。
+     柱顶 = 星数常显，柱下 = 项目名常显；点击直接去仓库。 */
+  const logMax = Math.log10(Math.max(10, maxStars));
+  trendingGrid.classList.add('spectrum');
   trendingGrid.innerHTML =
-      '<svg class="constellation__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">'
-    + '<polyline class="constellation__path" vector-effect="non-scaling-stroke" points="' + line + '" pathLength="1"></polyline></svg>'
-    + '<div class="constellation__updated">数据更新于 ' + escapeHtml(updatedText) + '</div>'
-    + currentRepos.map((repo, index) => {
+      '<div class="spectrum__updated">光谱更新于 ' + escapeHtml(updatedText) + '</div>'
+    + '<div class="spectrum__field">'
+    + currentRepos.map(function (repo, index) {
         const stars = formatStars(repo.stars);
-        const lang = repo.language !== 'N/A' ? repo.language : '多语言';
-        const spot = spots[index % spots.length];
-        const size = 8 + Math.round(Math.pow(repo.stars / maxStars, 0.6) * 18);
-        return '<button type="button" class="constellation-star" data-repo-index="' + index + '"'
-          + ' style="--x:' + spot.x + '%;--y:' + spot.y + '%;--size:' + size + 'px"'
-          + ' aria-haspopup="dialog" aria-label="' + escapeHtml(repo.name) + '，' + stars + '">'
-          + '<span class="constellation-star__dot" aria-hidden="true"><i></i></span>'
-          + '<b class="constellation-star__name">' + escapeHtml(repo.name) + '</b>'
-          + '<small class="constellation-star__meta">' + stars + ' · ' + escapeHtml(lang) + '</small>'
-          + '</button>';
-      }).join("")
-    + '<div class="constellation__legend" aria-hidden="true">'
-    + '最亮 · ' + escapeHtml(topRepo.name) + '（' + formatStars(topRepo.stars) + '）</div>';
-
-  setTimeout(function () {
-    trendingGrid.querySelectorAll('.constellation-star').forEach(function (el) {
-      el.classList.add('is-calm');
-    });
-  }, 120);
+        const h = 16 + Math.round(56 * (Math.log10(Math.max(2, repo.stars)) / logMax));
+        return '<a class="spectrum-bar" href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener noreferrer"'
+          + ' style="--h:' + h + '%"'
+          + ' aria-label="' + escapeHtml(repo.name) + '，' + stars + '，在 GitHub 打开">'
+          + '<span class="spectrum-bar__tip">' + stars + '</span>'
+          + '<i class="spectrum-bar__pill" aria-hidden="true"></i>'
+          + '<em class="spectrum-bar__name">' + escapeHtml(repo.name) + '</em>'
+          + '</a>';
+      }).join('')
+    + '</div>'
+    + '<p class="spectrum__foot">悬停看细节 · 点击直达仓库 ↗</p>';
 }
 function withTimeout(promise, ms) {
   return new Promise(function (resolve, reject) {
@@ -854,14 +836,15 @@ function initWishTags() {
 initWishTags();
 
 /* ===== Round 47: 纸签/便签的互斥展开（挂在容器上的事件委托） ===== */
-function initFreeExpand(containerSel, itemSel, bindAttr) {
+function initFreeExpand(containerSel, headSel) {
   document.querySelectorAll(containerSel).forEach(function (container) {
     container.addEventListener('click', function (event) {
-      const head = event.target.closest(itemSel);
-      if (!head || head.dataset[bindAttr]) return;
+      const head = event.target.closest(headSel);
+      if (!head) return;
       const li = head.closest('li');
+      if (!li) return;
       const willOpen = !li.classList.contains('is-open');
-      container.querySelectorAll(itemSel + ' li.is-open').forEach(function (other) {
+      container.querySelectorAll('li.is-open').forEach(function (other) {
         if (other !== li) {
           other.classList.remove('is-open');
           const otherHead = other.querySelector('button[aria-expanded]');
@@ -873,8 +856,7 @@ function initFreeExpand(containerSel, itemSel, bindAttr) {
     });
   });
 }
-initFreeExpand('.lantern-gallery', '.lantern', 'bound');
-initFreeExpand('.bottle-garden', '.bottle', 'bound');
+initFreeExpand('.windchime__rack', '.windchime__tag');
 
 detailModal?.addEventListener('click', function (event) {
   if (event.target === detailModal || event.target.closest('[data-close-modal]')) closeDetail();
@@ -888,12 +870,8 @@ document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape' && detailModal?.classList.contains('is-open')) closeDetail(false);
 });
 
-trendingGrid?.addEventListener('click', function (event) {
-  const card = event.target.closest('.constellation-star');
-  if (!card) return;
-  const repo = currentRepos[Number(card.dataset.repoIndex)];
-  if (repo) openRepoDetail(repo);
-});
+// 光谱柱本身就是 <a href target=_blank>，点击交给浏览器即可。
+
 
 detailModal?.addEventListener('keydown', function (event) {
   if (event.key !== 'Tab' || !detailModal.classList.contains('is-open')) return;

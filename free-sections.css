@@ -64,674 +64,427 @@
   line-height: 1.7;
 }
 
-/* ============================================================
-   作品 —— 孔明灯
-   ------------------------------------------------------------
-   六盏暖色孔明灯错落飘在夜空：纸面半透明、竹骨纹理、
-   底部悬着火苗，火光从内透出。悬停火旺、点灯展开简介。
-   ============================================================ */
-.lantern-gallery {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding-top: clamp(.5rem, 1.6vh, .9rem);
-}
-.lantern-gallery__hint {
-  margin: 0 0 clamp(.4rem, 1vh, .7rem);
-  color: var(--muted);
-  font-size: .78rem;
-  letter-spacing: .02em;
-}
-.lanterns {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex: 1 1 auto;
-  min-height: 0;
-  position: relative;
-}
-
-.lantern {
-  position: absolute;
-  width: clamp(4.6rem, 9vw, 6.4rem);
-  left: var(--rise);
-  bottom: 8%;
-  transform: rotate(var(--tilt, 0deg));
-  transform-origin: 50% 100%;
-  animation: lantern-bob var(--float, 5s) ease-in-out infinite alternate;
-  will-change: transform;
-}
-.lantern:nth-child(1)  { left: 6%;  bottom: 30%; }
-.lantern:nth-child(2)  { left: 28%; bottom: 12%; }
-.lantern:nth-child(3)  { left: 50%; bottom: 38%; }
-.lantern:nth-child(4)  { left: 72%; bottom: 16%; }
-.lantern:nth-child(5)  { left: 16%; bottom: 55%; }
-.lantern:nth-child(6)  { left: 58%; bottom: 60%; }
-
-@keyframes lantern-bob {
-  from { translate: 0 0; }
-  to   { translate: 0 -14px; }
-}
-
-/* 整盏灯：按钮即灯 */
-.lantern__head {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  font: inherit;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* 灯身：暖色半透明纸面，椭圆顶 + 收腰 */
-.lantern__body {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1.28;
-  border-radius: 50% 50% 46% 46% / 42% 42% 30% 30%;
-  background:
-    radial-gradient(120% 90% at 50% 12%, rgba(255, 240, 248, .94), rgba(250, 214, 238, .85) 46%, rgba(226, 172, 224, .82) 78%, rgba(186, 138, 206, .85));
-  box-shadow:
-    inset 0 -14px 24px rgba(128, 84, 150, .3),
-    inset 0 10px 18px rgba(255, 236, 252, .6),
-    0 0 30px rgba(255, 172, 222, .4),
-    0 0 60px rgba(255, 142, 202, .2);
-  transition: filter .4s, box-shadow .4s;
-}
-/* 顶部开口（竹圈） */
-.lantern__body::before {
-  content: "";
-  position: absolute;
-  top: -3.5%;
-  left: 50%;
-  translate: -50% 0;
-  width: 34%;
-  height: 8%;
-  border-radius: 50%;
-  background: rgba(96, 56, 122, .85);
-  box-shadow: 0 1px 3px rgba(0,0,0,.4);
-}
-/* 底部开口（灯座） */
-.lantern__body::after {
-  content: "";
-  position: absolute;
-  bottom: -4%;
-  left: 50%;
-  translate: -50% 0;
-  width: 30%;
-  height: 8%;
-  border-radius: 50%;
-  background: rgba(96, 56, 122, .9);
-}
-/* 竹骨纹理 */
-.lantern__rib {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background:
-    repeating-linear-gradient(90deg,
-      transparent 0 18%,
-      rgba(164, 108, 186, .24) 18% 19.5%,
-      transparent 19.5% 50%,
-      rgba(164, 108, 186, .22) 50% 51.5%,
-      transparent 51.5% 82%,
-      rgba(164, 108, 186, .24) 82% 83.5%,
-      transparent 83.5%),
-    linear-gradient(180deg, transparent 18%, rgba(164, 108, 186, .18) 18% 20%, transparent 20% 78%, rgba(164, 108, 186, .22) 78% 81%, transparent 81%);
-}
-/* 灯内火光透出 */
-.lantern__glow {
-  position: absolute;
-  top: 26%;
-  left: 50%;
-  width: 46%;
-  aspect-ratio: 1;
-  translate: -50% 0;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 236, 250, .95), rgba(255, 182, 232, .6) 45%, transparent 72%);
-  filter: blur(1px);
-  opacity: .5;
-  transition: opacity .4s, transform .4s;
-  pointer-events: none;
-}
-
-/* 序号：印在灯上 */
-.lantern__no {
-  position: absolute;
-  top: 24%;
-  left: 50%;
-  translate: -50% 0;
-  font-family: Georgia, "Songti SC", serif;
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  color: rgba(118, 66, 150, .9);
-  letter-spacing: .08em;
-  text-shadow: 0 0 10px rgba(255, 218, 250, .6);
-  pointer-events: none;
-  transition: opacity .3s;
-}
-
-/* 名字：默认藏在灯上，悬停浮现 */
-.lantern em {
-  position: absolute;
-  top: 47%;
-  left: 50%;
-  translate: -50% 0;
-  font-style: normal;
-  font-size: clamp(.6rem, 1.1vw, .72rem);
-  font-weight: 700;
-  letter-spacing: .12em;
-  color: rgba(255, 247, 235, .95);
-  text-shadow: 0 1px 6px rgba(104, 60, 128, .7);
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity .3s, transform .3s;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-/* 底部火苗 */
-.lantern__brazier {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 26%;
-  aspect-ratio: 1;
-  translate: -50% 52%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 226, 246, .95), rgba(255, 168, 214, .72) 55%, rgba(255, 128, 190, 0) 75%);
-  filter: blur(1.5px);
-  animation: flame-flicker 1.4s ease-in-out infinite;
-  transition: opacity .3s;
-  opacity: .45;
-}
-@keyframes flame-flicker {
-  0%, 100% { scale: 1; opacity: .42; }
-  50% { scale: 1.18 1.32; opacity: .68; }
-}
-
-/* 悬停：火旺，灯亮，名字浮现 */
-.lantern__head:hover .lantern__glow { opacity: .85; scale: 1.06; }
-.lantern__head:hover .lantern em { opacity: 1; transform: translateY(0); }
-.lantern__head:hover .lantern__body { filter: brightness(1.12) saturate(1.05); box-shadow:
-  inset 0 -14px 24px rgba(128, 84, 150, .3),
-  inset 0 10px 18px rgba(255, 238, 252, .6),
-  0 0 40px rgba(255, 186, 236, .55),
-  0 0 80px rgba(255, 152, 212, .28); }
-.lantern__head:hover .lantern__brazier { opacity: .9; }
-
-/* 展开的简介：一小片"纸条"从灯下展开 */
-.lantern__desc {
-  position: absolute;
-  top: calc(100% + 10%);
-  left: 50%;
-  width: 15rem;
-  max-width: 38vw;
-  translate: -50% 0;
-  margin: 0;
-  padding: .5rem .75rem;
-  border-radius: .45rem;
-  background: color-mix(in srgb, rgba(58, 30, 78, .74) 78%, transparent);
-  color: var(--text, #f4e9e2);
-  font-size: clamp(.72rem, 1.1vw, .82rem);
-  line-height: 1.55;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.6);
-  box-shadow: 0 8px 30px rgba(0,0,0,.35);
-  backdrop-filter: blur(6px);
-  opacity: 0;
-  transform: translateY(-8px) scale(.96);
-  transform-origin: 50% 110%;
-  transition: opacity .35s, transform .35s;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 5;
-}
-.lantern__desc small {
-  display: block;
-  margin-top: .3rem;
-  font-size: .68rem;
-  opacity: .75;
-  letter-spacing: .04em;
-}
-.lantern.is-open .lantern__desc {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  visibility: visible;
-}
-.lantern.is-open .lantern__glow { opacity: .9; scale: 1.04; }
-.lantern.is-open .lantern__body { filter: brightness(1.18) saturate(1.06); }
-.lantern.is-open .lantern em { opacity: 1; transform: translateY(0); }
-
-/* 响应式 */
-@media (max-width: 68rem) {
-  .lantern:nth-child(5)  { bottom: 46%; left: 14%; }
-  .lantern:nth-child(6)  { bottom: 52%; left: 56%; }
-}
-@media (max-width: 48rem) {
-  .lanterns { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; padding-top: .4rem; }
-  .lantern { position: static; bottom: auto; left: auto; width: 100%; animation: none; }
-  .lantern:nth-child(n) { left: auto; bottom: auto; }
-  .lantern__desc { width: 12rem; max-width: 34vw; }
-  .lantern em { opacity: 1; transform: none; top: 30%; font-size: .62rem; }
-  .lantern__no { top: 14%; }
-}
 
 /* ============================================================
-   话题 —— 星空星座
-   ------------------------------------------------------------
-   高星项目连成一片星座：线是细柔光丝，星有明暗与闪烁，
-   悬停亮名，点击弹详情。不画框、不用玻璃卡片。
+   Round 51 — 三页「风与光的故事」
+   作品=星图 · 话题=光谱 · 笔记=夜风铃
+   母题：风与光，贴合粉紫治愈系动漫壁纸。
+   原则：不画边框、不做玻璃卡片；用光晕 / 半透明 / 错落排版
+   表达层次；三页互不重复、不方方正正。
+   仅作用于 .free-scene 内部，不碰其它页面。
    ============================================================ */
-.constellation {
+/* ---------- 作品：星图 ----------
+   亮星=已上线能打开的；暗星=还空着的位置。
+   点线共用同一组百分比坐标，SVG 用 preserveAspectRatio="none"。 */
+.work-sky {
   position: relative;
   flex: 1 1 auto;
   min-height: 0;
-  margin-top: clamp(.4rem, 1.4vh, .8rem);
+  margin-top: clamp(.4rem, 1.4vh, 1rem);
 }
-.constellation__lines {
+.work-sky__lines {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   overflow: visible;
-  pointer-events: none;
 }
-.constellation__path {
+.work-sky__softline {
   fill: none;
-  stroke: rgba(238, 208, 255, .25);
-  stroke-width: 1.5;
-  stroke-dasharray: .045 .032;
+  stroke: rgba(190, 158, 255, .30);
+  stroke-width: 1;
+  stroke-dasharray: 3 8;
   stroke-linecap: round;
-  transition: stroke .5s, filter .5s;
 }
-.constellation.is-lit .constellation__path {
-  stroke: rgba(240, 215, 255, .85);
-  filter: drop-shadow(0 0 6px rgba(242, 190, 255, .55));
+.work-sky__line {
+  fill: none;
+  stroke: rgba(214, 178, 255, .52);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  -webkit-filter: drop-shadow(0 0 4px rgba(203, 169, 255, .6));
+  filter: drop-shadow(0 0 4px rgba(203, 169, 255, .6));
 }
-.constellation-star {
+.work-star {
   position: absolute;
   left: var(--x);
   top: var(--y);
   translate: -50% -50%;
-  width: calc(var(--size) * 4.2);
-  height: calc(var(--size) * 4.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 2;
+}
+a.work-star { text-decoration: none; }
+.work-star__dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
   display: grid;
   place-items: center;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  font: inherit;
-  -webkit-tap-highlight-color: transparent;
+  background: radial-gradient(circle at 34% 28%, #fff 0%, #ecd9ff 38%, #a98cf2 78%, #6f54c9 100%);
+  box-shadow:
+    inset -2px -3px 6px rgba(86, 54, 166, .55),
+    inset 2px 2px 4px rgba(255, 255, 255, .85),
+    0 0 12px rgba(199, 160, 255, .85),
+    0 0 26px rgba(170, 128, 255, .5);
 }
-.constellation-star__dot {
-  position: relative;
-  width: var(--size);
-  height: var(--size);
+.work-star__core {
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #fff 0%, #ffd9f7 55%, #ffb3e6 100%);
+  box-shadow: 0 0 8px #ffd2ef, 0 0 16px rgba(255, 170, 230, .75);
 }
-.constellation-star__dot::before {
-  content: "";
+.work-star__halo {
   position: absolute;
-  inset: 0;
+  inset: -13px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 241, 252, 1) 0 34%, rgba(255, 200, 246, .75) 48%, transparent 72%);
-  box-shadow: 0 0 calc(var(--size) * .9) rgba(255, 224, 250, .8), 0 0 calc(var(--size) * 2.2) rgba(255, 180, 232, .4);
-  animation: star-twinkle 3.2s ease-in-out infinite;
-  transition: filter .3s;
-}
-.constellation-star__dot i {
-  position: absolute;
-  inset: 18%;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffeefc 0 22%, transparent 70%);
-  opacity: .55;
-}
-@keyframes star-twinkle {
-  0%, 100% { opacity: .72; scale: 1; }
-  50% { opacity: 1; scale: 1.14; }
-}
-.constellation-star.is-calm .constellation-star__dot::before {
-  animation-delay: calc(var(--i, 0) * .37s);
-  animation-duration: 4s;
-}
-.constellation-star__name,
-.constellation-star__meta {
-  position: absolute;
-  left: 50%;
-  translate: -50% 0;
-  white-space: nowrap;
+  border: 1px solid rgba(255, 200, 255, .55);
+  animation: work-pulse var(--pulse, 2.6s) ease-in-out infinite;
   pointer-events: none;
-  transition: opacity .3s, transform .3s;
 }
-.constellation-star__name {
-  top: calc(100% - .2rem);
-  max-width: 44vw;
+@keyframes work-pulse {
+  0%, 100% { transform: scale(.84); opacity: .9; }
+  50% { transform: scale(1.24); opacity: .22; }
+}
+.work-star__tag {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  translate: 0 -50%;
+  display: flex;
+  flex-direction: column;
+  gap: .1rem;
+  min-width: max-content;
+  max-width: 12rem;
+  padding: .32rem .65rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, rgba(28, 20, 56, .62) 74%, transparent);
+  color: #f4ecff;
+  font-size: .78rem;
+  letter-spacing: .04em;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: opacity .3s, transform .3s;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.work-star__tag small {
+  display: block;
+  font-size: .6rem;
+  color: rgba(255, 240, 255, .72);
+  letter-spacing: .02em;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: clamp(.68rem, 1.2vw, .8rem);
-  font-weight: 700;
-  letter-spacing: .05em;
-  color: rgba(255, 245, 250, .94);
-  text-shadow: 0 0 8px rgba(255, 200, 245, .9), 0 0 18px rgba(255, 175, 225, .45);
-  opacity: 0;
-  transform: translateY(4px);
 }
-.constellation-star__meta {
-  top: calc(100% + .85rem);
-  font-size: .62rem;
-  color: rgba(255, 225, 246, .8);
-  text-shadow: 0 0 6px rgba(255, 200, 245, .75);
-  opacity: 0;
-  transform: translateY(4px);
-}
-.constellation-star:hover .constellation-star__name,
-.constellation-star:hover .constellation-star__meta,
-.constellation-star:focus-visible .constellation-star__name,
-.constellation-star:focus-visible .constellation-star__meta {
+a.work-star:hover .work-star__tag,
+a.work-star:focus-visible .work-star__tag,
+.work-star--live .work-star__tag {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }
-.constellation-star:hover .constellation-star__dot::before,
-.constellation-star:focus-visible .constellation-star__dot::before {
-  filter: brightness(1.35) saturate(1.2);
+.work-star--ghost .work-star__dot {
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.8) 0%, rgba(178,156,232,.4) 60%, rgba(120,105,170,.28) 100%);
+  box-shadow: 0 0 6px rgba(170, 145, 230, .4), inset 1px 1px 2px rgba(255,255,255,.5);
+  transition: box-shadow .25s;
 }
-.constellation__updated {
+.work-star--ghost .work-star__tag {
+  font-size: .7rem;
+}
+.work-star--ghost:hover .work-star__dot {
+  box-shadow: 0 0 14px rgba(196, 170, 252, .8), inset 1px 1px 2px rgba(255,255,255,.65);
+}
+.work-star--ghost:hover .work-star__tag {
+  opacity: .95;
+  transform: translateX(0);
+}
+.work-sky__legend {
   position: absolute;
-  top: 0;
+  right: clamp(.4rem, 2vw, 1.2rem);
+  bottom: .15rem;
+  margin: 0;
+  font-size: .62rem;
+  letter-spacing: .08em;
+  color: rgba(255, 235, 255, .5);
+  text-align: right;
+  pointer-events: none;
+}
+@media (max-width: 34rem) {
+  .work-star__tag { left: 50%; top: calc(100% + 10px); translate: -50% 0; }
+  .work-sky__legend { display: none; }
+}
+/* ---------- 话题：高星光谱 ----------
+   光柱高度按星数对数缩放，柱尖星点发光，项目名与星数常显。 */
+.spectrum {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: clamp(.5rem, 1.6vh, 1.1rem);
+}
+.spectrum__updated {
+  position: absolute;
   right: 0;
+  top: -.1rem;
   font-size: .64rem;
   letter-spacing: .06em;
-  color: rgba(255, 232, 248, .7);
-  text-shadow: 0 1px 4px rgba(0,0,0,.4);
-  pointer-events: none;
+  color: rgba(255, 235, 255, .55);
 }
-.constellation__legend {
+.spectrum__field {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(.6rem, 2vw, 1.8rem);
+  position: relative;
+}
+.spectrum-bar {
+  position: relative;
+  align-self: stretch;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+.spectrum-bar__tip {
   position: absolute;
-  bottom: 2%;
+  left: 50%;
+  bottom: calc(var(--h) + .5rem);
+  translate: -50% 0;
+  font-size: .66rem;
+  letter-spacing: .04em;
+  color: #ffe9fd;
+  font-weight: 700;
+  white-space: nowrap;
+  text-shadow: 0 0 6px rgba(255, 200, 250, .8);
+  opacity: .92;
+  transition: opacity .2s;
+}
+.spectrum-bar__pill {
+  display: block;
+  width: clamp(1.4rem, 3.2vw, 2.6rem);
+  height: var(--h);
+  border-radius: 999px 999px 5px 5px;
+  background: linear-gradient(180deg, #ffe0f6 0%, #c9a6ff 42%, rgba(143, 111, 232, .35) 100%);
+  box-shadow: 0 0 16px rgba(176, 138, 255, .5);
+  position: relative;
+  transform-origin: bottom;
+  transition: filter .25s, box-shadow .25s, height .4s cubic-bezier(.22, .9, .3, 1.1);
+}
+.spectrum-bar__pill::before {
+  content: "";
+  position: absolute;
+  top: -5px;
   left: 50%;
   translate: -50% 0;
-  max-width: 90%;
-  font-size: .62rem;
-  letter-spacing: .05em;
-  color: rgba(255, 236, 250, .55);
-  text-shadow: 0 1px 4px rgba(0,0,0,.4);
-  text-align: center;
-  pointer-events: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #fff, #ffd9f7 55%, #ffaee4 100%);
+  box-shadow: 0 0 9px rgba(255, 190, 240, .95);
 }
-.constellation__foot {
-  margin: .3rem 0 0;
-  text-align: center;
+.spectrum-bar:hover .spectrum-bar__pill {
+  filter: brightness(1.3);
+  box-shadow: 0 0 24px rgba(210, 170, 255, .95);
+}
+.spectrum-bar:hover .spectrum-bar__tip { opacity: 1; }
+.spectrum-bar__name {
+  display: block;
+  max-width: 100%;
+  margin-top: .55rem;
+  padding: .18rem .4rem;
+  border-radius: 999px;
+  background: rgba(30, 21, 58, .35);
+  color: rgba(255, 244, 255, .8);
+  font-size: .6rem;
+  font-style: normal;
+  letter-spacing: .03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background .2s, color .2s;
+}
+.spectrum-bar:hover .spectrum-bar__name {
+  background: rgba(46, 32, 88, .6);
+  color: #fff;
+}
+.spectrum__foot {
+  margin: .55rem 0 0;
   font-size: .64rem;
   letter-spacing: .08em;
-  color: rgba(255, 232, 248, .55);
-  text-shadow: 0 1px 4px rgba(0,0,0,.4);
+  color: rgba(255, 235, 255, .42);
+  text-align: right;
+  border-top: 1px solid color-mix(in srgb, rgba(210, 180, 255, .22) 60%, transparent);
+  padding-top: .4rem;
 }
 .trending-loading {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  color: rgba(255, 236, 250, .8);
-  font-size: .78rem;
-  letter-spacing: .12em;
-  text-shadow: 0 1px 4px rgba(0,0,0,.4);
+  color: rgba(255, 240, 255, .7);
+  font-size: .8rem;
+  letter-spacing: .1em;
 }
 .trending-loading::after {
   content: "";
-  position: absolute;
-  top: calc(50% + 1.6rem);
-  left: 50%;
-  width: 1.1rem;
-  height: 1.1rem;
-  border: 1px solid rgba(255, 238, 252, .4);
-  border-top-color: rgba(255, 238, 252, .95);
+  width: 1.6rem;
+  height: 1.6rem;
   border-radius: 50%;
-  animation: trending-spin 1s linear infinite;
+  border: 2px solid rgba(255, 255, 255, .15);
+  border-top-color: #c9a6ff;
+  animation: trend-spin 1s linear infinite;
 }
-@keyframes trending-spin { to { rotate: 360deg; } }
-/* ============================================================
-   笔记 —— 漂流瓶
-   ------------------------------------------------------------
-   玻璃瓶浮在夜海：瓶身半透明描光、塞子轻轻浮着，
-   点开时木塞飞起、纸卷展开读信。不画框、不用玻璃卡片。
-   ============================================================ */
-.bottle-garden {
+@keyframes trend-spin { to { transform: rotate(360deg); } }
+/* ---------- 笔记：夜风铃 ----------
+   一串纸签挂在线绳上，各自的摆幅与节奏不同，风来轻摆。 */
+.windchime {
+  position: relative;
   flex: 1 1 auto;
   min-height: 0;
-  position: relative;
-  margin-top: clamp(.4rem, 1.4vh, .8rem);
-  overflow: hidden;
+  margin-top: clamp(.5rem, 1.6vh, 1.1rem);
 }
-/* 夜海波光 */
-.bottle-garden::before {
-  content: "";
-  position: absolute;
-  left: -6%;
-  right: -6%;
-  bottom: 2%;
-  height: 26%;
-  border-radius: 50% 50% 0 0;
-  background:
-    radial-gradient(60% 130% at 20% 100%, rgba(255, 205, 230, .14), transparent 70%),
-    radial-gradient(50% 120% at 70% 100%, rgba(255, 225, 245, .12), transparent 70%);
-  filter: blur(1px);
-  pointer-events: none;
-}
-.bottles {
-  position: absolute;
-  inset: 0;
+.windchime__rack {
   list-style: none;
-  margin: 0;
+  margin: 1.5rem 0 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.2rem, 4vw, 3.4rem);
+  justify-content: flex-start;
+  position: relative;
 }
-.bottle {
+.windchime-item {
+  position: relative;
+  list-style: none;
+  transform-origin: top center;
+}
+.windchime-item:nth-child(1) { --rot: 2.2deg; }
+.windchime-item:nth-child(2) { --rot: -1.6deg; }
+.windchime-item:nth-child(3) { --rot: 1.4deg; }
+.windchime-item:nth-child(4) { --rot: -2.4deg; }
+.windchime-item:nth-child(5) { --rot: 1.8deg; }
+.windchime__string {
   position: absolute;
-  bottom: 4%;
-  left: var(--left);
-  width: clamp(6.4rem, 11vw, 8.6rem);
-  translate: -50% 0;
-  transform-origin: 50% 100%;
-  animation: bottle-bob var(--bob, 5s) ease-in-out infinite alternate;
-  will-change: transform;
+  top: -1.3rem;
+  left: 50%;
+  width: 1px;
+  height: 1.3rem;
+  background: linear-gradient(180deg, rgba(214, 178, 255, .85), rgba(170, 130, 230, .1));
 }
-@keyframes bottle-bob {
-  from { translate: -50% 0; }
-  to   { translate: -50% -10px; }
-}
-.bottle__head {
+.windchime__tag {
   position: relative;
   display: block;
-  width: 100%;
-  padding: 0;
+  width: clamp(8rem, 16vw, 10.6rem);
+  padding: .8rem .9rem .6rem;
   border: 0;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-  font: inherit;
-  -webkit-tap-highlight-color: transparent;
-}
-/* 瓶颈 */
-.bottle__neck {
-  position: absolute;
-  bottom: 44%;
-  left: 50%;
-  translate: -50% 0;
-  width: 24%;
-  height: 16%;
-  background: linear-gradient(90deg, rgba(220, 195, 255, .18), rgba(238, 225, 255, .36) 45%, rgba(210, 190, 250, .16));
-  border-left: 1px solid rgba(255, 255, 255, .14);
-  border-right: 1px solid rgba(255, 255, 255, .14);
-}
-/* 瓶身 */
-.bottle__glass {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  translate: -50% 0;
-  width: 100%;
-  aspect-ratio: 1 / 1.32;
-  border-radius: 8% 8% 30% 30% / 10% 10% 38% 38%;
+  border-radius: .55rem .4rem .6rem .6rem;
   background:
-    radial-gradient(120% 90% at 50% 12%, rgba(255, 255, 255, .14), rgba(255, 255, 255, .04) 55%, rgba(215, 190, 250, .12));
-  border: 1px solid rgba(242, 232, 255, .32);
-  box-shadow:
-    inset 0 -10px 20px rgba(196, 170, 240, .2),
-    inset 0 6px 12px rgba(255, 255, 255, .12),
-    0 0 20px rgba(222, 196, 255, .22),
-    0 8px 24px rgba(60, 40, 90, .18);
-  backdrop-filter: blur(2px);
-  transition: background .4s, box-shadow .4s;
+    linear-gradient(160deg, rgba(255,255,255,.18), rgba(204,172,255,.1)),
+    color-mix(in srgb, rgba(32, 22, 62, .52) 74%, transparent);
+  color: #f4ecff;
+  text-align: left;
+  cursor: pointer;
+  transform: rotate(var(--rot, 0deg));
+  transform-origin: top center;
+  animation: windchime-sway var(--hang, 4.6s) ease-in-out infinite;
+  transition: filter .25s, background .25s;
+  box-shadow: 0 6px 18px rgba(10, 6, 30, .3), inset 0 1px 0 rgba(255,255,255,.22);
 }
-/* 玻璃高光斜条 */
-.bottle__shine {
-  position: absolute;
-  top: 8%;
-  left: 14%;
-  width: 12%;
-  height: 62%;
-  border-radius: 40%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0) 85%);
-  transform: rotate(16deg);
-  pointer-events: none;
+@keyframes windchime-sway {
+  0%, 100% { transform: rotate(var(--rot, 0deg)); }
+  50% { transform: rotate(calc(var(--rot, 0deg) * -1)); }
 }
-/* 瓶内纸卷 */
-.bottle__scroll {
-  position: absolute;
-  top: 34%;
-  left: 50%;
-  translate: -50% 0;
-  width: 30%;
-  height: 40%;
-  border-radius: 4px / 60%;
-  background: linear-gradient(180deg, rgba(255, 238, 246, .34), rgba(255, 226, 240, .18));
-  box-shadow: 0 2px 8px rgba(40, 20, 60, .25);
-  pointer-events: none;
+.windchime__tag:hover {
+  filter: brightness(1.18);
+  animation-duration: calc(var(--hang, 4.6s) * .7);
 }
-/* 木塞 */
-.bottle__cork {
-  position: absolute;
-  bottom: 55%;
-  left: 50%;
-  translate: -50% 0;
-  width: 26%;
-  height: 9%;
-  border-radius: 3px;
-  background: linear-gradient(180deg, rgba(240, 205, 180, .92), rgba(200, 160, 140, .9));
-  box-shadow: 0 2px 6px rgba(60, 30, 40, .3);
-  transition: transform .45s cubic-bezier(.3, 1.4, .5, 1), opacity .3s;
-  pointer-events: none;
-}
-/* 标签：时间 + 标题，默认微微可见 */
-.bottle__tag {
-  position: absolute;
-  bottom: 112%;
-  left: 50%;
-  translate: -50% 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .15rem;
-  font-weight: 600;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: .8;
-  transition: opacity .3s;
-}
-.bottle__tag time {
-  font-size: .58rem;
+.windchime__tag time {
+  display: block;
+  font-size: .6rem;
   letter-spacing: .14em;
-  color: rgba(255, 226, 245, .66);
-  text-shadow: 0 1px 4px rgba(30, 10, 40, .5);
+  color: rgba(255, 225, 255, .65);
+  margin-bottom: .35rem;
 }
-.bottle__tag i {
+.windchime__tag i {
+  display: block;
   font-style: normal;
-  font-size: clamp(.66rem, 1.2vw, .78rem);
-  letter-spacing: .06em;
-  color: rgba(255, 248, 250, .94);
-  text-shadow: 0 0 8px rgba(255, 198, 245, .6), 0 1px 4px rgba(30, 10, 40, .6);
+  font-weight: 700;
+  font-size: .84rem;
+  line-height: 1.45;
+  letter-spacing: .03em;
 }
-/* 消息：从瓶口溢出的信纸 */
-.bottle__msg {
+.windchime__tag::after {
+  content: "";
+  display: block;
+  width: .55rem;
+  height: .55rem;
+  margin: .5rem auto -.85rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #ffd9f7, #c9a6ff 70%);
+  box-shadow: 0 0 6px rgba(255, 190, 240, .7);
+}
+.windchime__msg {
   position: absolute;
-  bottom: 118%;
   left: 50%;
+  top: calc(100% + 1rem);
   translate: -50% 0;
-  width: 16rem;
-  max-width: 42vw;
+  width: min(19rem, 72vw);
   margin: 0;
-  padding: .55rem .8rem;
-  border-radius: .4rem;
-  background: color-mix(in srgb, rgba(58, 30, 82, .68) 72%, transparent);
-  color: var(--text, #f6ece6);
-  font-size: clamp(.7rem, 1.1vw, .8rem);
-  line-height: 1.6;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(20, 8, 26, .65);
-  box-shadow: 0 10px 30px rgba(20, 8, 30, .35);
-  backdrop-filter: blur(6px);
+  padding: .85rem 1.05rem;
+  border-radius: .7rem 1.15rem .7rem 1.15rem;
+  background: color-mix(in srgb, rgba(28, 19, 56, .84) 78%, transparent);
+  color: #f0e8ff;
+  font-size: .8rem;
+  line-height: 1.7;
+  letter-spacing: .02em;
   opacity: 0;
-  transform: translateY(8px) scale(.97);
-  transform-origin: 50% 0;
-  transition: opacity .35s, transform .35s;
-  visibility: hidden;
+  transform: translate(-50%, -6px) scale(.98);
+  transition: opacity .3s, transform .3s;
   pointer-events: none;
   z-index: 5;
+  box-shadow: 0 10px 26px rgba(8, 4, 26, .36), inset 0 1px 0 rgba(255,255,255,.14);
 }
-.bottle__msg small {
+.windchime__msg::before {
+  content: "";
+  position: absolute;
+  top: -.32rem;
+  left: 50%;
+  translate: -50% 0;
+  border: .32rem solid transparent;
+  border-bottom-color: color-mix(in srgb, rgba(28, 19, 56, .84) 78%, transparent);
+}
+.windchime__msg small {
   display: block;
-  margin-bottom: .25rem;
+  margin-bottom: .3rem;
   font-size: .62rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(255, 210, 235, .8);
+  letter-spacing: .18em;
+  color: #e0c6ff;
 }
-.bottle__head:hover .bottle__glass {
+.windchime-item.is-open .windchime__tag {
   background:
-    radial-gradient(120% 90% at 50% 12%, rgba(255, 255, 255, .2), rgba(255, 255, 255, .06) 55%, rgba(222, 198, 255, .16));
-  box-shadow:
-    inset 0 -10px 20px rgba(196, 170, 240, .28),
-    inset 0 6px 12px rgba(255, 255, 255, .18),
-    0 0 30px rgba(228, 202, 255, .32),
-    0 8px 24px rgba(60, 40, 90, .2);
+    linear-gradient(160deg, rgba(255,255,255,.26), rgba(214,178,255,.14)),
+    color-mix(in srgb, rgba(44, 30, 84, .6) 76%, transparent);
 }
-.bottle__head:hover .bottle__cork { transform: translateY(-10%); }
-.bottle.is-open .bottle__cork {
-  transform: translateY(-160%) rotate(16deg);
-  opacity: 0;
-}
-.bottle.is-open .bottle__msg {
+.windchime-item.is-open .windchime__msg {
   opacity: 1;
-  transform: translateY(0) scale(1);
-  visibility: visible;
+  transform: translate(-50%, 0) scale(1);
+  pointer-events: auto;
 }
-.bottle.is-open .bottle__tag { opacity: 1; }
-
-/* 响应式 */
-@media (max-width: 68rem) {
-  .constellation-star__name { max-width: 34vw; }
-  .bottle { width: clamp(5.6rem, 12vw, 7.6rem); }
-}
-@media (max-width: 48rem) {
-  .constellation__updated { position: static; text-align: center; margin-bottom: .3rem; }
-  .constellation-star__name { font-size: .66rem; }
-  .bottle-garden { overflow: visible; }
-  .bottle { bottom: 6%; width: clamp(5rem, 14vw, 6.6rem); }
-  .bottle:nth-child(4), .bottle:nth-child(5) { display: none; }
-  .bottle__msg { width: 13rem; max-width: 38vw; }
-}
-@media (max-width: 30rem) {
-  .bottle:nth-child(3) { display: none; }
+@media (max-width: 34rem) {
+  .windchime__rack { justify-content: center; }
+  .windchime__msg { width: min(16rem, 78vw); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lantern, .bottle, .constellation-star__dot::before, .trending-loading::after { animation: none; }
+  .work-star__halo, .trending-loading::after, .windchime__tag { animation: none !important; }
 }
