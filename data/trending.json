@@ -1,273 +1,125 @@
 {
-  "fetched_at": "2026-09-06T05:29:40Z",
+  "fetched_at": "2026-09-07T05:41:08Z",
   "repos": [
     {
-      "full_name": "sindresorhus/awesome",
-      "name": "awesome",
-      "owner": "sindresorhus",
-      "description": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are temporarily disabled until I have a chance to catch up with the existing ones]",
-      "stars": 503381,
-      "language": "N/A",
-      "url": "https://github.com/sindresorhus/awesome",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "lists"
-      ]
-    },
-    {
-      "full_name": "public-apis/public-apis",
-      "name": "public-apis",
-      "owner": "public-apis",
-      "description": "A collective list of free APIs",
-      "stars": 476004,
+      "full_name": "sapientinc/PRAXIST",
+      "name": "PRAXIST",
+      "owner": "sapientinc",
+      "description": "Autonomous research system for measurable, computer-executable research.",
+      "stars": 6480,
       "language": "Python",
-      "url": "https://github.com/public-apis/public-apis",
-      "topics": [
-        "api",
-        "apis",
-        "dataset"
-      ]
-    },
-    {
-      "full_name": "freeCodeCamp/freeCodeCamp",
-      "name": "freeCodeCamp",
-      "owner": "freeCodeCamp",
-      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
-      "stars": 455073,
-      "language": "TypeScript",
-      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
-      "topics": [
-        "careers",
-        "certification",
-        "community"
-      ]
-    },
-    {
-      "full_name": "EbookFoundation/free-programming-books",
-      "name": "free-programming-books",
-      "owner": "EbookFoundation",
-      "description": ":books: Freely available programming books",
-      "stars": 396039,
-      "language": "Python",
-      "url": "https://github.com/EbookFoundation/free-programming-books",
-      "topics": [
-        "books",
-        "education",
-        "hacktoberfest"
-      ]
-    },
-    {
-      "full_name": "openclaw/openclaw",
-      "name": "openclaw",
-      "owner": "openclaw",
-      "description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞 ",
-      "stars": 388977,
-      "language": "TypeScript",
-      "url": "https://github.com/openclaw/openclaw",
-      "topics": [
-        "ai",
-        "assistant",
-        "crustacean"
-      ]
-    },
-    {
-      "full_name": "nilbuild/developer-roadmap",
-      "name": "developer-roadmap",
-      "owner": "nilbuild",
-      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
-      "stars": 366381,
-      "language": "TypeScript",
-      "url": "https://github.com/nilbuild/developer-roadmap",
-      "topics": [
-        "angular-roadmap",
-        "backend-roadmap",
-        "blockchain-roadmap"
-      ]
-    },
-    {
-      "full_name": "vinta/awesome-python",
-      "name": "awesome-python",
-      "owner": "vinta",
-      "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
-      "stars": 318573,
-      "language": "Python",
-      "url": "https://github.com/vinta/awesome-python",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "python"
-      ]
-    },
-    {
-      "full_name": "awesome-selfhosted/awesome-selfhosted",
-      "name": "awesome-selfhosted",
-      "owner": "awesome-selfhosted",
-      "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
-      "stars": 317399,
-      "language": "N/A",
-      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "cloud"
-      ]
-    },
-    {
-      "full_name": "practical-tutorials/project-based-learning",
-      "name": "project-based-learning",
-      "owner": "practical-tutorials",
-      "description": "Curated list of project-based tutorials",
-      "stars": 282240,
-      "language": "Python",
-      "url": "https://github.com/practical-tutorials/project-based-learning",
-      "topics": [
-        "beginner-project",
-        "cpp",
-        "golang"
-      ]
-    },
-    {
-      "full_name": "obra/superpowers",
-      "name": "superpowers",
-      "owner": "obra",
-      "description": "An agentic skills framework & software development methodology that works.",
-      "stars": 282150,
-      "language": "Shell",
-      "url": "https://github.com/obra/superpowers",
-      "topics": [
-        "ai",
-        "brainstorming",
-        "coding"
-      ]
-    },
-    {
-      "full_name": "mattpocock/skills",
-      "name": "skills",
-      "owner": "mattpocock",
-      "description": "Skills for Real Engineers. Straight from my .agents directory.",
-      "stars": 252987,
-      "language": "Shell",
-      "url": "https://github.com/mattpocock/skills",
+      "url": "https://github.com/sapientinc/PRAXIST",
       "topics": []
     },
     {
-      "full_name": "affaan-m/ECC",
-      "name": "ECC",
-      "owner": "affaan-m",
-      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 250136,
-      "language": "JavaScript",
-      "url": "https://github.com/affaan-m/ECC",
+      "full_name": "lnkiai/m3e-canvas",
+      "name": "m3e-canvas",
+      "owner": "lnkiai",
+      "description": "Sketch Material 3 Expressive screens in the browser and turn them into vibe-coding prompts.",
+      "stars": 4383,
+      "language": "TypeScript",
+      "url": "https://github.com/lnkiai/m3e-canvas",
+      "topics": [
+        "design-tool",
+        "material-3-expressive",
+        "material-design"
+      ]
+    },
+    {
+      "full_name": "crmne/fastpotify",
+      "name": "fastpotify",
+      "owner": "crmne",
+      "description": "Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.",
+      "stars": 3392,
+      "language": "Rust",
+      "url": "https://github.com/crmne/fastpotify",
+      "topics": [
+        "audio",
+        "cross-platform",
+        "desktop-app"
+      ]
+    },
+    {
+      "full_name": "XiaoDuoYa/codex-with-chatgpt",
+      "name": "codex-with-chatgpt",
+      "owner": "XiaoDuoYa",
+      "description": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
+      "stars": 2569,
+      "language": "TypeScript",
+      "url": "https://github.com/XiaoDuoYa/codex-with-chatgpt",
       "topics": [
         "ai-agents",
-        "anthropic",
-        "claude"
+        "chatgpt",
+        "codex"
       ]
     },
     {
-      "full_name": "react/react",
-      "name": "react",
-      "owner": "react",
-      "description": "The library for web and native user interfaces.",
-      "stars": 249119,
+      "full_name": "rakanki911/DLSS5-Swapper",
+      "name": "DLSS5-Swapper",
+      "owner": "rakanki911",
+      "description": "DLSS 5 Swapper is a powerful, easy-to-use tool for installing, managing, and restoring DLSS 5 across games and supported emulators. It features automatic game detection, optional drive scanning, DLSS5-Feeder for compatible titles without native DLSS, emulator support, and compatibility with DirectX 9/10/11/12, Vulkan, and OpenGL.",
+      "stars": 2394,
       "language": "JavaScript",
-      "url": "https://github.com/react/react",
-      "topics": [
-        "declarative",
-        "frontend",
-        "javascript"
-      ]
-    },
-    {
-      "full_name": "torvalds/linux",
-      "name": "linux",
-      "owner": "torvalds",
-      "description": "Linux kernel source tree",
-      "stars": 246777,
-      "language": "C",
-      "url": "https://github.com/torvalds/linux",
+      "url": "https://github.com/rakanki911/DLSS5-Swapper",
       "topics": []
     },
     {
-      "full_name": "NousResearch/hermes-agent",
-      "name": "hermes-agent",
-      "owner": "NousResearch",
-      "description": "The agent that grows with you",
-      "stars": 242095,
+      "full_name": "Nanako0129/sepia",
+      "name": "sepia",
+      "owner": "Nanako0129",
+      "description": "De-AI writing skill for any Agent Skills-compatible agent (77+ via the Skills CLI), with native plugins for Claude Code, Codex, Grok Build, and Antigravity. Narrative-architecture repair for fiction, venue-matched rules for professional prose. Based on StoryScope (arXiv:2604.03136).",
+      "stars": 2354,
       "language": "Python",
-      "url": "https://github.com/NousResearch/hermes-agent",
+      "url": "https://github.com/Nanako0129/sepia",
       "topics": [
-        "ai",
+        "agent-skills",
+        "ai-writing",
+        "antigravity"
+      ]
+    },
+    {
+      "full_name": "anthropics/commerce-agents",
+      "name": "commerce-agents",
+      "owner": "anthropics",
+      "description": "Reference blueprint for building shopping and merchant agents with Claude. Examples in retail, commerce, telecom, and entertainment included.",
+      "stars": 2262,
+      "language": "Python",
+      "url": "https://github.com/anthropics/commerce-agents",
+      "topics": []
+    },
+    {
+      "full_name": "ashemag/human-atlas",
+      "name": "human-atlas",
+      "owner": "ashemag",
+      "description": "Open-source 3D anatomy explorer: 2,234 selectable BodyParts3D meshes, system layers, search, and exploded views.",
+      "stars": 1493,
+      "language": "TypeScript",
+      "url": "https://github.com/ashemag/human-atlas",
+      "topics": []
+    },
+    {
+      "full_name": "Player-YN/PawWork_ZhuaZhua",
+      "name": "PawWork_ZhuaZhua",
+      "owner": "Player-YN",
+      "description": "Paw Work - selection-first web agent for Chrome: select on the live page, describe the outcome, take away an editable office file. BYOK, sandboxed, no server.",
+      "stars": 1477,
+      "language": "JavaScript",
+      "url": "https://github.com/Player-YN/PawWork_ZhuaZhua",
+      "topics": [
         "ai-agent",
-        "ai-agents"
+        "browser-agent",
+        "byok"
       ]
     },
     {
-      "full_name": "TheAlgorithms/Python",
-      "name": "Python",
-      "owner": "TheAlgorithms",
-      "description": "All Algorithms implemented in Python",
-      "stars": 224293,
-      "language": "Python",
-      "url": "https://github.com/TheAlgorithms/Python",
-      "topics": [
-        "algorithm",
-        "algorithm-competitions",
-        "algorithms-implemented"
-      ]
-    },
-    {
-      "full_name": "deepseek-ai/deepseek-harness",
-      "name": "deepseek-harness",
-      "owner": "deepseek-ai",
-      "description": "DeepSeek Harness: Everything is a Plugin.",
-      "stars": 213303,
+      "full_name": "wide-trace/open-higgsfield",
+      "name": "open-higgsfield",
+      "owner": "wide-trace",
+      "description": "A studio for image and video generation — one prompt bar, each model’s own settings, and every finished run in one gallery.",
+      "stars": 1398,
       "language": "TypeScript",
-      "url": "https://github.com/deepseek-ai/deepseek-harness",
-      "topics": [
-        "ai-agents",
-        "cordis",
-        "dsh"
-      ]
-    },
-    {
-      "full_name": "anomalyco/opencode",
-      "name": "opencode",
-      "owner": "anomalyco",
-      "description": "The open source coding agent.",
-      "stars": 204768,
-      "language": "TypeScript",
-      "url": "https://github.com/anomalyco/opencode",
+      "url": "https://github.com/wide-trace/open-higgsfield",
       "topics": []
-    },
-    {
-      "full_name": "n8n-io/n8n",
-      "name": "n8n",
-      "owner": "n8n-io",
-      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 203494,
-      "language": "TypeScript",
-      "url": "https://github.com/n8n-io/n8n",
-      "topics": [
-        "ai",
-        "apis",
-        "automation"
-      ]
-    },
-    {
-      "full_name": "tensorflow/tensorflow",
-      "name": "tensorflow",
-      "owner": "tensorflow",
-      "description": "An Open Source Machine Learning Framework for Everyone",
-      "stars": 198868,
-      "language": "C++",
-      "url": "https://github.com/tensorflow/tensorflow",
-      "topics": [
-        "deep-learning",
-        "deep-neural-networks",
-        "distributed"
-      ]
     }
   ]
 }
