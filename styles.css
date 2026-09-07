@@ -5217,13 +5217,12 @@ button.mini-avatar:hover .mini-avatar__face i:last-child { transform: scaleY(1.2
    / body::after 隐藏，避免"进页面时先闪一下旧壁纸"，等视频
    缓冲好再显示。背景用视频 + 轻微渐晕即可。
    ============================================================ */
-.wallpaper-layer,
-body::before,
-body::after {
-  display: none !important;
-  content: none !important;
+/* 视频未就绪时的静态壁纸兜底：先显示每页 JPG，
+   视频 is-ready 后淡入盖过（视频 z-index 0 高于静态层 -1）。 */
+.wallpaper-layer {
+  display: block !important;
+  content: normal;
 }
-
 /* 视频就绪后淡入 */
 .bg-video { opacity: 0; transition: opacity 1s ease; }
 .bg-video.is-ready { opacity: 1; }
