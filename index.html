@@ -1,1 +1,303 @@
-<!doctype html><html lang="zh-CN" data-theme="dark"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="description" content="Samsara，一个大学生关于 AI、小程序、小游戏和网页智能体的个人实验站。">  <title>Samsara / AI 实验与个人作品</title>  <link rel="icon" href="data:,">  <link rel="preconnect" href="https://fonts.googleapis.com">  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <!-- 字体改为异步加载：外网字体慢时不再阻塞首屏渲染 -->  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia&display=swap" media="print" onload="this.media='all'">  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia&display=swap"></noscript>  <link rel="stylesheet" href="styles.css?v=20260907-02">  <link rel="stylesheet" href="wallpapers.css"><!-- 壁纸配置：换壁纸只改这个文件 -->  <link rel="stylesheet" href="about-theme.css">  <link rel="stylesheet" href="theme-overrides.css"></head><body>  <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/wallpapers/bg-video-v2.mp4" type="video/mp4"></video>  <div id="bg-video-scrim" aria-hidden="true"></div>  <a class="skip-link" href="#view-root">跳到主要内容</a>  <header class="site-header">    <button class="brand route-link" type="button" data-route="home" aria-label="返回 Samsara 首页">      <span class="brand__mark">S</span>      <span class="brand__text">Samsara<small>AI 实验站 / 2026</small></span>    </button>    <nav class="global-nav" aria-label="主导航">      <button class="route-link" type="button" data-route="home">首页</button>      <button class="route-link" type="button" data-route="systems">作品</button>      <button class="route-link" type="button" data-route="research">话题</button>      <button class="route-link" type="button" data-route="notes">笔记</button>      <button class="route-link" type="button" data-route="about">关于</button>    </nav>    <div class="header-tools"></div>  </header>  <nav class="side-index" aria-label="页面索引">    <button class="side-index__link route-link" type="button" data-route="home"><span>首页</span></button>    <button class="side-index__link route-link" type="button" data-route="systems"><span>作品</span></button>    <button class="side-index__link route-link" type="button" data-route="research"><span>话题</span></button>    <button class="side-index__link route-link" type="button" data-route="notes"><span>笔记</span></button>    <button class="side-index__link route-link" type="button" data-route="about"><span>关于</span></button>  </nav>  <main id="view-root">    <section id="home" class="view view-home is-active" data-view="home" aria-labelledby="home-title">      <canvas id="home-atmosphere" aria-hidden="true"></canvas>      <div class="home-grid">        <div class="home-hero">          <p class="eyebrow">大学生 · AI 新手 · 喜欢把想法做出来</p>          <h1 id="home-title" tabindex="-1">Samsara</h1>        </div>        <div class="home-right">          <p class="hero-lead">还在学习，也不怕折腾。<br>这里记录我做过的 <strong>小程序、小游戏、网页和智能体实验。</strong></p>          <div class="hero-meta">            <span>网页智能体</span><span>生成式界面</span><span>有趣的小产品</span>          </div>          <p class="home-status">当前重点 <strong>AI 实验站</strong> ・ 最近更新 <strong>2026-09</strong></p>        </div>      </div>    </section>    <section id="systems" class="view view-systems" data-view="systems" aria-labelledby="systems-title" aria-hidden="true">      <canvas id="systems-atmosphere" aria-hidden="true"></canvas>      <div class="page-frame systems-frame">        <header class="frame-heading">          <div class="frame-heading__body">            <button class="back-link" type="button" data-route="home">返回首页</button>            <p>01 / 作品与实验</p>            <h1 id="systems-title" tabindex="-1">先做出来，<br>再慢慢变好。</h1>          </div>          <p class="frame-heading__note">几个做到一半的小实验，按在做的时间排。</p>        </header>        <p class="frame-intro">这些实验大多算不上“作品”，更像我在量自己的水平——能做多少、卡在哪、还差多远。做的时候最在意的，是它能不能先跑起来，再慢慢变好。</p>        <ol class="index-list systems-list" aria-label="作品与实验索引">          <li>            <button type="button" class="index-card">              <h2>你画我猜</h2>              <p>多人限时猜词，重点在状态同步和计分。</p>              <small>状态同步 · 计分流程</small>              <i class="work-arrow" aria-hidden="true">↗</i>            </button>          </li>          <li>            <button type="button" class="index-card">              <h2>横版闯关</h2>              <p>用 Canvas 练重力、碰撞和跳跃手感。</p>              <small>HTML Canvas · 碰撞检测</small>              <i class="work-arrow" aria-hidden="true">↗</i>            </button>          </li>          <li>            <button type="button" class="index-card">              <h2>塔罗牌占卜</h2>              <p>抽牌、停顿、翻面，凑成一次有节奏的小互动。</p>              <small>随机逻辑 · 翻牌动画</small>              <i class="work-arrow" aria-hidden="true">↗</i>            </button>          </li>          <li>            <button type="button" class="index-card">              <h2>深夜电台</h2>              <p>把歌曲、封面和播放状态放进一个安静页面。</p>              <small>音频控制 · 播放列表</small>              <i class="work-arrow" aria-hidden="true">↗</i>            </button>          </li>          <li>            <button type="button" class="index-card">              <h2>任务小助手</h2>              <p>把“查资料 → 整理 → 输出”拆成可控步骤。</p>              <small>工具调用 · 状态记录</small>              <i class="work-arrow" aria-hidden="true">↗</i>            </button>          </li>          <li>            <button type="button" class="index-card">              <h2>自动摘要</h2>              <p>让长文先变成要点，再补结论和来源。</p>              <small>文本处理 · Agent</small>              <i class="work-arrow" aria-hidden="true">↗</i>            </button>          </li>        </ol>      </div>    </section>    <section id="research" class="view view-research" data-view="research" aria-labelledby="research-title" aria-hidden="true">      <div class="page-frame research-frame">        <header class="frame-heading frame-heading--compact">          <div class="frame-heading__body">            <button class="back-link" type="button" data-route="home">返回首页</button>            <p>02 / 热门 AI 话题</p>            <h1 id="research-title" tabindex="-1">从高星项目里，<br>寻找学习路线。</h1>          </div>          <div class="trending-index-head">            <p>GitHub 高星项目 · 每日自动更新</p>            <p id="trending-updated" hidden></p>          </div>        </header>        <section class="github-watch" aria-labelledby="github-watch-title">          <h2 id="github-watch-title" class="visually-hidden">GitHub 热门项目</h2>          <div class="github-grid" id="trending-grid" data-trending>            <div class="trending-loading">正在加载 GitHub 热门项目…</div>          </div>        </section>        <div class="page-foot research-foot" aria-label="学习线索">          <article class="foot-card"><span>线索 01</span><strong>项目构建</strong><p>看高星项目如何组织 README、示例和入口。</p></article>          <article class="foot-card"><span>线索 02</span><strong>Agent 框架</strong><p>关注工具调用、记忆和上下文组织。</p></article>          <article class="foot-card"><span>线索 03</span><strong>前端交互</strong><p>观察列表、状态和动效的轻量做法。</p></article>          <article class="foot-card"><span>线索 04</span><strong>学习路线</strong><p>把大项目拆成能练习的小任务。</p></article>        </div></div>        </section>      </div>    </section>    <section id="notes" class="view view-notes" data-view="notes" aria-labelledby="notes-title" aria-hidden="true">      <div class="page-frame notes-frame">        <header class="frame-heading frame-heading--compact">          <div class="frame-heading__body">            <button class="back-link" type="button" data-route="home">返回首页</button>            <p>03 / 学习与折腾笔记</p>            <h1 id="notes-title" tabindex="-1">在做东西的循环里，<br>留下真实记录。</h1>          </div>          <p class="frame-heading__note">不装作教程专家，只记录为什么做、卡在哪里、学会了什么。</p>        </header>        <div class="index-grid notes-index">          <button type="button" class="index-card index-card--primary"><span>2026 / 07</span><h2>多人游戏比画板更难</h2><p>倒计时、答案和分数的同步才是你画我猜的真正难点。</p><small>状态同步</small></button>          <button type="button" class="index-card"><span>2026 / 06</span><h2>跳跃手感需要调</h2><p>重力、速度和碰撞边界会让角色从轻快变得迟钝。</p><small>Canvas</small></button>          <button type="button" class="index-card"><span>2026 / 05</span><h2>翻牌要慢一点</h2><p>抽牌、停顿、翻面和解读的顺序决定仪式感。</p><small>交互节奏</small></button>          <button type="button" class="index-card"><span>2026 / 04</span><h2>电台不只是按钮</h2><p>留白、封面和文字节奏让它更像一个安静的小房间。</p><small>音乐网页</small></button>          <button type="button" class="index-card"><span>2026 / 03</span><h2>未上线也有价值</h2><p>把当前状态和没解决的问题写清楚，就是诚实的记录。</p><small>项目复盘</small></button>          <button type="button" class="index-card"><span>2026 / 02</span><h2>做项目才会留下知识</h2><p>遇到具体问题再查资料，读完马上用上，记忆才更深。</p><small>学习方法</small></button>          <button type="button" class="index-card"><span>2026 / 01</span><h2>接口要先想失败</h2><p>请求不到时，页面要给明确提示而不是白屏。</p><small>错误处理</small></button>          <button type="button" class="index-card"><span>2026 / 01</span><h2>AI 不是替代思考</h2><p>让它帮你列可能性，最后判断仍要自己收口。</p><small>AI 协作</small></button>          <aside class="mini-card mini-calendar" data-widget="calendar" aria-label="学习日历：点击格子切换点亮状态">            <div class="mini-card__head"><span>本周记录</span><i class="mini-calendar__live" aria-hidden="true"></i></div>            <strong>学习日历</strong>            <div class="mini-calendar__grid" data-calendar-grid>              <button type="button" class="mini-calendar__cell" data-day="0" aria-label="周一"></button>              <button type="button" class="mini-calendar__cell" data-day="1" aria-label="周二"></button>              <button type="button" class="mini-calendar__cell" data-day="2" aria-label="周三"></button>              <button type="button" class="mini-calendar__cell" data-day="3" aria-label="周四"></button>              <button type="button" class="mini-calendar__cell" data-day="4" aria-label="周五"></button>              <button type="button" class="mini-calendar__cell" data-day="5" aria-label="周六"></button>              <button type="button" class="mini-calendar__cell" data-day="6" aria-label="周日"></button>            </div>            <small><span id="calendar-note" aria-live="polite">读取本地时间…</span></small>          </aside>          <button type="button" class="mini-card mini-mood" data-widget="mood" aria-label="点击切换一条状态">            <div class="mini-card__head"><span>状态</span><i class="mini-mood__pulse" aria-hidden="true"></i></div>            <strong data-mood-title>今天有点想写代码</strong>            <div class="mini-mood__meter" data-mood-meter aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>            <small><span id="mood-time">刚刚</span> · <span data-mood-note>AI 协作</span> · 点击换一条</small>          </button>        </div>              <div class="page-foot notes-foot" aria-label="固定检查">          <article class="foot-card"><span>检查 01</span><strong>能不能点</strong><p>先确认主要交互能跑通。</p></article>          <article class="foot-card"><span>检查 02</span><strong>能不能停</strong><p>给用户明确的停止和回退路径。</p></article>          <article class="foot-card"><span>检查 03</span><strong>能不能记</strong><p>关键数据要有保存方式。</p></article>          <article class="foot-card"><span>检查 04</span><strong>能不能说</strong><p>用一句话解释页面在做什么。</p></article>        </div>      </div>    </section>    <section id="about" class="view view-about" data-view="about" aria-labelledby="about-title" aria-hidden="true">      <div class="page-frame about-frame">        <header class="frame-heading frame-heading--compact">          <div class="frame-heading__body">            <button class="back-link" type="button" data-route="home">返回首页</button>            <p>04 / 关于 Samsara</p>            <h1 id="about-title" tabindex="-1">一个大学生新手，<br>和不断增加的实验。</h1>          </div>          <p class="frame-heading__note">先动手，再从报错和不顺手的地方补知识。</p>        </header>        <div class="frame-text">          <h2>为什么做这些</h2>          <p>我是大二学生，读数据科学与大数据技术。屏幕上这些东西，很多都没做完——它们更像一把尺子，量出我现在的水平。</p>          <p>做它们，是因为觉得这是这个时代的洪流，也是机会。我不想只站在岸边看 AI 往前走，想自己动手，哪怕做得不完整。</p>          <p>是我的朋友带我进来的，他们比我厉害太多。也正因为这样，我常常焦虑：觉得自己太慢、能力不够。但焦虑归焦虑，还是想一直做下去，慢慢追。</p>          <p>如果说这些折腾有个意义：一是想学会一门将来能靠它吃饭的技术；二是更希望看这个网站的人，对 AI 有一点感触——它没那么遥远，普通人也能上手，也能做出点东西。</p>        </div>        <div class="index-grid about-index">          <button type="button" class="index-card index-card--primary"><span>我是谁</span><h2>还在摸索方向</h2><p>喜欢把突然冒出来的想法做成能点击、能运行的小东西。</p><small>AI 新手 · 网页 / 小程序</small></button>          <button type="button" class="index-card"><span>我在学</span><h2>JavaScript 与交互</h2><p>前端交互、Canvas、接口调用和基础产品设计。</p><small>做中学</small></button>          <button type="button" class="index-card"><span>我想做</span><h2>能行动的智能体</h2><p>能搜索、调用工具、保存记忆并说明过程。</p><small>Agent · MCP</small></button>          <article class="index-card index-card--secondary"><span>联系我</span><h2>一起折腾</h2><p>欢迎交流学习记录、小产品和还没成熟的点子。</p><small><a href="https://github.com/Samsara1-1" target="_blank" rel="noopener noreferrer">github.com/Samsara1-1 ↗</a></small></article>          <button type="button" class="index-card"><span>我在看</span><h2>开源实践</h2><p>从高星项目里拆结构、看文档，再模仿小部分。</p><small>GitHub · 学习路线</small></button>          <button type="button" class="index-card"><span>我在练</span><h2>清晰表达</h2><p>把技术过程写成别人能看懂的话。</p><small>写作 · 复盘</small></button>          <button type="button" class="mini-card mini-avatar" data-widget="avatar" data-expr="smile" aria-label="点头像切换状态">            <div class="mini-card__head"><span>我的状态</span><i class="mini-avatar__dot" data-avatar-dot aria-hidden="true"></i></div>            <div class="mini-avatar__scene" aria-hidden="true">              <i class="mini-avatar__halo"></i>              <div class="mini-avatar__face"><i></i><i></i><b></b></div>            </div>            <strong data-avatar-title>在线折腾中</strong>            <small><span id="avatar-time" aria-live="polite">在线</span> · <span id="avatar-sub">可约聊</span> · 点头像换状态</small>          </button>        </div>              <div class="page-foot about-foot" aria-label="能力路线">          <article class="foot-card"><span>现在</span><strong>基础交互</strong><p>把页面、状态和反馈写清楚。</p></article>          <article class="foot-card"><span>三个月</span><strong>小工具集</strong><p>做 3 个真正能复用的小工具。</p></article>          <article class="foot-card"><span>半年</span><strong>智能体雏形</strong><p>把搜索、记忆和工具调用串起来。</p></article>          <article class="foot-card"><span>长期</span><strong>个人系统</strong><p>让作品、笔记和话题形成闭环。</p></article>        </div>      </div>    </section>    </main>  <div class="wallpaper-layer is-visible" data-wallpaper="home" aria-hidden="true"></div>  <div class="wallpaper-layer" data-wallpaper="systems" aria-hidden="true"></div>  <div class="wallpaper-layer" data-wallpaper="research" aria-hidden="true"></div>  <div class="wallpaper-layer" data-wallpaper="notes" aria-hidden="true"></div>  <div class="wallpaper-layer" data-wallpaper="about" aria-hidden="true"></div>  <audio id="bg-audio" preload="none"></audio>  <div class="detail-modal" id="detail-modal" aria-hidden="true">    <div class="detail-modal__backdrop" data-close-modal></div>    <article class="detail-modal__panel" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title">      <header>        <p id="detail-modal-kicker">详情</p>        <h2 id="detail-modal-title"></h2>        <button class="detail-modal__close" type="button" aria-label="关闭详情">✕</button>      </header>      <div class="detail-modal__body">        <p id="detail-modal-desc"></p>        <div id="detail-modal-meta" class="detail-modal__meta"></div>        <ul id="detail-modal-extra"></ul>      </div>    </article>  </div>  <div class="route-status" aria-live="polite" aria-atomic="true"></div>  <script src="app.js?v=20260907-01"></script></body></html>
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samsara，一个大学生关于 AI、小程序、小游戏和网页智能体的个人实验站。">
+  <title>Samsara / AI 实验与个人作品</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 字体改为异步加载：外网字体慢时不再阻塞首屏渲染 -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Georgia&display=swap"></noscript>
+  <link rel="stylesheet" href="styles.css?v=20260907-02">
+  <link rel="stylesheet" href="wallpapers.css"><!-- 壁纸配置：换壁纸只改这个文件 -->
+  <link rel="stylesheet" href="about-theme.css">
+  <link rel="stylesheet" href="theme-overrides.css">
+</head>
+<body>
+  <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/wallpapers/bg-video-v2.mp4" type="video/mp4"></video>
+  <div id="bg-video-scrim" aria-hidden="true"></div>
+  <a class="skip-link" href="#view-root">跳到主要内容</a>
+
+  <header class="site-header">
+    <button class="brand route-link" type="button" data-route="home" aria-label="返回 Samsara 首页">
+      <span class="brand__mark">S</span>
+      <span class="brand__text">Samsara<small>AI 实验站 / 2026</small></span>
+    </button>
+    <nav class="global-nav" aria-label="主导航">
+      <button class="route-link" type="button" data-route="home">首页</button>
+      <button class="route-link" type="button" data-route="systems">作品</button>
+      <button class="route-link" type="button" data-route="research">话题</button>
+      <button class="route-link" type="button" data-route="notes">笔记</button>
+      <button class="route-link" type="button" data-route="about">关于</button>
+    </nav>
+    <div class="header-tools"></div>
+  </header>
+
+
+  <nav class="side-index" aria-label="页面索引">
+    <button class="side-index__link route-link" type="button" data-route="home"><span>首页</span></button>
+    <button class="side-index__link route-link" type="button" data-route="systems"><span>作品</span></button>
+    <button class="side-index__link route-link" type="button" data-route="research"><span>话题</span></button>
+    <button class="side-index__link route-link" type="button" data-route="notes"><span>笔记</span></button>
+    <button class="side-index__link route-link" type="button" data-route="about"><span>关于</span></button>
+  </nav>
+
+  <main id="view-root">
+    <section id="home" class="view view-home is-active" data-view="home" aria-labelledby="home-title">
+      <canvas id="home-atmosphere" aria-hidden="true"></canvas>
+      <div class="home-grid">
+        <div class="home-hero">
+          <p class="eyebrow">大学生 · AI 新手 · 喜欢把想法做出来</p>
+          <h1 id="home-title" tabindex="-1">Samsara</h1>
+        </div>
+
+        <div class="home-right">
+          <p class="hero-lead">还在学习，也不怕折腾。<br>这里记录我做过的 <strong>小程序、小游戏、网页和智能体实验。</strong></p>
+          <div class="hero-meta">
+            <span>网页智能体</span><span>生成式界面</span><span>有趣的小产品</span>
+          </div>
+          <p class="home-status">当前重点 <strong>AI 实验站</strong> ・ 最近更新 <strong>2026-09</strong></p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="systems" class="view view-systems" data-view="systems" aria-labelledby="systems-title" aria-hidden="true">
+      <canvas id="systems-atmosphere" aria-hidden="true"></canvas>
+      <div class="page-frame systems-frame">
+        <header class="frame-heading">
+          <div class="frame-heading__body">
+            <button class="back-link" type="button" data-route="home">返回首页</button>
+            <p>01 / 作品与实验</p>
+            <h1 id="systems-title" tabindex="-1">先做出来，<br>再慢慢变好。</h1>
+          </div>
+          <p class="frame-heading__note">几个做到一半的小实验，按在做的时间排。</p>
+        </header>
+        <p class="frame-intro">这些实验大多算不上“作品”，更像我在量自己的水平——能做多少、卡在哪、还差多远。做的时候最在意的，是它能不能先跑起来，再慢慢变好。</p>
+        <ol class="index-list systems-list" aria-label="作品与实验索引">
+          <li>
+            <button type="button" class="index-card">
+              <h2>你画我猜</h2>
+              <p>多人限时猜词，重点在状态同步和计分。</p>
+              <small>状态同步 · 计分流程</small>
+              <i class="work-arrow" aria-hidden="true">↗</i>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="index-card">
+              <h2>横版闯关</h2>
+              <p>用 Canvas 练重力、碰撞和跳跃手感。</p>
+              <small>HTML Canvas · 碰撞检测</small>
+              <i class="work-arrow" aria-hidden="true">↗</i>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="index-card">
+              <h2>塔罗牌占卜</h2>
+              <p>抽牌、停顿、翻面，凑成一次有节奏的小互动。</p>
+              <small>随机逻辑 · 翻牌动画</small>
+              <i class="work-arrow" aria-hidden="true">↗</i>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="index-card">
+              <h2>深夜电台</h2>
+              <p>把歌曲、封面和播放状态放进一个安静页面。</p>
+              <small>音频控制 · 播放列表</small>
+              <i class="work-arrow" aria-hidden="true">↗</i>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="index-card">
+              <h2>任务小助手</h2>
+              <p>把“查资料 → 整理 → 输出”拆成可控步骤。</p>
+              <small>工具调用 · 状态记录</small>
+              <i class="work-arrow" aria-hidden="true">↗</i>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="index-card">
+              <h2>自动摘要</h2>
+              <p>让长文先变成要点，再补结论和来源。</p>
+              <small>文本处理 · Agent</small>
+              <i class="work-arrow" aria-hidden="true">↗</i>
+            </button>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <section id="research" class="view view-research" data-view="research" aria-labelledby="research-title" aria-hidden="true">
+      <div class="page-frame research-frame">
+        <header class="frame-heading frame-heading--compact">
+          <div class="frame-heading__body">
+            <button class="back-link" type="button" data-route="home">返回首页</button>
+            <p>02 / 热门 AI 话题</p>
+            <h1 id="research-title" tabindex="-1">从高星项目里，<br>寻找学习路线。</h1>
+          </div>
+          <div class="trending-index-head">
+            <p>GitHub 高星项目 · 每日自动更新</p>
+            <p id="trending-updated" hidden></p>
+          </div>
+        </header>
+        <section class="github-watch" aria-labelledby="github-watch-title">
+          <h2 id="github-watch-title" class="visually-hidden">GitHub 热门项目</h2>
+          <div class="github-grid" id="trending-grid" data-trending>
+            <div class="trending-loading">正在加载 GitHub 热门项目…</div>
+          </div>
+        </section>
+
+        <div class="page-foot research-foot" aria-label="学习线索">
+          <article class="foot-card"><span>线索 01</span><strong>项目构建</strong><p>看高星项目如何组织 README、示例和入口。</p></article>
+          <article class="foot-card"><span>线索 02</span><strong>Agent 框架</strong><p>关注工具调用、记忆和上下文组织。</p></article>
+          <article class="foot-card"><span>线索 03</span><strong>前端交互</strong><p>观察列表、状态和动效的轻量做法。</p></article>
+          <article class="foot-card"><span>线索 04</span><strong>学习路线</strong><p>把大项目拆成能练习的小任务。</p></article>
+        </div></div>
+        </section>
+      </div>
+    </section>
+
+
+    <section id="notes" class="view view-notes" data-view="notes" aria-labelledby="notes-title" aria-hidden="true">
+      <div class="page-frame notes-frame">
+        <header class="frame-heading frame-heading--compact">
+          <div class="frame-heading__body">
+            <button class="back-link" type="button" data-route="home">返回首页</button>
+            <p>03 / 学习与折腾笔记</p>
+            <h1 id="notes-title" tabindex="-1">在做东西的循环里，<br>留下真实记录。</h1>
+          </div>
+          <p class="frame-heading__note">不装作教程专家，只记录为什么做、卡在哪里、学会了什么。</p>
+        </header>
+        <div class="index-grid notes-index">
+          <button type="button" class="index-card index-card--primary"><span>2026 / 07</span><h2>多人游戏比画板更难</h2><p>倒计时、答案和分数的同步才是你画我猜的真正难点。</p><small>状态同步</small></button>
+          <button type="button" class="index-card"><span>2026 / 06</span><h2>跳跃手感需要调</h2><p>重力、速度和碰撞边界会让角色从轻快变得迟钝。</p><small>Canvas</small></button>
+          <button type="button" class="index-card"><span>2026 / 05</span><h2>翻牌要慢一点</h2><p>抽牌、停顿、翻面和解读的顺序决定仪式感。</p><small>交互节奏</small></button>
+          <button type="button" class="index-card"><span>2026 / 04</span><h2>电台不只是按钮</h2><p>留白、封面和文字节奏让它更像一个安静的小房间。</p><small>音乐网页</small></button>
+          <button type="button" class="index-card"><span>2026 / 03</span><h2>未上线也有价值</h2><p>把当前状态和没解决的问题写清楚，就是诚实的记录。</p><small>项目复盘</small></button>
+          <button type="button" class="index-card"><span>2026 / 02</span><h2>做项目才会留下知识</h2><p>遇到具体问题再查资料，读完马上用上，记忆才更深。</p><small>学习方法</small></button>
+          <button type="button" class="index-card"><span>2026 / 01</span><h2>接口要先想失败</h2><p>请求不到时，页面要给明确提示而不是白屏。</p><small>错误处理</small></button>
+          <button type="button" class="index-card"><span>2026 / 01</span><h2>AI 不是替代思考</h2><p>让它帮你列可能性，最后判断仍要自己收口。</p><small>AI 协作</small></button>
+          <aside class="mini-card mini-calendar" data-widget="calendar" aria-label="学习日历：点击格子切换点亮状态">
+            <div class="mini-card__head"><span>本周记录</span><i class="mini-calendar__live" aria-hidden="true"></i></div>
+            <strong>学习日历</strong>
+            <div class="mini-calendar__grid" data-calendar-grid>
+              <button type="button" class="mini-calendar__cell" data-day="0" aria-label="周一"></button>
+              <button type="button" class="mini-calendar__cell" data-day="1" aria-label="周二"></button>
+              <button type="button" class="mini-calendar__cell" data-day="2" aria-label="周三"></button>
+              <button type="button" class="mini-calendar__cell" data-day="3" aria-label="周四"></button>
+              <button type="button" class="mini-calendar__cell" data-day="4" aria-label="周五"></button>
+              <button type="button" class="mini-calendar__cell" data-day="5" aria-label="周六"></button>
+              <button type="button" class="mini-calendar__cell" data-day="6" aria-label="周日"></button>
+            </div>
+            <small><span id="calendar-note" aria-live="polite">读取本地时间…</span></small>
+          </aside>
+          <button type="button" class="mini-card mini-mood" data-widget="mood" aria-label="点击切换一条状态">
+            <div class="mini-card__head"><span>状态</span><i class="mini-mood__pulse" aria-hidden="true"></i></div>
+            <strong data-mood-title>今天有点想写代码</strong>
+            <div class="mini-mood__meter" data-mood-meter aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <small><span id="mood-time">刚刚</span> · <span data-mood-note>AI 协作</span> · 点击换一条</small>
+          </button>
+        </div>
+      
+        <div class="page-foot notes-foot" aria-label="固定检查">
+          <article class="foot-card"><span>检查 01</span><strong>能不能点</strong><p>先确认主要交互能跑通。</p></article>
+          <article class="foot-card"><span>检查 02</span><strong>能不能停</strong><p>给用户明确的停止和回退路径。</p></article>
+          <article class="foot-card"><span>检查 03</span><strong>能不能记</strong><p>关键数据要有保存方式。</p></article>
+          <article class="foot-card"><span>检查 04</span><strong>能不能说</strong><p>用一句话解释页面在做什么。</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="about" class="view view-about" data-view="about" aria-labelledby="about-title" aria-hidden="true">
+      <div class="page-frame about-frame">
+        <header class="frame-heading frame-heading--compact">
+          <div class="frame-heading__body">
+            <button class="back-link" type="button" data-route="home">返回首页</button>
+            <p>04 / 关于 Samsara</p>
+            <h1 id="about-title" tabindex="-1">一个大学生新手，<br>和不断增加的实验。</h1>
+          </div>
+          <p class="frame-heading__note">先动手，再从报错和不顺手的地方补知识。</p>
+        </header>
+        <div class="frame-text">
+          <h2>为什么做这些</h2>
+          <p>我是大二学生，读数据科学与大数据技术。屏幕上这些东西，很多都没做完——它们更像一把尺子，量出我现在的水平。</p>
+          <p>做它们，是因为觉得这是这个时代的洪流，也是机会。我不想只站在岸边看 AI 往前走，想自己动手，哪怕做得不完整。</p>
+          <p>是我的朋友带我进来的，他们比我厉害太多。也正因为这样，我常常焦虑：觉得自己太慢、能力不够。但焦虑归焦虑，还是想一直做下去，慢慢追。</p>
+          <p>如果说这些折腾有个意义：一是想学会一门将来能靠它吃饭的技术；二是更希望看这个网站的人，对 AI 有一点感触——它没那么遥远，普通人也能上手，也能做出点东西。</p>
+        </div>
+        <div class="index-grid about-index">
+          <button type="button" class="index-card index-card--primary"><span>我是谁</span><h2>还在摸索方向</h2><p>喜欢把突然冒出来的想法做成能点击、能运行的小东西。</p><small>AI 新手 · 网页 / 小程序</small></button>
+          <button type="button" class="index-card"><span>我在学</span><h2>JavaScript 与交互</h2><p>前端交互、Canvas、接口调用和基础产品设计。</p><small>做中学</small></button>
+          <button type="button" class="index-card"><span>我想做</span><h2>能行动的智能体</h2><p>能搜索、调用工具、保存记忆并说明过程。</p><small>Agent · MCP</small></button>
+          <article class="index-card index-card--secondary"><span>联系我</span><h2>一起折腾</h2><p>欢迎交流学习记录、小产品和还没成熟的点子。</p><small><a href="https://github.com/Samsara1-1" target="_blank" rel="noopener noreferrer">github.com/Samsara1-1 ↗</a></small></article>
+          <button type="button" class="index-card"><span>我在看</span><h2>开源实践</h2><p>从高星项目里拆结构、看文档，再模仿小部分。</p><small>GitHub · 学习路线</small></button>
+          <button type="button" class="index-card"><span>我在练</span><h2>清晰表达</h2><p>把技术过程写成别人能看懂的话。</p><small>写作 · 复盘</small></button>
+          <button type="button" class="mini-card mini-avatar" data-widget="avatar" data-expr="smile" aria-label="点头像切换状态">
+            <div class="mini-card__head"><span>我的状态</span><i class="mini-avatar__dot" data-avatar-dot aria-hidden="true"></i></div>
+            <div class="mini-avatar__scene" aria-hidden="true">
+              <i class="mini-avatar__halo"></i>
+              <div class="mini-avatar__face"><i></i><i></i><b></b></div>
+            </div>
+            <strong data-avatar-title>在线折腾中</strong>
+            <small><span id="avatar-time" aria-live="polite">在线</span> · <span id="avatar-sub">可约聊</span> · 点头像换状态</small>
+          </button>
+        </div>
+      
+        <div class="page-foot about-foot" aria-label="能力路线">
+          <article class="foot-card"><span>现在</span><strong>基础交互</strong><p>把页面、状态和反馈写清楚。</p></article>
+          <article class="foot-card"><span>三个月</span><strong>小工具集</strong><p>做 3 个真正能复用的小工具。</p></article>
+          <article class="foot-card"><span>半年</span><strong>智能体雏形</strong><p>把搜索、记忆和工具调用串起来。</p></article>
+          <article class="foot-card"><span>长期</span><strong>个人系统</strong><p>让作品、笔记和话题形成闭环。</p></article>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+  <div class="wallpaper-layer is-visible" data-wallpaper="home" aria-hidden="true"></div>
+  <div class="wallpaper-layer" data-wallpaper="systems" aria-hidden="true"></div>
+  <div class="wallpaper-layer" data-wallpaper="research" aria-hidden="true"></div>
+  <div class="wallpaper-layer" data-wallpaper="notes" aria-hidden="true"></div>
+  <div class="wallpaper-layer" data-wallpaper="about" aria-hidden="true"></div>
+
+  <audio id="bg-audio" preload="none"></audio>
+  <div class="detail-modal" id="detail-modal" aria-hidden="true">
+    <div class="detail-modal__backdrop" data-close-modal></div>
+    <article class="detail-modal__panel" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title">
+      <header>
+        <p id="detail-modal-kicker">详情</p>
+        <h2 id="detail-modal-title"></h2>
+        <button class="detail-modal__close" type="button" aria-label="关闭详情">✕</button>
+      </header>
+      <div class="detail-modal__body">
+        <p id="detail-modal-desc"></p>
+        <div id="detail-modal-meta" class="detail-modal__meta"></div>
+        <ul id="detail-modal-extra"></ul>
+      </div>
+    </article>
+  </div>
+  <div class="route-status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js?v=20260907-01"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
