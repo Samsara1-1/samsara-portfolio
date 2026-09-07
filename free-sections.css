@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    Round 50 — 三页「夜空里的光」重构
    作品=孔明灯 · 话题=星座 · 笔记=漂流瓶
    母题：夜空中发光的物件，贴合粉紫治愈系动漫壁纸。
@@ -138,12 +138,12 @@
   aspect-ratio: 1 / 1.28;
   border-radius: 50% 50% 46% 46% / 42% 42% 30% 30%;
   background:
-    radial-gradient(120% 90% at 50% 12%, rgba(255, 214, 170, .92), rgba(255, 158, 122, .82) 46%, rgba(224, 104, 112, .78) 78%, rgba(178, 74, 96, .8));
+    radial-gradient(120% 90% at 50% 12%, rgba(255, 240, 248, .94), rgba(250, 214, 238, .85) 46%, rgba(226, 172, 224, .82) 78%, rgba(186, 138, 206, .85));
   box-shadow:
-    inset 0 -14px 24px rgba(120, 30, 40, .28),
-    inset 0 10px 18px rgba(255, 236, 200, .5),
-    0 0 30px rgba(255, 176, 110, .38),
-    0 0 60px rgba(255, 150, 100, .18);
+    inset 0 -14px 24px rgba(128, 84, 150, .3),
+    inset 0 10px 18px rgba(255, 236, 252, .6),
+    0 0 30px rgba(255, 172, 222, .4),
+    0 0 60px rgba(255, 142, 202, .2);
   transition: filter .4s, box-shadow .4s;
 }
 /* 顶部开口（竹圈） */
@@ -156,7 +156,7 @@
   width: 34%;
   height: 8%;
   border-radius: 50%;
-  background: rgba(82, 44, 40, .85);
+  background: rgba(96, 56, 122, .85);
   box-shadow: 0 1px 3px rgba(0,0,0,.4);
 }
 /* 底部开口（灯座） */
@@ -169,7 +169,7 @@
   width: 30%;
   height: 8%;
   border-radius: 50%;
-  background: rgba(82, 44, 40, .9);
+  background: rgba(96, 56, 122, .9);
 }
 /* 竹骨纹理 */
 .lantern__rib {
@@ -179,13 +179,13 @@
   background:
     repeating-linear-gradient(90deg,
       transparent 0 18%,
-      rgba(120, 50, 40, .22) 18% 19.5%,
+      rgba(164, 108, 186, .24) 18% 19.5%,
       transparent 19.5% 50%,
-      rgba(120, 50, 40, .2) 50% 51.5%,
+      rgba(164, 108, 186, .22) 50% 51.5%,
       transparent 51.5% 82%,
-      rgba(120, 50, 40, .22) 82% 83.5%,
+      rgba(164, 108, 186, .24) 82% 83.5%,
       transparent 83.5%),
-    linear-gradient(180deg, transparent 18%, rgba(120, 50, 40, .16) 18% 20%, transparent 20% 78%, rgba(120, 50, 40, .2) 78% 81%, transparent 81%);
+    linear-gradient(180deg, transparent 18%, rgba(164, 108, 186, .18) 18% 20%, transparent 20% 78%, rgba(164, 108, 186, .22) 78% 81%, transparent 81%);
 }
 /* 灯内火光透出 */
 .lantern__glow {
@@ -196,7 +196,7 @@
   aspect-ratio: 1;
   translate: -50% 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 240, 200, .95), rgba(255, 190, 120, .55) 45%, transparent 72%);
+  background: radial-gradient(circle, rgba(255, 236, 250, .95), rgba(255, 182, 232, .6) 45%, transparent 72%);
   filter: blur(1px);
   opacity: .5;
   transition: opacity .4s, transform .4s;
@@ -211,9 +211,9 @@
   translate: -50% 0;
   font-family: Georgia, "Songti SC", serif;
   font-size: clamp(1rem, 2vw, 1.3rem);
-  color: rgba(96, 40, 34, .88);
+  color: rgba(118, 66, 150, .9);
   letter-spacing: .08em;
-  text-shadow: 0 0 10px rgba(255, 225, 180, .55);
+  text-shadow: 0 0 10px rgba(255, 218, 250, .6);
   pointer-events: none;
   transition: opacity .3s;
 }
@@ -229,7 +229,7 @@
   font-weight: 700;
   letter-spacing: .12em;
   color: rgba(255, 247, 235, .95);
-  text-shadow: 0 1px 6px rgba(120, 40, 40, .65);
+  text-shadow: 0 1px 6px rgba(104, 60, 128, .7);
   opacity: 0;
   transform: translateY(4px);
   transition: opacity .3s, transform .3s;
@@ -246,7 +246,7 @@
   aspect-ratio: 1;
   translate: -50% 52%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 236, 150, .95), rgba(255, 150, 60, .7) 55%, rgba(255, 120, 40, 0) 75%);
+  background: radial-gradient(circle, rgba(255, 226, 246, .95), rgba(255, 168, 214, .72) 55%, rgba(255, 128, 190, 0) 75%);
   filter: blur(1.5px);
   animation: flame-flicker 1.4s ease-in-out infinite;
   transition: opacity .3s;
@@ -261,10 +261,10 @@
 .lantern__head:hover .lantern__glow { opacity: .85; scale: 1.06; }
 .lantern__head:hover .lantern em { opacity: 1; transform: translateY(0); }
 .lantern__head:hover .lantern__body { filter: brightness(1.12) saturate(1.05); box-shadow:
-  inset 0 -14px 24px rgba(120, 30, 40, .28),
-  inset 0 10px 18px rgba(255, 236, 200, .55),
-  0 0 40px rgba(255, 190, 120, .5),
-  0 0 80px rgba(255, 160, 105, .25); }
+  inset 0 -14px 24px rgba(128, 84, 150, .3),
+  inset 0 10px 18px rgba(255, 238, 252, .6),
+  0 0 40px rgba(255, 186, 236, .55),
+  0 0 80px rgba(255, 152, 212, .28); }
 .lantern__head:hover .lantern__brazier { opacity: .9; }
 
 /* 展开的简介：一小片"纸条"从灯下展开 */
@@ -278,7 +278,7 @@
   margin: 0;
   padding: .5rem .75rem;
   border-radius: .45rem;
-  background: color-mix(in srgb, rgba(30, 18, 26, .72) 78%, transparent);
+  background: color-mix(in srgb, rgba(58, 30, 78, .74) 78%, transparent);
   color: var(--text, #f4e9e2);
   font-size: clamp(.72rem, 1.1vw, .82rem);
   line-height: 1.55;
@@ -346,15 +346,15 @@
 }
 .constellation__path {
   fill: none;
-  stroke: rgba(255, 222, 168, .2);
+  stroke: rgba(238, 208, 255, .25);
   stroke-width: 1.5;
   stroke-dasharray: .045 .032;
   stroke-linecap: round;
   transition: stroke .5s, filter .5s;
 }
 .constellation.is-lit .constellation__path {
-  stroke: rgba(255, 226, 158, .75);
-  filter: drop-shadow(0 0 6px rgba(255, 210, 150, .5));
+  stroke: rgba(240, 215, 255, .85);
+  filter: drop-shadow(0 0 6px rgba(242, 190, 255, .55));
 }
 .constellation-star {
   position: absolute;
@@ -384,8 +384,8 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 244, 214, 1) 0 34%, rgba(255, 224, 170, .75) 48%, transparent 72%);
-  box-shadow: 0 0 calc(var(--size) * .9) rgba(255, 226, 178, .8), 0 0 calc(var(--size) * 2.2) rgba(255, 200, 150, .35);
+  background: radial-gradient(circle, rgba(255, 241, 252, 1) 0 34%, rgba(255, 200, 246, .75) 48%, transparent 72%);
+  box-shadow: 0 0 calc(var(--size) * .9) rgba(255, 224, 250, .8), 0 0 calc(var(--size) * 2.2) rgba(255, 180, 232, .4);
   animation: star-twinkle 3.2s ease-in-out infinite;
   transition: filter .3s;
 }
@@ -393,7 +393,7 @@
   position: absolute;
   inset: 18%;
   border-radius: 50%;
-  background: radial-gradient(circle, #fff8e8 0 22%, transparent 70%);
+  background: radial-gradient(circle, #ffeefc 0 22%, transparent 70%);
   opacity: .55;
 }
 @keyframes star-twinkle {
@@ -421,16 +421,16 @@
   font-size: clamp(.68rem, 1.2vw, .8rem);
   font-weight: 700;
   letter-spacing: .05em;
-  color: rgba(255, 243, 224, .92);
-  text-shadow: 0 0 8px rgba(255, 190, 130, .9), 0 0 18px rgba(255, 160, 110, .4);
+  color: rgba(255, 245, 250, .94);
+  text-shadow: 0 0 8px rgba(255, 200, 245, .9), 0 0 18px rgba(255, 175, 225, .45);
   opacity: 0;
   transform: translateY(4px);
 }
 .constellation-star__meta {
   top: calc(100% + .85rem);
   font-size: .62rem;
-  color: rgba(255, 230, 200, .75);
-  text-shadow: 0 0 6px rgba(255, 190, 130, .7);
+  color: rgba(255, 225, 246, .8);
+  text-shadow: 0 0 6px rgba(255, 200, 245, .75);
   opacity: 0;
   transform: translateY(4px);
 }
@@ -451,7 +451,7 @@
   right: 0;
   font-size: .64rem;
   letter-spacing: .06em;
-  color: rgba(255, 235, 210, .66);
+  color: rgba(255, 232, 248, .7);
   text-shadow: 0 1px 4px rgba(0,0,0,.4);
   pointer-events: none;
 }
@@ -463,7 +463,7 @@
   max-width: 90%;
   font-size: .62rem;
   letter-spacing: .05em;
-  color: rgba(255, 240, 220, .5);
+  color: rgba(255, 236, 250, .55);
   text-shadow: 0 1px 4px rgba(0,0,0,.4);
   text-align: center;
   pointer-events: none;
@@ -473,7 +473,7 @@
   text-align: center;
   font-size: .64rem;
   letter-spacing: .08em;
-  color: rgba(255, 235, 210, .5);
+  color: rgba(255, 232, 248, .55);
   text-shadow: 0 1px 4px rgba(0,0,0,.4);
 }
 .trending-loading {
@@ -481,7 +481,7 @@
   inset: 0;
   display: grid;
   place-items: center;
-  color: rgba(255, 236, 215, .75);
+  color: rgba(255, 236, 250, .8);
   font-size: .78rem;
   letter-spacing: .12em;
   text-shadow: 0 1px 4px rgba(0,0,0,.4);
@@ -493,8 +493,8 @@
   left: 50%;
   width: 1.1rem;
   height: 1.1rem;
-  border: 1px solid rgba(255, 240, 220, .4);
-  border-top-color: rgba(255, 240, 220, .95);
+  border: 1px solid rgba(255, 238, 252, .4);
+  border-top-color: rgba(255, 238, 252, .95);
   border-radius: 50%;
   animation: trending-spin 1s linear infinite;
 }
@@ -568,7 +568,7 @@
   translate: -50% 0;
   width: 24%;
   height: 16%;
-  background: linear-gradient(90deg, rgba(180, 225, 255, .16), rgba(220, 245, 255, .34) 45%, rgba(160, 210, 240, .14));
+  background: linear-gradient(90deg, rgba(220, 195, 255, .18), rgba(238, 225, 255, .36) 45%, rgba(210, 190, 250, .16));
   border-left: 1px solid rgba(255, 255, 255, .14);
   border-right: 1px solid rgba(255, 255, 255, .14);
 }
@@ -582,12 +582,12 @@
   aspect-ratio: 1 / 1.32;
   border-radius: 8% 8% 30% 30% / 10% 10% 38% 38%;
   background:
-    radial-gradient(120% 90% at 50% 12%, rgba(255, 255, 255, .14), rgba(255, 255, 255, .04) 55%, rgba(160, 210, 245, .1));
-  border: 1px solid rgba(235, 250, 255, .3);
+    radial-gradient(120% 90% at 50% 12%, rgba(255, 255, 255, .14), rgba(255, 255, 255, .04) 55%, rgba(215, 190, 250, .12));
+  border: 1px solid rgba(242, 232, 255, .32);
   box-shadow:
-    inset 0 -10px 20px rgba(150, 205, 245, .18),
+    inset 0 -10px 20px rgba(196, 170, 240, .2),
     inset 0 6px 12px rgba(255, 255, 255, .12),
-    0 0 20px rgba(170, 215, 255, .18),
+    0 0 20px rgba(222, 196, 255, .22),
     0 8px 24px rgba(60, 40, 90, .18);
   backdrop-filter: blur(2px);
   transition: background .4s, box-shadow .4s;
@@ -613,7 +613,7 @@
   width: 30%;
   height: 40%;
   border-radius: 4px / 60%;
-  background: linear-gradient(180deg, rgba(255, 242, 224, .32), rgba(255, 236, 212, .16));
+  background: linear-gradient(180deg, rgba(255, 238, 246, .34), rgba(255, 226, 240, .18));
   box-shadow: 0 2px 8px rgba(40, 20, 60, .25);
   pointer-events: none;
 }
@@ -650,15 +650,15 @@
 .bottle__tag time {
   font-size: .58rem;
   letter-spacing: .14em;
-  color: rgba(255, 236, 220, .62);
+  color: rgba(255, 226, 245, .66);
   text-shadow: 0 1px 4px rgba(30, 10, 40, .5);
 }
 .bottle__tag i {
   font-style: normal;
   font-size: clamp(.66rem, 1.2vw, .78rem);
   letter-spacing: .06em;
-  color: rgba(255, 248, 238, .92);
-  text-shadow: 0 0 8px rgba(255, 190, 230, .55), 0 1px 4px rgba(30, 10, 40, .6);
+  color: rgba(255, 248, 250, .94);
+  text-shadow: 0 0 8px rgba(255, 198, 245, .6), 0 1px 4px rgba(30, 10, 40, .6);
 }
 /* 消息：从瓶口溢出的信纸 */
 .bottle__msg {
@@ -671,7 +671,7 @@
   margin: 0;
   padding: .55rem .8rem;
   border-radius: .4rem;
-  background: color-mix(in srgb, rgba(30, 16, 34, .66) 72%, transparent);
+  background: color-mix(in srgb, rgba(58, 30, 82, .68) 72%, transparent);
   color: var(--text, #f6ece6);
   font-size: clamp(.7rem, 1.1vw, .8rem);
   line-height: 1.6;
@@ -697,11 +697,11 @@
 }
 .bottle__head:hover .bottle__glass {
   background:
-    radial-gradient(120% 90% at 50% 12%, rgba(255, 255, 255, .2), rgba(255, 255, 255, .06) 55%, rgba(170, 220, 250, .14));
+    radial-gradient(120% 90% at 50% 12%, rgba(255, 255, 255, .2), rgba(255, 255, 255, .06) 55%, rgba(222, 198, 255, .16));
   box-shadow:
-    inset 0 -10px 20px rgba(150, 205, 245, .26),
+    inset 0 -10px 20px rgba(196, 170, 240, .28),
     inset 0 6px 12px rgba(255, 255, 255, .18),
-    0 0 30px rgba(190, 225, 255, .3),
+    0 0 30px rgba(228, 202, 255, .32),
     0 8px 24px rgba(60, 40, 90, .2);
 }
 .bottle__head:hover .bottle__cork { transform: translateY(-10%); }
