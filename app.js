@@ -307,47 +307,45 @@ function renderTrending(repos, fetchedAt = null) {
     ? new Date(fetchedAt).toLocaleString('zh-CN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
     : new Date().toLocaleDateString('zh-CN');
 
-  /* 星空行星：星越多，行星越大越亮。每颗星的位置由 index 决定，
-     用 CSS 变量 --x / --y / --size / --drift / --orbit 实现错落轨道与公转。
-     保留 .trend-card[data-repo-index]（弹窗委托依赖它）。 */
+  /* 星座：高星项目连成一片星图。点位与 SVG 连线共用同一组百分比坐标，
+     preserveAspectRatio="none" 保证线始终穿过星心，无需 resize 重算。 */
   const spots = [
-    { x: 8,  y: 22, orbit: 2, drift: 3 },
-    { x: 34, y: 8,  orbit: 8, drift: 6 },
-    { x: 62, y: 18, orbit: 14, drift: 4 },
-    { x: 86, y: 30, orbit: 5, drift: 7 },
-    { x: 20, y: 62, orbit: 11, drift: 5 },
-    { x: 55, y: 70, orbit: 3, drift: 8 },
-    { x: 82, y: 66, orbit: 9, drift: 4 }
+    { x: 8,  y: 22 },
+    { x: 34, y: 8 },
+    { x: 62, y: 18 },
+    { x: 86, y: 30 },
+    { x: 82, y: 66 },
+    { x: 55, y: 70 },
+    { x: 20, y: 62 }
   ];
+  const line = spots.map(s => s.x + ',' + s.y).join(' ');
 
-  trendingGrid.classList.add('star-field');
-  trendingGrid.innerHTML = '<div class="star-field__updated">数据更新于 ' + escapeHtml(updatedText) + '</div>'
+  trendingGrid.classList.add('constellation');
+  trendingGrid.innerHTML =
+      '<svg class="constellation__lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">'
+    + '<polyline class="constellation__path" vector-effect="non-scaling-stroke" points="' + line + '" pathLength="1"></polyline></svg>'
+    + '<div class="constellation__updated">数据更新于 ' + escapeHtml(updatedText) + '</div>'
     + currentRepos.map((repo, index) => {
-      const desc = formatDescription(repo.description, 58);
-      const stars = formatStars(repo.stars);
-      const lang = repo.language !== 'N/A' ? repo.language : '多语言';
-      const topics = (repo.topics || []).slice(0, 2).join(" / ");
-      const spot = spots[index % spots.length];
-      const size = 16 + Math.round(Math.pow(repo.stars / maxStars, 0.6) * 46);
-      return '<button type="button" class="star-planet" data-repo-index="' + index + '"'
-        + ' style="--x:' + spot.x + '%;--y:' + spot.y + '%;--size:' + size + 'px;--orbit:' + spot.orbit + 's;--drift:' + spot.drift + 's"'
-        + ' aria-haspopup="dialog" aria-label="' + escapeHtml(repo.name) + '，' + stars + '">'
-        + '<span class="star-planet__star" aria-hidden="true"><i></i></span>'
-        + '<span class="star-planet__orbit" aria-hidden="true"></span>'
-        + '<b class="star-planet__name">' + escapeHtml(repo.name) + '</b>'
-        + '<small class="star-planet__glow">' + stars + '<i>·</i>' + escapeHtml(lang) + '</small>'
-        + '<span class="star-planet__tip">' + escapeHtml(topics || '查看项目 ↗') + '</span>'
-        + '</button>';
-    }).join("")
-    + '<div class="star-field__legend" aria-hidden="true">'
-    + '<span>最亮 · ' + escapeHtml(topRepo.name) + '（' + formatStars(topRepo.stars) + '）</span>'
-    + '</div>';
+        const stars = formatStars(repo.stars);
+        const lang = repo.language !== 'N/A' ? repo.language : '多语言';
+        const spot = spots[index % spots.length];
+        const size = 8 + Math.round(Math.pow(repo.stars / maxStars, 0.6) * 18);
+        return '<button type="button" class="constellation-star" data-repo-index="' + index + '"'
+          + ' style="--x:' + spot.x + '%;--y:' + spot.y + '%;--size:' + size + 'px"'
+          + ' aria-haspopup="dialog" aria-label="' + escapeHtml(repo.name) + '，' + stars + '">'
+          + '<span class="constellation-star__dot" aria-hidden="true"><i></i></span>'
+          + '<b class="constellation-star__name">' + escapeHtml(repo.name) + '</b>'
+          + '<small class="constellation-star__meta">' + stars + ' · ' + escapeHtml(lang) + '</small>'
+          + '</button>';
+      }).join("")
+    + '<div class="constellation__legend" aria-hidden="true">'
+    + '最亮 · ' + escapeHtml(topRepo.name) + '（' + formatStars(topRepo.stars) + '）</div>';
 
   setTimeout(function () {
-    trendingGrid.querySelectorAll('.star-planet').forEach(function (el) {
+    trendingGrid.querySelectorAll('.constellation-star').forEach(function (el) {
       el.classList.add('is-calm');
     });
-  }, 60);
+  }, 120);
 }
 function withTimeout(promise, ms) {
   return new Promise(function (resolve, reject) {
@@ -875,8 +873,8 @@ function initFreeExpand(containerSel, itemSel, bindAttr) {
     });
   });
 }
-initFreeExpand('.rope-gallery', '.rope-sign', 'bound');
-initFreeExpand('.note-sticks', '.note-stick', 'bound');
+initFreeExpand('.lantern-gallery', '.lantern', 'bound');
+initFreeExpand('.bottle-garden', '.bottle', 'bound');
 
 detailModal?.addEventListener('click', function (event) {
   if (event.target === detailModal || event.target.closest('[data-close-modal]')) closeDetail();
@@ -891,7 +889,7 @@ document.addEventListener('keydown', function (event) {
 });
 
 trendingGrid?.addEventListener('click', function (event) {
-  const card = event.target.closest('.star-planet');
+  const card = event.target.closest('.constellation-star');
   if (!card) return;
   const repo = currentRepos[Number(card.dataset.repoIndex)];
   if (repo) openRepoDetail(repo);
