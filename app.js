@@ -298,6 +298,12 @@ function formatDescription(desc, maxLen) {
   return desc.slice(0, maxLen) + '…';
 }
 
+function axisStars(n) {
+  if (n >= 10000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + ' 万星';
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + ' 千星';
+  return String(n) + ' 星';
+}
+
 function renderTrending(repos, fetchedAt = null) {
   if (!trendingGrid || !repos?.length) return;
   currentRepos = repos.slice(0, 7);
@@ -307,37 +313,38 @@ function renderTrending(repos, fetchedAt = null) {
     ? new Date(fetchedAt).toLocaleString('zh-CN', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
     : new Date().toLocaleDateString('zh-CN');
 
-  /* 涟漪池：七颗新星从水面浮起（越高=星越多），
-     星数悬在星光上方、项目名沉在水线；
-     涟漪一圈圈荡开，点击直达仓库。 */
-  const logMax = Math.log10(Math.max(10, maxStars));
-  trendingGrid.classList.add('ripple-pool');
+  /* 星阶图：七个每日高星项目化作一根根星柱，
+     左侧星数刻度、柱顶星标定格热度、底部项目名，
+     一天一换，每日同步。 */
   trendingGrid.innerHTML =
-      '<p class="ripple-pool__date">星光更新于 ' + escapeHtml(updatedText) + '</p>'
-    + '<p class="ripple-pool__foot">悬停点亮星光 · 点击直达仓库 ↗</p>'
-    + '<div class="ripple-pool__field">'
-    + currentRepos.map(function (repo, index) {
+      '<p class="trend-chart__date">★ 每日星阶 · 更新于 ' + escapeHtml(updatedText) + '</p>'
+    + '<div class="trend-chart__body">'
+    +   '<div class="trend-chart__axis" aria-hidden="true">'
+    +     '<span style="--f:1">' + axisStars(maxStars) + '</span>'
+    +     '<span style="--f:.5">' + axisStars(Math.round(maxStars / 2)) + '</span>'
+    +     '<span style="--f:0">0 星</span>'
+    +   '</div>'
+    +   '<div class="trend-chart__plot">'
+    +     currentRepos.map(function (repo, index) {
+        const ratio = Math.max(0.08, repo.stars / maxStars);
+        const height = Math.round(92 * ratio);
         const stars = formatStars(repo.stars);
-        const ratio = Math.log10(Math.max(2, repo.stars)) / logMax;      // 0..1
-        const rise = 10 + Math.round(52 * ratio);                       // 10%..62%
-        const size = (0.86 + 0.66 * ratio).toFixed(2);
-        const jitter = ((index % 2 ? -1 : 1) * (4 + (index % 4) * 2)) + '%';
         const langText = repo.language && repo.language !== 'N/A' ? repo.language : '';
-        const descText = formatDescription(repo.description, 18);
+        const descText = formatDescription(repo.description, 20);
         const metaText = langText ? langText + ' · ' + descText : descText;
-        return '<a class="ripple-star" href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener noreferrer"'
-          + ' style="--rise:' + rise + '%;--size:' + size + 'rem;--jitter:' + jitter
-          + ';--delay:' + (index * 480) + 'ms;--delay2:' + (index * 120) + 'ms"'
+        return '<a class="trend-col" href="' + escapeHtml(repo.url) + '" target="_blank" rel="noopener noreferrer"'
+          + ' style="--h:' + height + '%;--delay:' + (index * 70) + 'ms"'
           + ' aria-label="' + escapeHtml(repo.name) + '，' + stars + '，' + escapeHtml(metaText) + '，在 GitHub 打开">'
-          + '<i class="ripple-star__ring" aria-hidden="true"></i>'
-          + '<i class="ripple-star__ring ripple-star__ring--b" aria-hidden="true"></i>'
-          + '<span class="ripple-star__orb" aria-hidden="true"></span>'
-          + '<b class="ripple-star__count">' + stars + '</b>'
-          + '<em class="ripple-star__name">' + escapeHtml(repo.name) + '</em>'
-          + (metaText ? '<small class="ripple-star__meta">' + escapeHtml(metaText) + '</small>' : '')
+          + '<span class="trend-col__beam" aria-hidden="true"></span>'
+          + '<span class="trend-col__star" aria-hidden="true">✦</span>'
+          + '<b class="trend-col__count">' + stars + '</b>'
+          + '<em class="trend-col__name">' + escapeHtml(repo.name) + '</em>'
+          + (metaText ? '<small class="trend-col__meta">' + escapeHtml(metaText) + '</small>' : '')
           + '</a>';
       }).join('')
-    + '</div>';
+    +   '</div>'
+    + '</div>'
+    + '<p class="trend-chart__foot">悬停柱身看简介 · 点击直达仓库 ↗</p>';
   requestAnimationFrame(function () {
     requestAnimationFrame(function () {
       trendingGrid.classList.add('is-in');
@@ -871,7 +878,7 @@ function initFreeExpand(containerSel, headSel) {
     });
   });
 }
-initFreeExpand('.grain-trail', '.grain__btn');
+/* r57: 笔记说明改为常驻，展开逻辑不再使用 */
 
 detailModal?.addEventListener('click', function (event) {
   if (event.target === detailModal || event.target.closest('[data-close-modal]')) closeDetail();

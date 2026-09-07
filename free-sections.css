@@ -125,6 +125,64 @@
   from { opacity: .55; filter: blur(0); }
   to   { opacity: 1; filter: blur(.4px); }
 }
+/* 轨道环：两圈缓缓公转的淡环，环上各有一颗微光 */
+.work-sky__ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.work-sky__ring--a {
+  width: min(74%, 30rem);
+  aspect-ratio: 1.55;
+  border: 1px dashed rgba(214, 178, 255, .26);
+  animation: ring-orbit 38s linear infinite;
+}
+.work-sky__ring--b {
+  width: min(56%, 22rem);
+  aspect-ratio: 1.34;
+  border: 1px solid rgba(214, 178, 255, .12);
+  border-top-color: rgba(255, 214, 246, .55);
+  border-bottom-color: rgba(190, 150, 255, .3);
+  rotate: 38deg;
+  animation: ring-orbit 26s linear infinite reverse;
+}
+.work-sky__ring::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: #ffe4fa;
+  box-shadow: 0 0 8px rgba(255, 205, 245, .95), 0 0 16px rgba(200, 160, 255, .65);
+}
+@keyframes ring-orbit {
+  to { transform: rotate(360deg); }
+}
+/* 核心：夜空中心一处柔和的呼吸光 */
+.work-sky__core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(2.4rem, 6vw, 3.6rem);
+  height: clamp(2.4rem, 6vw, 3.6rem);
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 44% 40%, rgba(255, 255, 255, .95), rgba(255, 196, 244, .5) 30%, rgba(190, 140, 255, .2) 58%, transparent 72%);
+  filter: blur(1px);
+  z-index: 0;
+  animation: core-breathe 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes core-breathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: .82; }
+  50%      { transform: translate(-50%, -50%) scale(1.16); opacity: 1; }
+}
 .work-sky__lines {
   position: absolute;
   inset: 0;
@@ -235,6 +293,35 @@ a.work-star { text-decoration: none; }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/* LIVE 徽标：已上线作品专属的呼吸红点 */
+.work-star__live {
+  display: inline-block;
+  margin-left: .34em;
+  font-style: normal;
+  font-size: .56rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+  color: #ffd9ea;
+  vertical-align: middle;
+  text-shadow: 0 0 8px rgba(255, 120, 190, .95), 0 0 16px rgba(255, 120, 190, .5);
+  animation: live-blink 1.9s ease-in-out infinite;
+}
+@keyframes live-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .3; }
+}
+/* 星座名：作品页的落款 */
+.work-sky__constellation {
+  position: absolute;
+  left: clamp(.6rem, 2vw, 1.4rem);
+  bottom: .15rem;
+  margin: 0;
+  font-size: .6rem;
+  letter-spacing: .26em;
+  color: rgba(255, 235, 255, .55);
+  text-shadow: 0 0 8px rgba(190, 150, 255, .6);
+  pointer-events: none;
+}
 a.work-star:hover .work-star__tag,
 a.work-star:focus-visible .work-star__tag,
 .work-star--live .work-star__tag {
@@ -292,186 +379,246 @@ a.work-star:focus-visible .work-star__tag,
   .work-star__tag { left: 50%; top: calc(100% + 10px); translate: -50% 0; }
   .work-sky__legend { display: none; }
 }
-/* ---------- 话题：新星涟漪池 ----------
-   七颗新星从水面浮起，高度与光晕=星数；
-   星数悬在星光上方，项目名沉在水线；
-   涟漪一圈圈荡开，点击直达仓库。 */
-.ripple-pool {
+/* ---------- 话题：每日星阶 · 柱状星图 ----------
+   七根星柱立在星域里：高度=星数，柱顶一颗✦定格热度；
+   左侧星数刻度、底部项目名、悬停浮出简介，点击直达仓库。
+   数据每天 0 点后自动重取，日期同步刷新。 */
+.trend-chart {
   position: relative;
   flex: 1 1 auto;
   min-height: 0;
   margin-top: clamp(.5rem, 1.6vh, 1.1rem);
-}
-.ripple-pool__date {
-  position: absolute;
-  top: -.1rem;
-  right: 0;
-  font-size: .68rem;
-  letter-spacing: .08em;
-  color: rgba(255, 242, 255, .86);
-}
-.ripple-pool__foot {
-  position: absolute;
-  top: 1.1rem;
-  right: 0;
-  margin: 0;
-  font-size: .62rem;
-  letter-spacing: .08em;
-  color: rgba(255, 240, 255, .66);
-}
-.ripple-pool__field {
-  position: absolute;
-  inset: 1.6rem 0 0;
   display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: clamp(.2rem, 1.4vw, 1rem);
+  flex-direction: column;
 }
-/* 水面：一道极淡的星光水线 + 底部柔光 */
-.ripple-pool__field::before {
+.trend-chart__date {
+  align-self: flex-end;
+  margin: .2rem 0 0;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  color: rgba(255, 242, 255, .9);
+  text-shadow: 0 0 10px rgba(22, 12, 46, .65);
+}
+.trend-chart__foot {
+  align-self: flex-end;
+  margin: .2rem 0 0;
+  font-size: .6rem;
+  letter-spacing: .1em;
+  color: rgba(255, 240, 255, .62);
+  text-shadow: 0 0 8px rgba(22, 12, 46, .5);
+}
+.trend-chart__body {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  margin-top: .9rem;
+}
+/* 左侧星数刻度：与柱高同高的三个刻度点 */
+.trend-chart__axis {
+  position: relative;
+  width: 3.2rem;
+  flex: 0 0 3.2rem;
+  margin-right: .5rem;
+  pointer-events: none;
+}
+.trend-chart__axis span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  translate: 0 50%;
+  font-size: .56rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: rgba(255, 240, 255, .56);
+  text-shadow: 0 0 8px rgba(22, 12, 46, .6);
+  white-space: nowrap;
+}
+.trend-chart__axis span::after {
   content: "";
   position: absolute;
-  left: 2%;
-  right: 2%;
-  bottom: 1.75rem;
+  left: calc(100% + .3rem);
+  top: 50%;
+  translate: 0 -50%;
+  width: .45rem;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(226, 196, 255, .38) 16%, rgba(255, 214, 246, .55) 50%, rgba(226, 196, 255, .38) 84%, transparent);
-  box-shadow: 0 0 10px rgba(190, 150, 255, .35);
+  background: rgba(214, 178, 255, .35);
 }
-.ripple-pool__field::after {
+.trend-chart__axis span:first-child::after { opacity: .9; }
+.trend-chart__plot {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: clamp(.15rem, 1.1vw, .7rem);
+  /* 淡色地平线光晕 */
+}
+.trend-chart__plot::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.6rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(226, 196, 255, .4) 18%, rgba(255, 214, 246, .6) 50%, rgba(226, 196, 255, .4) 82%, transparent);
+  box-shadow: 0 0 12px rgba(190, 150, 255, .3);
+}
+.trend-chart__plot::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -1.7rem;
-  width: 82%;
-  height: 4.4rem;
+  bottom: -1.9rem;
+  width: 72%;
+  height: 3.6rem;
   translate: -50% 0;
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(163, 122, 243, .2), rgba(163, 122, 243, 0) 72%);
+  background: radial-gradient(closest-side, rgba(163, 122, 243, .14), transparent 72%);
   pointer-events: none;
 }
-.ripple-star {
+.trend-col {
   position: relative;
   flex: 1 1 0;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .5s ease, transform .55s cubic-bezier(.22, .9, .3, 1.08);
+  transition-delay: var(--delay, 0ms);
+  outline-offset: 4px;
 }
-.ripple-pool.is-in .ripple-star {
-  animation: star-rise .85s cubic-bezier(.22, .9, .3, 1.08) forwards;
-  animation-delay: var(--delay2, 0s);
+.trend-chart.is-in .trend-col {
+  opacity: 1;
+  transform: none;
 }
-@keyframes star-rise {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: none; }
-}
-.ripple-star__orb {
+.trend-col__beam {
   position: absolute;
-  left: calc(50% + var(--jitter, 0%));
-  bottom: calc(3.4rem + var(--rise));
-  width: var(--size);
-  height: var(--size);
+  bottom: 1.6rem;
+  left: 50%;
   translate: -50% 0;
-  border-radius: 50%;
-  background: radial-gradient(circle at 38% 32%, #fff 0%, #ffe3fb 34%, #cfa4ff 66%, #8f6ae0 100%);
-  box-shadow:
-    0 0 calc(var(--size) * .9) rgba(255, 196, 244, .8),
-    0 0 calc(var(--size) * 2.4) rgba(186, 143, 255, .45);
+  width: clamp(.5rem, .9vw, .82rem);
+  height: var(--h);
+  min-height: .6rem;
+  border-radius: 999px 999px .4rem .4rem;
+  background: linear-gradient(180deg, rgba(255, 226, 250, .95), rgba(207, 164, 255, .66) 58%, rgba(139, 106, 224, .28));
+  box-shadow: 0 0 12px rgba(207, 164, 255, .4), 0 0 26px rgba(255, 196, 244, .22);
+  transform-origin: bottom;
   transition: filter .25s, box-shadow .25s;
 }
-.ripple-star__count {
+/* 进场：星柱从地平线“长”出来 */
+.trend-chart.is-in .trend-col__beam {
+  animation: trend-grow .75s cubic-bezier(.22, .9, .3, 1.1) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+@keyframes trend-grow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+.trend-col__star {
   position: absolute;
-  left: calc(50% + var(--jitter, 0%));
-  bottom: calc(3.4rem + var(--rise) + var(--size) + .36rem);
+  bottom: calc(1.6rem + var(--h));
+  left: 50%;
+  translate: -50% 50%;
+  font-size: .8rem;
+  font-style: normal;
+  line-height: 1;
+  color: #ffe9fb;
+  text-shadow: 0 0 8px rgba(255, 190, 245, 1), 0 0 18px rgba(198, 160, 255, .6);
+  opacity: 0;
+  transition: opacity .4s, transform .4s;
+}
+.trend-chart.is-in .trend-col__star {
+  opacity: 1;
+  animation: trend-star-pop .5s cubic-bezier(.22, .9, .3, 1.35) forwards;
+  animation-delay: calc(var(--delay, 0ms) + .28s);
+}
+@keyframes trend-star-pop {
+  from { transform: translate(-50%, 50%) scale(.3); }
+  to   { transform: translate(-50%, 50%) scale(1); }
+}
+.trend-col__count {
+  position: absolute;
+  bottom: calc(1.9rem + var(--h));
+  left: 50%;
   translate: -50% 0;
-  font-size: .88rem;
+  font-size: .66rem;
   font-weight: 900;
-  letter-spacing: .05em;
+  letter-spacing: .04em;
   color: #fff;
   white-space: nowrap;
   text-shadow: 0 0 10px rgba(255, 190, 245, 1), 0 0 22px rgba(198, 160, 255, .6);
-  transition: color .25s, text-shadow .25s;
+  opacity: 0;
+  transition: opacity .35s;
 }
-.ripple-star__name {
-  position: absolute;
-  left: 50%;
-  bottom: .85rem;
-  translate: -50% 0;
-  max-width: calc(100% - .5rem);
-  font-size: .74rem;
+.trend-chart.is-in .trend-col__count {
+  opacity: 1;
+  transition-delay: calc(var(--delay, 0ms) + .32s);
+}
+.trend-col__name {
+  position: relative;
+  z-index: 1;
+  margin: .34rem 0 0;
+  max-width: 92%;
+  font-size: .68rem;
   font-style: normal;
   font-weight: 800;
-  letter-spacing: .05em;
-  color: rgba(255, 253, 255, .98);
+  letter-spacing: .04em;
+  color: rgba(255, 253, 255, .97);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-shadow: 0 0 8px rgba(20, 10, 44, .7), 0 0 18px rgba(255, 190, 245, .35);
+  text-shadow: 0 0 8px rgba(22, 12, 46, .8), 0 0 16px rgba(255, 200, 250, .4);
   transition: color .25s, text-shadow .25s;
 }
-.ripple-star__ring {
+.trend-col__meta {
   position: absolute;
-  left: calc(50% + var(--jitter, 0%));
-  bottom: calc(3.4rem + var(--rise));
-  width: var(--size);
-  height: var(--size);
-  translate: -50% -50%;
-  border: 1px solid rgba(214, 178, 255, .42);
-  border-radius: 50%;
-  opacity: 0;
-  pointer-events: none;
-  animation: ripple-ring 3.4s cubic-bezier(.22, .6, .3, 1) infinite;
-  animation-delay: var(--delay, 0s);
-}
-.ripple-star__ring--b {
-  animation-delay: calc(var(--delay, 0s) + 1.7s);
-}
-@keyframes ripple-ring {
-  0%   { opacity: 0; transform: scale(.38); }
-  16%  { opacity: .55; }
-  72%  { opacity: 0; transform: scale(2.8); }
-  100% { opacity: 0; transform: scale(2.8); }
-}
-.ripple-star:hover .ripple-star__orb,
-.ripple-star:focus-visible .ripple-star__orb {
-  filter: brightness(1.22);
-  box-shadow:
-    0 0 calc(var(--size) * 1.25) rgba(255, 210, 250, .95),
-    0 0 calc(var(--size) * 3) rgba(198, 160, 255, .6);
-}
-.ripple-star:hover .ripple-star__count,
-.ripple-star:focus-visible .ripple-star__count {
-  color: #fff;
-  text-shadow: 0 0 12px rgba(255, 190, 245, 1);
-}
-.ripple-star:hover .ripple-star__name,
-.ripple-star:focus-visible .ripple-star__name {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 200, 250, 1);
-}
-.ripple-star:focus-visible {
-  outline: 1px solid rgba(214, 178, 255, .4);
-  outline-offset: 5px;
-  border-radius: 8px;
-}
-.ripple-star__meta {
-  position: absolute;
+  bottom: calc(100% + .5rem);
   left: 50%;
-  bottom: .3rem;
   translate: -50% 0;
-  max-width: calc(100% - .5rem);
-  font-size: .52rem;
+  z-index: 3;
+  max-width: 13rem;
+  font-size: .58rem;
   font-style: normal;
   font-weight: 600;
-  letter-spacing: .06em;
-  color: rgba(255, 240, 255, .92);
+  letter-spacing: .04em;
+  line-height: 1.45;
+  text-align: center;
+  color: rgba(255, 246, 255, .95);
+  background: color-mix(in srgb, rgba(26, 17, 56, .66) 72%, transparent);
+  padding: .4rem .62rem;
+  border-radius: .8rem;
+  box-shadow: 0 0 18px rgba(180, 140, 255, .22);
+  opacity: 0;
+  transform: translate(-50%, 6px);
+  transition: opacity .3s, transform .36s cubic-bezier(.22, .9, .3, 1.15);
+  pointer-events: none;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-shadow: 0 0 10px rgba(22, 12, 46, .85), 0 0 16px rgba(255, 190, 245, .4);
-  transition: color .25s;
 }
-.ripple-star:hover .ripple-star__meta,
-.ripple-star:focus-visible .ripple-star__meta {
+.trend-col:hover .trend-col__meta,
+.trend-col:focus-visible .trend-col__meta {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.trend-col:hover .trend-col__beam,
+.trend-col:focus-visible .trend-col__beam {
+  filter: brightness(1.25);
+  box-shadow: 0 0 16px rgba(207, 164, 255, .7), 0 0 34px rgba(255, 196, 244, .4);
+}
+.trend-col:hover .trend-col__name,
+.trend-col:focus-visible .trend-col__name {
   color: #fff;
+  text-shadow: 0 0 10px rgba(255, 200, 250, 1), 0 0 20px rgba(255, 200, 250, .5);
+}
+.trend-col:focus-visible {
+  outline: 1px solid rgba(214, 178, 255, .5);
 }
 .trending-loading {
   position: absolute;
@@ -499,14 +646,18 @@ a.work-star:focus-visible .work-star__tag,
 }
 @keyframes trend-spin { to { transform: rotate(360deg); } }
 @media (max-width: 34rem) {
-  .ripple-star__count { font-size: .74rem; }
-  .ripple-star__name { font-size: .66rem; }
-  .ripple-star__meta { font-size: .48rem; }
-  .ripple-pool__foot { top: 1.2rem; }
+  .trend-chart__axis { width: 2.5rem; flex-basis: 2.5rem; }
+  .trend-chart__axis span { font-size: .5rem; }
+  .trend-col__name { font-size: .56rem; max-width: 100%; white-space: normal; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .trend-col__count { font-size: .56rem; }
+  .trend-col__meta { max-width: 9rem; font-size: .5rem; }
+  .trend-chart__date { font-size: .6rem; }
+  .trend-chart__foot { display: none; }
 }
+
 /* ---------- 笔记：星砂轨迹 ----------
-   五粒发光的星砂沿一条柔弧散落，各自轻浮微闪；
-   点开一粒，气泡在身边缓缓浮出 —— 无框、圆润。 */
+   五粒发光的星砂沿一条柔弧散落，说明常驻在侧——
+   一条上、一条下错落排开，无框无泡，一眼读完。 */
 .grain-path {
   position: relative;
   flex: 1 1 auto;
@@ -532,6 +683,10 @@ a.work-star:focus-visible .work-star__tag,
 @keyframes grain-drift {
   to { stroke-dashoffset: -29; }
 }
+.grain-path__dots circle {
+  fill: rgba(255, 244, 255, .45);
+  filter: drop-shadow(0 0 3px rgba(224, 190, 255, .8));
+}
 .grain-trail {
   position: absolute;
   inset: 0;
@@ -544,116 +699,123 @@ a.work-star:focus-visible .work-star__tag,
   left: var(--sx);
   top: var(--sy);
   translate: -50% -50%;
-}
-.grain__btn {
-  position: relative;
-  display: grid;
-  place-items: center;
-  width: 2.9rem;
-  height: 2.9rem;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  width: .86rem;
+  height: .86rem;
+  z-index: 2;
 }
 .grain__spark {
-  width: .82rem;
-  height: .82rem;
+  display: block;
+  width: .86rem;
+  height: .86rem;
   background: radial-gradient(circle at 40% 35%, #fff 0%, #ffddf8 48%, #c79fff 82%, #8f6ae0 100%);
   clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
   filter: drop-shadow(0 0 5px rgba(255, 186, 240, .9)) drop-shadow(0 0 12px rgba(186, 143, 255, .5));
   animation: sparkle-idle var(--tw, 5.4s) ease-in-out infinite;
   animation-delay: var(--td, 0s);
-  transition: transform .3s cubic-bezier(.22, .9, .3, 1.25), filter .3s;
 }
 @keyframes sparkle-idle {
   0%, 100% { transform: scale(.88) rotate(0deg); opacity: .72; }
   50%      { transform: scale(1.16) rotate(22deg); opacity: 1; }
 }
-.grain__btn:hover .grain__spark,
-.grain.is-open .grain__spark {
-  transform: scale(1.4) rotate(45deg);
-  filter: drop-shadow(0 0 8px rgba(255, 200, 248, 1)) drop-shadow(0 0 20px rgba(200, 160, 255, .85));
-  animation-play-state: paused;
-}
 .grain__date {
   position: absolute;
-  top: calc(100% + .4rem);
   left: 50%;
   translate: -50% 0;
-  font-size: .66rem;
+  font-size: .56rem;
   font-weight: 700;
-  letter-spacing: .14em;
-  color: rgba(255, 250, 255, .97);
-  background: rgba(255, 236, 255, .13);
-  border: 1px solid rgba(255, 218, 252, .34);
-  border-radius: 999px;
-  padding: .2em .72em;
+  letter-spacing: .18em;
+  color: rgba(255, 250, 255, .85);
+  text-shadow: 0 0 10px rgba(22, 12, 46, .85), 0 0 16px rgba(255, 190, 245, .45);
   white-space: nowrap;
-  text-shadow: 0 0 10px rgba(22, 12, 46, .8), 0 0 16px rgba(255, 190, 245, .4);
-  transition: color .25s, background .25s, border-color .25s;
 }
-.grain.is-open .grain__date { color: rgba(255, 246, 255, .95); }
-/* 气泡：不规则圆角、无边框的柔光泡 */
+/* 说明常驻：一条上、一条下错落排开，无框无泡 */
 .grain__note {
   position: absolute;
-  width: min(15rem, 44vw);
+  width: min(15rem, 40vw);
   margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  color: rgba(255, 250, 255, .98);
-  font-size: .72rem;
+  font-size: .7rem;
   line-height: 1.5;
   letter-spacing: .04em;
+  color: rgba(255, 250, 255, .95);
+  text-shadow: 0 0 10px rgba(18, 10, 40, .9), 0 0 20px rgba(30, 14, 60, .55);
   pointer-events: none;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity .3s cubic-bezier(.22, .9, .3, 1), transform .36s cubic-bezier(.22, .9, .3, 1.18);
-  z-index: 6;
+  z-index: 5;
 }
-.grain.is-open .grain__note {
-  opacity: 1;
-  transform: none;
+.grain--under .grain__note {
+  left: 1.35rem;
+  top: 1.05rem;
+  translate: var(--nx, 0%) 0;
+}
+.grain--over .grain__note {
+  right: 1.35rem;
+  bottom: 1.05rem;
+  translate: var(--nx, 0%) 0;
+  text-align: right;
 }
 .grain__note small {
   display: inline-block;
-  margin-bottom: .14rem;
-  font-size: .58rem;
+  margin-bottom: .1rem;
+  font-size: .56rem;
   font-weight: 800;
-  letter-spacing: .18em;
+  letter-spacing: .2em;
   color: #e9d2ff;
 }
 .grain__note strong {
   display: block;
-  margin: .06rem 0 .18rem;
-  font-size: .86rem;
+  margin: .04rem 0 .08rem;
+  font-size: .84rem;
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: .03em;
   color: #ffffff;
-  text-shadow: 0 0 12px rgba(0, 0, 0, .45);
 }
 .grain__note span {
   display: block;
-  font-size: .66rem;
-  color: rgba(255, 246, 255, .92);
-  text-shadow: 0 0 8px rgba(0, 0, 0, .4);
+  font-size: .64rem;
+  color: rgba(255, 246, 255, .9);
 }
-.grain:nth-child(1) .grain__note,
-.grain:nth-child(2) .grain__note,
-.grain:nth-child(3) .grain__note { left: 2.7rem; top: 50%; translate: 0 -50%; }
-.grain:nth-child(4) .grain__note,
-.grain:nth-child(5) .grain__note { right: 2.7rem; top: 50%; translate: 0 -50%; text-align: right; }
+/* 日期放在星砂反侧，与说明上下交替 */
+.grain--under .grain__date { bottom: calc(100% + .55rem); }
+.grain--over .grain__date { top: calc(100% + .55rem); }
+.grain-path__legend {
+  position: absolute;
+  left: 50%;
+  bottom: .1rem;
+  translate: -50% 0;
+  margin: 0;
+  font-size: .58rem;
+  letter-spacing: .24em;
+  color: rgba(255, 235, 255, .5);
+  text-shadow: 0 0 8px rgba(22, 12, 46, .5);
+  pointer-events: none;
+  white-space: nowrap;
+}
+/* 平板/窄桌面：说明收窄、五粒星沿纵向错开，避免说明互相叠压 */
+@media (min-width: 34.01rem) and (max-width: 64rem) {
+  .grain__note { width: min(11rem, 26vw); }
+  .grain:nth-child(1) { --sy: 10% !important; }
+  .grain:nth-child(2) { --sy: 28% !important; }
+  .grain:nth-child(3) { --sy: 55% !important; }
+  .grain:nth-child(4) { --sy: 75% !important; }
+  .grain:nth-child(5) { --sy: 92% !important; }
+}
 @media (max-width: 34rem) {
-  .grain__note { width: min(16rem, 62vw); }
-  .grain__date { font-size: .56rem; }
+  .grain__note { width: min(8.6rem, 38vw); font-size: .55rem; line-height: 1.42; }
+  .grain__note small { font-size: .5rem; margin: 0 0 .04rem; }
+  .grain__note strong { font-size: .66rem; margin: .02rem 0 .05rem; }
+  .grain__note span { font-size: .52rem; }
+  .grain__date { font-size: .48rem; }
+  /* 手机上把五粒星砂沿纵向错开，说明行各自占一条垂直带，不再互相叠压 */
+  .grain:nth-child(1) { --sy: 5% !important; }
+  .grain:nth-child(2) { --sy: 22% !important; }
+  .grain:nth-child(3) { --sy: 53% !important; }
+  .grain:nth-child(4) { --sy: 73% !important; }
+  .grain:nth-child(5) { --sy: 92% !important; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .work-star__halo, .trending-loading::after,
-  .ripple-star__ring, .grain-path__curve, .grain__spark {
+  .work-star__halo, .grain-path__curve,
+  .grain__spark, .trending-loading::after {
     animation: none !important;
   }
 }
+
