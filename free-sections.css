@@ -632,16 +632,16 @@ a.work-star:focus-visible .work-star__tag,
   .trend-chart__date { font-size: .6rem; }
   .trend-chart__foot { display: none; }
 }
-/* ---------- 笔记：星砂轨迹 ----------
-   五粒发光的星砂沿一条柔弧散落，说明常驻在侧——
-   一条上、一条下错落排开，无框无泡，一眼读完。 */
-.grain-path {
+/* ---------- 笔记：墨迹手记 ----------
+   一支发光的笔沿纸面持续书写（SVG 路径 + 流动墨水 + 笔尖巡游），
+   五条记录如字句排在笔迹上下，无框无泡，文字常驻、悬停点亮。 */
+.ink-journal {
   position: relative;
   flex: 1 1 auto;
   min-height: 0;
   margin-top: clamp(.5rem, 1.6vh, 1.1rem);
 }
-.grain-path__arc {
+.ink-journal__art {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -649,149 +649,183 @@ a.work-star:focus-visible .work-star__tag,
   overflow: visible;
   pointer-events: none;
 }
-.grain-path__curve {
+.ink-journal__line {
   fill: none;
-  stroke: rgba(206, 168, 255, .3);
-  stroke-width: 1;
-  stroke-dasharray: .2 7;
+  stroke: url(#ink-grad);
+  stroke-width: 1.1;
   stroke-linecap: round;
-  animation: grain-drift 26s linear infinite;
+  stroke-dasharray: 1;
+  stroke-dashoffset: .6;
+  opacity: .88;
+  filter: drop-shadow(0 0 3px rgba(226, 178, 255, .55)) drop-shadow(0 0 10px rgba(180, 140, 255, .3));
+  animation: ink-draw 2.4s ease forwards;
 }
-@keyframes grain-drift {
-  to { stroke-dashoffset: -29; }
+@keyframes ink-draw { to { stroke-dashoffset: 0; } }
+.ink-journal__flow {
+  fill: none;
+  stroke: rgba(255, 240, 255, .5);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-dasharray: .4 3.4;
+  animation: ink-flow 9s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(255, 215, 250, .8));
 }
-.grain-path__dots circle {
-  fill: rgba(255, 244, 255, .45);
-  filter: drop-shadow(0 0 3px rgba(224, 190, 255, .8));
+@keyframes ink-flow { to { stroke-dashoffset: -15.2; } }
+.ink-journal__pen {
+  fill: #fff;
+  stroke: rgba(255, 214, 250, .95);
+  stroke-width: .5;
+  filter: drop-shadow(0 0 5px rgba(255, 214, 250, .95)) drop-shadow(0 0 12px rgba(255, 190, 245, .55));
 }
-.grain-trail {
+.ink-journal__list {
   position: absolute;
   inset: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.grain {
+.ink-note {
   position: absolute;
   left: var(--sx);
   top: var(--sy);
   translate: -50% -50%;
-  width: .86rem;
-  height: .86rem;
+  width: .8rem;
+  height: .8rem;
   z-index: 2;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: ink-note-in .7s cubic-bezier(.2, .8, .3, 1.1) forwards;
+  animation-delay: var(--d, 0s);
 }
-.grain__spark {
+@keyframes ink-note-in { to { opacity: 1; transform: translateY(0); } }
+.ink-note__drop {
   display: block;
-  width: .86rem;
-  height: .86rem;
-  background: radial-gradient(circle at 40% 35%, #fff 0%, #ffddf8 48%, #c79fff 82%, #8f6ae0 100%);
-  clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
-  filter: drop-shadow(0 0 5px rgba(255, 186, 240, .9)) drop-shadow(0 0 12px rgba(186, 143, 255, .5));
-  animation: sparkle-idle var(--tw, 5.4s) ease-in-out infinite;
-  animation-delay: var(--td, 0s);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 28%, #fff 0%, #ffe2f8 42%, #d3a8ff 78%, #8f6ae0 100%);
+  box-shadow:
+    inset -1px -2px 4px rgba(96, 62, 170, .5),
+    inset 1px 1px 2px rgba(255, 255, 255, .9),
+    0 0 9px rgba(222, 172, 255, .9),
+    0 0 20px rgba(180, 140, 255, .5);
+  transition: transform .3s cubic-bezier(.22, .9, .3, 1.25), box-shadow .3s, filter .3s;
+  filter: drop-shadow(0 0 6px rgba(226, 178, 255, .8));
 }
-@keyframes sparkle-idle {
-  0%, 100% { transform: scale(.88) rotate(0deg); opacity: .72; }
-  50%      { transform: scale(1.16) rotate(22deg); opacity: 1; }
+.ink-note:hover .ink-note__drop,
+.ink-note:focus-visible .ink-note__drop {
+  transform: scale(1.55);
+  box-shadow:
+    inset -1px -2px 4px rgba(96, 62, 170, .5),
+    inset 1px 1px 2px rgba(255, 255, 255, .9),
+    0 0 14px rgba(236, 186, 255, 1),
+    0 0 30px rgba(190, 145, 255, .85);
+  filter: drop-shadow(0 0 10px rgba(255, 214, 250, 1));
 }
-.grain__date {
+.ink-note__date {
   position: absolute;
   left: 50%;
   translate: -50% 0;
   font-size: .56rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: .18em;
-  color: rgba(255, 250, 255, .85);
-  text-shadow: 0 0 10px rgba(22, 12, 46, .85), 0 0 16px rgba(255, 190, 245, .45);
+  color: rgba(255, 242, 255, .92);
+  text-shadow: 0 0 9px rgba(18, 10, 40, .9), 0 0 14px rgba(255, 190, 245, .5);
   white-space: nowrap;
+  pointer-events: none;
 }
-/* 说明常驻：一条上、一条下错落排开，无框无泡 */
-.grain__note {
+.ink-note--up .ink-note__date { top: calc(100% + .6rem); }
+.ink-note--down .ink-note__date { bottom: calc(100% + .6rem); }
+.ink-note__text {
   position: absolute;
-  width: min(15rem, 40vw);
+  width: max-content;
+  max-width: min(14rem, 40vw);
   margin: 0;
-  font-size: .7rem;
+  font-size: .68rem;
   line-height: 1.5;
   letter-spacing: .04em;
-  color: rgba(255, 250, 255, .95);
-  text-shadow: 0 0 10px rgba(18, 10, 40, .9), 0 0 20px rgba(30, 14, 60, .55);
+  color: rgba(255, 250, 255, .97);
+  text-shadow: 0 0 10px rgba(18, 10, 40, .95), 0 0 20px rgba(30, 14, 60, .6);
   pointer-events: none;
-  z-index: 5;
+  transition: color .3s, text-shadow .3s;
 }
-.grain--under .grain__note {
-  left: 1.35rem;
-  top: 1.05rem;
-  translate: var(--nx, 0%) 0;
-}
-.grain--over .grain__note {
-  right: 1.35rem;
+.ink-note--up .ink-note__text {
+  right: 1.5rem;
   bottom: 1.05rem;
-  translate: var(--nx, 0%) 0;
   text-align: right;
 }
-.grain__note small {
-  display: inline-block;
-  margin-bottom: .1rem;
-  font-size: .56rem;
+.ink-note--down .ink-note__text {
+  left: 1.5rem;
+  top: 1.05rem;
+}
+.ink-note__text small {
+  display: block;
+  font-size: .55rem;
   font-weight: 800;
   letter-spacing: .2em;
   color: #e9d2ff;
 }
-.grain__note strong {
+.ink-note__text strong {
   display: block;
-  margin: .04rem 0 .08rem;
-  font-size: .84rem;
+  margin: .04rem 0 .06rem;
+  font-size: .8rem;
   font-weight: 700;
   line-height: 1.35;
   letter-spacing: .03em;
   color: #ffffff;
 }
-.grain__note span {
+.ink-note__text span {
   display: block;
-  font-size: .64rem;
-  color: rgba(255, 246, 255, .9);
+  font-size: .6rem;
+  color: rgba(255, 246, 255, .88);
 }
-/* 日期放在星砂反侧，与说明上下交替 */
-.grain--under .grain__date { bottom: calc(100% + .55rem); }
-.grain--over .grain__date { top: calc(100% + .55rem); }
-.grain-path__legend {
+.ink-note:hover .ink-note__text,
+.ink-note:focus-visible .ink-note__text {
+  color: #fff;
+  text-shadow: 0 0 12px rgba(255, 214, 250, .95), 0 0 24px rgba(190, 145, 255, .6);
+}
+.ink-note:hover .ink-note__text strong,
+.ink-note:focus-visible .ink-note__text strong {
+  text-shadow: 0 0 12px rgba(255, 214, 250, 1), 0 0 22px rgba(190, 145, 255, .7);
+}
+.ink-journal__legend {
   position: absolute;
   left: 50%;
   bottom: .1rem;
   translate: -50% 0;
   margin: 0;
-  font-size: .58rem;
+  font-size: .57rem;
   letter-spacing: .24em;
   color: rgba(255, 235, 255, .5);
   text-shadow: 0 0 8px rgba(22, 12, 46, .5);
   pointer-events: none;
   white-space: nowrap;
 }
-/* 平板/窄桌面：说明收窄、五粒星沿纵向错开，避免说明互相叠压 */
+/* 平板/窄桌面：文字收窄、笔迹隐淡，五条记录纵向错开避免叠压 */
 @media (min-width: 34.01rem) and (max-width: 64rem) {
-  .grain__note { width: min(11rem, 26vw); }
-  .grain:nth-child(1) { --sy: 10% !important; }
-  .grain:nth-child(2) { --sy: 28% !important; }
-  .grain:nth-child(3) { --sy: 55% !important; }
-  .grain:nth-child(4) { --sy: 75% !important; }
-  .grain:nth-child(5) { --sy: 92% !important; }
+  .ink-journal__art { opacity: .55; }
+  .ink-note__text { max-width: min(11.5rem, 30vw); }
+  .ink-note:nth-child(1) { --sy: 14% !important; }
+  .ink-note:nth-child(2) { --sy: 34% !important; }
+  .ink-note:nth-child(3) { --sy: 56% !important; }
+  .ink-note:nth-child(4) { --sy: 74% !important; }
+  .ink-note:nth-child(5) { --sy: 92% !important; }
 }
 @media (max-width: 34rem) {
-  .grain__note { width: min(8.6rem, 38vw); font-size: .55rem; line-height: 1.42; }
-  .grain__note small { font-size: .5rem; margin: 0 0 .04rem; }
-  .grain__note strong { font-size: .66rem; margin: .02rem 0 .05rem; }
-  .grain__note span { font-size: .52rem; }
-  .grain__date { font-size: .48rem; }
-  /* 手机上把五粒星砂沿纵向错开，说明行各自占一条垂直带，不再互相叠压 */
-  .grain:nth-child(1) { --sy: 5% !important; }
-  .grain:nth-child(2) { --sy: 22% !important; }
-  .grain:nth-child(3) { --sy: 53% !important; }
-  .grain:nth-child(4) { --sy: 73% !important; }
-  .grain:nth-child(5) { --sy: 92% !important; }
+  .ink-journal__art { opacity: .22; }
+  .ink-note__text { max-width: min(9rem, 42vw); font-size: .56rem; line-height: 1.42; }
+  .ink-note__text small { font-size: .5rem; }
+  .ink-note__text strong { font-size: .66rem; }
+  .ink-note__text span { font-size: .52rem; }
+  .ink-note__date { font-size: .48rem; }
+  .ink-note:nth-child(1) { --sy: 7% !important; }
+  .ink-note:nth-child(2) { --sy: 25% !important; }
+  .ink-note:nth-child(3) { --sy: 55% !important; }
+  .ink-note:nth-child(4) { --sy: 74% !important; }
+  .ink-note:nth-child(5) { --sy: 93% !important; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .work-star__halo, .grain-path__curve,
-  .grain__spark, .trending-loading::after {
+  .ink-journal__line, .ink-journal__flow, .ink-note {
     animation: none !important;
   }
 }
@@ -863,21 +897,4 @@ a.work-star:focus-visible .work-star__tag,
 }
 .work-star__halo {
   border-color: rgba(255, 220, 252, .7);
-}
-/* Round 59 · 笔记常驻文字对比度增强 */
-.grain__note {
-  color: rgba(255, 253, 255, 1);
-  text-shadow: 0 0 12px rgba(12, 6, 28, 1), 0 0 24px rgba(30, 14, 60, .8), 0 1px 2px rgba(0,0,0,.6);
-}
-.grain__note strong {
-  color: #ffffff;
-  text-shadow: 0 0 14px rgba(12, 6, 28, 1), 0 1px 2px rgba(0,0,0,.65);
-}
-.grain__note span {
-  color: rgba(255, 248, 255, .95);
-  text-shadow: 0 0 10px rgba(12, 6, 28, 1), 0 1px 2px rgba(0,0,0,.6);
-}
-.grain__date {
-  color: rgba(255, 252, 255, .95);
-  text-shadow: 0 0 12px rgba(12, 6, 28, 1), 0 0 18px rgba(255, 190, 245, .5);
 }

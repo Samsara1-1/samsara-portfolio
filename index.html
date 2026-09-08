@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="wallpapers.css"><!-- 壁纸配置：换壁纸只改这个文件 -->
   <link rel="stylesheet" href="about-theme.css">
   <link rel="stylesheet" href="theme-overrides.css">
-  <link rel="stylesheet" href="free-sections.css?v=20260908-04">
+  <link rel="stylesheet" href="free-sections.css?v=20260908-05">
 </head>
 <body>
   <video id="bg-video" class="bg-video" autoplay muted loop playsinline preload="auto" aria-hidden="true"><source src="assets/wallpapers/bg-video-v2.mp4" type="video/mp4"></video>
@@ -156,67 +156,75 @@
           <p class="scene-head__note">只记录为什么做、卡在哪里、学到了什么。</p>
         </header>
 
-        <!-- Round 52 · 星砂轨迹：五粒发光的星砂沿柔弧散落，点开一粒，读一页。 -->
-                <!-- Round 57 · 星砂轨迹：五粒发光的星砂沿柔弧散落，说明常驻在侧，
-             一条上一条下错开排布，一眼读完五条记录。 -->
-        <div class="grain-path" aria-label="学习笔记 · 星砂轨迹">
-          <svg class="grain-path__arc" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">
-            <path class="grain-path__curve" d="M 8 18 Q 30 54 52 30 T 90 28"/>
-            <g class="grain-path__dots">
-              <circle cx="18" cy="26" r=".5"></circle>
-              <circle cx="40" cy="42" r=".45"></circle>
-              <circle cx="62" cy="30" r=".5"></circle>
-              <circle cx="80" cy="36" r=".45"></circle>
-            </g>
+                <!-- Round 60 · 墨迹手记：一支发光的笔沿纸面持续书写，
+             五条记录如字句排在笔迹上下，无框无泡，文字常驻、悬停点亮。 -->
+        <div class="ink-journal" aria-label="学习笔记 · 墨迹手记">
+          <svg class="ink-journal__art" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="ink-grad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ffdcf5"/>
+                <stop offset=".55" stop-color="#e0c2ff"/>
+                <stop offset="1" stop-color="#b99aff"/>
+              </linearGradient>
+            </defs>
+            <path id="inkPath" class="ink-journal__line"
+                  d="M 2 34 C 16 8, 24 42, 33 30 S 52 16, 59 28 S 77 42, 85 26 S 93 18, 98 15"/>
+            <path class="ink-journal__flow"
+                  d="M 2 34 C 16 8, 24 42, 33 30 S 52 16, 59 28 S 77 42, 85 26 S 93 18, 98 15"/>
+            <circle class="ink-journal__pen" r="1.7">
+              <animateMotion dur="18s" repeatCount="indefinite" rotate="auto">
+                <mpath href="#inkPath"/>
+              </animateMotion>
+            </circle>
           </svg>
-          <ol class="grain-trail">
-            <li class="grain grain--under" style="--sx:8%;--sy:18%;--tw:5.2s;--td:.2s;--nx:10%">
-              <i class="grain__spark" aria-hidden="true"></i>
-              <span class="grain__date">2026 · 01</span>
-              <p class="grain__note">
+          <ol class="ink-journal__list">
+            <li class="ink-note ink-note--up" style="--sx:12%;--sy:48%;--d:.1s">
+              <i class="ink-note__drop" aria-hidden="true"></i>
+              <time class="ink-note__date">2026 · 01</time>
+              <p class="ink-note__text">
                 <small>AI 协作</small>
                 <strong>AI 不是替代思考</strong>
-                <span>AI 提供可能性，最终判断仍需自己完成。</span>
+                <span>提可能，判断仍要自己完成。</span>
               </p>
             </li>
-            <li class="grain grain--under" style="--sx:28%;--sy:34%;--tw:6.1s;--td:1.1s">
-              <i class="grain__spark" aria-hidden="true"></i>
-              <span class="grain__date">2026 · 02</span>
-              <p class="grain__note">
+            <li class="ink-note ink-note--down" style="--sx:33%;--sy:62%;--d:.45s">
+              <i class="ink-note__drop" aria-hidden="true"></i>
+              <time class="ink-note__date">2026 · 02</time>
+              <p class="ink-note__text">
                 <small>学习方法</small>
-                <strong>做项目才会留下知识</strong>
-                <span>边做边查，即学即用，记忆更扎实。</span>
+                <strong>做项目才留下知识</strong>
+                <span>边做边查，即学即用。</span>
               </p>
             </li>
-            <li class="grain grain--over" style="--sx:50%;--sy:30%;--tw:5.6s;--td:2s">
-              <i class="grain__spark" aria-hidden="true"></i>
-              <span class="grain__date">2026 · 03</span>
-              <p class="grain__note">
+            <li class="ink-note ink-note--up" style="--sx:52%;--sy:36%;--d:.8s">
+              <i class="ink-note__drop" aria-hidden="true"></i>
+              <time class="ink-note__date">2026 · 03</time>
+              <p class="ink-note__text">
+                <small>交互节奏</small>
+                <strong>停顿塑造仪式</strong>
+                <span>抽、停、翻、解读，顺序即仪式。</span>
+              </p>
+            </li>
+            <li class="ink-note ink-note--down" style="--sx:71%;--sy:66%;--d:1.15s">
+              <i class="ink-note__drop" aria-hidden="true"></i>
+              <time class="ink-note__date">2026 · 05</time>
+              <p class="ink-note__text">
                 <small>项目复盘</small>
                 <strong>未上线也有价值</strong>
-                <span>如实记录现状与未解问题，即诚实复盘。</span>
+                <span>如实记录，就是诚实复盘。</span>
               </p>
             </li>
-            <li class="grain grain--over" style="--sx:71%;--sy:46%;--tw:6.4s;--td:.8s">
-              <i class="grain__spark" aria-hidden="true"></i>
-              <span class="grain__date">2026 · 05</span>
-              <p class="grain__note">
-                <small>交互节奏</small>
-                <strong>翻牌要慢一点</strong>
-                <span>抽牌、停顿、翻牌、解读的顺序塑造仪式感。</span>
-              </p>
-            </li>
-            <li class="grain grain--over" style="--sx:90%;--sy:28%;--tw:5.9s;--td:1.6s;--nx:-10%">
-              <i class="grain__spark" aria-hidden="true"></i>
-              <span class="grain__date">2026 · 07</span>
-              <p class="grain__note">
+            <li class="ink-note ink-note--up" style="--sx:89%;--sy:26%;--d:1.5s">
+              <i class="ink-note__drop" aria-hidden="true"></i>
+              <time class="ink-note__date">2026 · 07</time>
+              <p class="ink-note__text">
                 <small>状态同步</small>
-                <strong>多人游戏比画板更难</strong>
-                <span>倒计时、答案与分数的同步是多人玩法核心难点。</span>
+                <strong>多人同步最难</strong>
+                <span>倒计时、答案、分数，同步是核心。</span>
               </p>
             </li>
           </ol>
-          <p class="grain-path__legend" aria-hidden="true">✦ 五粒星砂 · 五段真实记录</p>
+          <p class="ink-journal__legend" aria-hidden="true">墨迹即足迹 · 记录还在写</p>
         </div>
     </section>
 <section id="about" class="view view-about" data-view="about" aria-labelledby="about-title" aria-hidden="true">
