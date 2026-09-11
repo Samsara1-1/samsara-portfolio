@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-09-10T05:35:53Z",
+  "fetched_at": "2026-09-11T05:37:05Z",
   "repos": [
     {
       "full_name": "lnkiai/m3e-canvas",
       "name": "m3e-canvas",
       "owner": "lnkiai",
       "description": "Sketch Material 3 Expressive screens in the browser and turn them into vibe-coding prompts.",
-      "stars": 5593,
+      "stars": 5950,
       "language": "TypeScript",
       "url": "https://github.com/lnkiai/m3e-canvas",
       "topics": [
@@ -16,25 +16,11 @@
       ]
     },
     {
-      "full_name": "XiaoDuoYa/codex-with-chatgpt",
-      "name": "codex-with-chatgpt",
-      "owner": "XiaoDuoYa",
-      "description": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
-      "stars": 3837,
-      "language": "TypeScript",
-      "url": "https://github.com/XiaoDuoYa/codex-with-chatgpt",
-      "topics": [
-        "ai-agents",
-        "chatgpt",
-        "codex"
-      ]
-    },
-    {
       "full_name": "rakanki911/DLSS5-Swapper",
       "name": "DLSS5-Swapper",
       "owner": "rakanki911",
       "description": "DLSS 5 Swapper is a powerful, easy-to-use tool for installing, managing, and restoring DLSS 5 across games and supported emulators. It features automatic game detection, optional drive scanning, DLSS5-Feeder for compatible titles without native DLSS, emulator support, and compatibility with DirectX 9/10/11/12, Vulkan, and OpenGL.",
-      "stars": 3311,
+      "stars": 3522,
       "language": "JavaScript",
       "url": "https://github.com/rakanki911/DLSS5-Swapper",
       "topics": []
@@ -44,7 +30,7 @@
       "name": "human-atlas",
       "owner": "ashemag",
       "description": "Open-source 3D anatomy explorer: 2,234 selectable BodyParts3D meshes, system layers, search, and exploded views.",
-      "stars": 2882,
+      "stars": 3130,
       "language": "TypeScript",
       "url": "https://github.com/ashemag/human-atlas",
       "topics": []
@@ -54,45 +40,17 @@
       "name": "commerce-agents",
       "owner": "anthropics",
       "description": "Reference blueprint for building shopping and merchant agents with Claude. Examples in retail, commerce, telecom, and entertainment included.",
-      "stars": 2629,
+      "stars": 2714,
       "language": "Python",
       "url": "https://github.com/anthropics/commerce-agents",
       "topics": []
-    },
-    {
-      "full_name": "Nanako0129/sepia",
-      "name": "sepia",
-      "owner": "Nanako0129",
-      "description": "De-AI writing skill for any Agent Skills-compatible agent (77+ via the Skills CLI), with native plugins for Claude Code, Codex, Grok Build, and Antigravity. Narrative-architecture repair for fiction, venue-matched rules for professional prose. Based on StoryScope (arXiv:2604.03136).",
-      "stars": 2509,
-      "language": "Python",
-      "url": "https://github.com/Nanako0129/sepia",
-      "topics": [
-        "agent-skills",
-        "ai-writing",
-        "antigravity"
-      ]
-    },
-    {
-      "full_name": "Player-YN/PawWork_ZhuaZhua",
-      "name": "PawWork_ZhuaZhua",
-      "owner": "Player-YN",
-      "description": "Paw Work - selection-first web agent for Chrome: select on the live page, describe the outcome, take away an editable office file. BYOK, sandboxed, no server.",
-      "stars": 2421,
-      "language": "JavaScript",
-      "url": "https://github.com/Player-YN/PawWork_ZhuaZhua",
-      "topics": [
-        "ai-agent",
-        "browser-agent",
-        "byok"
-      ]
     },
     {
       "full_name": "Albert-Weasker/niubigeo",
       "name": "niubigeo",
       "owner": "Albert-Weasker",
       "description": "Open-source AI brand visibility and competitor reports. Official website: https://niubigeo.ai/ | Paid services: AI testing by real people and GEO optimization. Pricing: https://niubigeo.ai/pricing",
-      "stars": 2260,
+      "stars": 2316,
       "language": "TypeScript",
       "url": "https://github.com/Albert-Weasker/niubigeo",
       "topics": []
@@ -102,7 +60,7 @@
       "name": "wechat-intelligence-hub",
       "owner": "Rion-Wu-tech",
       "description": "Local-first WeChat intelligence system with a read-only CLI, Codex skills, searchable chat history, daily briefings, follow-ups and opportunity tracking.",
-      "stars": 2033,
+      "stars": 2067,
       "language": "Python",
       "url": "https://github.com/Rion-Wu-tech/wechat-intelligence-hub",
       "topics": []
@@ -112,10 +70,44 @@
       "name": "NavierStokesAndEuler",
       "owner": "openai",
       "description": "Lean certificates accompanying Navier-Stokes and Euler results",
-      "stars": 1595,
+      "stars": 1731,
       "language": "Lean",
       "url": "https://github.com/openai/NavierStokesAndEuler",
       "topics": []
+    },
+    {
+      "full_name": "sdli1995/dlssg_for_sm86",
+      "name": "dlssg_for_sm86",
+      "owner": "sdli1995",
+      "description": "Here is a dlssg for RTX30 Series GPU ",
+      "stars": 1508,
+      "language": "N/A",
+      "url": "https://github.com/sdli1995/dlssg_for_sm86",
+      "topics": []
+    },
+    {
+      "full_name": "vinzdg/codenotch",
+      "name": "codenotch",
+      "owner": "vinzdg",
+      "description": "A macOS app that pins usage limits from Claude Code, Cursor, Codex, and Antigravity to a screen edge.",
+      "stars": 1400,
+      "language": "Swift",
+      "url": "https://github.com/vinzdg/codenotch",
+      "topics": []
+    },
+    {
+      "full_name": "shadcn-ui/cn",
+      "name": "cn",
+      "owner": "shadcn-ui",
+      "description": "cn is a new engine for Tailwind class merging and conflict resolution. It replaces tailwind-merge and clsx. Same APIs. Full parity. And it is 30× faster.",
+      "stars": 1399,
+      "language": "TypeScript",
+      "url": "https://github.com/shadcn-ui/cn",
+      "topics": [
+        "clsx",
+        "cn",
+        "shadcn"
+      ]
     }
   ]
 }
