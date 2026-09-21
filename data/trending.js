@@ -1,24 +1,14 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-09-20T05:42:54Z",
+  "fetched_at": "2026-09-21T05:54:24Z",
   "repos": [
     {
       "full_name": "browser-use/jev-ultrafast",
       "name": "jev-ultrafast",
       "owner": "browser-use",
       "description": "i. am. speed.",
-      "stars": 9291,
+      "stars": 12876,
       "language": "Python",
       "url": "https://github.com/browser-use/jev-ultrafast",
-      "topics": []
-    },
-    {
-      "full_name": "eternity4719/HowToLiveBetter",
-      "name": "HowToLiveBetter",
-      "owner": "eternity4719",
-      "description": "按性价比排序的循证生活指南：长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
-      "stars": 6151,
-      "language": "HTML",
-      "url": "https://github.com/eternity4719/HowToLiveBetter",
       "topics": []
     },
     {
@@ -26,19 +16,19 @@ window.TRENDING_DATA = {
       "name": "fast-jev-compaction",
       "owner": "tamaratran",
       "description": "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
-      "stars": 4427,
+      "stars": 5449,
       "language": "TypeScript",
       "url": "https://github.com/tamaratran/fast-jev-compaction",
       "topics": []
     },
     {
-      "full_name": "sdli1995/dlssg_for_sm86",
-      "name": "dlssg_for_sm86",
-      "owner": "sdli1995",
-      "description": "Here is a dlssg for RTX30 Series GPU ",
-      "stars": 3572,
-      "language": "N/A",
-      "url": "https://github.com/sdli1995/dlssg_for_sm86",
+      "full_name": "NandhaKishorM/laya",
+      "name": "laya",
+      "owner": "NandhaKishorM",
+      "description": "暂无描述",
+      "stars": 5433,
+      "language": "Python",
+      "url": "https://github.com/NandhaKishorM/laya",
       "topics": []
     },
     {
@@ -46,9 +36,19 @@ window.TRENDING_DATA = {
       "name": "Compositor",
       "owner": "robbietilton",
       "description": "The Photoshop alternative for Mac",
-      "stars": 2830,
+      "stars": 3840,
       "language": "Swift",
       "url": "https://github.com/robbietilton/Compositor",
+      "topics": []
+    },
+    {
+      "full_name": "zai-org/ZCode",
+      "name": "ZCode",
+      "owner": "zai-org",
+      "description": "Z.ai's coding agent harness. Powerful, intelligent, extensible.",
+      "stars": 3574,
+      "language": "TypeScript",
+      "url": "https://github.com/zai-org/ZCode",
       "topics": []
     },
     {
@@ -56,9 +56,19 @@ window.TRENDING_DATA = {
       "name": "SemIf",
       "owner": "TheoLeeCJ",
       "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
-      "stars": 2023,
+      "stars": 2583,
       "language": "Python",
       "url": "https://github.com/TheoLeeCJ/SemIf",
+      "topics": []
+    },
+    {
+      "full_name": "mcncarl/jianying-headless",
+      "name": "jianying-headless",
+      "owner": "mcncarl",
+      "description": "Private source preview: native Jianying drafts, isolated editing/export, and standalone Agent Skill.",
+      "stars": 2117,
+      "language": "Python",
+      "url": "https://github.com/mcncarl/jianying-headless",
       "topics": []
     },
     {
@@ -66,43 +76,33 @@ window.TRENDING_DATA = {
       "name": "Edge0",
       "owner": "Edge0-AI",
       "description": "暂无描述",
-      "stars": 2009,
+      "stars": 2029,
       "language": "Python",
       "url": "https://github.com/Edge0-AI/Edge0",
       "topics": []
+    },
+    {
+      "full_name": "mizorewww/laya-mlx",
+      "name": "laya-mlx",
+      "owner": "mizorewww",
+      "description": "Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
+      "stars": 2014,
+      "language": "Python",
+      "url": "https://github.com/mizorewww/laya-mlx",
+      "topics": [
+        "apple-silicon",
+        "decision-model",
+        "inference"
+      ]
     },
     {
       "full_name": "openai/NavierStokesAndEuler",
       "name": "NavierStokesAndEuler",
       "owner": "openai",
       "description": "Lean certificates accompanying Navier-Stokes and Euler results",
-      "stars": 1962,
+      "stars": 1968,
       "language": "Lean",
       "url": "https://github.com/openai/NavierStokesAndEuler",
-      "topics": []
-    },
-    {
-      "full_name": "Vincentwei1021/anything2explainer",
-      "name": "anything2explainer",
-      "owner": "Vincentwei1021",
-      "description": "Topic in, narrated explainer video out. A Claude Code / Codex skill that turns any topic into a black-canvas motion-graphics explainer video with TTS voiceover, subtitles and a chapter progress bar. Chinese or English; every frame drawn in code with Remotion.",
-      "stars": 1778,
-      "language": "TypeScript",
-      "url": "https://github.com/Vincentwei1021/anything2explainer",
-      "topics": [
-        "agent-skills",
-        "ai-agents",
-        "ai-video"
-      ]
-    },
-    {
-      "full_name": "EverettFish/holo-card-studio",
-      "name": "holo-card-studio",
-      "owner": "EverettFish",
-      "description": "Turn the user's description or uploaded reference into a finished, editable Blender card and an interactive Three.js page. Preserve the requested subject, style, typography and destination. This skill contains code and text only; generated artwork belongs in the user's output project.",
-      "stars": 1689,
-      "language": "Python",
-      "url": "https://github.com/EverettFish/holo-card-studio",
       "topics": []
     }
   ]
