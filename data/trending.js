@@ -1,12 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-09-22T05:51:36Z",
+  "fetched_at": "2026-09-23T05:29:20Z",
   "repos": [
     {
       "full_name": "browser-use/jev-ultrafast",
       "name": "jev-ultrafast",
       "owner": "browser-use",
       "description": "Fastest and cheapest web agent",
-      "stars": 16497,
+      "stars": 18343,
       "language": "Python",
       "url": "https://github.com/browser-use/jev-ultrafast",
       "topics": []
@@ -16,19 +16,9 @@ window.TRENDING_DATA = {
       "name": "laya",
       "owner": "NandhaKishorM",
       "description": "暂无描述",
-      "stars": 11869,
+      "stars": 17544,
       "language": "Python",
       "url": "https://github.com/NandhaKishorM/laya",
-      "topics": []
-    },
-    {
-      "full_name": "tamaratran/fast-jev-compaction",
-      "name": "fast-jev-compaction",
-      "owner": "tamaratran",
-      "description": "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
-      "stars": 6060,
-      "language": "TypeScript",
-      "url": "https://github.com/tamaratran/fast-jev-compaction",
       "topics": []
     },
     {
@@ -36,19 +26,19 @@ window.TRENDING_DATA = {
       "name": "ZCode",
       "owner": "zai-org",
       "description": "Z.ai's coding agent harness. Powerful, intelligent, extensible.",
-      "stars": 5911,
+      "stars": 6378,
       "language": "TypeScript",
       "url": "https://github.com/zai-org/ZCode",
       "topics": []
     },
     {
-      "full_name": "robbietilton/Compositor",
-      "name": "Compositor",
-      "owner": "robbietilton",
-      "description": "The Photoshop alternative for Mac",
-      "stars": 4521,
-      "language": "Swift",
-      "url": "https://github.com/robbietilton/Compositor",
+      "full_name": "tamaratran/fast-jev-compaction",
+      "name": "fast-jev-compaction",
+      "owner": "tamaratran",
+      "description": "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
+      "stars": 6375,
+      "language": "TypeScript",
+      "url": "https://github.com/tamaratran/fast-jev-compaction",
       "topics": []
     },
     {
@@ -56,7 +46,7 @@ window.TRENDING_DATA = {
       "name": "laya-mlx",
       "owner": "mizorewww",
       "description": "Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
-      "stars": 4278,
+      "stars": 5600,
       "language": "Python",
       "url": "https://github.com/mizorewww/laya-mlx",
       "topics": [
@@ -66,13 +56,13 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "TheoLeeCJ/SemIf",
-      "name": "SemIf",
-      "owner": "TheoLeeCJ",
-      "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
-      "stars": 3385,
-      "language": "Python",
-      "url": "https://github.com/TheoLeeCJ/SemIf",
+      "full_name": "robbietilton/Compositor",
+      "name": "Compositor",
+      "owner": "robbietilton",
+      "description": "The Photoshop alternative for Mac",
+      "stars": 4971,
+      "language": "Swift",
+      "url": "https://github.com/robbietilton/Compositor",
       "topics": []
     },
     {
@@ -80,7 +70,7 @@ window.TRENDING_DATA = {
       "name": "kev",
       "owner": "jaredpalmer",
       "description": "tiny Jev-like family of decision models built on top of Qwen3.5 you can train and run on your own",
-      "stars": 2687,
+      "stars": 4669,
       "language": "Python",
       "url": "https://github.com/jaredpalmer/kev",
       "topics": [
@@ -90,23 +80,37 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "mcncarl/jianying-headless",
-      "name": "jianying-headless",
-      "owner": "mcncarl",
-      "description": "Private source preview: native Jianying drafts, isolated editing/export, and standalone Agent Skill.",
-      "stars": 2410,
+      "full_name": "jev-chat/jev-chat-jarvis",
+      "name": "jev-chat-jarvis",
+      "owner": "jev-chat",
+      "description": "装在手机上的对话副驾：在微信 / QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
+      "stars": 4380,
+      "language": "Kotlin",
+      "url": "https://github.com/jev-chat/jev-chat-jarvis",
+      "topics": [
+        "accessibility-service",
+        "android",
+        "chat-assistant"
+      ]
+    },
+    {
+      "full_name": "TheoLeeCJ/SemIf",
+      "name": "SemIf",
+      "owner": "TheoLeeCJ",
+      "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
+      "stars": 3904,
       "language": "Python",
-      "url": "https://github.com/mcncarl/jianying-headless",
+      "url": "https://github.com/TheoLeeCJ/SemIf",
       "topics": []
     },
     {
-      "full_name": "jarrodwatts/jev-trader",
-      "name": "jev-trader",
-      "owner": "jarrodwatts",
-      "description": "One AI trade decision every Monad block. Jev on Kuru MON-USDC.",
-      "stars": 1893,
-      "language": "TypeScript",
-      "url": "https://github.com/jarrodwatts/jev-trader",
+      "full_name": "Mak5er/AirCard",
+      "name": "AirCard",
+      "owner": "Mak5er",
+      "description": "Apple Wallet Card Skinner for iOS 18+ (No Jailbreak Required)",
+      "stars": 2969,
+      "language": "Swift",
+      "url": "https://github.com/Mak5er/AirCard",
       "topics": []
     }
   ]
