@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-09-26T05:51:00Z",
+  "fetched_at": "2026-09-27T06:13:10Z",
   "repos": [
     {
       "full_name": "NandhaKishorM/laya",
       "name": "laya",
       "owner": "NandhaKishorM",
       "description": "Non-autoregressive System 1 decision engine. Typed choice, score and yes/no decisions over any text in a single forward pass, in 100+ languages, with a router that picks the right checkpoint per request.",
-      "stars": 24881,
+      "stars": 26030,
       "language": "Python",
       "url": "https://github.com/NandhaKishorM/laya",
       "topics": [
@@ -20,7 +20,7 @@
       "name": "jev-ultrafast",
       "owner": "browser-use",
       "description": "Fastest and cheapest web agent",
-      "stars": 20313,
+      "stars": 20622,
       "language": "Python",
       "url": "https://github.com/browser-use/jev-ultrafast",
       "topics": []
@@ -30,7 +30,7 @@
       "name": "kev",
       "owner": "jaredpalmer",
       "description": "Jev-like family of decision models built on top of Qwen3.5/3.8 you can train and run on your own",
-      "stars": 7068,
+      "stars": 7270,
       "language": "Python",
       "url": "https://github.com/jaredpalmer/kev",
       "topics": [
@@ -44,7 +44,7 @@
       "name": "fast-jev-compaction",
       "owner": "tamaratran",
       "description": "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
-      "stars": 6881,
+      "stars": 6979,
       "language": "TypeScript",
       "url": "https://github.com/tamaratran/fast-jev-compaction",
       "topics": []
@@ -54,7 +54,7 @@
       "name": "ZCode",
       "owner": "zai-org",
       "description": "Z.ai's coding agent harness. Powerful, intelligent, extensible.",
-      "stars": 6790,
+      "stars": 6850,
       "language": "TypeScript",
       "url": "https://github.com/zai-org/ZCode",
       "topics": []
@@ -64,7 +64,7 @@
       "name": "jev-chat-jarvis",
       "owner": "jev-chat",
       "description": "装在手机上的对话副驾：在 QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
-      "stars": 6543,
+      "stars": 6700,
       "language": "Kotlin",
       "url": "https://github.com/jev-chat/jev-chat-jarvis",
       "topics": [
@@ -78,7 +78,7 @@
       "name": "laya-mlx",
       "owner": "mizorewww",
       "description": "Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
-      "stars": 6359,
+      "stars": 6435,
       "language": "Python",
       "url": "https://github.com/mizorewww/laya-mlx",
       "topics": [
@@ -92,19 +92,9 @@
       "name": "Compositor",
       "owner": "robbietilton",
       "description": "The Photoshop alternative for Mac",
-      "stars": 5615,
+      "stars": 5784,
       "language": "Swift",
       "url": "https://github.com/robbietilton/Compositor",
-      "topics": []
-    },
-    {
-      "full_name": "TheoLeeCJ/SemIf-OpenJev",
-      "name": "SemIf-OpenJev",
-      "owner": "TheoLeeCJ",
-      "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
-      "stars": 4334,
-      "language": "Python",
-      "url": "https://github.com/TheoLeeCJ/SemIf-OpenJev",
       "topics": []
     },
     {
@@ -112,9 +102,19 @@
       "name": "AirCard",
       "owner": "Mak5er",
       "description": "Apple Wallet Card Skinner for iOS 18+ (No Jailbreak Required)",
-      "stars": 4234,
+      "stars": 4438,
       "language": "Swift",
       "url": "https://github.com/Mak5er/AirCard",
+      "topics": []
+    },
+    {
+      "full_name": "TheoLeeCJ/SemIf-OpenJev",
+      "name": "SemIf-OpenJev",
+      "owner": "TheoLeeCJ",
+      "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
+      "stars": 4406,
+      "language": "Python",
+      "url": "https://github.com/TheoLeeCJ/SemIf-OpenJev",
       "topics": []
     }
   ]
