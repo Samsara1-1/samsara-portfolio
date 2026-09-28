@@ -1,12 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-09-27T06:13:10Z",
+  "fetched_at": "2026-09-28T06:19:07Z",
   "repos": [
     {
       "full_name": "NandhaKishorM/laya",
       "name": "laya",
       "owner": "NandhaKishorM",
       "description": "Non-autoregressive System 1 decision engine. Typed choice, score and yes/no decisions over any text in a single forward pass, in 100+ languages, with a router that picks the right checkpoint per request.",
-      "stars": 26030,
+      "stars": 26968,
       "language": "Python",
       "url": "https://github.com/NandhaKishorM/laya",
       "topics": [
@@ -20,7 +20,7 @@ window.TRENDING_DATA = {
       "name": "jev-ultrafast",
       "owner": "browser-use",
       "description": "Fastest and cheapest web agent",
-      "stars": 20622,
+      "stars": 20909,
       "language": "Python",
       "url": "https://github.com/browser-use/jev-ultrafast",
       "topics": []
@@ -30,7 +30,7 @@ window.TRENDING_DATA = {
       "name": "kev",
       "owner": "jaredpalmer",
       "description": "Jev-like family of decision models built on top of Qwen3.5/3.8 you can train and run on your own",
-      "stars": 7270,
+      "stars": 7478,
       "language": "Python",
       "url": "https://github.com/jaredpalmer/kev",
       "topics": [
@@ -44,7 +44,7 @@ window.TRENDING_DATA = {
       "name": "fast-jev-compaction",
       "owner": "tamaratran",
       "description": "Claude Code plugin that replaces the compaction summary with Jev decisions: every tool call and result is scored in one fast request, stale ones are dropped or truncated, everything kept stays verbatim.",
-      "stars": 6979,
+      "stars": 7042,
       "language": "TypeScript",
       "url": "https://github.com/tamaratran/fast-jev-compaction",
       "topics": []
@@ -54,7 +54,7 @@ window.TRENDING_DATA = {
       "name": "ZCode",
       "owner": "zai-org",
       "description": "Z.ai's coding agent harness. Powerful, intelligent, extensible.",
-      "stars": 6850,
+      "stars": 6937,
       "language": "TypeScript",
       "url": "https://github.com/zai-org/ZCode",
       "topics": []
@@ -64,7 +64,7 @@ window.TRENDING_DATA = {
       "name": "jev-chat-jarvis",
       "owner": "jev-chat",
       "description": "装在手机上的对话副驾：在 QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
-      "stars": 6700,
+      "stars": 6810,
       "language": "Kotlin",
       "url": "https://github.com/jev-chat/jev-chat-jarvis",
       "topics": [
@@ -78,7 +78,7 @@ window.TRENDING_DATA = {
       "name": "laya-mlx",
       "owner": "mizorewww",
       "description": "Native MLX runtime for Laya typed decision models — 7–14 ms short decisions on M3 Max. No text generation, PyTorch, or cloud API.",
-      "stars": 6435,
+      "stars": 6507,
       "language": "Python",
       "url": "https://github.com/mizorewww/laya-mlx",
       "topics": [
@@ -92,7 +92,7 @@ window.TRENDING_DATA = {
       "name": "Compositor",
       "owner": "robbietilton",
       "description": "The Photoshop alternative for Mac",
-      "stars": 5784,
+      "stars": 5898,
       "language": "Swift",
       "url": "https://github.com/robbietilton/Compositor",
       "topics": []
@@ -102,7 +102,7 @@ window.TRENDING_DATA = {
       "name": "AirCard",
       "owner": "Mak5er",
       "description": "Apple Wallet Card Skinner for iOS 18+ (No Jailbreak Required)",
-      "stars": 4438,
+      "stars": 4599,
       "language": "Swift",
       "url": "https://github.com/Mak5er/AirCard",
       "topics": []
@@ -112,7 +112,7 @@ window.TRENDING_DATA = {
       "name": "SemIf-OpenJev",
       "owner": "TheoLeeCJ",
       "description": "Semantic ifs from open models, on a 3090 at home. Independent; not affiliated with Jev or TypeSafe.",
-      "stars": 4406,
+      "stars": 4467,
       "language": "Python",
       "url": "https://github.com/TheoLeeCJ/SemIf-OpenJev",
       "topics": []
