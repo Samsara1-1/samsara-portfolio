@@ -1,14 +1,14 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-10-03T06:01:57Z",
+  "fetched_at": "2026-10-04T06:37:04Z",
   "repos": [
     {
-      "full_name": "zai-org/ZCode",
-      "name": "ZCode",
-      "owner": "zai-org",
-      "description": "Z.ai's coding agent harness. Powerful, intelligent, extensible.",
-      "stars": 7342,
-      "language": "TypeScript",
-      "url": "https://github.com/zai-org/ZCode",
+      "full_name": "Niko1221/Strata",
+      "name": "Strata",
+      "owner": "Niko1221",
+      "description": "Qwen3.8-Flash-Next on any consumer hardware: one-click install for Windows / Linux. Strata inference engine, OpenAI/Anthropic API on localhost, optional image input.",
+      "stars": 8878,
+      "language": "C++",
+      "url": "https://github.com/Niko1221/Strata",
       "topics": []
     },
     {
@@ -16,7 +16,7 @@ window.TRENDING_DATA = {
       "name": "jev-chat-jarvis",
       "owner": "jev-chat",
       "description": "装在手机上的对话副驾：在 QQ / X / 飞书里读懂对方、给出候选回复、一键填入输入框，发不发由你。非侵入，只读屏幕，不 hook 不改包。",
-      "stars": 7270,
+      "stars": 7304,
       "language": "Kotlin",
       "url": "https://github.com/jev-chat/jev-chat-jarvis",
       "topics": [
@@ -26,21 +26,11 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "Niko1221/Strata",
-      "name": "Strata",
-      "owner": "Niko1221",
-      "description": "Qwen3.8-Flash-Next on any consumer hardware: one-click install for Windows / Linux. Strata inference engine, OpenAI/Anthropic API on localhost, optional image input.",
-      "stars": 6855,
-      "language": "C++",
-      "url": "https://github.com/Niko1221/Strata",
-      "topics": []
-    },
-    {
       "full_name": "KKKKhazix/AIHOT",
       "name": "AIHOT",
       "owner": "KKKKhazix",
       "description": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。",
-      "stars": 5014,
+      "stars": 5527,
       "language": "TypeScript",
       "url": "https://github.com/KKKKhazix/AIHOT",
       "topics": [
@@ -54,7 +44,7 @@ window.TRENDING_DATA = {
       "name": "magpie",
       "owner": "yetone",
       "description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
-      "stars": 4311,
+      "stars": 4509,
       "language": "Go",
       "url": "https://github.com/yetone/magpie",
       "topics": [
@@ -68,7 +58,7 @@ window.TRENDING_DATA = {
       "name": "coucou",
       "owner": "Louis-CFM",
       "description": "A tiny friend that lives in your notch (macOS) or at the top of your screen (Windows, Linux) and keeps an eye on your coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more.",
-      "stars": 3036,
+      "stars": 3268,
       "language": "Swift",
       "url": "https://github.com/Louis-CFM/coucou",
       "topics": [
@@ -78,23 +68,47 @@ window.TRENDING_DATA = {
       ]
     },
     {
+      "full_name": "shihabal3amri/DiPlay",
+      "name": "DiPlay",
+      "owner": "shihabal3amri",
+      "description": "Independent CarPlay receiver for compatible Android head units. Wired and wireless public preview.",
+      "stars": 3166,
+      "language": "Kotlin",
+      "url": "https://github.com/shihabal3amri/DiPlay",
+      "topics": []
+    },
+    {
       "full_name": "Contrastive-LM/CLM",
       "name": "CLM",
       "owner": "Contrastive-LM",
       "description": "暂无描述",
-      "stars": 2742,
+      "stars": 2766,
       "language": "Python",
       "url": "https://github.com/Contrastive-LM/CLM",
       "topics": []
     },
     {
-      "full_name": "shihabal3amri/DiPlay",
-      "name": "DiPlay",
-      "owner": "shihabal3amri",
-      "description": "Independent CarPlay receiver for compatible Android head units. Wired and wireless public preview.",
-      "stars": 2606,
-      "language": "Kotlin",
-      "url": "https://github.com/shihabal3amri/DiPlay",
+      "full_name": "rehan-remade/universal-modder",
+      "name": "universal-modder",
+      "owner": "rehan-remade",
+      "description": "Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos.",
+      "stars": 2713,
+      "language": "Python",
+      "url": "https://github.com/rehan-remade/universal-modder",
+      "topics": [
+        "age-of-empires",
+        "claude-code",
+        "claude-code-plugin"
+      ]
+    },
+    {
+      "full_name": "CopilotKit/OpenDots",
+      "name": "OpenDots",
+      "owner": "CopilotKit",
+      "description": "Your always-on AI coworkers that move between text, calls, and Slack.",
+      "stars": 2700,
+      "language": "TypeScript",
+      "url": "https://github.com/CopilotKit/OpenDots",
       "topics": []
     },
     {
@@ -102,7 +116,7 @@ window.TRENDING_DATA = {
       "name": "dots",
       "owner": "feder-cr",
       "description": "Open-source dots for the web: an AI agent with its own browser, one that does not get blocked.",
-      "stars": 2547,
+      "stars": 2580,
       "language": "Python",
       "url": "https://github.com/feder-cr/dots",
       "topics": [
@@ -110,16 +124,6 @@ window.TRENDING_DATA = {
         "ai-agents",
         "ai-browser"
       ]
-    },
-    {
-      "full_name": "driceroland/Search",
-      "name": "Search",
-      "owner": "driceroland",
-      "description": "A small, fast WebKit browser for macOS, by Office Commun.",
-      "stars": 2324,
-      "language": "Swift",
-      "url": "https://github.com/driceroland/Search",
-      "topics": []
     }
   ]
 }
