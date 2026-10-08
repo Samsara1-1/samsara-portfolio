@@ -1,22 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-10-07T06:50:50Z",
+  "fetched_at": "2026-10-08T06:59:29Z",
   "repos": [
-    {
-      "full_name": "Niko1221/Strata",
-      "name": "Strata",
-      "owner": "Niko1221",
-      "description": "Qwen3.8-Flash-Next on any consumer hardware: one-click install for Windows / Linux. Strata inference engine, OpenAI/Anthropic API on localhost, optional image input.",
-      "stars": 16125,
-      "language": "C++",
-      "url": "https://github.com/Niko1221/Strata",
-      "topics": []
-    },
     {
       "full_name": "storytold/photocraft",
       "name": "photocraft",
       "owner": "storytold",
       "description": "An open-source, clean-room reimplementation of Adobe Photoshop in pure Rust",
-      "stars": 9868,
+      "stars": 19693,
       "language": "Rust",
       "url": "https://github.com/storytold/photocraft",
       "topics": [
@@ -26,11 +16,21 @@ window.TRENDING_DATA = {
       ]
     },
     {
+      "full_name": "openai/math",
+      "name": "math",
+      "owner": "openai",
+      "description": "暂无描述",
+      "stars": 10556,
+      "language": "Lean",
+      "url": "https://github.com/openai/math",
+      "topics": []
+    },
+    {
       "full_name": "KKKKhazix/AIHOT",
       "name": "AIHOT",
       "owner": "KKKKhazix",
       "description": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。",
-      "stars": 6253,
+      "stars": 6551,
       "language": "TypeScript",
       "url": "https://github.com/KKKKhazix/AIHOT",
       "topics": [
@@ -40,31 +40,11 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "shihabal3amri/DiPlay",
-      "name": "DiPlay",
-      "owner": "shihabal3amri",
-      "description": "Independent CarPlay receiver for compatible Android head units. Wired and wireless public preview.",
-      "stars": 5562,
-      "language": "Kotlin",
-      "url": "https://github.com/shihabal3amri/DiPlay",
-      "topics": []
-    },
-    {
-      "full_name": "openai/math",
-      "name": "math",
-      "owner": "openai",
-      "description": "暂无描述",
-      "stars": 4935,
-      "language": "Lean",
-      "url": "https://github.com/openai/math",
-      "topics": []
-    },
-    {
       "full_name": "rehan-remade/universal-modder",
       "name": "universal-modder",
       "owner": "rehan-remade",
       "description": "Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos.",
-      "stars": 4767,
+      "stars": 5310,
       "language": "Python",
       "url": "https://github.com/rehan-remade/universal-modder",
       "topics": [
@@ -78,7 +58,7 @@ window.TRENDING_DATA = {
       "name": "OpenDots",
       "owner": "CopilotKit",
       "description": "Your always-on AI coworkers that move between text, calls, and Slack.",
-      "stars": 3995,
+      "stars": 4288,
       "language": "TypeScript",
       "url": "https://github.com/CopilotKit/OpenDots",
       "topics": []
@@ -88,7 +68,7 @@ window.TRENDING_DATA = {
       "name": "coucou",
       "owner": "Louis-CFM",
       "description": "A tiny friend in your Mac's notch and on your iPhone that keeps an eye on your AI coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more. Approve from the notch or your Lock Screen.",
-      "stars": 3868,
+      "stars": 4093,
       "language": "Swift",
       "url": "https://github.com/Louis-CFM/coucou",
       "topics": [
@@ -98,11 +78,25 @@ window.TRENDING_DATA = {
       ]
     },
     {
+      "full_name": "storytold/filmcraft",
+      "name": "filmcraft",
+      "owner": "storytold",
+      "description": "An open-source, clean-room reimplementation of Adobe Premiere Pro built in pure Rust.",
+      "stars": 3746,
+      "language": "Rust",
+      "url": "https://github.com/storytold/filmcraft",
+      "topics": [
+        "adobe",
+        "art",
+        "rust"
+      ]
+    },
+    {
       "full_name": "omlahore/RemoveMacAI",
       "name": "RemoveMacAI",
       "owner": "omlahore",
       "description": "Debloat macOS: turn off Apple Intelligence, analytics, ads and pop-ups. A native app and CLI, and every change can be undone.",
-      "stars": 3224,
+      "stars": 3630,
       "language": "Swift",
       "url": "https://github.com/omlahore/RemoveMacAI",
       "topics": [
@@ -112,13 +106,27 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "Droid-Deck/DroidDeck",
-      "name": "DroidDeck",
-      "owner": "Droid-Deck",
-      "description": "DroidDeck brings the SteamOS experience to Android",
-      "stars": 2836,
-      "language": "Kotlin",
-      "url": "https://github.com/Droid-Deck/DroidDeck",
+      "full_name": "storytold/lightcraft",
+      "name": "lightcraft",
+      "owner": "storytold",
+      "description": "An open-source, clean-room reimplementation of Adobe Lightroom in pure Rust.",
+      "stars": 3498,
+      "language": "Rust",
+      "url": "https://github.com/storytold/lightcraft",
+      "topics": [
+        "art",
+        "lightroom",
+        "photography"
+      ]
+    },
+    {
+      "full_name": "nykooi1/vibe-wise",
+      "name": "vibe-wise",
+      "owner": "nykooi1",
+      "description": "A Claude Code plugin that helps you learn how to build while AI writes the code.",
+      "stars": 3014,
+      "language": "Python",
+      "url": "https://github.com/nykooi1/vibe-wise",
       "topics": []
     }
   ]
