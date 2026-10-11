@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-10-10T06:41:10Z",
+  "fetched_at": "2026-10-11T06:48:05Z",
   "repos": [
     {
       "full_name": "storytold/photocraft",
       "name": "photocraft",
       "owner": "storytold",
       "description": "An open-source, clean-room reimplementation of Adobe Photoshop in pure Rust",
-      "stars": 37070,
+      "stars": 43332,
       "language": "Rust",
       "url": "https://github.com/storytold/photocraft",
       "topics": [
@@ -20,7 +20,7 @@
       "name": "math",
       "owner": "openai",
       "description": "暂无描述",
-      "stars": 13288,
+      "stars": 13778,
       "language": "Lean",
       "url": "https://github.com/openai/math",
       "topics": []
@@ -30,7 +30,7 @@
       "name": "lightcraft",
       "owner": "storytold",
       "description": "An open-source, clean-room reimplementation of Adobe Lightroom in pure Rust.",
-      "stars": 8023,
+      "stars": 9264,
       "language": "Rust",
       "url": "https://github.com/storytold/lightcraft",
       "topics": [
@@ -44,7 +44,7 @@
       "name": "filmcraft",
       "owner": "storytold",
       "description": "An open-source, clean-room reimplementation of Adobe Premiere Pro built in pure Rust.",
-      "stars": 7460,
+      "stars": 8944,
       "language": "Rust",
       "url": "https://github.com/storytold/filmcraft",
       "topics": [
@@ -54,25 +54,11 @@
       ]
     },
     {
-      "full_name": "KKKKhazix/AIHOT",
-      "name": "AIHOT",
-      "owner": "KKKKhazix",
-      "description": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。",
-      "stars": 6982,
-      "language": "TypeScript",
-      "url": "https://github.com/KKKKhazix/AIHOT",
-      "topics": [
-        "ai",
-        "chinese",
-        "content-curation"
-      ]
-    },
-    {
       "full_name": "storytold/pdfcraft",
       "name": "pdfcraft",
       "owner": "storytold",
       "description": "An open-source, clean-room reimplementation of Adobe Acrobat built in pure Rust",
-      "stars": 6764,
+      "stars": 8282,
       "language": "Rust",
       "url": "https://github.com/storytold/pdfcraft",
       "topics": [
@@ -82,11 +68,25 @@
       ]
     },
     {
+      "full_name": "KKKKhazix/AIHOT",
+      "name": "AIHOT",
+      "owner": "KKKKhazix",
+      "description": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。",
+      "stars": 7105,
+      "language": "TypeScript",
+      "url": "https://github.com/KKKKhazix/AIHOT",
+      "topics": [
+        "ai",
+        "chinese",
+        "content-curation"
+      ]
+    },
+    {
       "full_name": "rehan-remade/universal-modder",
       "name": "universal-modder",
       "owner": "rehan-remade",
       "description": "Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos.",
-      "stars": 6106,
+      "stars": 6448,
       "language": "Python",
       "url": "https://github.com/rehan-remade/universal-modder",
       "topics": [
@@ -100,7 +100,7 @@
       "name": "vectorcraft",
       "owner": "storytold",
       "description": "An open-source, clean-room reimplementation of Adobe Illustrator, built in pure Rust.",
-      "stars": 5414,
+      "stars": 6365,
       "language": "Rust",
       "url": "https://github.com/storytold/vectorcraft",
       "topics": [
@@ -114,24 +114,20 @@
       "name": "OpenDots",
       "owner": "CopilotKit",
       "description": "Your always-on AI coworkers that move between text, calls, and Slack.",
-      "stars": 4719,
+      "stars": 4828,
       "language": "TypeScript",
       "url": "https://github.com/CopilotKit/OpenDots",
       "topics": []
     },
     {
-      "full_name": "Louis-CFM/coucou",
-      "name": "coucou",
-      "owner": "Louis-CFM",
-      "description": "A tiny friend in your Mac's notch and on your iPhone that keeps an eye on your AI coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more. Approve from the notch or your Lock Screen.",
-      "stars": 4565,
-      "language": "Swift",
-      "url": "https://github.com/Louis-CFM/coucou",
-      "topics": [
-        "ai-agents",
-        "anthropic",
-        "antigravity"
-      ]
+      "full_name": "storytold/effectcraft",
+      "name": "effectcraft",
+      "owner": "storytold",
+      "description": "暂无描述",
+      "stars": 4710,
+      "language": "Rust",
+      "url": "https://github.com/storytold/effectcraft",
+      "topics": []
     }
   ]
 }
