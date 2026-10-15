@@ -1,12 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-10-14T05:48:36Z",
+  "fetched_at": "2026-10-15T05:33:44Z",
   "repos": [
     {
       "full_name": "openai/math",
       "name": "math",
       "owner": "openai",
       "description": "暂无描述",
-      "stars": 14715,
+      "stars": 14844,
       "language": "Lean",
       "url": "https://github.com/openai/math",
       "topics": []
@@ -16,7 +16,7 @@ window.TRENDING_DATA = {
       "name": "wordcraft",
       "owner": "storytold",
       "description": "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
-      "stars": 11413,
+      "stars": 12576,
       "language": "Rust",
       "url": "https://github.com/storytold/wordcraft",
       "topics": []
@@ -26,7 +26,7 @@ window.TRENDING_DATA = {
       "name": "anatomy",
       "owner": "wheresryan22",
       "description": "An agent skill for creating detailed, interactive isometric illustrations of real-world machines and complex systems. Generates polished SVGs with optional WebGL shaders and 3D effects.",
-      "stars": 8591,
+      "stars": 10968,
       "language": "JavaScript",
       "url": "https://github.com/wheresryan22/anatomy",
       "topics": [
@@ -36,25 +36,11 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "storytold/effectcraft",
-      "name": "effectcraft",
-      "owner": "storytold",
-      "description": "EffectCraft: An open-source motion graphics and compositing tool written by scratch in pure Rust",
-      "stars": 6315,
-      "language": "Rust",
-      "url": "https://github.com/storytold/effectcraft",
-      "topics": [
-        "art",
-        "compositing",
-        "compositing-software"
-      ]
-    },
-    {
       "full_name": "storytold/gridcraft",
       "name": "gridcraft",
       "owner": "storytold",
       "description": "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust. By ArtCraft.",
-      "stars": 4528,
+      "stars": 4936,
       "language": "Rust",
       "url": "https://github.com/storytold/gridcraft",
       "topics": []
@@ -64,7 +50,7 @@ window.TRENDING_DATA = {
       "name": "cadcraft",
       "owner": "storytold",
       "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
-      "stars": 4339,
+      "stars": 4894,
       "language": "Rust",
       "url": "https://github.com/storytold/cadcraft",
       "topics": []
@@ -74,7 +60,7 @@ window.TRENDING_DATA = {
       "name": "ARTEX",
       "owner": "mhtsec",
       "description": "AI 自主渗透测试系统 | 百度“agent+”攻防挑战赛冠军项目",
-      "stars": 3943,
+      "stars": 4137,
       "language": "Go",
       "url": "https://github.com/mhtsec/ARTEX",
       "topics": []
@@ -84,34 +70,48 @@ window.TRENDING_DATA = {
       "name": "huashu-art-motion",
       "owner": "alchaincyf",
       "description": "艺术动画skill：35种艺术风格、9种解说语法，用代码让画动起来。",
-      "stars": 3890,
+      "stars": 3999,
       "language": "JavaScript",
       "url": "https://github.com/alchaincyf/huashu-art-motion",
       "topics": []
-    },
-    {
-      "full_name": "storytold/designcraft",
-      "name": "designcraft",
-      "owner": "storytold",
-      "description": "DesignCraft: An open-source page and layout design editor written by scratch in pure Rust",
-      "stars": 3752,
-      "language": "Rust",
-      "url": "https://github.com/storytold/designcraft",
-      "topics": [
-        "art",
-        "layout",
-        "print"
-      ]
     },
     {
       "full_name": "zhongerxin/iPhone-use",
       "name": "iPhone-use",
       "owner": "zhongerxin",
       "description": "让 Codex 通过 USB 操作真实 iPhone：引导安装、App 自动化、实时屏幕与截图回退。",
-      "stars": 3627,
+      "stars": 3769,
       "language": "Python",
       "url": "https://github.com/zhongerxin/iPhone-use",
       "topics": []
+    },
+    {
+      "full_name": "ARahim3/DigUp",
+      "name": "DigUp",
+      "owner": "ARahim3",
+      "description": "Search your computer by what's in your files: photos, PDFs, documents, recordings, videos and code. On-device on Mac, Windows and Linux, built on Google DeepMind's EmbeddingGemma 2.",
+      "stars": 3768,
+      "language": "Swift",
+      "url": "https://github.com/ARahim3/DigUp",
+      "topics": [
+        "embeddinggemma",
+        "embeddings",
+        "file-search"
+      ]
+    },
+    {
+      "full_name": "QingYunA/answer-me-with-html",
+      "name": "answer-me-with-html",
+      "owner": "QingYunA",
+      "description": "Answer me with HTML — an agent skill that answers hard questions with a one-page HTML you can actually read. 让 AI Agent 用一页 HTML 回答复杂问题。",
+      "stars": 3390,
+      "language": "JavaScript",
+      "url": "https://github.com/QingYunA/answer-me-with-html",
+      "topics": [
+        "agent-skill",
+        "ai-agent",
+        "claude-code"
+      ]
     }
   ]
 }
