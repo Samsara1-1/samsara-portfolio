@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-10-18T05:25:58Z",
+  "fetched_at": "2026-10-19T05:43:44Z",
   "repos": [
     {
       "full_name": "wheresryan22/anatomy",
       "name": "anatomy",
       "owner": "wheresryan22",
       "description": "An agent skill for creating detailed, interactive isometric illustrations of real-world machines and complex systems. Generates polished SVGs with optional WebGL shaders and 3D effects.",
-      "stars": 15314,
+      "stars": 16265,
       "language": "JavaScript",
       "url": "https://github.com/wheresryan22/anatomy",
       "topics": [
@@ -20,7 +20,7 @@
       "name": "math",
       "owner": "openai",
       "description": "暂无描述",
-      "stars": 15118,
+      "stars": 15186,
       "language": "Lean",
       "url": "https://github.com/openai/math",
       "topics": []
@@ -30,51 +30,27 @@
       "name": "wordcraft",
       "owner": "storytold",
       "description": "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
-      "stars": 14109,
+      "stars": 14458,
       "language": "Rust",
       "url": "https://github.com/storytold/wordcraft",
       "topics": []
     },
     {
-      "full_name": "storytold/cadcraft",
-      "name": "cadcraft",
-      "owner": "storytold",
-      "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
-      "stars": 5630,
-      "language": "Rust",
-      "url": "https://github.com/storytold/cadcraft",
+      "full_name": "google-research/harness2",
+      "name": "harness2",
+      "owner": "google-research",
+      "description": "暂无描述",
+      "stars": 7686,
+      "language": "Python",
+      "url": "https://github.com/google-research/harness2",
       "topics": []
-    },
-    {
-      "full_name": "storytold/gridcraft",
-      "name": "gridcraft",
-      "owner": "storytold",
-      "description": "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust. By ArtCraft.",
-      "stars": 5629,
-      "language": "Rust",
-      "url": "https://github.com/storytold/gridcraft",
-      "topics": []
-    },
-    {
-      "full_name": "ARahim3/DigUp",
-      "name": "DigUp",
-      "owner": "ARahim3",
-      "description": "Search your computer by what's in your files: photos, PDFs, documents, recordings, videos and code. On-device on Mac, Windows and Linux, built on Google DeepMind's EmbeddingGemma 2.",
-      "stars": 4625,
-      "language": "Swift",
-      "url": "https://github.com/ARahim3/DigUp",
-      "topics": [
-        "embeddinggemma",
-        "embeddings",
-        "file-search"
-      ]
     },
     {
       "full_name": "tangency-labs/solidcraft",
       "name": "solidcraft",
       "owner": "tangency-labs",
       "description": "SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP.",
-      "stars": 4445,
+      "stars": 5986,
       "language": "Rust",
       "url": "https://github.com/tangency-labs/solidcraft",
       "topics": [
@@ -84,11 +60,45 @@
       ]
     },
     {
+      "full_name": "storytold/cadcraft",
+      "name": "cadcraft",
+      "owner": "storytold",
+      "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
+      "stars": 5826,
+      "language": "Rust",
+      "url": "https://github.com/storytold/cadcraft",
+      "topics": []
+    },
+    {
+      "full_name": "storytold/gridcraft",
+      "name": "gridcraft",
+      "owner": "storytold",
+      "description": "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust. By ArtCraft.",
+      "stars": 5783,
+      "language": "Rust",
+      "url": "https://github.com/storytold/gridcraft",
+      "topics": []
+    },
+    {
+      "full_name": "ARahim3/DigUp",
+      "name": "DigUp",
+      "owner": "ARahim3",
+      "description": "Search your computer by what's in your files: photos, PDFs, documents, recordings, videos and code. On-device on Mac, Windows and Linux, built on Google DeepMind's EmbeddingGemma 2.",
+      "stars": 4836,
+      "language": "Swift",
+      "url": "https://github.com/ARahim3/DigUp",
+      "topics": [
+        "embeddinggemma",
+        "embeddings",
+        "file-search"
+      ]
+    },
+    {
       "full_name": "alchaincyf/huashu-art-motion",
       "name": "huashu-art-motion",
       "owner": "alchaincyf",
       "description": "艺术动画skill：35种艺术风格、9种解说语法，用代码让画动起来。",
-      "stars": 4256,
+      "stars": 4417,
       "language": "JavaScript",
       "url": "https://github.com/alchaincyf/huashu-art-motion",
       "topics": []
@@ -98,24 +108,10 @@
       "name": "iPhone-use",
       "owner": "zhongerxin",
       "description": "让 Codex 通过 USB 操作真实 iPhone：引导安装、App 自动化、实时屏幕与截图回退。",
-      "stars": 4092,
+      "stars": 4230,
       "language": "Python",
       "url": "https://github.com/zhongerxin/iPhone-use",
       "topics": []
-    },
-    {
-      "full_name": "LosaLosSantos/aurelio-finance",
-      "name": "aurelio-finance",
-      "owner": "LosaLosSantos",
-      "description": "Open-source personal finance app with an AI financial advisor: track your net worth, investments, ETFs, cash and debts on your own computer.",
-      "stars": 3951,
-      "language": "Python",
-      "url": "https://github.com/LosaLosSantos/aurelio-finance",
-      "topics": [
-        "ai",
-        "dividends",
-        "etf"
-      ]
     }
   ]
 }
