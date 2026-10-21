@@ -1,12 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-10-20T05:39:46Z",
+  "fetched_at": "2026-10-21T05:43:13Z",
   "repos": [
     {
       "full_name": "wheresryan22/anatomy",
       "name": "anatomy",
       "owner": "wheresryan22",
       "description": "An agent skill for creating detailed, interactive isometric illustrations of real-world machines and complex systems. Generates polished SVGs with optional WebGL shaders and 3D effects.",
-      "stars": 17066,
+      "stars": 17782,
       "language": "JavaScript",
       "url": "https://github.com/wheresryan22/anatomy",
       "topics": [
@@ -16,35 +16,21 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "storytold/wordcraft",
-      "name": "wordcraft",
-      "owner": "storytold",
-      "description": "An open-source, clean-room reimplementation of Microsoft Word in pure Rust",
-      "stars": 14829,
-      "language": "Rust",
-      "url": "https://github.com/storytold/wordcraft",
+      "full_name": "deepseek-ai/DeepInfer",
+      "name": "DeepInfer",
+      "owner": "deepseek-ai",
+      "description": "DeepInfer: High-performance, large-scale inference framework for DeepSeek models",
+      "stars": 14713,
+      "language": "Python",
+      "url": "https://github.com/deepseek-ai/DeepInfer",
       "topics": []
-    },
-    {
-      "full_name": "tangency-labs/solidcraft",
-      "name": "solidcraft",
-      "owner": "tangency-labs",
-      "description": "SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP.",
-      "stars": 7519,
-      "language": "Rust",
-      "url": "https://github.com/tangency-labs/solidcraft",
-      "topics": [
-        "3d-modeling",
-        "brep",
-        "cad"
-      ]
     },
     {
       "full_name": "Gathin23/cleanyourtv",
       "name": "cleanyourtv",
       "owner": "Gathin23",
       "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
-      "stars": 6630,
+      "stars": 13471,
       "language": "Java",
       "url": "https://github.com/Gathin23/cleanyourtv",
       "topics": [
@@ -54,31 +40,11 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "storytold/cadcraft",
-      "name": "cadcraft",
-      "owner": "storytold",
-      "description": "CADCraft: computer-aided design and drafting — an open-source, clean-room AutoCAD-style app in pure Rust",
-      "stars": 6033,
-      "language": "Rust",
-      "url": "https://github.com/storytold/cadcraft",
-      "topics": []
-    },
-    {
-      "full_name": "storytold/gridcraft",
-      "name": "gridcraft",
-      "owner": "storytold",
-      "description": "GridCraft: an open-source, clean-room spreadsheet (Microsoft Excel-style) in pure Rust. By ArtCraft.",
-      "stars": 5933,
-      "language": "Rust",
-      "url": "https://github.com/storytold/gridcraft",
-      "topics": []
-    },
-    {
       "full_name": "ARahim3/DigUp",
       "name": "DigUp",
       "owner": "ARahim3",
       "description": "Search your computer by what's in your files: photos, PDFs, documents, recordings, videos and code. On-device on Mac, Windows and Linux, built on Google DeepMind's EmbeddingGemma 2.",
-      "stars": 5099,
+      "stars": 5264,
       "language": "Swift",
       "url": "https://github.com/ARahim3/DigUp",
       "topics": [
@@ -92,7 +58,7 @@ window.TRENDING_DATA = {
       "name": "d2r-mobile",
       "owner": "jhaizhou-ops",
       "description": "Open-source iOS / macOS compatibility layer for Diablo II: Resurrected with the Reign of the Warlock expansion. Runs your own Switch copy natively on iPhone, iPad and Mac — full touch controls, 60 fps, new endgame modes. Bring your own game files. 开源的《暗黑破坏神 II：狱火重生》术士君临 iOS / macOS 兼容层",
-      "stars": 4083,
+      "stars": 4216,
       "language": "C",
       "url": "https://github.com/jhaizhou-ops/d2r-mobile",
       "topics": [
@@ -102,24 +68,70 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "storytold/deckcraft",
-      "name": "deckcraft",
-      "owner": "storytold",
-      "description": "Presentations and slide shows: an open-source, clean-room reimplementation of Microsoft PowerPoint in pure Rust. Part of the ArtCraft Crafting Apps.",
-      "stars": 3917,
-      "language": "Rust",
-      "url": "https://github.com/storytold/deckcraft",
-      "topics": []
-    },
-    {
       "full_name": "storytold/craft-launcher",
       "name": "craft-launcher",
       "owner": "storytold",
       "description": "The Craft App Launcher",
-      "stars": 3526,
+      "stars": 3687,
       "language": "Rust",
       "url": "https://github.com/storytold/craft-launcher",
       "topics": []
+    },
+    {
+      "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
+      "name": "qwen21-nsfw-pose-skill",
+      "owner": "Arekejoker",
+      "description": "Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw",
+      "stars": 3519,
+      "language": "Python",
+      "url": "https://github.com/Arekejoker/qwen21-nsfw-pose-skill",
+      "topics": [
+        "agent-skill",
+        "comfyui",
+        "image-generation"
+      ]
+    },
+    {
+      "full_name": "T-Auto/dsh-ops",
+      "name": "dsh-ops",
+      "owner": "T-Auto",
+      "description": "A toolkit for low-level operations in DSH, designed to reduce token usage and task execution time / DSH 底层操作工具插件，旨在减少 Token 消耗与任务耗时",
+      "stars": 3518,
+      "language": "JavaScript",
+      "url": "https://github.com/T-Auto/dsh-ops",
+      "topics": [
+        "dsh",
+        "dsh-plugin",
+        "dsh-plugins"
+      ]
+    },
+    {
+      "full_name": "onehumanbeing/esp32-iphone-agent",
+      "name": "esp32-iphone-agent",
+      "owner": "onehumanbeing",
+      "description": "Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.",
+      "stars": 3423,
+      "language": "C",
+      "url": "https://github.com/onehumanbeing/esp32-iphone-agent",
+      "topics": [
+        "ai-agent",
+        "airplay",
+        "automation"
+      ]
+    },
+    {
+      "full_name": "HeyPuter/everything",
+      "name": "everything",
+      "owner": "HeyPuter",
+      "description": "We're rebuilding and open-sourcing the world’s software from scratch.",
+      "stars": 3269,
+      "language": "JavaScript",
+      "url": "https://github.com/HeyPuter/everything",
+      "topics": [
+        "adobe",
+        "cad",
+        "office"
+      ]
     }
   ]
 }
