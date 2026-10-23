@@ -1,12 +1,12 @@
 {
-  "fetched_at": "2026-10-22T05:45:18Z",
+  "fetched_at": "2026-10-23T05:43:55Z",
   "repos": [
     {
       "full_name": "Gathin23/cleanyourtv",
       "name": "cleanyourtv",
       "owner": "Gathin23",
       "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
-      "stars": 20416,
+      "stars": 25027,
       "language": "Java",
       "url": "https://github.com/Gathin23/cleanyourtv",
       "topics": [
@@ -20,51 +20,41 @@
       "name": "DeepInfer",
       "owner": "deepseek-ai",
       "description": "DeepInfer: High-performance, large-scale inference framework for DeepSeek models",
-      "stars": 18538,
+      "stars": 20205,
       "language": "Python",
       "url": "https://github.com/deepseek-ai/DeepInfer",
       "topics": []
-    },
-    {
-      "full_name": "jhaizhou-ops/d2r-mobile",
-      "name": "d2r-mobile",
-      "owner": "jhaizhou-ops",
-      "description": "Open-source iOS / macOS compatibility layer for Diablo II: Resurrected with the Reign of the Warlock expansion. Runs your own Switch copy natively on iPhone, iPad and Mac — full touch controls, 60 fps, new endgame modes. Bring your own game files. 开源的《暗黑破坏神 II：狱火重生》术士君临 iOS / macOS 兼容层",
-      "stars": 4343,
-      "language": "C",
-      "url": "https://github.com/jhaizhou-ops/d2r-mobile",
-      "topics": [
-        "compatibility-layer",
-        "diablo-2-resurrected",
-        "diablo2"
-      ]
     },
     {
       "full_name": "ly05010419/MacNativeGames",
       "name": "MacNativeGames",
       "owner": "ly05010419",
       "description": "暂无描述",
-      "stars": 4058,
+      "stars": 4597,
       "language": "C",
       "url": "https://github.com/ly05010419/MacNativeGames",
       "topics": []
     },
     {
-      "full_name": "storytold/craft-launcher",
-      "name": "craft-launcher",
-      "owner": "storytold",
-      "description": "The Craft App Launcher",
-      "stars": 3779,
-      "language": "Rust",
-      "url": "https://github.com/storytold/craft-launcher",
-      "topics": []
+      "full_name": "jhaizhou-ops/d2r-mobile",
+      "name": "d2r-mobile",
+      "owner": "jhaizhou-ops",
+      "description": "Open-source compatibility layer for Diablo II: Resurrected with the Reign of the Warlock expansion. Runs your own Switch copy natively on iPhone, iPad, Mac, Android and HarmonyOS — full touch controls, 60 fps, new endgame modes. Bring your own game files. 开源的《暗黑破坏神 II：狱火重生》术士君临 iOS / macOS / 安卓 / 鸿蒙兼容层",
+      "stars": 4429,
+      "language": "C",
+      "url": "https://github.com/jhaizhou-ops/d2r-mobile",
+      "topics": [
+        "android",
+        "compatibility-layer",
+        "diablo-2-resurrected"
+      ]
     },
     {
       "full_name": "Arekejoker/qwen21-nsfw-pose-skill",
       "name": "qwen21-nsfw-pose-skill",
       "owner": "Arekejoker",
       "description": "Qwen-Image 2.1 NSFW/姿势出图 skill：作者级提示词配方 + NSFW LoRA + 136 姿势 VNCCS 人偶控制；适用 Claude Code / Codex / Cursor / OpenClaw",
-      "stars": 3596,
+      "stars": 3643,
       "language": "Python",
       "url": "https://github.com/Arekejoker/qwen21-nsfw-pose-skill",
       "topics": [
@@ -74,25 +64,11 @@
       ]
     },
     {
-      "full_name": "onehumanbeing/esp32-iphone-agent",
-      "name": "esp32-iphone-agent",
-      "owner": "onehumanbeing",
-      "description": "Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.",
-      "stars": 3508,
-      "language": "C",
-      "url": "https://github.com/onehumanbeing/esp32-iphone-agent",
-      "topics": [
-        "ai-agent",
-        "airplay",
-        "automation"
-      ]
-    },
-    {
       "full_name": "HeyPuter/everything",
       "name": "everything",
       "owner": "HeyPuter",
       "description": "We're rebuilding and open-sourcing the world’s software from scratch.",
-      "stars": 3497,
+      "stars": 3616,
       "language": "JavaScript",
       "url": "https://github.com/HeyPuter/everything",
       "topics": [
@@ -102,25 +78,49 @@
       ]
     },
     {
-      "full_name": "storytold/figcraft",
-      "name": "figcraft",
-      "owner": "storytold",
-      "description": "FigCraft: interface design and prototyping; an open-source, clean-room reimplementation of collaborative design workflows in pure Rust",
-      "stars": 3074,
-      "language": "Rust",
-      "url": "https://github.com/storytold/figcraft",
+      "full_name": "onehumanbeing/esp32-iphone-agent",
+      "name": "esp32-iphone-agent",
+      "owner": "onehumanbeing",
+      "description": "Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.",
+      "stars": 3578,
+      "language": "C",
+      "url": "https://github.com/onehumanbeing/esp32-iphone-agent",
       "topics": [
-        "design",
-        "rust",
-        "tools"
+        "ai-agent",
+        "airplay",
+        "automation"
       ]
+    },
+    {
+      "full_name": "simbasjungles/free-my-tv",
+      "name": "free-my-tv",
+      "owner": "simbasjungles",
+      "description": "A fast, ad-free home screen for Google TV. Open source, built with Claude Code. One button to undo.",
+      "stars": 3558,
+      "language": "Java",
+      "url": "https://github.com/simbasjungles/free-my-tv",
+      "topics": [
+        "android-tv",
+        "claude-code",
+        "google-tv"
+      ]
+    },
+    {
+      "full_name": "pengchujin/aerial-tv",
+      "name": "aerial-tv",
+      "owner": "pengchujin",
+      "description": "给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。A tvOS-style launcher for Xiaomi, TCL and other China-market TVs.",
+      "stars": 3343,
+      "language": "Kotlin",
+      "url": "https://github.com/pengchujin/aerial-tv",
+      "topics": []
     },
     {
       "full_name": "liseami/CCBaga",
       "name": "CCBaga",
       "owner": "liseami",
       "description": "暂无描述",
-      "stars": 2852,
+      "stars": 2884,
       "language": "Rust",
       "url": "https://github.com/liseami/CCBaga",
       "topics": []
