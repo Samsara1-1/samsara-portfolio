@@ -1,12 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-10-29T06:45:02Z",
+  "fetched_at": "2026-10-30T06:48:08Z",
   "repos": [
     {
       "full_name": "Gathin23/cleanyourtv",
       "name": "cleanyourtv",
       "owner": "Gathin23",
       "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
-      "stars": 44234,
+      "stars": 45778,
       "language": "Python",
       "url": "https://github.com/Gathin23/cleanyourtv",
       "topics": [
@@ -16,21 +16,11 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "deepseek-ai/DeepInfer",
-      "name": "DeepInfer",
-      "owner": "deepseek-ai",
-      "description": "DeepInfer: High-performance, large-scale inference framework for DeepSeek models",
-      "stars": 24047,
-      "language": "Python",
-      "url": "https://github.com/deepseek-ai/DeepInfer",
-      "topics": []
-    },
-    {
       "full_name": "Zagitta/gpu-unlock",
       "name": "gpu-unlock",
       "owner": "Zagitta",
       "description": "Your GeForce runs AI at half speed. This fixes it for 20/30/40 series cards. Up to 2× FP16 / BF16 / TF32 tensor throughput",
-      "stars": 12556,
+      "stars": 13201,
       "language": "C",
       "url": "https://github.com/Zagitta/gpu-unlock",
       "topics": []
@@ -40,7 +30,7 @@ window.TRENDING_DATA = {
       "name": "aerial-tv",
       "owner": "pengchujin",
       "description": "给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。A tvOS-style launcher for Xiaomi, TCL and other China-market TVs.",
-      "stars": 7527,
+      "stars": 7867,
       "language": "Kotlin",
       "url": "https://github.com/pengchujin/aerial-tv",
       "topics": []
@@ -50,7 +40,7 @@ window.TRENDING_DATA = {
       "name": "MacNativeGames",
       "owner": "ly05010419",
       "description": "Play your own Tears of the Kingdom and Breath of the Wild natively on Apple silicon Mac, iPhone and iPad. Not an emulator: the game's ARM64 code runs directly, NVN rebuilt on Metal. Bring your own game.",
-      "stars": 6338,
+      "stars": 6488,
       "language": "C",
       "url": "https://github.com/ly05010419/MacNativeGames",
       "topics": [
@@ -64,7 +54,7 @@ window.TRENDING_DATA = {
       "name": "free-my-tv",
       "owner": "simbasjungles",
       "description": "A fast, ad-free home screen for Google TV, LG webOS and Samsung Tizen. One button to undo.",
-      "stars": 5271,
+      "stars": 5414,
       "language": "Java",
       "url": "https://github.com/simbasjungles/free-my-tv",
       "topics": [
@@ -78,7 +68,7 @@ window.TRENDING_DATA = {
       "name": "cn-math-taxonomy",
       "owner": "xiaoyang111222",
       "description": "数学（小学到高中）、英语（三年级到高中）、初中物理的知识图谱：1644 个知识点、2403 条先修边、6723 道题，对齐课标，附自适应前置诊断。",
-      "stars": 4978,
+      "stars": 5335,
       "language": "Python",
       "url": "https://github.com/xiaoyang111222/cn-math-taxonomy",
       "topics": [
@@ -88,11 +78,21 @@ window.TRENDING_DATA = {
       ]
     },
     {
+      "full_name": "unclebob/ub-mode",
+      "name": "ub-mode",
+      "owner": "unclebob",
+      "description": "暂无描述",
+      "stars": 4937,
+      "language": "N/A",
+      "url": "https://github.com/unclebob/ub-mode",
+      "topics": []
+    },
+    {
       "full_name": "rddmwmddr/android-ad-cleaner",
       "name": "android-ad-cleaner",
       "owner": "rddmwmddr",
       "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
-      "stars": 4478,
+      "stars": 4846,
       "language": "Python",
       "url": "https://github.com/rddmwmddr/android-ad-cleaner",
       "topics": [
@@ -106,19 +106,19 @@ window.TRENDING_DATA = {
       "name": "gpu-unlock-ada",
       "owner": "JustAResearcher",
       "description": "GPU tensor unlock source for RTX 4090 and experimental RTX 4070 Ti SUPER; firmware generated locally",
-      "stars": 4449,
+      "stars": 4539,
       "language": "C",
       "url": "https://github.com/JustAResearcher/gpu-unlock-ada",
       "topics": []
     },
     {
-      "full_name": "unclebob/ub-mode",
-      "name": "ub-mode",
-      "owner": "unclebob",
-      "description": "暂无描述",
-      "stars": 4013,
-      "language": "N/A",
-      "url": "https://github.com/unclebob/ub-mode",
+      "full_name": "interplains/Zero-Breach-Toolkit",
+      "name": "Zero-Breach-Toolkit",
+      "owner": "interplains",
+      "description": "Free, open-source, offline checks for traces of known mercenary spyware. Works on Windows, macOS and Linux, Android phones and iPhone backups.",
+      "stars": 3676,
+      "language": "Python",
+      "url": "https://github.com/interplains/Zero-Breach-Toolkit",
       "topics": []
     }
   ]
