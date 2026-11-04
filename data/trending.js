@@ -1,34 +1,24 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-11-03T07:33:40Z",
+  "fetched_at": "2026-11-04T07:14:26Z",
   "repos": [
     {
       "full_name": "deepseek-ai/dsh-superagent-prototype",
       "name": "dsh-superagent-prototype",
       "owner": "deepseek-ai",
       "description": "Towards a More Autonomous Agent System",
-      "stars": 14651,
+      "stars": 17610,
       "language": "TypeScript",
       "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
       "topics": []
     },
     {
-      "full_name": "unclebob/ub-mode",
-      "name": "ub-mode",
-      "owner": "unclebob",
-      "description": "暂无描述",
-      "stars": 6638,
-      "language": "N/A",
-      "url": "https://github.com/unclebob/ub-mode",
-      "topics": []
-    },
-    {
-      "full_name": "heydamir/unslop",
-      "name": "unslop",
-      "owner": "heydamir",
-      "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
-      "stars": 6627,
-      "language": "JavaScript",
-      "url": "https://github.com/heydamir/unslop",
+      "full_name": "storytold/craft-anything",
+      "name": "craft-anything",
+      "owner": "storytold",
+      "description": "Craft Anything: understand how any software works, and craft your own.",
+      "stars": 9276,
+      "language": "Rust",
+      "url": "https://github.com/storytold/craft-anything",
       "topics": []
     },
     {
@@ -36,7 +26,7 @@ window.TRENDING_DATA = {
       "name": "dsh-Go",
       "owner": "ccch1mneyyy",
       "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
-      "stars": 6321,
+      "stars": 8309,
       "language": "Dart",
       "url": "https://github.com/ccch1mneyyy/dsh-Go",
       "topics": [
@@ -46,25 +36,31 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "rddmwmddr/android-ad-cleaner",
-      "name": "android-ad-cleaner",
-      "owner": "rddmwmddr",
-      "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
-      "stars": 5972,
-      "language": "Python",
-      "url": "https://github.com/rddmwmddr/android-ad-cleaner",
-      "topics": [
-        "adb",
-        "ai-agent",
-        "android"
-      ]
+      "full_name": "heydamir/unslop",
+      "name": "unslop",
+      "owner": "heydamir",
+      "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
+      "stars": 7770,
+      "language": "JavaScript",
+      "url": "https://github.com/heydamir/unslop",
+      "topics": []
+    },
+    {
+      "full_name": "unclebob/ub-mode",
+      "name": "ub-mode",
+      "owner": "unclebob",
+      "description": "暂无描述",
+      "stars": 6837,
+      "language": "N/A",
+      "url": "https://github.com/unclebob/ub-mode",
+      "topics": []
     },
     {
       "full_name": "wangzan101/Mika",
       "name": "Mika",
       "owner": "wangzan101",
       "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
-      "stars": 5677,
+      "stars": 6217,
       "language": "Kotlin",
       "url": "https://github.com/wangzan101/Mika",
       "topics": [
@@ -74,11 +70,25 @@ window.TRENDING_DATA = {
       ]
     },
     {
+      "full_name": "rddmwmddr/android-ad-cleaner",
+      "name": "android-ad-cleaner",
+      "owner": "rddmwmddr",
+      "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+      "stars": 6179,
+      "language": "Python",
+      "url": "https://github.com/rddmwmddr/android-ad-cleaner",
+      "topics": [
+        "adb",
+        "ai-agent",
+        "android"
+      ]
+    },
+    {
       "full_name": "anhao/ai-pose-gallery-zh",
       "name": "ai-pose-gallery-zh",
       "owner": "anhao",
       "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
-      "stars": 5625,
+      "stars": 5841,
       "language": "TypeScript",
       "url": "https://github.com/anhao/ai-pose-gallery-zh",
       "topics": [
@@ -88,38 +98,28 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "storytold/craft-anything",
-      "name": "craft-anything",
-      "owner": "storytold",
-      "description": "Craft Anything: understand how any software works, and craft your own.",
-      "stars": 5326,
-      "language": "Rust",
-      "url": "https://github.com/storytold/craft-anything",
-      "topics": []
-    },
-    {
-      "full_name": "l0ng-ai/openidea",
-      "name": "openidea",
-      "owner": "l0ng-ai",
-      "description": "The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.",
-      "stars": 5268,
-      "language": "TypeScript",
-      "url": "https://github.com/l0ng-ai/openidea",
-      "topics": [
-        "code-editor",
-        "cross-platform",
-        "dap"
-      ]
-    },
-    {
       "full_name": "JustAResearcher/gpu-unlock-ada",
       "name": "gpu-unlock-ada",
       "owner": "JustAResearcher",
       "description": "GPU tensor unlock source for RTX 4090 and experimental RTX 4070 Ti SUPER; firmware generated locally",
-      "stars": 4717,
+      "stars": 4745,
       "language": "C",
       "url": "https://github.com/JustAResearcher/gpu-unlock-ada",
       "topics": []
+    },
+    {
+      "full_name": "valentderah/totk-pc-recomp",
+      "name": "totk-pc-recomp",
+      "owner": "valentderah",
+      "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows and Linux x86-64, with a Vulkan renderer. Game files not included.",
+      "stars": 4616,
+      "language": "C",
+      "url": "https://github.com/valentderah/totk-pc-recomp",
+      "topics": [
+        "game",
+        "linux",
+        "port"
+      ]
     }
   ]
 }
