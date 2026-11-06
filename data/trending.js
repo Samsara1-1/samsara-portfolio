@@ -1,12 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-11-05T07:42:20Z",
+  "fetched_at": "2026-11-06T07:39:02Z",
   "repos": [
     {
       "full_name": "deepseek-ai/dsh-superagent-prototype",
       "name": "dsh-superagent-prototype",
       "owner": "deepseek-ai",
       "description": "Towards a More Autonomous Agent System",
-      "stars": 18946,
+      "stars": 19817,
       "language": "TypeScript",
       "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
       "topics": []
@@ -16,7 +16,7 @@ window.TRENDING_DATA = {
       "name": "craft-anything",
       "owner": "storytold",
       "description": "Craft Anything: understand how any software works, and craft your own.",
-      "stars": 13116,
+      "stars": 16026,
       "language": "Rust",
       "url": "https://github.com/storytold/craft-anything",
       "topics": []
@@ -26,7 +26,7 @@ window.TRENDING_DATA = {
       "name": "dsh-Go",
       "owner": "ccch1mneyyy",
       "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
-      "stars": 10295,
+      "stars": 12070,
       "language": "Dart",
       "url": "https://github.com/ccch1mneyyy/dsh-Go",
       "topics": [
@@ -40,19 +40,9 @@ window.TRENDING_DATA = {
       "name": "unslop",
       "owner": "heydamir",
       "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
-      "stars": 8965,
+      "stars": 10123,
       "language": "JavaScript",
       "url": "https://github.com/heydamir/unslop",
-      "topics": []
-    },
-    {
-      "full_name": "unclebob/ub-mode",
-      "name": "ub-mode",
-      "owner": "unclebob",
-      "description": "暂无描述",
-      "stars": 7019,
-      "language": "N/A",
-      "url": "https://github.com/unclebob/ub-mode",
       "topics": []
     },
     {
@@ -60,7 +50,7 @@ window.TRENDING_DATA = {
       "name": "Mika",
       "owner": "wangzan101",
       "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
-      "stars": 6834,
+      "stars": 7247,
       "language": "Kotlin",
       "url": "https://github.com/wangzan101/Mika",
       "topics": [
@@ -70,11 +60,21 @@ window.TRENDING_DATA = {
       ]
     },
     {
+      "full_name": "unclebob/ub-mode",
+      "name": "ub-mode",
+      "owner": "unclebob",
+      "description": "暂无描述",
+      "stars": 7149,
+      "language": "N/A",
+      "url": "https://github.com/unclebob/ub-mode",
+      "topics": []
+    },
+    {
       "full_name": "rddmwmddr/android-ad-cleaner",
       "name": "android-ad-cleaner",
       "owner": "rddmwmddr",
       "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
-      "stars": 6403,
+      "stars": 6619,
       "language": "Python",
       "url": "https://github.com/rddmwmddr/android-ad-cleaner",
       "topics": [
@@ -88,7 +88,7 @@ window.TRENDING_DATA = {
       "name": "ai-pose-gallery-zh",
       "owner": "anhao",
       "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
-      "stars": 6003,
+      "stars": 6153,
       "language": "TypeScript",
       "url": "https://github.com/anhao/ai-pose-gallery-zh",
       "topics": [
@@ -98,31 +98,31 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "valentderah/totk-pc-recomp",
-      "name": "totk-pc-recomp",
-      "owner": "valentderah",
-      "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows and Linux x86-64, with a Vulkan renderer. Game files not included.",
-      "stars": 4939,
-      "language": "C",
-      "url": "https://github.com/valentderah/totk-pc-recomp",
-      "topics": [
-        "game",
-        "linux",
-        "port"
-      ]
-    },
-    {
       "full_name": "patch-gg/pixelfx",
       "name": "pixelfx",
       "owner": "patch-gg",
       "description": "244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
-      "stars": 4921,
+      "stars": 5405,
       "language": "JavaScript",
       "url": "https://github.com/patch-gg/pixelfx",
       "topics": [
         "agent-skills",
         "animation",
         "canvas"
+      ]
+    },
+    {
+      "full_name": "valentderah/totk-pc-recomp",
+      "name": "totk-pc-recomp",
+      "owner": "valentderah",
+      "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows and Linux x86-64, with a Vulkan renderer. Game files not included.",
+      "stars": 5228,
+      "language": "C",
+      "url": "https://github.com/valentderah/totk-pc-recomp",
+      "topics": [
+        "game",
+        "linux",
+        "port"
       ]
     }
   ]
