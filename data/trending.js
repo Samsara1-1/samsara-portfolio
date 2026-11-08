@@ -1,46 +1,32 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-11-07T06:49:18Z",
+  "fetched_at": "2026-11-08T06:55:27Z",
   "repos": [
-    {
-      "full_name": "deepseek-ai/dsh-superagent-prototype",
-      "name": "dsh-superagent-prototype",
-      "owner": "deepseek-ai",
-      "description": "Towards a More Autonomous Agent System",
-      "stars": 20421,
-      "language": "TypeScript",
-      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
-      "topics": []
-    },
     {
       "full_name": "storytold/craft-anything",
       "name": "craft-anything",
       "owner": "storytold",
       "description": "Craft Anything: understand how any software works, and craft your own.",
-      "stars": 18720,
+      "stars": 21228,
       "language": "Rust",
       "url": "https://github.com/storytold/craft-anything",
       "topics": []
     },
     {
-      "full_name": "ccch1mneyyy/dsh-Go",
-      "name": "dsh-Go",
-      "owner": "ccch1mneyyy",
-      "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。",
-      "stars": 13242,
-      "language": "Dart",
-      "url": "https://github.com/ccch1mneyyy/dsh-Go",
-      "topics": [
-        "ai-agent",
-        "android",
-        "android-app"
-      ]
+      "full_name": "deepseek-ai/dsh-superagent-prototype",
+      "name": "dsh-superagent-prototype",
+      "owner": "deepseek-ai",
+      "description": "Towards a More Autonomous Agent System",
+      "stars": 20936,
+      "language": "TypeScript",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+      "topics": []
     },
     {
       "full_name": "heydamir/unslop",
       "name": "unslop",
       "owner": "heydamir",
       "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
-      "stars": 10889,
+      "stars": 11489,
       "language": "JavaScript",
       "url": "https://github.com/heydamir/unslop",
       "topics": []
@@ -50,7 +36,7 @@ window.TRENDING_DATA = {
       "name": "Mika",
       "owner": "wangzan101",
       "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
-      "stars": 7456,
+      "stars": 7648,
       "language": "Kotlin",
       "url": "https://github.com/wangzan101/Mika",
       "topics": [
@@ -60,21 +46,11 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "unclebob/ub-mode",
-      "name": "ub-mode",
-      "owner": "unclebob",
-      "description": "暂无描述",
-      "stars": 7218,
-      "language": "N/A",
-      "url": "https://github.com/unclebob/ub-mode",
-      "topics": []
-    },
-    {
       "full_name": "anhao/ai-pose-gallery-zh",
       "name": "ai-pose-gallery-zh",
       "owner": "anhao",
       "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
-      "stars": 6292,
+      "stars": 6393,
       "language": "TypeScript",
       "url": "https://github.com/anhao/ai-pose-gallery-zh",
       "topics": [
@@ -84,11 +60,21 @@ window.TRENDING_DATA = {
       ]
     },
     {
+      "full_name": "zortos293/Lichii",
+      "name": "Lichii",
+      "owner": "zortos293",
+      "description": "VERY experimental Nintendo Switch 2 emulator",
+      "stars": 5992,
+      "language": "C++",
+      "url": "https://github.com/zortos293/Lichii",
+      "topics": []
+    },
+    {
       "full_name": "patch-gg/pixelfx",
       "name": "pixelfx",
       "owner": "patch-gg",
       "description": "244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
-      "stars": 5668,
+      "stars": 5906,
       "language": "JavaScript",
       "url": "https://github.com/patch-gg/pixelfx",
       "topics": [
@@ -102,7 +88,7 @@ window.TRENDING_DATA = {
       "name": "totk-pc-recomp",
       "owner": "valentderah",
       "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows and Linux x86-64, with a Vulkan renderer. Game files not included.",
-      "stars": 5485,
+      "stars": 5741,
       "language": "C",
       "url": "https://github.com/valentderah/totk-pc-recomp",
       "topics": [
@@ -116,10 +102,24 @@ window.TRENDING_DATA = {
       "name": "Eglantine",
       "owner": "Djihads80",
       "description": "VERY experimental Nintendo Switch 2 emulator",
-      "stars": 4958,
+      "stars": 5257,
       "language": "C++",
       "url": "https://github.com/Djihads80/Eglantine",
       "topics": []
+    },
+    {
+      "full_name": "BryceYuuu/RUN",
+      "name": "RUN",
+      "owner": "BryceYuuu",
+      "description": "RUN · 润：中国护照持有人的海外移居手册。欧洲 36 国 110 条移民路线 + 13 个主要移民地区：数字游民签证、欧盟蓝卡、技术移民、留学转工作、创业自雇、投资居留，每条附官方来源，持续更新。",
+      "stars": 4198,
+      "language": "Python",
+      "url": "https://github.com/BryceYuuu/RUN",
+      "topics": [
+        "china",
+        "chinese",
+        "digital-nomad"
+      ]
     }
   ]
 }
