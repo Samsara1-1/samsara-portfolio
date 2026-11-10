@@ -1,12 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-11-09T07:39:11Z",
+  "fetched_at": "2026-11-10T07:59:30Z",
   "repos": [
     {
       "full_name": "storytold/craft-anything",
       "name": "craft-anything",
       "owner": "storytold",
       "description": "Craft Anything: understand how any software works, and craft your own.",
-      "stars": 23340,
+      "stars": 25155,
       "language": "Rust",
       "url": "https://github.com/storytold/craft-anything",
       "topics": []
@@ -16,7 +16,7 @@ window.TRENDING_DATA = {
       "name": "dsh-superagent-prototype",
       "owner": "deepseek-ai",
       "description": "Towards a More Autonomous Agent System",
-      "stars": 21436,
+      "stars": 21943,
       "language": "TypeScript",
       "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
       "topics": []
@@ -26,7 +26,7 @@ window.TRENDING_DATA = {
       "name": "unslop",
       "owner": "heydamir",
       "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
-      "stars": 12215,
+      "stars": 13003,
       "language": "JavaScript",
       "url": "https://github.com/heydamir/unslop",
       "topics": []
@@ -36,7 +36,7 @@ window.TRENDING_DATA = {
       "name": "Mika",
       "owner": "wangzan101",
       "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
-      "stars": 7815,
+      "stars": 7966,
       "language": "Kotlin",
       "url": "https://github.com/wangzan101/Mika",
       "topics": [
@@ -50,23 +50,23 @@ window.TRENDING_DATA = {
       "name": "Lichii",
       "owner": "zortos293",
       "description": "VERY experimental Nintendo Switch 2 emulator",
-      "stars": 7064,
+      "stars": 7813,
       "language": "C++",
       "url": "https://github.com/zortos293/Lichii",
       "topics": []
     },
     {
-      "full_name": "anhao/ai-pose-gallery-zh",
-      "name": "ai-pose-gallery-zh",
-      "owner": "anhao",
-      "description": "中文版 AI 姿势参考图库 · 1439 组 / 2878 张图片 / 完整汉化 · 零依赖静态画廊",
-      "stars": 6489,
+      "full_name": "Minireel/HGhub",
+      "name": "HGhub",
+      "owner": "Minireel",
+      "description": "YellowFruit third-party client",
+      "stars": 7171,
       "language": "TypeScript",
-      "url": "https://github.com/anhao/ai-pose-gallery-zh",
+      "url": "https://github.com/Minireel/HGhub",
       "topics": [
-        "ai-art",
-        "chinese",
-        "cloudflare-pages"
+        "android",
+        "drama",
+        "free"
       ]
     },
     {
@@ -74,7 +74,7 @@ window.TRENDING_DATA = {
       "name": "pixelfx",
       "owner": "patch-gg",
       "description": "244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
-      "stars": 6168,
+      "stars": 6474,
       "language": "JavaScript",
       "url": "https://github.com/patch-gg/pixelfx",
       "topics": [
@@ -88,7 +88,7 @@ window.TRENDING_DATA = {
       "name": "totk-pc-recomp",
       "owner": "valentderah",
       "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows and Linux x86-64, with a Vulkan renderer. Game files not included.",
-      "stars": 6026,
+      "stars": 6264,
       "language": "C",
       "url": "https://github.com/valentderah/totk-pc-recomp",
       "topics": [
@@ -98,21 +98,11 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "Eglantine-Community/Eglantine",
-      "name": "Eglantine",
-      "owner": "Eglantine-Community",
-      "description": "VERY experimental Nintendo Switch 2 emulator",
-      "stars": 5489,
-      "language": "C++",
-      "url": "https://github.com/Eglantine-Community/Eglantine",
-      "topics": []
-    },
-    {
       "full_name": "JuneYaooo/rea-video",
       "name": "rea-video",
       "owner": "JuneYaooo",
       "description": "Reverse-engineer any video, shot by shot: filmed, AI-generated or coded, and how to remake it. 逆向一切视频，逐个镜头看是拍的、AI 生成的还是代码做的，再告诉你怎么复刻。",
-      "stars": 4871,
+      "stars": 5844,
       "language": "Python",
       "url": "https://github.com/JuneYaooo/rea-video",
       "topics": [
@@ -120,6 +110,16 @@ window.TRENDING_DATA = {
         "ai-video",
         "aigc-detection"
       ]
+    },
+    {
+      "full_name": "Eglantine-Community/Eglantine",
+      "name": "Eglantine",
+      "owner": "Eglantine-Community",
+      "description": "VERY experimental Nintendo Switch 2 emulator",
+      "stars": 5686,
+      "language": "C++",
+      "url": "https://github.com/Eglantine-Community/Eglantine",
+      "topics": []
     }
   ]
 }
