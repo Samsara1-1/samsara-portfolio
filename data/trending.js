@@ -1,12 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-11-11T07:29:11Z",
+  "fetched_at": "2026-11-12T07:57:17Z",
   "repos": [
     {
       "full_name": "storytold/craft-anything",
       "name": "craft-anything",
       "owner": "storytold",
       "description": "Craft Anything: understand how any software works, and craft your own.",
-      "stars": 27077,
+      "stars": 28961,
       "language": "Rust",
       "url": "https://github.com/storytold/craft-anything",
       "topics": []
@@ -16,19 +16,9 @@ window.TRENDING_DATA = {
       "name": "dsh-superagent-prototype",
       "owner": "deepseek-ai",
       "description": "Towards a More Autonomous Agent System",
-      "stars": 22308,
+      "stars": 22603,
       "language": "TypeScript",
       "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
-      "topics": []
-    },
-    {
-      "full_name": "heydamir/unslop",
-      "name": "unslop",
-      "owner": "heydamir",
-      "description": "A Claude skill that turns vibecoded, AI-looking UI into a designed interface",
-      "stars": 14022,
-      "language": "JavaScript",
-      "url": "https://github.com/heydamir/unslop",
       "topics": []
     },
     {
@@ -36,7 +26,7 @@ window.TRENDING_DATA = {
       "name": "Lichii",
       "owner": "zortos293",
       "description": "VERY experimental Nintendo Switch 2 emulator",
-      "stars": 8284,
+      "stars": 8618,
       "language": "C++",
       "url": "https://github.com/zortos293/Lichii",
       "topics": []
@@ -46,7 +36,7 @@ window.TRENDING_DATA = {
       "name": "HGhub",
       "owner": "Minireel",
       "description": "YellowFruit third-party client",
-      "stars": 8212,
+      "stars": 8346,
       "language": "N/A",
       "url": "https://github.com/Minireel/HGhub",
       "topics": [
@@ -56,25 +46,11 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "wangzan101/Mika",
-      "name": "Mika",
-      "owner": "wangzan101",
-      "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
-      "stars": 8131,
-      "language": "Kotlin",
-      "url": "https://github.com/wangzan101/Mika",
-      "topics": [
-        "accessibility",
-        "ai-agent",
-        "android"
-      ]
-    },
-    {
       "full_name": "NotRexed/Hookshot",
       "name": "Hookshot",
       "owner": "NotRexed",
       "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
-      "stars": 6878,
+      "stars": 8107,
       "language": "C++",
       "url": "https://github.com/NotRexed/Hookshot",
       "topics": []
@@ -84,7 +60,7 @@ window.TRENDING_DATA = {
       "name": "pixelfx",
       "owner": "patch-gg",
       "description": "244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
-      "stars": 6793,
+      "stars": 7063,
       "language": "JavaScript",
       "url": "https://github.com/patch-gg/pixelfx",
       "topics": [
@@ -94,32 +70,48 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "JuneYaooo/rea-video",
-      "name": "rea-video",
-      "owner": "JuneYaooo",
-      "description": "Reverse-engineer any video, shot by shot: filmed, AI-generated or coded, and how to remake it. 逆向一切视频，逐个镜头看是拍的、AI 生成的还是代码做的，再告诉你怎么复刻。",
-      "stars": 6664,
-      "language": "Python",
-      "url": "https://github.com/JuneYaooo/rea-video",
+      "full_name": "huamidev/GestaltX",
+      "name": "GestaltX",
+      "owner": "huamidev",
+      "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups, and support for 7 languages.",
+      "stars": 6617,
+      "language": "Swift",
+      "url": "https://github.com/huamidev/GestaltX",
+      "topics": []
+    },
+    {
+      "full_name": "janestreet/agent_skills",
+      "name": "agent_skills",
+      "owner": "janestreet",
+      "description": "Agent skills",
+      "stars": 6360,
+      "language": "N/A",
+      "url": "https://github.com/janestreet/agent_skills",
+      "topics": []
+    },
+    {
+      "full_name": "KKKKhazix/agent-autoloop",
+      "name": "agent-autoloop",
+      "owner": "KKKKhazix",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "stars": 4564,
+      "language": "TypeScript",
+      "url": "https://github.com/KKKKhazix/agent-autoloop",
       "topics": [
-        "agent-skills",
-        "ai-video",
-        "aigc-detection"
+        "ai-agents",
+        "automation",
+        "claude-code"
       ]
     },
     {
-      "full_name": "valentderah/totk-pc-recomp",
-      "name": "totk-pc-recomp",
-      "owner": "valentderah",
-      "description": "Static recompilation of The Legend of Zelda: Tears of the Kingdom to native Windows and Linux x86-64, with a Vulkan renderer. Game files not included.",
-      "stars": 6526,
-      "language": "C",
-      "url": "https://github.com/valentderah/totk-pc-recomp",
-      "topics": [
-        "game",
-        "linux",
-        "port"
-      ]
+      "full_name": "Lee-xeo/Claude-Cage",
+      "name": "Claude-Cage",
+      "owner": "Lee-xeo",
+      "description": "Cage：为 Claude 特化的轻量化虚拟机，彻底杜绝网络泄露。多平台适配，支持多账号管理、远程部署、移动端操控。",
+      "stars": 4050,
+      "language": "Go",
+      "url": "https://github.com/Lee-xeo/Claude-Cage",
+      "topics": []
     }
   ]
 }
