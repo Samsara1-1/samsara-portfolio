@@ -1,52 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-11-13T07:36:08Z",
+  "fetched_at": "2026-11-14T07:20:40Z",
   "repos": [
-    {
-      "full_name": "storytold/craft-anything",
-      "name": "craft-anything",
-      "owner": "storytold",
-      "description": "Craft Anything: understand how any software works, and craft your own.",
-      "stars": 30508,
-      "language": "Rust",
-      "url": "https://github.com/storytold/craft-anything",
-      "topics": []
-    },
-    {
-      "full_name": "deepseek-ai/dsh-superagent-prototype",
-      "name": "dsh-superagent-prototype",
-      "owner": "deepseek-ai",
-      "description": "Towards a More Autonomous Agent System",
-      "stars": 22870,
-      "language": "TypeScript",
-      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
-      "topics": []
-    },
-    {
-      "full_name": "NotRexed/Hookshot",
-      "name": "Hookshot",
-      "owner": "NotRexed",
-      "description": "A Native Recompilation Of The Legend Of Zelda: Ocarina Of Time Nintendo Switch 2 Remake",
-      "stars": 9017,
-      "language": "C++",
-      "url": "https://github.com/NotRexed/Hookshot",
-      "topics": []
-    },
-    {
-      "full_name": "zortos293/Lichii",
-      "name": "Lichii",
-      "owner": "zortos293",
-      "description": "VERY experimental Nintendo Switch 2 emulator",
-      "stars": 8833,
-      "language": "C++",
-      "url": "https://github.com/zortos293/Lichii",
-      "topics": []
-    },
     {
       "full_name": "Minireel/HGhub",
       "name": "HGhub",
       "owner": "Minireel",
       "description": "YellowFruit third-party client",
-      "stars": 8726,
+      "stars": 8830,
       "language": "N/A",
       "url": "https://github.com/Minireel/HGhub",
       "topics": [
@@ -60,7 +20,7 @@ window.TRENDING_DATA = {
       "name": "agent_skills",
       "owner": "janestreet",
       "description": "Agent skills",
-      "stars": 7939,
+      "stars": 8363,
       "language": "N/A",
       "url": "https://github.com/janestreet/agent_skills",
       "topics": []
@@ -70,19 +30,9 @@ window.TRENDING_DATA = {
       "name": "GestaltX",
       "owner": "huamidev",
       "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
-      "stars": 7072,
+      "stars": 7414,
       "language": "Swift",
       "url": "https://github.com/huamidev/GestaltX",
-      "topics": []
-    },
-    {
-      "full_name": "Lee-xeo/Claude-Cage",
-      "name": "Claude-Cage",
-      "owner": "Lee-xeo",
-      "description": "Cage：为 Claude 特化的轻量化虚拟机，彻底杜绝网络泄露。多平台适配，支持多账号管理、远程部署、移动端操控。",
-      "stars": 5045,
-      "language": "Go",
-      "url": "https://github.com/Lee-xeo/Claude-Cage",
       "topics": []
     },
     {
@@ -90,7 +40,7 @@ window.TRENDING_DATA = {
       "name": "agent-autoloop",
       "owner": "KKKKhazix",
       "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
-      "stars": 4961,
+      "stars": 5199,
       "language": "TypeScript",
       "url": "https://github.com/KKKKhazix/agent-autoloop",
       "topics": [
@@ -100,13 +50,71 @@ window.TRENDING_DATA = {
       ]
     },
     {
+      "full_name": "expo/exact",
+      "name": "exact",
+      "owner": "expo",
+      "description": "Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI agent can build it, run it, see it, and test it on every one of them.",
+      "stars": 4062,
+      "language": "Rust",
+      "url": "https://github.com/expo/exact",
+      "topics": [
+        "ai-agents",
+        "appkit",
+        "coding-agents"
+      ]
+    },
+    {
       "full_name": "tangerineturtle1/NX2navi",
       "name": "NX2navi",
       "owner": "tangerineturtle1",
       "description": "暂无描述",
-      "stars": 3650,
+      "stars": 3966,
       "language": "C",
       "url": "https://github.com/tangerineturtle1/NX2navi",
+      "topics": []
+    },
+    {
+      "full_name": "mromidev/claude-animated-shorts",
+      "name": "claude-animated-shorts",
+      "owner": "mromidev",
+      "description": "Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion",
+      "stars": 3300,
+      "language": "TypeScript",
+      "url": "https://github.com/mromidev/claude-animated-shorts",
+      "topics": []
+    },
+    {
+      "full_name": "shanselman/gputaskman",
+      "name": "gputaskman",
+      "owner": "shanselman",
+      "description": "A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
+      "stars": 3121,
+      "language": "Python",
+      "url": "https://github.com/shanselman/gputaskman",
+      "topics": []
+    },
+    {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "name": "S2Arm",
+      "owner": "jhaizhou-ops",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "stars": 2898,
+      "language": "C#",
+      "url": "https://github.com/jhaizhou-ops/S2Arm",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting"
+      ]
+    },
+    {
+      "full_name": "JenkinWoo/sheeridVerify",
+      "name": "sheeridVerify",
+      "owner": "JenkinWoo",
+      "description": "暂无描述",
+      "stars": 2813,
+      "language": "JavaScript",
+      "url": "https://github.com/JenkinWoo/sheeridVerify",
       "topics": []
     }
   ]
