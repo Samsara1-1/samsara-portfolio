@@ -1,13 +1,13 @@
 {
-  "fetched_at": "2026-11-15T07:33:19Z",
+  "fetched_at": "2026-11-16T07:39:22Z",
   "repos": [
     {
       "full_name": "Minireel/HGhub",
       "name": "HGhub",
       "owner": "Minireel",
-      "description": "YellowFruit third-party client",
-      "stars": 8863,
-      "language": "N/A",
+      "description": "Plug-in media player",
+      "stars": 9209,
+      "language": "Rust",
       "url": "https://github.com/Minireel/HGhub",
       "topics": [
         "android",
@@ -20,7 +20,7 @@
       "name": "agent_skills",
       "owner": "janestreet",
       "description": "Agent skills",
-      "stars": 8704,
+      "stars": 9190,
       "language": "N/A",
       "url": "https://github.com/janestreet/agent_skills",
       "topics": []
@@ -30,7 +30,7 @@
       "name": "GestaltX",
       "owner": "huamidev",
       "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
-      "stars": 7635,
+      "stars": 7790,
       "language": "Swift",
       "url": "https://github.com/huamidev/GestaltX",
       "topics": []
@@ -40,7 +40,7 @@
       "name": "agent-autoloop",
       "owner": "KKKKhazix",
       "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
-      "stars": 5400,
+      "stars": 5576,
       "language": "TypeScript",
       "url": "https://github.com/KKKKhazix/agent-autoloop",
       "topics": [
@@ -50,41 +50,23 @@
       ]
     },
     {
-      "full_name": "expo/exact",
-      "name": "exact",
-      "owner": "expo",
-      "description": "Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI agent can build it, run it, see it, and test it on every one of them.",
-      "stars": 4218,
-      "language": "Rust",
-      "url": "https://github.com/expo/exact",
-      "topics": [
-        "ai-agents",
-        "appkit",
-        "coding-agents"
-      ]
-    },
-    {
-      "full_name": "libracoder/kiri",
-      "name": "kiri",
-      "owner": "libracoder",
-      "description": "A small, fast container runtime for macOS, Windows and Linux with free Ngrok alternative",
-      "stars": 4192,
-      "language": "Rust",
-      "url": "https://github.com/libracoder/kiri",
-      "topics": [
-        "containers",
-        "docker",
-        "kubernetes"
-      ]
-    },
-    {
       "full_name": "tangerineturtle1/NX2navi",
       "name": "NX2navi",
       "owner": "tangerineturtle1",
       "description": "暂无描述",
-      "stars": 4146,
+      "stars": 4251,
       "language": "C",
       "url": "https://github.com/tangerineturtle1/NX2navi",
+      "topics": []
+    },
+    {
+      "full_name": "deepseek-ai/chat-demo",
+      "name": "chat-demo",
+      "owner": "deepseek-ai",
+      "description": "Chat Demo",
+      "stars": 3601,
+      "language": "TypeScript",
+      "url": "https://github.com/deepseek-ai/chat-demo",
       "topics": []
     },
     {
@@ -92,7 +74,7 @@
       "name": "gputaskman",
       "owner": "shanselman",
       "description": "A GPU task manager for Windows, Linux, and WSL: per-process VRAM, GPU activity, and LLM model/KV-cache insights (Windows AMD and NVIDIA).",
-      "stars": 3252,
+      "stars": 3359,
       "language": "Python",
       "url": "https://github.com/shanselman/gputaskman",
       "topics": []
@@ -102,7 +84,7 @@
       "name": "sheeridVerify",
       "owner": "JenkinWoo",
       "description": "暂无描述",
-      "stars": 3191,
+      "stars": 3295,
       "language": "JavaScript",
       "url": "https://github.com/JenkinWoo/sheeridVerify",
       "topics": []
@@ -112,13 +94,27 @@
       "name": "S2Arm",
       "owner": "jhaizhou-ops",
       "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
-      "stars": 3061,
+      "stars": 3287,
       "language": "C#",
       "url": "https://github.com/jhaizhou-ops/S2Arm",
       "topics": [
         "apple-silicon",
         "arm64",
         "game-porting"
+      ]
+    },
+    {
+      "full_name": "govijr/terminal-mac",
+      "name": "terminal-mac",
+      "owner": "govijr",
+      "description": "Entire MacOS running in your terminal.",
+      "stars": 2784,
+      "language": "Swift",
+      "url": "https://github.com/govijr/terminal-mac",
+      "topics": [
+        "cli",
+        "gui",
+        "macos"
       ]
     }
   ]
