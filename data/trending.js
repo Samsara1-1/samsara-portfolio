@@ -1,14 +1,14 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-11-17T08:48:22Z",
+  "fetched_at": "2026-11-18T08:12:24Z",
   "repos": [
     {
-      "full_name": "huamidev/GestaltX",
+      "full_name": "huami-dev/GestaltX",
       "name": "GestaltX",
-      "owner": "huamidev",
+      "owner": "huami-dev",
       "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
-      "stars": 7962,
+      "stars": 8210,
       "language": "Swift",
-      "url": "https://github.com/huamidev/GestaltX",
+      "url": "https://github.com/huami-dev/GestaltX",
       "topics": []
     },
     {
@@ -16,7 +16,7 @@ window.TRENDING_DATA = {
       "name": "chat-demo",
       "owner": "deepseek-ai",
       "description": "Chat Demo",
-      "stars": 4313,
+      "stars": 4646,
       "language": "TypeScript",
       "url": "https://github.com/deepseek-ai/chat-demo",
       "topics": []
@@ -26,7 +26,7 @@ window.TRENDING_DATA = {
       "name": "NX2navi",
       "owner": "tangerineturtle1",
       "description": "暂无描述",
-      "stars": 4293,
+      "stars": 4310,
       "language": "C",
       "url": "https://github.com/tangerineturtle1/NX2navi",
       "topics": []
@@ -36,7 +36,7 @@ window.TRENDING_DATA = {
       "name": "S2Arm",
       "owner": "jhaizhou-ops",
       "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
-      "stars": 3412,
+      "stars": 3542,
       "language": "C#",
       "url": "https://github.com/jhaizhou-ops/S2Arm",
       "topics": [
@@ -50,17 +50,41 @@ window.TRENDING_DATA = {
       "name": "sheeridVerify",
       "owner": "JenkinWoo",
       "description": "暂无描述",
-      "stars": 3391,
+      "stars": 3451,
       "language": "JavaScript",
       "url": "https://github.com/JenkinWoo/sheeridVerify",
       "topics": []
+    },
+    {
+      "full_name": "krisgfx9/Wireless-Device-Battery-Monitor",
+      "name": "Wireless-Device-Battery-Monitor",
+      "owner": "krisgfx9",
+      "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+      "stars": 3232,
+      "language": "C++",
+      "url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+      "topics": []
+    },
+    {
+      "full_name": "ersinkoc/phonebox",
+      "name": "phonebox",
+      "owner": "ersinkoc",
+      "description": "Turn an old Android phone into a customizable desk panel and touch control deck for Windows, Linux and macOS. 115 widgets for system stats, AI coding, media and automation. USB or paired Wi-Fi. No cloud required.",
+      "stars": 2845,
+      "language": "C#",
+      "url": "https://github.com/ersinkoc/phonebox",
+      "topics": [
+        "android",
+        "claude-code",
+        "codex"
+      ]
     },
     {
       "full_name": "jamesondh/chimera-vocal-synth",
       "name": "chimera-vocal-synth",
       "owner": "jamesondh",
       "description": "the ultimate vocal synthesizer - sing, speak, beatbox, and more",
-      "stars": 2597,
+      "stars": 2678,
       "language": "Rust",
       "url": "https://github.com/jamesondh/chimera-vocal-synth",
       "topics": []
@@ -70,7 +94,7 @@ window.TRENDING_DATA = {
       "name": "ANR",
       "owner": "apex-compute",
       "description": "Apex Neural Rendering (ANR) by Apex Compute",
-      "stars": 2518,
+      "stars": 2614,
       "language": "C++",
       "url": "https://github.com/apex-compute/ANR",
       "topics": []
@@ -80,41 +104,13 @@ window.TRENDING_DATA = {
       "name": "pinky",
       "owner": "DIYgod",
       "description": "Let AI use your iPhone or Android phone, with you in the loop: any MCP agent from macOS, Windows or Linux, or Pinky itself, right on the phone.",
-      "stars": 2334,
+      "stars": 2415,
       "language": "Go",
       "url": "https://github.com/DIYgod/pinky",
       "topics": [
         "ai-agent",
         "android",
         "claude-code"
-      ]
-    },
-    {
-      "full_name": "hitkeeen/blender-ai-mcp-addon",
-      "name": "blender-ai-mcp-addon",
-      "owner": "hitkeeen",
-      "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
-      "stars": 2331,
-      "language": "N/A",
-      "url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
-      "topics": [
-        "ai-agents",
-        "ai-assistant",
-        "blender"
-      ]
-    },
-    {
-      "full_name": "IainKay/ram-altman",
-      "name": "ram-altman",
-      "owner": "IainKay",
-      "description": "Monitors your RAM and reports any \"quite terrible\" unused capacity directly to the CEO of OpenAI.",
-      "stars": 2230,
-      "language": "Shell",
-      "url": "https://github.com/IainKay/ram-altman",
-      "topics": [
-        "bash",
-        "cron",
-        "dram"
       ]
     }
   ]
