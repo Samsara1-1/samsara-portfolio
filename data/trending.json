@@ -1,44 +1,14 @@
 {
-  "fetched_at": "2026-11-19T08:23:41Z",
+  "fetched_at": "2026-11-20T08:04:17Z",
   "repos": [
     {
       "full_name": "huami1314/GestaltX",
       "name": "GestaltX",
       "owner": "huami1314",
       "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
-      "stars": 8441,
+      "stars": 8587,
       "language": "Swift",
       "url": "https://github.com/huami1314/GestaltX",
-      "topics": []
-    },
-    {
-      "full_name": "deepseek-ai/chat-demo",
-      "name": "chat-demo",
-      "owner": "deepseek-ai",
-      "description": "Chat Demo",
-      "stars": 4932,
-      "language": "TypeScript",
-      "url": "https://github.com/deepseek-ai/chat-demo",
-      "topics": []
-    },
-    {
-      "full_name": "tangerineturtle1/NX2navi",
-      "name": "NX2navi",
-      "owner": "tangerineturtle1",
-      "description": "暂无描述",
-      "stars": 4325,
-      "language": "C",
-      "url": "https://github.com/tangerineturtle1/NX2navi",
-      "topics": []
-    },
-    {
-      "full_name": "krisgfx9/Wireless-Device-Battery-Monitor",
-      "name": "Wireless-Device-Battery-Monitor",
-      "owner": "krisgfx9",
-      "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
-      "stars": 4206,
-      "language": "C++",
-      "url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
       "topics": []
     },
     {
@@ -46,7 +16,7 @@
       "name": "rust-anything",
       "owner": "erkamyaman",
       "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
-      "stars": 3918,
+      "stars": 5665,
       "language": "Rust",
       "url": "https://github.com/erkamyaman/rust-anything",
       "topics": [
@@ -56,35 +26,41 @@
       ]
     },
     {
-      "full_name": "jhaizhou-ops/S2Arm",
-      "name": "S2Arm",
-      "owner": "jhaizhou-ops",
-      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
-      "stars": 3629,
-      "language": "C#",
-      "url": "https://github.com/jhaizhou-ops/S2Arm",
-      "topics": [
-        "apple-silicon",
-        "arm64",
-        "game-porting"
-      ]
+      "full_name": "deepseek-ai/chat-demo",
+      "name": "chat-demo",
+      "owner": "deepseek-ai",
+      "description": "Chat Demo",
+      "stars": 5071,
+      "language": "TypeScript",
+      "url": "https://github.com/deepseek-ai/chat-demo",
+      "topics": []
     },
     {
-      "full_name": "JenkinWoo/sheeridVerify",
-      "name": "sheeridVerify",
-      "owner": "JenkinWoo",
+      "full_name": "krisgfx9/Wireless-Device-Battery-Monitor",
+      "name": "Wireless-Device-Battery-Monitor",
+      "owner": "krisgfx9",
+      "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+      "stars": 4811,
+      "language": "C++",
+      "url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+      "topics": []
+    },
+    {
+      "full_name": "tangerineturtle1/NX2navi",
+      "name": "NX2navi",
+      "owner": "tangerineturtle1",
       "description": "暂无描述",
-      "stars": 3550,
-      "language": "JavaScript",
-      "url": "https://github.com/JenkinWoo/sheeridVerify",
+      "stars": 4338,
+      "language": "C",
+      "url": "https://github.com/tangerineturtle1/NX2navi",
       "topics": []
     },
     {
       "full_name": "ersinkoc/phonebox",
       "name": "phonebox",
       "owner": "ersinkoc",
-      "description": "Turn an old Android phone into a customizable desk panel and touch control deck for Windows, Linux and macOS. 124 widgets and 30 templates for system stats, AI coding, media and automation, in 12 languages. USB or paired Wi-Fi. No cloud required.",
-      "stars": 3389,
+      "description": "Turn an old Android phone into a customizable desk panel and touch control deck for Windows, Linux and macOS. 124 widgets and 30 templates for system stats, AI coding, media and automation, in 13 languages. USB or paired Wi-Fi. No cloud required.",
+      "stars": 3961,
       "language": "C#",
       "url": "https://github.com/ersinkoc/phonebox",
       "topics": [
@@ -94,28 +70,52 @@
       ]
     },
     {
+      "full_name": "jhaizhou-ops/S2Arm",
+      "name": "S2Arm",
+      "owner": "jhaizhou-ops",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "stars": 3705,
+      "language": "C#",
+      "url": "https://github.com/jhaizhou-ops/S2Arm",
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting"
+      ]
+    },
+    {
       "full_name": "apex-compute/ANR",
       "name": "ANR",
       "owner": "apex-compute",
       "description": "Apex Neural Rendering (ANR) by Apex Compute",
-      "stars": 2673,
+      "stars": 2708,
       "language": "C++",
       "url": "https://github.com/apex-compute/ANR",
       "topics": []
     },
     {
-      "full_name": "DIYgod/pinky",
-      "name": "pinky",
-      "owner": "DIYgod",
-      "description": "Let AI use your iPhone or Android phone, with you in the loop: any MCP agent from macOS, Windows or Linux, or Pinky itself, right on the phone.",
-      "stars": 2495,
-      "language": "Go",
-      "url": "https://github.com/DIYgod/pinky",
+      "full_name": "FrigadeHQ/yogurt",
+      "name": "yogurt",
+      "owner": "FrigadeHQ",
+      "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+      "stars": 2661,
+      "language": "TypeScript",
+      "url": "https://github.com/FrigadeHQ/yogurt",
       "topics": [
-        "ai-agent",
-        "android",
-        "claude-code"
+        "ai-meeting-assistant",
+        "ai-notetaker",
+        "electron"
       ]
+    },
+    {
+      "full_name": "Immortal-Protocols/lastbook",
+      "name": "lastbook",
+      "owner": "Immortal-Protocols",
+      "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
+      "stars": 2645,
+      "language": "Python",
+      "url": "https://github.com/Immortal-Protocols/lastbook",
+      "topics": []
     }
   ]
 }
