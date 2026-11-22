@@ -1,14 +1,24 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-11-21T07:58:51Z",
+  "fetched_at": "2026-11-22T07:45:12Z",
   "repos": [
     {
       "full_name": "huami1314/GestaltX",
       "name": "GestaltX",
       "owner": "huami1314",
       "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups.",
-      "stars": 8673,
+      "stars": 8762,
       "language": "Swift",
       "url": "https://github.com/huami1314/GestaltX",
+      "topics": []
+    },
+    {
+      "full_name": "ItsNotRexed/Leonida",
+      "name": "Leonida",
+      "owner": "ItsNotRexed",
+      "description": "Leonida Is A Native PC Recompilation Of The Xbox Version Of Grand Theft Auto 6",
+      "stars": 7845,
+      "language": "Python",
+      "url": "https://github.com/ItsNotRexed/Leonida",
       "topics": []
     },
     {
@@ -16,7 +26,7 @@ window.TRENDING_DATA = {
       "name": "rust-anything",
       "owner": "erkamyaman",
       "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
-      "stars": 6881,
+      "stars": 7583,
       "language": "Rust",
       "url": "https://github.com/erkamyaman/rust-anything",
       "topics": [
@@ -30,7 +40,7 @@ window.TRENDING_DATA = {
       "name": "Wireless-Device-Battery-Monitor",
       "owner": "krisgfx9",
       "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
-      "stars": 5463,
+      "stars": 5907,
       "language": "C++",
       "url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
       "topics": []
@@ -40,31 +50,17 @@ window.TRENDING_DATA = {
       "name": "chat-demo",
       "owner": "deepseek-ai",
       "description": "Chat Demo",
-      "stars": 5163,
+      "stars": 5246,
       "language": "TypeScript",
       "url": "https://github.com/deepseek-ai/chat-demo",
       "topics": []
-    },
-    {
-      "full_name": "jhaizhou-ops/S2Arm",
-      "name": "S2Arm",
-      "owner": "jhaizhou-ops",
-      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
-      "stars": 3750,
-      "language": "C#",
-      "url": "https://github.com/jhaizhou-ops/S2Arm",
-      "topics": [
-        "apple-silicon",
-        "arm64",
-        "game-porting"
-      ]
     },
     {
       "full_name": "simplexai-labs/linger",
       "name": "linger",
       "owner": "simplexai-labs",
       "description": "Linger is An Open-Source Personal Agent That Runs Fully on Your PC.  We aim to break Big Tech’s grip on AI by bringing powerful local AI to everyday computers through efficient model–harness co-design, so everyone can run their own.",
-      "stars": 3056,
+      "stars": 3570,
       "language": "TypeScript",
       "url": "https://github.com/simplexai-labs/linger",
       "topics": [
@@ -74,11 +70,21 @@ window.TRENDING_DATA = {
       ]
     },
     {
+      "full_name": "Immortal-Protocols/lastbook",
+      "name": "lastbook",
+      "owner": "Immortal-Protocols",
+      "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
+      "stars": 2904,
+      "language": "Python",
+      "url": "https://github.com/Immortal-Protocols/lastbook",
+      "topics": []
+    },
+    {
       "full_name": "FrigadeHQ/yogurt",
       "name": "yogurt",
       "owner": "FrigadeHQ",
       "description": "Private AI meeting notes that stay on your computer. No meeting bot. Free and open source for Mac, Windows and Linux. An alternative to Granola, Otter and Fireflies.",
-      "stars": 2801,
+      "stars": 2894,
       "language": "TypeScript",
       "url": "https://github.com/FrigadeHQ/yogurt",
       "topics": [
@@ -88,38 +94,24 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "Immortal-Protocols/lastbook",
-      "name": "lastbook",
-      "owner": "Immortal-Protocols",
-      "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
-      "stars": 2785,
-      "language": "Python",
-      "url": "https://github.com/Immortal-Protocols/lastbook",
-      "topics": []
-    },
-    {
       "full_name": "apex-compute/ANR",
       "name": "ANR",
       "owner": "apex-compute",
       "description": "Apex Neural Rendering (ANR) by Apex Compute",
-      "stars": 2743,
+      "stars": 2853,
       "language": "C++",
       "url": "https://github.com/apex-compute/ANR",
       "topics": []
     },
     {
-      "full_name": "Kianuni/Erosion-CN",
-      "name": "Erosion-CN",
-      "owner": "Kianuni",
-      "description": "iOS / iPadOS 国行 Apple 智能、eSIM 与 MobileGestalt 系统配置工具箱（中英双语 · 防白苹果安全加固版） | Bootloop-Safe iOS / iPadOS MobileGestalt, Apple Intelligence & eSIM Toolbox (EN/ZH)",
-      "stars": 2657,
-      "language": "Swift",
-      "url": "https://github.com/Kianuni/Erosion-CN",
-      "topics": [
-        "apple-intelligence",
-        "esim",
-        "facetime-audio"
-      ]
+      "full_name": "Noniv/abyssal-garden",
+      "name": "abyssal-garden",
+      "owner": "Noniv",
+      "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
+      "stars": 2728,
+      "language": "JavaScript",
+      "url": "https://github.com/Noniv/abyssal-garden",
+      "topics": []
     }
   ]
 }
