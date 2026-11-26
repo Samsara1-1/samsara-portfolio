@@ -1,12 +1,12 @@
 window.TRENDING_DATA = {
-  "fetched_at": "2026-11-25T09:31:39Z",
+  "fetched_at": "2026-11-26T09:09:54Z",
   "repos": [
     {
       "full_name": "Marvisak/VIctory",
       "name": "VIctory",
       "owner": "Marvisak",
       "description": "An attempt at running GTA VI on PC",
-      "stars": 11853,
+      "stars": 12842,
       "language": "Rust",
       "url": "https://github.com/Marvisak/VIctory",
       "topics": []
@@ -16,7 +16,7 @@ window.TRENDING_DATA = {
       "name": "rust-anything",
       "owner": "erkamyaman",
       "description": "Rewrite your whole app in Rust, one piece at a time, checked against the original's recorded behavior at every step. CLIs, HTTP servers and libraries in TypeScript, Python, C, Go, Ruby and Java.",
-      "stars": 9389,
+      "stars": 9770,
       "language": "Rust",
       "url": "https://github.com/erkamyaman/rust-anything",
       "topics": [
@@ -30,7 +30,7 @@ window.TRENDING_DATA = {
       "name": "xcl",
       "owner": "xcl-dev",
       "description": "Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL",
-      "stars": 8052,
+      "stars": 8400,
       "language": "Rust",
       "url": "https://github.com/xcl-dev/xcl",
       "topics": [
@@ -40,23 +40,23 @@ window.TRENDING_DATA = {
       ]
     },
     {
-      "full_name": "deepseek-ai/chat-demo",
-      "name": "chat-demo",
-      "owner": "deepseek-ai",
-      "description": "Chat Demo",
-      "stars": 5427,
-      "language": "TypeScript",
-      "url": "https://github.com/deepseek-ai/chat-demo",
-      "topics": []
-    },
-    {
       "full_name": "Hut-hzf/ung220z-tool",
       "name": "ung220z-tool",
       "owner": "Hut-hzf",
       "description": "ung220z-tool 是一个针对 UNG220Z，另含中兴/烽火/华为/九联多厂商适配、固件指纹识别与分家族排障建议的一键凭据提取工具，仅限在你自己的设备上用于找回忘记的管理密码、迁移宽带配置或安全自查。",
-      "stars": 4661,
+      "stars": 5115,
       "language": "Python",
       "url": "https://github.com/Hut-hzf/ung220z-tool",
+      "topics": []
+    },
+    {
+      "full_name": "4lwayz/portwatch-vi",
+      "name": "portwatch-vi",
+      "owner": "4lwayz",
+      "description": "Does GTA VI run on PC yet? A live tracker of community recompilation and emulation efforts, updated daily.",
+      "stars": 4678,
+      "language": "JavaScript",
+      "url": "https://github.com/4lwayz/portwatch-vi",
       "topics": []
     },
     {
@@ -64,7 +64,7 @@ window.TRENDING_DATA = {
       "name": "fast-anything",
       "owner": "EL4CTEO",
       "description": "Don't rewrite it in Rust. Rewrite the 5% that's slow: profile Python, Node or Ruby apps, port the hot functions with your coding agent, prove they behave the same.",
-      "stars": 3764,
+      "stars": 4079,
       "language": "Rust",
       "url": "https://github.com/EL4CTEO/fast-anything",
       "topics": [
@@ -78,40 +78,48 @@ window.TRENDING_DATA = {
       "name": "xnulinux",
       "owner": "AFK-surf",
       "description": "XNU as a loadable kernel module inside Linux (macOS personality for arm64 Linux)",
-      "stars": 3662,
+      "stars": 4071,
       "language": "C",
       "url": "https://github.com/AFK-surf/xnulinux",
       "topics": []
     },
     {
-      "full_name": "4lwayz/portwatch-vi",
-      "name": "portwatch-vi",
-      "owner": "4lwayz",
-      "description": "Does GTA VI run on PC yet? A live tracker of community recompilation and emulation efforts, updated daily.",
-      "stars": 3191,
-      "language": "JavaScript",
-      "url": "https://github.com/4lwayz/portwatch-vi",
+      "full_name": "fxceless/victory-fork",
+      "name": "victory-fork",
+      "owner": "fxceless",
+      "description": "Work-in-progress fork of VIctory: getting an Xbox Series title to render and run on a Windows PC. No game files.",
+      "stars": 3167,
+      "language": "Rust",
+      "url": "https://github.com/fxceless/victory-fork",
       "topics": []
     },
     {
-      "full_name": "Immortal-Protocols/lastbook",
-      "name": "lastbook",
-      "owner": "Immortal-Protocols",
-      "description": "Offline knowledge AI, maps and videos for survival and rebuilding",
-      "stars": 3064,
+      "full_name": "sybil-solutions/inference-optimisation-skill",
+      "name": "inference-optimisation-skill",
+      "owner": "sybil-solutions",
+      "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+      "stars": 2742,
       "language": "Python",
-      "url": "https://github.com/Immortal-Protocols/lastbook",
-      "topics": []
+      "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+      "topics": [
+        "agent-skill",
+        "benchmarking",
+        "claude-code"
+      ]
     },
     {
-      "full_name": "Noniv/abyssal-garden",
-      "name": "abyssal-garden",
-      "owner": "Noniv",
-      "description": "A dreamy underwater world you can swim through in your browser: swaying kelp forests, sunbeams, a sunken ship and manta rays. Everything is generated by code with WebGPU (no images, models or sound files), all in a single 97 KB HTML file.",
-      "stars": 2956,
-      "language": "JavaScript",
-      "url": "https://github.com/Noniv/abyssal-garden",
-      "topics": []
+      "full_name": "iamajmeena/neonclipping",
+      "name": "neonclipping",
+      "owner": "iamajmeena",
+      "description": "Paste a link, get captioned 9:16 clips in ~2 min. Free, local, open-source clipping engine (audio-first, YouTube captions, local LLM).",
+      "stars": 2654,
+      "language": "Python",
+      "url": "https://github.com/iamajmeena/neonclipping",
+      "topics": [
+        "ai-video-clipper",
+        "clipping",
+        "faster-whisper"
+      ]
     }
   ]
 }
